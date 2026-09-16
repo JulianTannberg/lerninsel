@@ -143,6 +143,46 @@ function randomToken(len=8){const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";const
 function roomCode(){return randomToken(8).match(/.{1,4}/g).join("-")}
 function parentCode(){return randomToken(10).match(/.{1,5}/g).join("-")}
 function quizCode(){return String(Math.floor(100000+Math.random()*900000))}
+function shuffledOptions(options){
+  const arr=(options||[]).map((text,originalIndex)=>({text,originalIndex}));
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+function abortWorkDialog(){
+  if(state.quiz){
+    if(!confirm("Quiz wirklich verlassen? Der aktuelle Durchlauf wird beendet."))return false;
+    clearInterval(state.quiz.timer);
+    state.quiz=null;
+  }
+  if(state.practice){
+    if(!confirm("Übungsrunde wirklich verlassen? Du kannst sie später neu starten."))return false;
+    state.practice=null;
+  }
+  closeDialog("#workDialog");
+  if(state.currentSubject&&state.currentTopic)renderTopic(state.currentSubject,state.currentTopic);
+  return true;
+}
+function leaveLiveDialog(){
+  clearInterval(studentLiveTimer);
+  if(state.live&&!state.live.teacher)state.live=null;
+  closeDialog("#liveDialog");
+}
+function addDialogClose(dialogId,onClose){
+  const dlg=$(dialogId),inside=dlg?.querySelector(".inside");
+  if(!dlg||!inside)return;
+  inside.style.position="relative";
+  let b=inside.querySelector(".dialogClose");
+  if(!b){
+    b=document.createElement("button");
+    b.type="button";b.className="dialogClose";b.setAttribute("aria-label","Schließen");b.textContent="×";
+    Object.assign(b.style,{position:"absolute",right:"12px",top:"10px",width:"38px",height:"38px",border:"0",borderRadius:"50%",background:"#eef2f7",color:"#293347",fontSize:"26px",lineHeight:"34px",fontWeight:"700",zIndex:"3"});
+    inside.prepend(b);
+  }
+  b.onclick=()=>{if(onClose)onClose();else closeDialog(dialogId)};
+}
 function toast(msg){const d=document.createElement("div");d.className="toast";d.textContent=msg;document.body.appendChild(d);setTimeout(()=>d.remove(),1900)}
 function closeDialog(id){const d=$(id); if(d?.open)d.close()}
 function subjectMeta(id){return SUBJECTS.find(s=>s.id===id)||{id,name:id,icon:"📚"}}
@@ -430,6 +470,7 @@ function renderLesson(i){
     ${(i.sections||[]).map(s=>`<div class="lessonSection"><h3>${esc(s.heading)}</h3><div>${esc(s.text)}</div></div>`).join("")}
     ${i.memory?`<div class="merksatz">💡 ${esc(i.memory)}</div>`:""}
     <button id="readDone" class="primary big">${p.status==="completed"?"✓ Gelesen":"Gelesen"}</button>`;
+  addDialogClose("#workDialog",()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)});
   $("#workDialog").showModal();
   $("#readDone").onclick=async()=>{
     const b=$("#readDone");b.textContent="✓ Gelesen – gespeichert";b.disabled=true;
@@ -474,12 +515,14 @@ function renderPracticeItem(i){
   else if(i.type==="flashcard")renderFlashcard(i);
   else if(i.type==="cloze")renderPracticeCloze(i);
   else if(i.type==="builder")renderPracticeBuilder(i);
+  addDialogClose("#workDialog",abortWorkDialog);
   $("#workDialog").showModal()
 }
 function renderPracticeMCQ(i){
+  const shown=shuffledOptions(i.options);
   $("#workInside").innerHTML=practiceHead()+`<span class="badge">${esc(subjectMeta(i.subject).name)} · ${esc(i.topic)}</span>
     <div class="question">${esc(i.question)}</div>
-    <div>${i.options.map((o,n)=>`<button class="choice quizOption" data-opt="${n}">${esc(o)}</button>`).join("")}</div>
+    <div>${shown.map(o=>`<button class="choice quizOption" data-opt="${o.originalIndex}">${esc(o.text)}</button>`).join("")}</div>
     <button id="checkPractice" class="primary big" style="margin-top:10px">Antwort prüfen</button><div id="practiceFeedback"></div>`;
   let selected=null;
   $$("[data-opt]").forEach(b=>b.onclick=()=>{$$("[data-opt]").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");selected=+b.dataset.opt});
@@ -531,6 +574,7 @@ function renderHomework(i){
     ${i.steps.map((s,n)=>`<div class="stepBox"><h3>${n+1}. ${esc(s.prompt)}</h3>${s.options.map((o,k)=>`<button class="choice guidedChoice" data-step="${n}" data-opt="${k}">${esc(o)}</button>`).join("")}</div>`).join("")}
     <button id="checkHomework" class="primary big">Meine Auswahl prüfen</button><div id="homeFeedback"></div><div id="finalArea">${p.answer?`<div class="finalBox"><strong>Endfassung:</strong><br>${esc(p.answer)}</div>`:""}</div>
     <button id="closeHomework" class="ghost big" style="margin-top:10px">Schließen</button>`;
+  addDialogClose("#workDialog",()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)});
   $("#workDialog").showModal();
   $$(".guidedChoice").forEach(b=>b.onclick=()=>{const s=+b.dataset.step;answers[s]=+b.dataset.opt;$$(`.guidedChoice[data-step="${s}"]`).forEach(x=>x.classList.remove("selected"));b.classList.add("selected")});
   $("#checkHomework").onclick=async()=>{
@@ -551,11 +595,13 @@ function renderSoloQuizQuestion(){
   const q=state.quiz;if(!q)return;
   if(q.index>=q.items.length){finishSoloQuiz();return}
   const i=q.items[q.index];q.answered=false;q.deadline=Date.now()+15000;
+  const shown=shuffledOptions(i.options);
   $("#workInside").innerHTML=`<div class="sessionHead"><span>Quiz · Frage ${q.index+1} von ${q.items.length}</span><span class="quizTimer" id="quizTimer">15</span></div>
     <span class="badge">${esc(subjectMeta(i.subject).name)} · ${esc(i.topic)}</span>
     <div class="question">${esc(i.question)}</div>
-    <div>${i.options.map((o,n)=>`<button class="choice quizOption" data-qopt="${n}">${esc(o)}</button>`).join("")}</div>
+    <div>${shown.map(o=>`<button class="choice quizOption" data-qopt="${o.originalIndex}">${esc(o.text)}</button>`).join("")}</div>
     <div id="quizFeedback"></div>`;
+  addDialogClose("#workDialog",abortWorkDialog);
   $("#workDialog").showModal();
   $$("[data-qopt]").forEach(b=>b.onclick=()=>answerSoloQuiz(i,+b.dataset.qopt));
   clearInterval(q.timer);q.timer=setInterval(()=>{
@@ -566,9 +612,9 @@ function renderSoloQuizQuestion(){
 function answerSoloQuiz(i,opt){
   const q=state.quiz;if(!q||q.answered)return;q.answered=true;clearInterval(q.timer);
   const ok=opt===i.correct;let gained=0;
-  if(ok){const remain=Math.max(0,q.deadline-Date.now());gained=500+Math.round(500*Math.min(1,remain/15000));q.score+=gained;q.correct++}
+  if(ok){gained=1;q.score+=1;q.correct++}
   $$("[data-qopt]").forEach(b=>{b.disabled=true;if(+b.dataset.qopt===i.correct)b.classList.add("correct");else if(opt!==null&&+b.dataset.qopt===opt)b.classList.add("wrong")});
-  $("#quizFeedback").innerHTML=`<div class="feedback ${ok?"ok":"no"}">${ok?`✓ Richtig · +${gained} Punkte`:`${opt===null?"Zeit um.":"Nicht richtig."} Richtige Antwort ist markiert.`}</div>`;
+  $("#quizFeedback").innerHTML=`<div class="feedback ${ok?"ok":"no"}">${ok?`✓ Richtig · +${gained} Punkt`:`${opt===null?"Zeit um.":"Nicht richtig."} Richtige Antwort ist markiert.`}</div>`;
   studentEvent(i.id,"checked",{ok,quiz:true,score:gained});
   setTimeout(()=>{q.index++;renderSoloQuizQuestion()},850)
 }
@@ -578,6 +624,7 @@ function finishSoloQuiz(){
   $("#workInside").innerHTML=`<div style="text-align:center"><span class="sectionTitle">Quiz geschafft</span><div class="scoreBig">${q.score.toLocaleString("de-DE")} Punkte</div>
     <p><strong>${q.correct} von ${q.items.length}</strong> richtig · ${percent}%</p>
     <button id="quizDone" class="primary big">Zurück zum Thema</button></div>`;
+  addDialogClose("#workDialog",()=>{clearInterval(q.timer);state.quiz=null;closeDialog("#workDialog");renderTopic(state.currentSubject,state.currentTopic)});
   $("#quizDone").onclick=()=>{closeDialog("#workDialog");state.quiz=null;renderTopic(state.currentSubject,state.currentTopic)}
 }
 
@@ -589,6 +636,8 @@ function renderProfileSetup(first){
     <label>Spitzname<input id="nicknameInput" maxlength="24" value="${esc(state.profile?.nickname||"")}"></label>
     <label>Avatar</label><div class="avatarGrid">${AVATARS.map(a=>`<button class="avatarChoice ${a===selected?"selected":""}" data-avatar="${a}">${a}</button>`).join("")}</div>
     <button id="saveProfile" class="primary big" style="margin-top:12px">Speichern</button>`;
+  if(!first)addDialogClose("#profileDialog");
+  else { const oldClose=$("#profileInside .dialogClose"); if(oldClose)oldClose.remove(); }
   $("#profileDialog").showModal();
   $$("[data-avatar]").forEach(b=>b.onclick=()=>{selected=b.dataset.avatar;$$("[data-avatar]").forEach(x=>x.classList.toggle("selected",x.dataset.avatar===selected))});
   $("#saveProfile").onclick=async()=>{
@@ -611,12 +660,12 @@ async function openGame(){
     $("#gameInside").innerHTML=`<span class="sectionTitle">Minispiel</span><h2>🔒 Noch gesperrt</h2>
       <p>Für jeweils <strong>4 Inselpunkte</strong> bekommst du eine Spielrunde.</p>
       <p class="small">Du hast gerade ${pointsTotal()} Inselpunkte.</p><button id="closeGameInfo" class="ghost big">Zurück</button>`;
-    $("#gameDialog").showModal();$("#closeGameInfo").onclick=()=>closeDialog("#gameDialog");return
+    addDialogClose("#gameDialog");$("#gameDialog").showModal();$("#closeGameInfo").onclick=()=>closeDialog("#gameDialog");return
   }
   $("#gameInside").innerHTML=`<span class="sectionTitle">Minispiel</span><h2>🐚 Muschel-Sammler</h2>
     <p>Eine Spielrunde kostet 1 Spielmarke. Tippe in 30 Sekunden so viele Muscheln wie möglich an.</p>
     <button id="startShellGame" class="primary big">Spiel starten · ${tokens} Marke(n) verfügbar</button>`;
-  $("#gameDialog").showModal();
+  addDialogClose("#gameDialog");$("#gameDialog").showModal();
   $("#startShellGame").onclick=consumeGameTokenAndStart
 }
 async function consumeGameTokenAndStart(){
@@ -843,6 +892,7 @@ function renderLiveJoin(){
   $("#liveInside").innerHTML=`<span class="sectionTitle">Live-Quiz</span><h2>Spielcode eingeben</h2>
     <label>6-stelliger Spielcode<input id="liveCodeInput" inputmode="numeric" maxlength="6"></label>
     <button id="joinLiveBtn" class="primary big">Beitreten</button><p id="liveJoinMsg" class="small"></p>`;
+  addDialogClose("#liveDialog",leaveLiveDialog);
   $("#liveDialog").showModal();
   $("#joinLiveBtn").onclick=async()=>{
     const code=$("#liveCodeInput").value.trim();
@@ -859,15 +909,18 @@ async function renderStudentLive(){
   try{
     const r=await rpc("lerninsel_student_live_state",{p_public_code:studentSession.roomCode,p_student_code:studentSession.studentCode,p_game_code:state.live.gameCode});
     if(r.status==="lobby"){
-      $("#liveInside").innerHTML=`<div style="text-align:center"><span class="sectionTitle">Live-Quiz</span><h2>Du bist dabei!</h2><div class="liveCode">${esc(state.live.gameCode)}</div><p>Warte, bis das Quiz startet.</p></div>`;return
+      $("#liveInside").innerHTML=`<div style="text-align:center"><span class="sectionTitle">Live-Quiz</span><h2>Du bist dabei!</h2><div class="liveCode">${esc(state.live.gameCode)}</div><p>Warte, bis das Quiz startet.</p></div>`;addDialogClose("#liveDialog",leaveLiveDialog);return
     }
     if(r.status==="question"){
       const q=r.question||{};const idx=r.current_index??0;
       if(state.live.lastQuestion!==idx){
         state.live.lastQuestion=idx;
+        state.live.optionMaps??={};
+        const shown=state.live.optionMaps[idx]||(state.live.optionMaps[idx]=shuffledOptions(q.options||[]));
         $("#liveInside").innerHTML=`<div class="sessionHead"><span>Frage ${idx+1}</span><span id="liveRemain">${Math.max(0,Math.ceil(r.remaining||0))}</span></div>
-          <div class="question">${esc(q.question||"")}</div>${(q.options||[]).map((o,n)=>`<button class="choice quizOption liveAnswer" data-opt="${n}">${esc(o)}</button>`).join("")}
+          <div class="question">${esc(q.question||"")}</div>${shown.map(o=>`<button class="choice quizOption liveAnswer" data-opt="${o.originalIndex}">${esc(o.text)}</button>`).join("")}
           <div id="liveAnswerMsg"></div>`;
+        addDialogClose("#liveDialog",leaveLiveDialog);
         $$(".liveAnswer").forEach(b=>b.onclick=async()=>{if(state.live.answered===idx)return;state.live.answered=idx;$$(".liveAnswer").forEach(x=>x.disabled=true);
           try{const a=await rpc("lerninsel_student_live_answer",{p_public_code:studentSession.roomCode,p_student_code:studentSession.studentCode,p_game_code:state.live.gameCode,p_option_index:+b.dataset.opt});
             $("#liveAnswerMsg").innerHTML=`<div class="feedback ${a.correct?"ok":"no"}">${a.correct?`✓ Richtig · +${a.points} Punkte`:"Antwort gespeichert."}</div>`
@@ -879,11 +932,11 @@ async function renderStudentLive(){
     if(r.status==="reveal"){
       const rank=r.rank||null;
       $("#liveInside").innerHTML=`<div style="text-align:center"><span class="sectionTitle">Zwischenstand</span><h2>${r.was_correct?"✓ Richtig":"Nächste Runde"}</h2>
-        <div class="scoreBig">${r.score||0} Punkte</div>${rank?`<p>Platz ${rank}</p>`:""}<p class="small">Warte auf die nächste Frage.</p></div>`;return
+        <div class="scoreBig">${r.score||0} Punkte</div>${rank?`<p>Platz ${rank}</p>`:""}<p class="small">Warte auf die nächste Frage.</p></div>`;addDialogClose("#liveDialog",leaveLiveDialog);return
     }
     if(r.status==="finished"){
       clearInterval(studentLiveTimer);$("#liveInside").innerHTML=`<div style="text-align:center"><span class="sectionTitle">Live-Quiz beendet</span><div class="scoreBig">${r.score||0}</div><p>Punkte · Platz ${r.rank||"-"}</p>
-        <button id="closeLiveDone" class="primary big">Fertig</button></div>`;$("#closeLiveDone").onclick=()=>closeDialog("#liveDialog")
+        <button id="closeLiveDone" class="primary big">Fertig</button></div>`;addDialogClose("#liveDialog",leaveLiveDialog);$("#closeLiveDone").onclick=leaveLiveDialog
     }
   }catch{}
 }
