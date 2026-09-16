@@ -545,7 +545,11 @@ function renderFlashcard(i){
 }
 function renderPracticeCloze(i){
   let line=esc(i.template);
-  i.gaps.forEach((g,n)=>{const opts=['<option value="">Bitte wählen</option>',...g.options.map((o,k)=>`<option value="${k}">${esc(o)}</option>`)].join("");line=line.replace(`{${n}}`,`<select class="inlineSelect gap" data-gap="${n}">${opts}</select>`)});
+  i.gaps.forEach((g,n)=>{
+    const shown=shuffledOptions(g.options);
+    const opts=['<option value="">Bitte wählen</option>',...shown.map(o=>`<option value="${o.originalIndex}">${esc(o.text)}</option>`)].join("");
+    line=line.replace(`{${n}}`,`<select class="inlineSelect gap" data-gap="${n}">${opts}</select>`)
+  });
   $("#workInside").innerHTML=practiceHead()+`<div class="question">${esc(i.question)}</div><div class="lessonSection">${line}</div>
     <button id="checkPractice" class="primary big">Prüfen</button><div id="practiceFeedback"></div>`;
   $("#checkPractice").onclick=()=>{
@@ -569,9 +573,10 @@ function renderPracticeBuilder(i){
 /* Homework */
 function renderHomework(i){
   const p=progressFor(i.id);let answers=Array(i.steps.length).fill(null);
+  const shownSteps=i.steps.map(s=>({...s,shownOptions:shuffledOptions(s.options)}));
   $("#workInside").innerHTML=`<span class="badge">${esc(subjectMeta(i.subject).name)} · Hausaufgabe</span><h2>${esc(i.title)}</h2>
     <div class="homeworkIntro"><strong>Deine Aufgabe:</strong><p>${esc(i.question)}</p></div>
-    ${i.steps.map((s,n)=>`<div class="stepBox"><h3>${n+1}. ${esc(s.prompt)}</h3>${s.options.map((o,k)=>`<button class="choice guidedChoice" data-step="${n}" data-opt="${k}">${esc(o)}</button>`).join("")}</div>`).join("")}
+    ${shownSteps.map((s,n)=>`<div class="stepBox"><h3>${n+1}. ${esc(s.prompt)}</h3>${s.shownOptions.map(o=>`<button class="choice guidedChoice" data-step="${n}" data-opt="${o.originalIndex}">${esc(o.text)}</button>`).join("")}</div>`).join("")}
     <button id="checkHomework" class="primary big">Meine Auswahl prüfen</button><div id="homeFeedback"></div><div id="finalArea">${p.answer?`<div class="finalBox"><strong>Endfassung:</strong><br>${esc(p.answer)}</div>`:""}</div>
     <button id="closeHomework" class="ghost big" style="margin-top:10px">Schließen</button>`;
   addDialogClose("#workDialog",()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)});
