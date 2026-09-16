@@ -115,7 +115,137 @@ const DEFAULT_CONTENT = [
   {id:"g2-piraten-quiz-7",subject:"gsel2",topic:"Piraten",kind:"quiz",type:"mcq",title:"Quizfrage 7",
    question:"Für wen wurden die Vitalienbrüder später zum Problem?",options:["Für die Hanse","Für die Römer","Für die Wikinger","Für die Ägypter"],correct:0},
   {id:"g2-piraten-quiz-8",subject:"gsel2",topic:"Piraten",kind:"quiz",type:"mcq",title:"Quizfrage 8",
-   question:"Was konnten begnadigte Piraten später tun?",options:["Als Piratenjäger arbeiten","König werden","Nur noch an Land leben","Keine Schiffe mehr sehen"],correct:0}
+   question:"Was konnten begnadigte Piraten später tun?",options:["Als Piratenjäger arbeiten","König werden","Nur noch an Land leben","Keine Schiffe mehr sehen"],correct:0},
+  {
+    id:"m-winkel-lernen-1",subject:"mathe",topic:"Winkelmessen",kind:"lesson",type:"lesson",
+    title:"Winkel mit dem Geodreieck messen",summary:"So legst du das Geodreieck richtig an.",
+    videoUrl:"https://www.youtube.com/watch?v=-GrYGqMHwxg",
+    videoLabel:"Lernvideo: Winkel messen und zeichnen",
+    sections:[
+      {heading:"1. Mittelpunkt auf den Scheitelpunkt",text:"Lege den Mittelpunkt des Geodreiecks genau auf den Scheitelpunkt des Winkels."},
+      {heading:"2. Grundlinie auf einen Schenkel",text:"Drehe das Geodreieck so, dass die Grundlinie genau auf einem Schenkel des Winkels liegt."},
+      {heading:"3. Richtige Skala ablesen",text:"Beginne bei der 0 auf dem angelegten Schenkel. Lies dort ab, wo der zweite Schenkel die Gradskala trifft."}
+    ],
+    memory:"Mittelpunkt auf den Scheitelpunkt · Grundlinie auf einen Schenkel · bei 0 beginnen."
+  },
+  {
+    id:"m-winkel-practice-35",subject:"mathe",topic:"Winkelmessen",kind:"practice",type:"anglemeasure",
+    title:"Winkel messen: 35°",question:"Lege das Geodreieck richtig an und miss den Winkel.",targetAngle:35,baseDeg:0
+  },
+  {
+    id:"m-winkel-practice-70",subject:"mathe",topic:"Winkelmessen",kind:"practice",type:"anglemeasure",
+    title:"Winkel messen: 70°",question:"Lege das Geodreieck richtig an und miss den Winkel.",targetAngle:70,baseDeg:18
+  },
+  {
+    id:"m-winkel-practice-115",subject:"mathe",topic:"Winkelmessen",kind:"practice",type:"anglemeasure",
+    title:"Winkel messen: 115°",question:"Lege das Geodreieck richtig an und miss den Winkel.",targetAngle:115,baseDeg:-14
+  },
+  {
+    id:"m-winkel-practice-145",subject:"mathe",topic:"Winkelmessen",kind:"practice",type:"anglemeasure",
+    title:"Winkel messen: 145°",question:"Lege das Geodreieck richtig an und miss den Winkel.",targetAngle:145,baseDeg:8
+  },
+  {
+    id:"m-winkel-quiz-1",subject:"mathe",topic:"Winkelmessen",kind:"quiz",type:"mcq",title:"Quizfrage 1",
+    question:"Wo muss der Mittelpunkt des Geodreiecks liegen?",options:["Auf dem Scheitelpunkt des Winkels","Auf dem zweiten Schenkel","Irgendwo auf der Grundlinie","Am Rand des Blattes"],correct:0
+  },
+  {
+    id:"m-winkel-quiz-2",subject:"mathe",topic:"Winkelmessen",kind:"quiz",type:"mcq",title:"Quizfrage 2",
+    question:"Was muss beim Messen auf einem Schenkel des Winkels liegen?",options:["Die Grundlinie des Geodreiecks","Die lange Außenkante oben","Nur eine Ecke des Geodreiecks","Die Beschriftung 90°"],correct:0
+  },
+  {
+    id:"m-winkel-quiz-3",subject:"mathe",topic:"Winkelmessen",kind:"quiz",type:"mcq",title:"Quizfrage 3",
+    question:"An welcher Zahl musst du auf dem angelegten Schenkel mit dem Ablesen beginnen?",options:["0","45","90","180"],correct:0
+  },
+  {
+    id:"m-winkel-quiz-4",subject:"mathe",topic:"Winkelmessen",kind:"quiz",type:"mcq",title:"Quizfrage 4",
+    question:"Ein Winkel misst 70°. Welche Aussage stimmt?",options:["Er ist kleiner als ein rechter Winkel","Er ist genau ein rechter Winkel","Er ist größer als 90°","Er ist ein gestreckter Winkel"],correct:0
+  },
+  {
+    id:"g1-staende-lernen-1",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"lesson",type:"lesson",
+    title:"Die drei Stände einfach erklärt",summary:"Wer gehörte zu welchem Stand und welche Aufgaben hatte er?",
+    sections:[
+      {heading:"Was ist ein Stand?",text:"Im Mittelalter war die Gesellschaft in große Gruppen eingeteilt. Diese Gruppen nannte man Stände. Meist entschied die Geburt darüber, zu welchem Stand ein Mensch gehörte. Ein Wechsel in einen anderen Stand war nur selten möglich."},
+      {heading:"1. Stand: die Geistlichen",text:"Zum ersten Stand gehörten zum Beispiel Bischöfe, Äbtissinnen, Priester, Mönche und Nonnen. Ihre wichtigste Aufgabe war die Religion: beten, Gottesdienste feiern und sich um das kirchliche Leben kümmern."},
+      {heading:"2. Stand: der Adel",text:"Zum zweiten Stand gehörten der König, Herzöge, Grafen und Ritter. Sie herrschten über Land, entschieden über vieles und sollten das Land und die Menschen schützen. Viele Adlige besaßen Land und hatten mehr Rechte als andere Menschen."},
+      {heading:"3. Stand: Bauern und arbeitende Menschen",text:"Zum dritten Stand gehörte der größte Teil der Bevölkerung. Viele waren Bauern. Sie arbeiteten auf den Feldern, stellten Lebensmittel her und mussten häufig Abgaben leisten. Sie hatten im Vergleich zum Adel nur wenige Rechte."},
+      {heading:"Konnte man den Stand wechseln?",text:"Meist blieb ein Mensch in dem Stand, in den er hineingeboren wurde. Es gab aber Ausnahmen. Zum Beispiel konnte eine Tochter aus einer adligen Familie in ein Kloster gehen und Nonne werden."}
+    ],
+    memory:"1. Stand = Geistliche · 2. Stand = Adel · 3. Stand = Bauern und andere arbeitende Menschen."
+  },
+  {
+    id:"g1-staende-lernen-m2",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"lesson",type:"lesson",
+    title:"M2 verstehen: Was zeigt das Bild?",summary:"Das Bild Schritt für Schritt erklärt.",
+    diagram:"three-estates",
+    sections:[
+      {heading:"Oben: Christus",text:"Ganz oben steht Christus. Damit zeigt der Zeichner: Die Ordnung der Gesellschaft soll von Gott kommen und von ihm gewollt sein."},
+      {heading:"Links: die Geistlichen",text:"Die Geistlichen sollen beten. Auf dem Bild stehen sie für den ersten Stand und für die Kirche."},
+      {heading:"Rechts: Adel und Ritter",text:"Der Adel soll beschützen. Ritter und Herrscher stehen für den zweiten Stand. Sie sollen für Sicherheit sorgen und das Land verteidigen."},
+      {heading:"Unten: die Arbeitenden",text:"Bauern und andere arbeitende Menschen sollen arbeiten. Sie stehen für den dritten Stand und versorgen die Gesellschaft mit Lebensmitteln und Arbeit."},
+      {heading:"Was will der Zeichner damit sagen?",text:"Der Zeichner stellt die drei Stände nicht als zufällige Einteilung dar. Er zeigt sie als feste Ordnung: Jeder Stand hat seine Aufgabe, und diese Ordnung soll von Gott bestimmt sein. So wurde erklärt, warum Menschen sehr unterschiedliche Rechte und Aufgaben hatten."}
+    ],
+    memory:"Die Bildaussage: Jeder Stand hat eine Aufgabe – beten, beschützen oder arbeiten – und diese Ordnung wird als von Gott gewollt dargestellt."
+  },
+  {
+    id:"g1-staende-lernen-kritik",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"lesson",type:"lesson",
+    title:"War diese Ordnung wirklich für alle gerecht?",summary:"Warum die Ständeordnung später kritisiert wurde.",
+    sections:[
+      {heading:"Lange Zeit",text:"Viele Menschen glaubten, die Ständeordnung sei von Gott gewollt. Deshalb wurde sie lange kaum infrage gestellt."},
+      {heading:"Später gab es Kritik",text:"Ab dem 13. Jahrhundert wurde häufiger darüber nachgedacht, ob diese Ordnung gerecht war. Manche meinten, Bauern seien besonders wichtig, weil alle Menschen von ihrer Arbeit und ihren Lebensmitteln abhängig waren."},
+      {heading:"Gleichheit vor Gott",text:"Auch innerhalb der Kirche gab es Gruppen, die stärker betonten, dass alle Menschen vor Gott gleich sind. Einige Orden lebten bewusst in Armut und Demut."}
+    ],
+    memory:"Die Ständeordnung wurde lange als gottgewollt angesehen, später aber zunehmend kritisiert."
+  },
+  {
+    id:"g1-staende-lernen-kloster",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"lesson",type:"lesson",
+    title:"Klöster im Mittelalter",summary:"Wie Mönche und Nonnen lebten und welche Aufgaben Klöster hatten.",
+    sections:[
+      {heading:"Leben im Kloster",text:"Mönche und Nonnen lebten gemeinsam in einem abgeschlossenen Kloster. Geleitet wurde es von einem Abt oder einer Äbtissin."},
+      {heading:"Wichtige Regeln",text:"Zum Klosterleben gehörten Armut, Gehorsam und der Verzicht auf Ehe und Familie. Beten und Arbeiten gehörten zum Alltag."},
+      {heading:"Aufgaben der Klöster",text:"Klöster übernahmen viele Aufgaben, für die heute zum Beispiel Schulen, Universitäten, Krankenhäuser oder soziale Einrichtungen zuständig sind. Sie halfen Armen und Kranken und vermittelten Wissen über Landwirtschaft und Handwerk."}
+    ],
+    memory:"Klöster waren nicht nur Orte des Gebets, sondern auch wichtige Orte für Bildung, Hilfe, Landwirtschaft und Handwerk."
+  },
+
+  {id:"g1-staende-practice-fc1",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"practice",type:"flashcard",
+   title:"Flashkarte: Stand",question:"Was bedeutet „Stand“ im Mittelalter?",answer:"Ein Stand war eine gesellschaftliche Gruppe mit bestimmten Aufgaben, Rechten und Ansehen. Meist wurde man in seinen Stand hineingeboren."},
+  {id:"g1-staende-practice-fc2",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"practice",type:"flashcard",
+   title:"Flashkarte: erster Stand",question:"Wer gehörte zum ersten Stand?",answer:"Die Geistlichen, zum Beispiel Bischöfe, Priester, Mönche und Nonnen."},
+  {id:"g1-staende-practice-fc3",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"practice",type:"flashcard",
+   title:"Flashkarte: zweiter Stand",question:"Wer gehörte zum zweiten Stand?",answer:"Der Adel, zum Beispiel König, Herzöge, Grafen und Ritter."},
+  {id:"g1-staende-practice-fc4",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"practice",type:"flashcard",
+   title:"Flashkarte: dritter Stand",question:"Wer gehörte zum dritten Stand?",answer:"Vor allem Bauern und andere arbeitende Menschen. Sie bildeten den größten Teil der Bevölkerung."},
+
+  {id:"g1-staende-practice-mcq1",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"practice",type:"mcq",
+   title:"Aufgabe: drei Stände",question:"Welche Reihenfolge stimmt?",options:["Geistliche – Adel – Bauern und Arbeitende","Adel – Bauern – Geistliche","Bauern – Geistliche – Adel","Ritter – Händler – Könige"],correct:0},
+  {id:"g1-staende-practice-mcq2",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"practice",type:"mcq",
+   title:"Aufgabe: M2",question:"Welche Aussage passt am besten zu M2?",options:["Jeder Stand hat eine bestimmte Aufgabe, und die Ordnung wird als von Gott gewollt dargestellt.","Alle Menschen hatten dieselben Rechte.","Jeder konnte seinen Stand frei wählen.","Nur Bauern gehörten zur Gesellschaft."],correct:0},
+  {id:"g1-staende-practice-mcq3",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"practice",type:"mcq",
+   title:"Aufgabe: Kloster",question:"Welche Aufgabe hatten Klöster zusätzlich zum Gebet?",options:["Sie halfen bei Bildung, Kranken- und Armenfürsorge.","Sie waren nur Burgen für Ritter.","Sie dienten nur als Märkte.","Sie waren ausschließlich Gefängnisse."],correct:0},
+
+  {
+    id:"g1-staende-homework-m2",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"homework",type:"guided",
+    title:"M2 erklären: Wie wird die Ständeordnung begründet?",summary:"Geführte Hilfe zur Bildauswertung.",
+    question:"Erkläre mit dem Bild M2, wie der Zeichner die Aufteilung der Gesellschaft in drei Stände begründet.",
+    steps:[
+      {prompt:"Wer steht ganz oben im Bild?",options:["Christus","Ein Bauer","Ein Ritter"],correct:0},
+      {prompt:"Welche drei Aufgaben werden den Ständen zugeordnet?",options:["beten – beschützen – arbeiten","reisen – handeln – feiern","lernen – bauen – kämpfen"],correct:0},
+      {prompt:"Welche Vorstellung steckt dahinter?",options:["Die Ordnung wird als von Gott gewollt dargestellt.","Jeder darf seinen Stand selbst wählen.","Die Stände sollen jedes Jahr wechseln."],correct:0}
+    ],
+    finalText:"Der Zeichner stellt die Ständeordnung als von Gott gewollt dar. Christus steht über den drei Ständen. Die Geistlichen sollen beten, der Adel soll beschützen und die Bauern beziehungsweise Arbeitenden sollen arbeiten. Dadurch wirkt die Aufteilung der Gesellschaft wie eine feste, von Gott bestimmte Ordnung."
+  },
+
+  {id:"g1-staende-quiz-1",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"quiz",type:"mcq",title:"Quizfrage 1",
+   question:"Wer gehörte zum ersten Stand?",options:["Geistliche","Bauern","Ritter","Händler"],correct:0},
+  {id:"g1-staende-quiz-2",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"quiz",type:"mcq",title:"Quizfrage 2",
+   question:"Wer gehörte zum zweiten Stand?",options:["Adlige und Ritter","Mönche und Nonnen","Bauern","Handwerker allein"],correct:0},
+  {id:"g1-staende-quiz-3",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"quiz",type:"mcq",title:"Quizfrage 3",
+   question:"Welcher Stand umfasste den größten Teil der Bevölkerung?",options:["Der dritte Stand","Der erste Stand","Der zweite Stand","Keiner der Stände"],correct:0},
+  {id:"g1-staende-quiz-4",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"quiz",type:"mcq",title:"Quizfrage 4",
+   question:"Was zeigt M2 über die Ständeordnung?",options:["Sie wird als von Gott gewollt dargestellt.","Sie soll jeden Monat wechseln.","Alle Menschen sind Ritter.","Nur Geistliche dürfen arbeiten."],correct:0},
+  {id:"g1-staende-quiz-5",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"quiz",type:"mcq",title:"Quizfrage 5",
+   question:"Was gehörte zu den Aufgaben mittelalterlicher Klöster?",options:["Bildung sowie Armen- und Krankenfürsorge","Nur der Bau von Burgen","Nur Handel mit Schiffen","Nur das Einsammeln von Steuern"],correct:0},
+  {id:"g1-staende-quiz-6",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"quiz",type:"mcq",title:"Quizfrage 6",
+   question:"Warum wurde die Ständeordnung später kritisiert?",options:["Weil manche die Bedeutung der Bauern und die Gleichheit der Menschen stärker betonten.","Weil es keine Bauern mehr gab.","Weil Ritter keine Rüstungen mehr trugen.","Weil Klöster verboten wurden."],correct:0}
 ];
 
 let role = localStorage.getItem(KEYS.role);
@@ -463,12 +593,33 @@ function openItem(id){
   if(i.kind==="lesson")renderLesson(i);
   else if(i.kind==="homework")renderHomework(i)
 }
+
+function lessonExtra(i){
+  if(i.diagram!=="three-estates")return "";
+  return `
+    <div class="lessonSection" style="background:#f4f7fb">
+      <h3>M2 als einfaches Schaubild</h3>
+      <div style="text-align:center;margin:8px 0 14px">
+        <div style="display:inline-block;background:#fff;border:2px solid #8091a5;border-radius:14px;padding:10px 18px;font-weight:800">✝️ Christus<br><span class="small">steht über der Ordnung</span></div>
+        <div style="font-size:1.6rem;line-height:1">↓</div>
+        <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:8px">
+          <div style="background:#fff;border:1px solid #d8e0e8;border-radius:14px;padding:12px"><div style="font-size:1.5rem">🙏</div><strong>Geistliche</strong><div class="small">„beten“</div></div>
+          <div style="background:#fff;border:1px solid #d8e0e8;border-radius:14px;padding:12px"><div style="font-size:1.5rem">🛡️</div><strong>Adel</strong><div class="small">„beschützen“</div></div>
+          <div style="background:#fff;border:1px solid #d8e0e8;border-radius:14px;padding:12px"><div style="font-size:1.5rem">🌾</div><strong>Arbeitende</strong><div class="small">„arbeiten“</div></div>
+        </div>
+      </div>
+      <div class="small"><strong>Wichtig:</strong> Dieses Schaubild erklärt die Aussage des Buchbildes vereinfacht. Es ist keine Kopie des historischen Bildes.</div>
+    </div>`;
+}
+
 function renderLesson(i){
   const p=progressFor(i.id);
   $("#workInside").innerHTML=`
     <span class="badge">${esc(subjectMeta(i.subject).name)} · Lernen</span><h2>${esc(i.title)}</h2>
+    ${lessonExtra(i)}
     ${(i.sections||[]).map(s=>`<div class="lessonSection"><h3>${esc(s.heading)}</h3><div>${esc(s.text)}</div></div>`).join("")}
     ${i.memory?`<div class="merksatz">💡 ${esc(i.memory)}</div>`:""}
+    ${i.videoUrl?`<div class="videoCard"><h3 style="margin-top:0">▶ Lernvideo</h3><p class="small">${esc(i.videoLabel||"Video öffnen")}</p><a class="primary big" style="display:block;text-align:center;text-decoration:none" href="${esc(i.videoUrl)}" target="_blank" rel="noopener">Video öffnen</a></div>`:""}
     <button id="readDone" class="primary big">${p.status==="completed"?"✓ Gelesen":"Gelesen"}</button>`;
   addDialogClose("#workDialog",()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)});
   $("#workDialog").showModal();
@@ -515,9 +666,166 @@ function renderPracticeItem(i){
   else if(i.type==="flashcard")renderFlashcard(i);
   else if(i.type==="cloze")renderPracticeCloze(i);
   else if(i.type==="builder")renderPracticeBuilder(i);
+  else if(i.type==="anglemeasure")renderAngleMeasure(i);
   addDialogClose("#workDialog",abortWorkDialog);
   $("#workDialog").showModal()
 }
+
+function ensureAngleStyles(){
+  if($("#angleMeasureStyles"))return;
+  const s=document.createElement("style");
+  s.id="angleMeasureStyles";
+  s.textContent=`
+    .angleStage{background:#fbfcfd;border:1px solid #d9e0e8;border-radius:16px;padding:8px;margin:10px 0;touch-action:none}
+    .angleStage svg{display:block;width:100%;height:auto;max-height:56vh;touch-action:none;user-select:none}
+    .geoTool .geoOutline{fill:rgba(220,232,245,.52);stroke:#61758d;stroke-width:3;transition:.15s}
+    .geoTool .geoArc{fill:none;stroke:#708398;stroke-width:2}
+    .geoTool .geoTick{stroke:#63758a;stroke-width:1}
+    .geoTool .geoMajor{stroke-width:2}
+    .geoTool .geoCenter{fill:#31445f}
+    .geoTool.correct .geoOutline{stroke:#2f9d57;stroke-width:5;filter:drop-shadow(0 0 3px rgba(47,157,87,.35))}
+    .geoTool.correct .geoCenter{fill:#2f9d57}
+    .geoTool.almost .geoOutline{stroke:#d79a2b;stroke-width:4}
+    .geoRotateHandle{fill:#fff;stroke:#31445f;stroke-width:3;cursor:grab}
+    .geoDragArea{fill:transparent;cursor:grab}
+    .angleStatus{padding:11px 12px;border-radius:12px;margin:10px 0;font-weight:750}
+    .angleStatus.ok{background:#e5f5e9;color:#246f3d}
+    .angleStatus.hint{background:#fff3d8;color:#7c5b12}
+    .angleAnswerRow{display:flex;gap:8px;align-items:end;flex-wrap:wrap}
+    .angleAnswerRow label{flex:1;min-width:160px;margin:0}
+    .angleAnswerRow button{flex:0 0 auto}
+    .degreeLabel{font-size:12px;fill:#405268;font-weight:700;pointer-events:none}
+    .angleRay{stroke:#263748;stroke-width:5;stroke-linecap:round}
+    .angleVertex{fill:#263748}
+  `;
+  document.head.appendChild(s)
+}
+function angleNorm180(d){
+  let x=((d%180)+180)%180;
+  return x>90?180-x:x
+}
+function protractorTicks(){
+  let out="";
+  for(let d=0;d<=180;d+=5){
+    const a=d*Math.PI/180,major=d%10===0;
+    const r1=major?116:122,r2=132;
+    const x1=r1*Math.cos(a),y1=-r1*Math.sin(a);
+    const x2=r2*Math.cos(a),y2=-r2*Math.sin(a);
+    out+=`<line class="geoTick ${major?"geoMajor":""}" x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}"/>`;
+  }
+  for(let d=0;d<=180;d+=30){
+    const a=d*Math.PI/180,r=96;
+    const x=r*Math.cos(a),y=-r*Math.sin(a)+4;
+    out+=`<text class="degreeLabel" x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="middle">${d}</text>`;
+  }
+  return out
+}
+function renderAngleMeasure(i){
+  ensureAngleStyles();
+  const W=640,H=390,vx=320,vy=245;
+  const target=Number(i.targetAngle||60),base=Number(i.baseDeg||0);
+  const L=245;
+  const rad=d=>d*Math.PI/180;
+  const bx=vx+L*Math.cos(rad(base)),by=vy+L*Math.sin(rad(base));
+  const second=base-target;
+  const sx=vx+L*Math.cos(rad(second)),sy=vy+L*Math.sin(rad(second));
+
+  let toolX=165,toolY=322,toolRot=base+28;
+  let dragMode=null,dragDx=0,dragDy=0;
+
+  $("#workInside").innerHTML=practiceHead()+`
+    <span class="badge">${esc(subjectMeta(i.subject).name)} · ${esc(i.topic)}</span>
+    <div class="question">${esc(i.question)}</div>
+    <div class="small">Ziehe das Geodreieck am Körper. Am runden Griff kannst du es drehen.</div>
+    <div class="angleStage">
+      <svg id="angleSvg" viewBox="0 0 ${W} ${H}" aria-label="Interaktive Winkelmessung">
+        <line class="angleRay" x1="${vx}" y1="${vy}" x2="${bx.toFixed(1)}" y2="${by.toFixed(1)}"/>
+        <line class="angleRay" x1="${vx}" y1="${vy}" x2="${sx.toFixed(1)}" y2="${sy.toFixed(1)}"/>
+        <circle class="angleVertex" cx="${vx}" cy="${vy}" r="7"/>
+        <g id="geoTool" class="geoTool" transform="translate(${toolX} ${toolY}) rotate(${toolRot})">
+          <polygon class="geoOutline" points="-160,0 160,0 0,-165"/>
+          <path class="geoArc" d="M -132 0 A 132 132 0 0 1 132 0"/>
+          ${protractorTicks()}
+          <line x1="-150" y1="0" x2="150" y2="0" stroke="#31445f" stroke-width="3"/>
+          <circle class="geoCenter" cx="0" cy="0" r="6"/>
+          <circle cx="0" cy="0" r="17" fill="none" stroke="#31445f" stroke-width="2"/>
+          <rect id="geoDragArea" class="geoDragArea" x="-155" y="-148" width="310" height="148"/>
+          <line x1="0" y1="-165" x2="0" y2="-188" stroke="#31445f" stroke-width="3"/>
+          <circle id="geoRotateHandle" class="geoRotateHandle" cx="0" cy="-196" r="14"/>
+        </g>
+      </svg>
+    </div>
+    <div id="angleStatus" class="angleStatus hint">Mittelpunkt auf den Scheitelpunkt legen und die Grundlinie auf einen Schenkel drehen.</div>
+    <div class="angleAnswerRow">
+      <label>Gemessener Winkel in Grad
+        <input id="angleAnswer" type="number" min="0" max="180" inputmode="numeric" disabled placeholder="z. B. 70">
+      </label>
+      <button id="checkAngle" class="primary" disabled>Prüfen</button>
+    </div>
+    <div id="practiceFeedback"></div>`;
+
+  const svg=$("#angleSvg"),tool=$("#geoTool"),status=$("#angleStatus"),answer=$("#angleAnswer"),check=$("#checkAngle");
+
+  function svgPoint(ev){
+    const r=svg.getBoundingClientRect();
+    return {x:(ev.clientX-r.left)/r.width*W,y:(ev.clientY-r.top)/r.height*H}
+  }
+  function updateTransform(){tool.setAttribute("transform",`translate(${toolX.toFixed(1)} ${toolY.toFixed(1)}) rotate(${toolRot.toFixed(1)})`)}
+  function checkPlacement(){
+    const dist=Math.hypot(toolX-vx,toolY-vy);
+    const rotErr=angleNorm180(toolRot-base);
+    const centerOK=dist<=15,rotationOK=rotErr<=4.5;
+    tool.classList.toggle("correct",centerOK&&rotationOK);
+    tool.classList.toggle("almost",!(centerOK&&rotationOK)&&(centerOK||rotationOK));
+    if(centerOK&&rotationOK){
+      status.className="angleStatus ok";
+      status.textContent="✓ Richtig angelegt! Jetzt den Winkel an der Skala ablesen.";
+      answer.disabled=false;check.disabled=false
+    }else{
+      status.className="angleStatus hint";
+      answer.disabled=true;check.disabled=true;
+      if(!centerOK&&rotationOK)status.textContent="Die Grundlinie stimmt schon. Schiebe jetzt den Mittelpunkt genau auf den Scheitelpunkt.";
+      else if(centerOK&&!rotationOK)status.textContent="Der Mittelpunkt sitzt richtig. Drehe jetzt die Grundlinie genau auf einen Schenkel.";
+      else status.textContent="Mittelpunkt auf den Scheitelpunkt legen und die Grundlinie auf einen Schenkel drehen."
+    }
+    return centerOK&&rotationOK
+  }
+
+  $("#geoDragArea").addEventListener("pointerdown",ev=>{
+    ev.preventDefault();const p=svgPoint(ev);dragMode="move";dragDx=p.x-toolX;dragDy=p.y-toolY;svg.setPointerCapture?.(ev.pointerId)
+  });
+  $("#geoRotateHandle").addEventListener("pointerdown",ev=>{
+    ev.preventDefault();dragMode="rotate";svg.setPointerCapture?.(ev.pointerId)
+  });
+  svg.addEventListener("pointermove",ev=>{
+    if(!dragMode)return;ev.preventDefault();const p=svgPoint(ev);
+    if(dragMode==="move"){
+      toolX=Math.max(35,Math.min(W-35,p.x-dragDx));
+      toolY=Math.max(180,Math.min(H-20,p.y-dragDy))
+    }else{
+      toolRot=Math.atan2(p.y-toolY,p.x-toolX)*180/Math.PI+90
+    }
+    updateTransform();checkPlacement()
+  });
+  const endDrag=()=>{dragMode=null};
+  svg.addEventListener("pointerup",endDrag);svg.addEventListener("pointercancel",endDrag);
+
+  check.onclick=()=>{
+    if(!checkPlacement())return;
+    const val=Number(answer.value);
+    if(!Number.isFinite(val)||answer.value===""){
+      $("#practiceFeedback").innerHTML='<div class="feedback no">Trage zuerst den gemessenen Winkel ein.</div>';return
+    }
+    const p=progressFor(i.id);p.attempts++;saveLocal();
+    if(Math.abs(val-target)<=1){
+      correctPractice(i,"✓ Richtig gemessen!")
+    }else{
+      retryPractice(i,"Noch nicht richtig abgelesen. Diese Winkelaufgabe kommt am Ende noch einmal.")
+    }
+  };
+  checkPlacement()
+}
+
 function renderPracticeMCQ(i){
   const shown=shuffledOptions(i.options);
   $("#workInside").innerHTML=practiceHead()+`<span class="badge">${esc(subjectMeta(i.subject).name)} · ${esc(i.topic)}</span>
@@ -798,7 +1106,7 @@ function renderTeacherPane(tab){
     p.innerHTML=`<div class="card"><h3>Fächer & Themen</h3><p class="small">Ein Fach kann beliebig viele Themen enthalten. Lernen, Üben, Hausaufgaben und Quiz gehören jeweils zum Thema.</p>
       ${Object.entries(groups).map(([k,arr])=>{const [s,t]=k.split("|");return `<div class="itemRow"><div><strong>${esc(subjectMeta(s).name)} · ${esc(t)}</strong>
         <div class="small">${arr.filter(x=>x.kind==="lesson").length} Lernen · ${arr.filter(x=>x.kind==="practice").length} Übungen · ${arr.filter(x=>x.kind==="homework").length} Hausaufgaben · ${arr.filter(x=>x.kind==="quiz").length} Quizfragen</div></div></div>`}).join("")}
-      <button id="syncDefaultContent" class="primary big" style="margin-top:12px">${teacherRoom?"Piratenpaket / neue Struktur synchronisieren":"Zuerst Lernraum erstellen"}</button></div>`;
+      <button id="syncDefaultContent" class="primary big" style="margin-top:12px">${teacherRoom?"Lerninhalte synchronisieren":"Zuerst Lernraum erstellen"}</button></div>`;
     $("#syncDefaultContent").disabled=!teacherRoom;$("#syncDefaultContent").onclick=teacherSyncDefault
   }
   if(tab==="students"){
