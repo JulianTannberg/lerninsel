@@ -3,395 +3,107 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#334866">
+<meta name="theme-color" content="#31445f">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <title>Lerninsel</title>
 <style>
 *{box-sizing:border-box}
-:root{--bg:#f5f6f8;--card:#fff;--ink:#202632;--muted:#6a7381;--line:#e0e5eb;--accent:#334866;--soft:#eef2f7;--good:#e5f5e9;--warn:#fff3d8;--bad:#fde9e9;--purple:#6b55a1}
+:root{
+ --bg:#f5f6f8;--card:#fff;--ink:#202632;--muted:#6b7481;--line:#dde3ea;
+ --accent:#31445f;--accent2:#58769e;--soft:#eef2f7;--good:#e5f5e9;
+ --warn:#fff3d8;--bad:#fde9e9;--purple:#7257a4;--sea:#eaf6f7
+}
 body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink)}
-button,input,textarea,select{font:inherit}button{cursor:pointer}
-.app{max-width:1050px;margin:auto;padding:16px 14px 80px}
-.top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:15px}.top h1{font-size:1.5rem;margin:0}.top p{margin:3px 0 0;color:var(--muted);font-size:.9rem}
+button,input,select,textarea{font:inherit}button{cursor:pointer}
+.hidden{display:none!important}
+.app{max-width:1080px;margin:auto;padding:14px 14px 88px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.brand{display:flex;align-items:center;gap:10px}.brandIcon{width:44px;height:44px;border-radius:14px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:1.35rem}
+.brand h1{font-size:1.32rem;margin:0}.brand p{margin:2px 0 0;color:var(--muted);font-size:.82rem}
+.topActions{display:flex;gap:8px;align-items:center}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 4px 16px rgba(0,0,0,.035)}
-.hero h2{margin:.25rem 0}.hero p{color:var(--muted);line-height:1.5}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px}
-.role{text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:7px}.role strong{font-size:1.15rem}.role span{color:var(--muted)}
-.primary,.ghost,.tab,.choice,.chip{border:0;border-radius:12px;padding:10px 13px}.primary{background:var(--accent);color:white}.ghost,.tab,.choice,.chip{background:white;border:1px solid #d4dae3;color:#293347}
-.hidden{display:none!important}.toolbar{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:12px}.toolbar h2{margin:2px 0}
-.tabs{display:flex;gap:8px;overflow:auto;padding-bottom:4px;margin-bottom:12px}.tab{white-space:nowrap}.tab.active{background:var(--accent);color:white}
-.sectionTitle{font-size:.77rem;text-transform:uppercase;letter-spacing:.08em;color:var(--purple);font-weight:800}
-.subjectHead{display:flex;justify-content:space-between;align-items:center;margin:18px 0 8px}.subjectHead h3{margin:0}
-.badge{display:inline-block;background:var(--soft);border-radius:999px;padding:4px 8px;font-size:.76rem;font-weight:750}.good{background:var(--good)}.warn{background:var(--warn)}.bad{background:var(--bad)}
-.task h3{margin:.45rem 0}.task p{color:var(--muted);margin:.35rem 0}.meta{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
-.teacherTask{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:10px}.actions{display:flex;gap:7px;flex-wrap:wrap}
-label{display:block;font-weight:650;margin:11px 0 5px}input,textarea,select{width:100%;padding:10px 11px;border:1px solid #cfd5de;border-radius:10px;background:#fff}textarea{resize:vertical}
-dialog{border:0;border-radius:18px;max-width:760px;width:calc(100% - 22px);padding:0;box-shadow:0 20px 70px rgba(0,0,0,.28)}dialog::backdrop{background:rgba(20,24,30,.48)}.inside{padding:18px}
-.small{font-size:.84rem;color:var(--muted)}.lessonSection{background:#faf8ef;border-radius:14px;padding:14px;margin:10px 0;line-height:1.55}.lessonSection h3{margin:0 0 6px;font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.primary,.ghost,.choice,.chip,.tab{border:0;border-radius:12px;padding:11px 14px}
+.primary{background:var(--accent);color:#fff}.primary:disabled{opacity:.55}
+.ghost,.choice,.chip,.tab{background:#fff;border:1px solid #d3dae3;color:#293347}
+.big{width:100%;padding:15px;font-size:1.05rem;font-weight:800}
+.sectionTitle{text-transform:uppercase;letter-spacing:.08em;font-size:.74rem;font-weight:800;color:var(--purple)}
+.small{font-size:.84rem;color:var(--muted)}.muted{color:var(--muted)}
+.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:var(--soft);font-size:.75rem;font-weight:750}
+.badge.good{background:var(--good)}.badge.warn{background:var(--warn)}.badge.bad{background:var(--bad)}
+.subjectCard,.topicCard{min-height:135px}.subjectCard h3,.topicCard h3{margin:.45rem 0}.subjectCard p,.topicCard p{color:var(--muted);margin:.35rem 0}
+.subjectIcon{font-size:1.55rem}.subjectHead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.back{margin-bottom:10px}
+.profileBar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.profileLeft{display:flex;align-items:center;gap:10px}.avatar{width:48px;height:48px;border-radius:50%;background:#eef2f7;display:grid;place-items:center;font-size:1.65rem}
+.points{font-weight:800}.token{background:#fff3d8;border-radius:999px;padding:6px 10px;font-size:.82rem;font-weight:800}
+.topicSections{display:grid;gap:14px}.topicSection h3{margin:0 0 7px}.topicSection .hint{margin:0 0 10px;color:var(--muted);font-size:.86rem}
+.lessonList,.homeworkList{display:grid;gap:9px}.itemRow{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}
+.itemRow h4{margin:0 0 3px}.itemRow p{margin:0;color:var(--muted);font-size:.84rem}
+.itemRow .primary{flex:0 0 auto}
+dialog{border:0;border-radius:20px;max-width:760px;width:calc(100% - 20px);padding:0;box-shadow:0 20px 70px rgba(0,0,0,.28)}
+dialog::backdrop{background:rgba(20,24,30,.5)}.inside{padding:18px}
+.lessonSection{background:#faf8ef;border-radius:14px;padding:14px;margin:10px 0;line-height:1.55}.lessonSection h3{margin:0 0 6px;font-size:1rem}
 .merksatz{background:#edf4ff;border-left:4px solid #4f78a6;border-radius:10px;padding:12px;margin:12px 0;font-weight:700}
-.videoCard{background:#f1f5fb;border:1px solid #d7e0ed;border-radius:14px;padding:14px;margin:12px 0}.videoCard h3{margin:0 0 5px}.videoCard p{margin:0 0 10px;color:var(--muted)}
-.question{font-size:1.08rem;font-weight:750;margin:14px 0 8px}
-.choice{display:block;width:100%;text-align:left;margin:8px 0}.choice.selected{outline:3px solid #97adc8;background:#f3f7fb}.choice.correct{background:var(--good);border-color:#91c59d}.choice.wrong{background:var(--bad);border-color:#d99c9c}
+.videoCard{background:#f1f5fb;border:1px solid #d7e0ed;border-radius:14px;padding:14px;margin:12px 0}
+.question{font-size:1.08rem;font-weight:800;margin:12px 0}
+.choice{display:block;width:100%;text-align:left;margin:8px 0}.choice.selected{outline:3px solid #9eb1c8;background:#f3f7fb}.choice.correct{background:var(--good);border-color:#91c59d}.choice.wrong{background:var(--bad);border-color:#d99c9c}
 .feedback{padding:10px 12px;border-radius:12px;margin-top:10px}.feedback.ok{background:var(--good)}.feedback.no{background:var(--bad)}
-.helpBox{background:#fff8e8;border:1px solid #efdcaa;border-radius:14px;padding:12px;margin:10px 0}.helpBox strong{display:block;margin-bottom:4px}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.chip.used{opacity:.42}.builderOut{min-height:52px;background:#f5f7fa;border:1px dashed #b7c0cd;border-radius:12px;padding:12px;line-height:1.5}
-.clozeLine{line-height:2.4}.inlineSelect{width:auto;min-width:135px;display:inline-block;margin:0 5px;padding:7px}
-.finalBox{background:#f4f7fb;border:1px dashed #b8c3d2;border-radius:14px;padding:14px;white-space:pre-wrap;margin-top:12px}
-.activity{padding:10px 0;border-bottom:1px solid #eceff3}.activity:last-child{border-bottom:0}
-.studentHeader{display:flex;justify-content:space-between;gap:12px;align-items:center}.progress{color:var(--muted);font-size:.86rem}.helpUsage{font-size:.82rem;color:#8a5b00}
-.studentRow{display:flex;justify-content:space-between;align-items:center;gap:10px}.kpiGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}.kpi{text-align:center}.kpi strong{display:block;font-size:1.35rem}
-.homeworkIntro{background:#f7f8fa;border-radius:14px;padding:13px;margin:10px 0}.homeworkIntro p{margin:4px 0;color:var(--muted)}
-.stepBox{border:1px solid #e1e5eb;border-radius:14px;padding:13px;margin:10px 0}.stepBox h3{font-size:1rem;margin:0 0 8px}
-.rowEnd{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
-.note{font-size:.82rem;color:var(--muted);margin-top:7px}
-.authCard{max-width:560px;margin:28px auto}.authNote{background:#eef4fb;border-radius:12px;padding:11px;margin:10px 0}.parentChild{margin-bottom:10px}.codeBox{font-size:1.25rem;font-weight:800;letter-spacing:.06em;background:#f4f7fb;border-radius:12px;padding:12px;margin:10px 0}.danger{color:#9a2b2b}.splitActions{display:flex;gap:8px;flex-wrap:wrap}.splitActions>*{flex:1;min-width:140px}
-@media(max-width:650px){.teacherTask,.studentHeader,.top,.toolbar{align-items:flex-start}.teacherTask{flex-direction:column}.actions{width:100%}.actions button{flex:1}.top p{max-width:230px}.inlineSelect{width:100%;margin:5px 0}}
+.sessionHead{display:flex;justify-content:space-between;gap:8px;background:#eef4fb;border-radius:12px;padding:9px 11px;margin-bottom:12px;font-size:.84rem;font-weight:800}
+.flashcard{min-height:210px;display:flex;flex-direction:column;justify-content:center;text-align:center;background:linear-gradient(180deg,#fff,#f7f9fb);border:1px solid var(--line);border-radius:18px;padding:24px;margin:14px 0}
+.flashcard .front{font-size:1.25rem;font-weight:850}.flashcard .backText{font-size:1.05rem;line-height:1.5}
+.actions{display:flex;gap:8px;flex-wrap:wrap}.actions>*{flex:1;min-width:125px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.chip.used{opacity:.4}.builderOut{min-height:50px;background:#f5f7fa;border:1px dashed #b7c0cd;border-radius:12px;padding:12px}
+.inlineSelect{width:auto;min-width:145px;margin:0 5px;padding:8px;border:1px solid #cfd6df;border-radius:10px}
+.homeworkIntro{background:#f7f8fa;border-radius:14px;padding:13px;margin:10px 0}.stepBox{border:1px solid #e1e5eb;border-radius:14px;padding:13px;margin:10px 0}.stepBox h3{font-size:1rem;margin:0 0 8px}
+.finalBox{background:#f4f7fb;border:1px dashed #b8c3d2;border-radius:14px;padding:14px;margin-top:12px;white-space:pre-wrap}
+.quizTimer{font-size:1.2rem;font-weight:900}.scoreBig{font-size:2rem;font-weight:900}
+.quizOption{font-size:1rem;min-height:54px}.rankList{display:grid;gap:8px}.rankRow{display:flex;justify-content:space-between;gap:10px;background:#f6f8fa;border-radius:12px;padding:10px}
+.authCard{max-width:560px;margin:28px auto}.authCard h2{margin:.35rem 0}
+label{display:block;font-weight:700;margin:11px 0 5px}input,select,textarea{width:100%;padding:11px;border:1px solid #cfd6df;border-radius:11px;background:#fff}
+.setupGrid button{text-align:left}
+.tabs{display:flex;gap:7px;overflow:auto;margin:10px 0 14px}.tab{white-space:nowrap}.tab.active{background:var(--accent);color:#fff}
+.studentTable{display:grid;gap:8px}.studentRow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px;border:1px solid var(--line);border-radius:13px;background:#fff}
+.kpiGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}.kpi{text-align:center;background:#f7f9fb;border-radius:14px;padding:12px}.kpi strong{display:block;font-size:1.25rem}
+.gameArea{position:relative;height:360px;background:linear-gradient(#dff4ff 0 48%,#f8e8b7 48%);border-radius:18px;overflow:hidden;border:1px solid var(--line);margin:12px 0}
+.shell{position:absolute;font-size:2.2rem;border:0;background:transparent;padding:0;animation:pop .16s ease-out}@keyframes pop{from{transform:scale(.5)}to{transform:scale(1)}}
+.gameHud{display:flex;justify-content:space-between;gap:10px;font-weight:850}
+.avatarGrid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.avatarChoice{font-size:1.8rem;padding:10px;border:1px solid var(--line);background:#fff;border-radius:13px}.avatarChoice.selected{outline:3px solid #9eb1c8}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;box-shadow:0 8px 28px rgba(0,0,0,.16);font-weight:800;max-width:calc(100% - 28px);text-align:center}
+.liveCode{font-size:2rem;font-weight:900;letter-spacing:.1em;text-align:center;background:#eef4fb;border-radius:16px;padding:14px}
+.footerReset{margin-top:30px;text-align:center}.footerReset button{font-size:.78rem;color:#7a8490;background:transparent;border:0}
+@media(max-width:650px){
+ .top{align-items:flex-start}.brand p{display:none}.itemRow{align-items:flex-start;flex-direction:column}.itemRow .primary{width:100%}
+ .avatarGrid{grid-template-columns:repeat(4,1fr)}.profileBar{align-items:flex-start}.topActions{flex-direction:column}
+}
 </style>
 </head>
 <body>
 <div class="app">
 <header class="top">
-  <div><h1>🦇 Lerninsel</h1><p>Lernen → Üben → Hausaufgaben</p></div>
-  <button id="homeBtn" class="ghost hidden">Start</button>
+  <div class="brand"><div class="brandIcon">🏝️</div><div><h1>Lerninsel</h1><p>Lernen · Üben · Hausaufgaben · Quiz</p></div></div>
+  <div class="topActions">
+    <button id="gameTopBtn" class="ghost hidden">🎮 Spiel</button>
+    <button id="teacherLogoutBtn" class="ghost hidden">Abmelden</button>
+  </div>
 </header>
 
-<section id="startView">
-  <div class="card hero">
-    <span class="sectionTitle">Lerninsel</span>
-    <h2>Wer benutzt die App?</h2>
-    <p>„Lernen“ erklärt nur. „Üben“ fragt ab. Bei Hausaufgaben wird die Lösung nicht vorher angezeigt.</p>
-  </div>
-  <div class="grid">
-    <button id="teacherStart" class="card role"><strong>👩‍🏫 Lehreransicht</strong><span>Schülercodes, Lernstand und Hilfen ansehen</span></button>
-    <button id="studentStart" class="card role"><strong>🎒 Schüleransicht</strong><span>Mit Lernraum-Code und persönlichem Code anmelden</span></button>
-    <button id="parentStart" class="card role"><strong>👪 Elternansicht</strong><span>Nur den Lernstand des eigenen Kindes sehen</span></button>
-  </div>
-</section>
+<main id="appMain"></main>
 
-<section id="teacherLogin" class="hidden">
-  <div class="card authCard">
-    <span class="sectionTitle">Lehrer</span><h2>Geschützter Lehrerzugang</h2>
-    <p class="small">Der Lehrerbereich ist erst nach Anmeldung erreichbar.</p>
-    <label>E-Mail<input id="teacherEmail" type="email" autocomplete="username" placeholder="name@beispiel.de"></label>
-    <label>Passwort<input id="teacherPassword" type="password" autocomplete="current-password" minlength="6"></label>
-    <div class="splitActions"><button id="teacherLoginBtn" class="primary">Anmelden</button><button id="teacherSignupBtn" class="ghost">Lehrerkonto anlegen</button></div>
-    <p id="teacherLoginMsg" class="small"></p>
-  </div>
-</section>
-
-<section id="teacherView" class="hidden">
-  <div class="toolbar"><div><span class="sectionTitle">Lehrerbereich</span><h2>Material & Lernstand</h2><div id="teacherRoomLabel" class="small"></div></div><button id="teacherLogout" class="ghost">Abmelden</button></div>
-  <div class="tabs">
-    <button class="tab active" data-tab="content">Inhalte</button>
-    <button class="tab" data-tab="students">Schüler</button>
-    <button class="tab" data-tab="progress">Lernstand</button>
-    <button class="tab" data-tab="activity">Aktivität</button>
-    <button class="tab" data-tab="parents">Eltern</button>
-    <button class="tab" data-tab="online">Online</button>
-  </div>
-  <div id="contentTab" class="tabPane"></div>
-  <div id="studentsTab" class="tabPane hidden"></div>
-  <div id="progressTab" class="tabPane hidden"></div>
-  <div id="activityTab" class="tabPane hidden"></div>
-  <div id="parentsTab" class="tabPane hidden"></div>
-  <div id="onlineTab" class="tabPane hidden"></div>
-</section>
-
-<section id="parentLogin" class="hidden">
-  <div class="card authCard">
-    <span class="sectionTitle">Eltern</span><h2>Elternzugang</h2>
-    <p class="small">Eltern sehen ausschließlich die Kinder, die mit ihrem Konto verknüpft wurden.</p>
-    <label>E-Mail<input id="parentEmail" type="email" autocomplete="username"></label>
-    <label>Passwort<input id="parentPassword" type="password" autocomplete="current-password" minlength="6"></label>
-    <div class="splitActions"><button id="parentLoginBtn" class="primary">Anmelden</button><button id="parentSignupBtn" class="ghost">Elternkonto anlegen</button></div>
-    <p id="parentLoginMsg" class="small"></p>
-  </div>
-</section>
-
-<section id="parentView" class="hidden">
-  <div class="toolbar"><div><span class="sectionTitle">Elternbereich</span><h2>Mein Kind</h2></div><button id="parentLogout" class="ghost">Abmelden</button></div>
-  <div id="parentContent"></div>
-</section>
-
-<section id="studentLogin" class="hidden">
-  <div class="card" style="max-width:560px;margin:30px auto">
-    <span class="sectionTitle">Schüler</span><h2>Einloggen</h2>
-    <label>Lernraum-Code<input id="roomCode" autocapitalize="characters" placeholder="z. B. AB12-CD34"></label>
-    <label>Dein persönlicher Code<input id="studentCode" inputmode="numeric" placeholder="z. B. 4821"></label>
-    <div class="rowEnd"><button id="loginBtn" class="primary">Öffnen</button></div>
-    <p id="loginMsg" class="small"></p>
-    <button id="demoBtn" class="ghost" style="width:100%">Nur auf diesem Gerät testen</button>
-  </div>
-</section>
-
-<section id="studentView" class="hidden">
-  <div class="card studentHeader">
-    <div><span class="sectionTitle">Schülerbereich</span><h2 id="studentName">Hallo</h2><p class="small">Du kannst zuerst lernen und danach üben.</p></div>
-    <div id="studentProgress" class="progress"></div>
-  </div>
-  <div id="studentTasks"></div>
-</section>
+<div class="footerReset"><button id="resetDeviceBtn">Gerät neu einrichten</button></div>
 </div>
 
 <dialog id="workDialog"><div id="workInside" class="inside"></div></dialog>
-
-<dialog id="studentDialog">
-<form id="studentForm" class="inside">
-  <h2>Schüler</h2><input type="hidden" id="studentId">
-  <label>Name / Kürzel<input id="studentLabel" required placeholder="z. B. Schüler A"></label>
-  <label>Persönlicher Code<input id="studentNewCode" required inputmode="numeric" maxlength="8"></label>
-  <div class="rowEnd"><button type="button" id="cancelStudent" class="ghost">Abbrechen</button><button class="primary">Speichern</button></div>
-</form>
-</dialog>
-
-<dialog id="inviteDialog"><div class="inside">
-  <h2>Elternzugang</h2>
-  <p>Gib den folgenden Code zusammen mit dem Lernraum-Code an die Eltern weiter.</p>
-  <div id="inviteCodeShow" class="codeBox"></div>
-  <p class="small">Der Einladungscode ist 30 Tage gültig und kann einmal eingelöst werden.</p>
-  <div class="rowEnd"><button id="closeInvite" class="primary">Schließen</button></div>
-</div></dialog>
+<dialog id="profileDialog"><div id="profileInside" class="inside"></div></dialog>
+<dialog id="gameDialog"><div id="gameInside" class="inside"></div></dialog>
+<dialog id="liveDialog"><div id="liveInside" class="inside"></div></dialog>
 
 <script src="config.js"></script>
+<script src="app.js"></script>
 <script>
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const uid=()=>crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2)+Date.now();
-const esc=(s="")=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
-const key="lerninsel_v7_secure";
-const zdf="https://www.zdf.de/video/dokus/legendaere-piraten-100/legendaere-piraten-anne-bonny-und-mary-read-100";
-let currentStudent=null,currentItem=null;
-let data=JSON.parse(localStorage.getItem(key)||"null")||{students:[],items:[],progress:{},events:[]};
-const CFG=window.LERNINSEL_CONFIG||{};
-const API_OK=Boolean(CFG.supabaseUrl&&CFG.supabasePublishableKey);
-const ROOM_KEY="lerninsel_teacher_room_secure_v1", STUDENT_SESSION_KEY="lerninsel_student_session_secure_v1", AUTH_KEY="lerninsel_auth_secure_v1", CODE_KEY="lerninsel_teacher_student_codes_v1";
-let teacherRoom=JSON.parse(localStorage.getItem(ROOM_KEY)||"null");
-let studentSession=JSON.parse(localStorage.getItem(STUDENT_SESSION_KEY)||"null");
-let authSession=JSON.parse(localStorage.getItem(AUTH_KEY)||"null");
-let codeCache=JSON.parse(localStorage.getItem(CODE_KEY)||"{}");
-function save(){localStorage.setItem(key,JSON.stringify(data))}
-function saveCodes(){localStorage.setItem(CODE_KEY,JSON.stringify(codeCache))}
-function randomToken(len=32){const chars="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789";const a=new Uint8Array(len);crypto.getRandomValues(a);return [...a].map(n=>chars[n%chars.length]).join("")}
-function publicCode(){return randomToken(8).toUpperCase().match(/.{1,4}/g).join("-")}
-function inviteCode(){return randomToken(10).toUpperCase()}
-function base64urlDecode(s){try{s=s.replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';return decodeURIComponent(escape(atob(s)))}catch{return ''}}
-function tokenExpired(token){try{const p=JSON.parse(base64urlDecode(token.split('.')[1]));return !p.exp||Date.now()/1000>p.exp-30}catch{return true}}
-async function authFetch(path,opts={}){if(!API_OK)throw new Error('Supabase nicht konfiguriert');const h={"Content-Type":"application/json","apikey":CFG.supabasePublishableKey,...(opts.headers||{})};const r=await fetch(CFG.supabaseUrl.replace(/\/$/,"")+path,{...opts,headers:h});const t=await r.text();let j=null;try{j=t?JSON.parse(t):null}catch{j=t}if(!r.ok)throw new Error(j?.msg||j?.message||j?.error_description||j?.error||t||('HTTP '+r.status));return j}
-async function refreshAuth(){if(!authSession?.refresh_token)return false;try{const r=await authFetch('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:JSON.stringify({refresh_token:authSession.refresh_token})});authSession=r;localStorage.setItem(AUTH_KEY,JSON.stringify(r));return true}catch{authSession=null;localStorage.removeItem(AUTH_KEY);return false}}
-async function ensureAuth(){if(!authSession?.access_token)return false;if(tokenExpired(authSession.access_token))return await refreshAuth();return true}
-async function signIn(email,password){const r=await authFetch('/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email,password})});authSession=r;localStorage.setItem(AUTH_KEY,JSON.stringify(r));return r}
-async function signUp(email,password){const r=await authFetch('/auth/v1/signup',{method:'POST',body:JSON.stringify({email,password})});if(r?.access_token){authSession=r;localStorage.setItem(AUTH_KEY,JSON.stringify(r))}return r}
-function authLogout(){authSession=null;localStorage.removeItem(AUTH_KEY)}
-async function rpc(name,payload={},needsAuth=false){if(!API_OK)throw new Error("Supabase nicht konfiguriert");const headers={"Content-Type":"application/json","apikey":CFG.supabasePublishableKey};if(needsAuth){if(!await ensureAuth())throw new Error('Bitte erneut anmelden');headers.Authorization='Bearer '+authSession.access_token}const r=await fetch(CFG.supabaseUrl.replace(/\/$/,"")+"/rest/v1/rpc/"+name,{method:"POST",headers,body:JSON.stringify(payload||{})});const t=await r.text();if(!r.ok){let e=t;try{const j=JSON.parse(t);e=j.message||j.hint||t}catch{}throw new Error(e)}if(!t)return null;try{return JSON.parse(t)}catch{return t}}
-async function syncProgress(id){if(!currentStudent||!studentSession||!API_OK)return;try{await rpc("lerninsel_student_save_progress",{p_public_code:studentSession.roomCode,p_student_code:studentSession.studentCode,p_item_id:id,p_progress:p(currentStudent.id,id)})}catch(e){}}
-function hideAll(){["startView","teacherLogin","teacherView","parentLogin","parentView","studentLogin","studentView"].forEach(x=>$("#"+x)?.classList.add("hidden"))}
-function home(){hideAll();$("#startView").classList.remove("hidden");$("#homeBtn").classList.add("hidden");currentStudent=null}
-$("#homeBtn").onclick=home;
-$("#teacherStart").onclick=async()=>{if(await ensureAuth()){await openTeacher()}else{hideAll();$("#teacherLogin").classList.remove("hidden");$("#homeBtn").classList.remove("hidden")}};
-$("#studentStart").onclick=()=>{hideAll();$("#studentLogin").classList.remove("hidden");$("#homeBtn").classList.remove("hidden")};
-$("#parentStart").onclick=async()=>{if(await ensureAuth()){await openParent()}else{hideAll();$("#parentLogin").classList.remove("hidden");$("#homeBtn").classList.remove("hidden")}};
-
-function p(sid,id){data.progress[sid]??={};data.progress[sid][id]??={status:"not_started",helps:[],attempts:0,answer:null,updatedAt:null};return data.progress[sid][id]}
-function log(type,id,detail={}){if(!currentStudent)return;data.events.push({id:uid(),sid:currentStudent.id,itemId:id,type,detail,at:Date.now()});if(data.events.length>600)data.events=data.events.slice(-600);save();syncProgress(id);if(studentSession&&API_OK)rpc("lerninsel_student_event",{p_public_code:studentSession.roomCode,p_student_code:studentSession.studentCode,p_item_id:id,p_event_type:type,p_detail:detail}).catch(()=>{})}
-function kindLabel(i){if(i.kind==="lesson")return"Lernen";if(i.kind==="practice")return"Üben";return"Hausaufgabe"}
-function typeLabel(i){return({mcq:"4 Antworten",cloze:"Lückentext",builder:"Satzbausteine",guided:"Geführte Aufgabe",lesson:"Lernseite"})[i.type]||i.type}
-
-function renderTeacher(){
-  $("#teacherRoomLabel").textContent=teacherRoom?`${teacherRoom.name||'Lerninsel'} · Lernraum ${teacherRoom.publicCode}`:'Noch kein Lernraum';
-  $("#contentTab").innerHTML=["Lernen","Üben","Hausaufgaben"].map(cat=>{const arr=data.items.filter(i=>kindLabel(i)===cat);return `<div class="subjectHead"><h3>GSEL 2 · ${cat}</h3><span class="badge">${arr.length}</span></div>`+arr.map(i=>`<div class="card teacherTask"><div><span class="badge">${typeLabel(i)}</span><h3>${esc(i.title)}</h3><p class="small">${esc(i.summary||i.question||"")}</p></div></div>`).join("")}).join("");
-  $("#studentsTab").innerHTML=`<div class="toolbar"><div><h3>Schülercodes</h3><p class="small">Jeder Schüler bekommt einen eigenen Code. Codes werden aus Sicherheitsgründen nicht aus Supabase zurückgelesen.</p></div><button id="addStudent" class="primary">+ Schüler</button></div>`+data.students.map(s=>`<div class="card studentRow" style="margin-bottom:8px"><div><strong>${esc(s.label)}</strong><div class="small">Code: <b>${esc(codeCache[s.id]||'auf diesem Gerät nicht gespeichert')}</b></div></div><div class="actions"><button class="ghost editStudent" data-id="${s.id}">Bearbeiten</button><button class="ghost parentInvite" data-id="${s.id}">Elterncode</button><button class="ghost deleteStudent" data-id="${s.id}">Löschen</button></div></div>`).join("");
-  if($("#addStudent"))$("#addStudent").onclick=()=>openStudent();
-  $$(".editStudent").forEach(b=>b.onclick=()=>openStudent(b.dataset.id));
-  $$(".parentInvite").forEach(b=>b.onclick=()=>createParentInvite(b.dataset.id));
-  $$(".deleteStudent").forEach(b=>b.onclick=async()=>{if(!teacherRoom||!confirm("Schüler wirklich löschen?"))return;try{await rpc('lerninsel_teacher_delete_student',{p_room_id:teacherRoom.roomId,p_student_id:b.dataset.id},true);delete codeCache[b.dataset.id];saveCodes();await teacherPull()}catch(e){alert('Löschen fehlgeschlagen: '+e.message)}});
-  $("#progressTab").innerHTML=data.students.map(s=>{const arr=data.items,done=arr.filter(i=>p(s.id,i.id).status==="completed").length,helps=arr.reduce((n,i)=>n+p(s.id,i.id).helps.length,0);return `<div class="card" style="margin-bottom:10px"><h3>${esc(s.label)}</h3><div class="kpiGrid"><div class="kpi"><strong>${done}/${arr.length}</strong><span class="small">erledigt/gelesen</span></div><div class="kpi"><strong>${helps}</strong><span class="small">Hilfen benutzt</span></div></div>${arr.map(i=>{let q=p(s.id,i.id);return `<div class="activity"><b>${kindLabel(i)} · ${esc(i.title)}</b><div class="meta"><span class="badge ${q.status==="completed"?"good":q.status==="working"?"warn":""}">${q.status==="completed"?"erledigt":q.status==="working"?"in Arbeit":"nicht begonnen"}</span>${q.helps.length?`<span class="helpUsage">${q.helps.length} Hilfe(n)</span>`:""}</div>${q.answer?`<div class="small">Endfassung: ${esc(q.answer)}</div>`:''}</div>`}).join("")}</div>`}).join("")||'<div class="card">Noch keine Schüler.</div>';
-  const ev=[...data.events].sort((a,b)=>b.at-a.at).slice(0,100);$("#activityTab").innerHTML=ev.length?`<div class="card">${ev.map(e=>{let s=data.students.find(x=>x.id===e.sid),i=data.items.find(x=>x.id===e.itemId);return `<div class="activity"><b>${esc(s?.label||"Schüler")} · ${esc(({opened:"geöffnet",completed:"erledigt",help:"Hilfe benutzt",checked:"geprüft",video:"Video geöffnet"})[e.type]||e.type)}</b><div>${esc(i?.title||e.itemId||"")}</div><div class="small">${new Date(e.at).toLocaleString("de-DE")}</div></div>`}).join("")}</div>`:'<div class="card">Noch keine Aktivität.</div>';
-  $("#parentsTab").innerHTML=`<div class="card"><h3>Elternzugänge</h3><p>Ein Elternkonto wird immer gezielt mit einem Schüler verknüpft.</p><p class="small">Unter <b>Schüler</b> auf „Elterncode“ drücken. Die Eltern erstellen ihr eigenes Konto und lösen diesen Einladungscode zusammen mit dem Lernraum-Code ein.</p></div>`;
-  const cfgStatus=API_OK?'<span class="good badge">✓ Supabase verbunden</span>':'<span class="warn badge">Supabase nicht konfiguriert</span>';
-  const room=teacherRoom?`<div class="lessonSection"><b>Lernraum-Code:</b><div style="font-size:1.35rem;margin:6px 0">${esc(teacherRoom.publicCode)}</div><div class="small">Diesen Code bekommen Schüler und Eltern zusätzlich zu ihrem persönlichen Code.</div></div>`:"";
-  $("#onlineTab").innerHTML=`<div class="card"><h3>Online & Schutz</h3><p>${cfgStatus}</p>${room}<div class="actions">${teacherRoom?'':'<button id="createRoomBtn" class="primary">Lernraum erstellen</button>'}${teacherRoom?'<button id="syncBtn" class="primary">Lernmaterial synchronisieren</button><button id="pullBtn" class="ghost">Lernstand aktualisieren</button>':''}</div><p id="onlineMsg" class="small"></p></div>`;
-  if($("#createRoomBtn"))$("#createRoomBtn").onclick=createRoom;if($("#syncBtn"))$("#syncBtn").onclick=teacherSync;if($("#pullBtn"))$("#pullBtn").onclick=teacherPull;
-}
-$$('.tab').forEach(b=>b.onclick=()=>{$$('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');$$('.tabPane').forEach(x=>x.classList.add('hidden'));$('#'+b.dataset.tab+'Tab').classList.remove('hidden');if(b.dataset.tab==='progress'||b.dataset.tab==='activity')teacherPull();renderTeacher()});
-
-async function openTeacher(){hideAll();$('#teacherView').classList.remove('hidden');$('#homeBtn').classList.remove('hidden');try{const rooms=await rpc('lerninsel_teacher_list_rooms',{},true);if(Array.isArray(rooms)&&rooms.length){const saved=teacherRoom&&rooms.find(r=>r.id===teacherRoom.roomId);const r=saved||rooms[0];teacherRoom={roomId:r.id,publicCode:r.publicCode,name:r.name};localStorage.setItem(ROOM_KEY,JSON.stringify(teacherRoom));await teacherPull()}else{teacherRoom=null;localStorage.removeItem(ROOM_KEY);renderTeacher()}}catch(e){alert('Lehrerbereich konnte nicht geladen werden: '+e.message);renderTeacher()}}
-$('#teacherLoginBtn').onclick=async()=>{const m=$('#teacherLoginMsg');m.textContent='';try{await signIn($('#teacherEmail').value.trim(),$('#teacherPassword').value);await openTeacher()}catch(e){m.textContent='Anmeldung fehlgeschlagen: '+e.message}};
-$('#teacherSignupBtn').onclick=async()=>{const m=$('#teacherLoginMsg');m.textContent='';try{const r=await signUp($('#teacherEmail').value.trim(),$('#teacherPassword').value);if(r?.access_token){m.textContent='Konto erstellt.';await openTeacher()}else m.textContent='Konto erstellt. Bitte bestätige ggf. zuerst die E-Mail und melde dich danach an.'}catch(e){m.textContent='Konto konnte nicht erstellt werden: '+e.message}};
-$('#teacherLogout').onclick=()=>{authLogout();teacherRoom=null;localStorage.removeItem(ROOM_KEY);home()};
-
-async function openParent(){hideAll();$('#parentView').classList.remove('hidden');$('#homeBtn').classList.remove('hidden');await renderParent()}
-$('#parentLoginBtn').onclick=async()=>{const m=$('#parentLoginMsg');m.textContent='';try{await signIn($('#parentEmail').value.trim(),$('#parentPassword').value);await openParent()}catch(e){m.textContent='Anmeldung fehlgeschlagen: '+e.message}};
-$('#parentSignupBtn').onclick=async()=>{const m=$('#parentLoginMsg');m.textContent='';try{const r=await signUp($('#parentEmail').value.trim(),$('#parentPassword').value);if(r?.access_token){m.textContent='Konto erstellt.';await openParent()}else m.textContent='Konto erstellt. Bitte bestätige ggf. zuerst die E-Mail und melde dich danach an.'}catch(e){m.textContent='Konto konnte nicht erstellt werden: '+e.message}};
-$('#parentLogout').onclick=()=>{authLogout();home()};
-async function renderParent(){const el=$('#parentContent');el.innerHTML='<div class="card">Lade …</div>';try{const kids=await rpc('lerninsel_parent_list_children',{},true);let html='';if(!kids?.length)html+=`<div class="card"><h3>Kind verknüpfen</h3><p>Du brauchst den Lernraum-Code und einen einmaligen Eltern-Einladungscode vom Lehrer.</p><label>Lernraum-Code<input id="claimRoom" autocapitalize="characters"></label><label>Eltern-Einladungscode<input id="claimInvite" autocapitalize="characters"></label><div class="rowEnd"><button id="claimBtn" class="primary">Kind verknüpfen</button></div><p id="claimMsg" class="small"></p></div>`;else html+=kids.map(k=>`<div class="card parentChild"><h3>${esc(k.studentLabel)}</h3><div class="small">${esc(k.roomName)}</div><button class="primary showChild" data-room="${k.roomId}" data-student="${k.studentId}">Lernstand ansehen</button><div class="childState" id="child-${k.studentId}"></div></div>`).join('');el.innerHTML=html;if($('#claimBtn'))$('#claimBtn').onclick=async()=>{const m=$('#claimMsg');try{await rpc('lerninsel_parent_claim',{p_public_code:$('#claimRoom').value.trim().toUpperCase(),p_invite_code:$('#claimInvite').value.trim().toUpperCase()},true);m.textContent='✓ Verknüpft.';await renderParent()}catch(e){m.textContent='Verknüpfung fehlgeschlagen: '+e.message}};$$('.showChild').forEach(b=>b.onclick=()=>loadParentChild(b.dataset.room,b.dataset.student))}catch(e){el.innerHTML='<div class="card">Elternbereich konnte nicht geladen werden: '+esc(e.message)+'</div>'}}
-async function loadParentChild(roomId,studentId){const el=$('#child-'+studentId);el.innerHTML='<p class="small">Lade …</p>';try{const r=await rpc('lerninsel_parent_get_state',{p_room_id:roomId,p_student_id:studentId},true);const prog=r.progress||{};const items=r.items||[];const done=items.filter(i=>prog[i.id]?.status==='completed').length;const helps=items.reduce((n,i)=>n+(prog[i.id]?.helps?.length||0),0);el.innerHTML=`<div class="kpiGrid" style="margin-top:12px"><div class="kpi"><strong>${done}/${items.length}</strong><span class="small">erledigt</span></div><div class="kpi"><strong>${helps}</strong><span class="small">Hilfen</span></div></div>${items.map(i=>{const q=prog[i.id]||{};return `<div class="activity"><b>${esc(i.title||i.id)}</b><div class="small">${q.status==='completed'?'✓ erledigt':q.status==='working'?'in Arbeit':'offen'}${q.helps?.length?' · '+q.helps.length+' Hilfe(n)':''}</div></div>`}).join('')}`}catch(e){el.innerHTML='<p class="small danger">Fehler: '+esc(e.message)+'</p>'}}
-
-$("#loginBtn").onclick=async()=>{const rc=$("#roomCode").value.trim().toUpperCase(),code=$("#studentCode").value.trim();$("#loginMsg").textContent="";if(!API_OK){$("#loginMsg").textContent="Online-Verbindung ist noch nicht eingerichtet.";return}try{const r=await rpc("lerninsel_student_login",{p_public_code:rc,p_student_code:code});if(!r||!r.student){$("#loginMsg").textContent="Lernraum oder Schülercode nicht gefunden.";return}currentStudent=r.student;studentSession={roomCode:rc,studentCode:code};localStorage.setItem(STUDENT_SESSION_KEY,JSON.stringify(studentSession));data.students=[currentStudent];data.items=r.items||[];data.progress[currentStudent.id]=r.progress||{};save();hideAll();$("#studentView").classList.remove("hidden");$("#homeBtn").classList.remove("hidden");renderStudent()}catch(e){$("#loginMsg").textContent="Anmeldung fehlgeschlagen. Bitte Codes prüfen."}};
-$("#demoBtn").onclick=()=>{let s=data.students[0];if(!s){s={id:"demo",label:"Demo-Schüler",code:"4821"};data.students=[s];assignAllItems();save()}currentStudent=s;studentSession=null;hideAll();$("#studentView").classList.remove("hidden");$("#homeBtn").classList.remove("hidden");renderStudent()};
-function renderStudent(){
-  $("#studentName").textContent="Hallo "+currentStudent.label;
-  const items=studentSession?data.items:data.items.filter(i=>!i.studentIds||i.studentIds.includes(currentStudent.id)),done=items.filter(i=>p(currentStudent.id,i.id).status==="completed").length;
-  $("#studentProgress").textContent=`${done} von ${items.length} erledigt`;
-  $("#studentTasks").innerHTML=["Lernen","Üben","Hausaufgaben"].map(cat=>{
-    const arr=items.filter(i=>kindLabel(i)===cat);if(!arr.length)return"";
-    const explain=cat==="Lernen"?"Hier wird nur erklärt. Keine Abfrage.":cat==="Üben"?"Hier kannst du das Gelernte ausprobieren.":"Hier steht nur die echte Aufgabe. Die Lösung steht nicht darüber.";
-    return `<div class="subjectHead"><div><h3>GSEL 2 · ${cat}</h3><div class="small">${explain}</div></div></div><div class="grid">${arr.map(i=>{let q=p(currentStudent.id,i.id);return `<div class="card task"><span class="badge">${typeLabel(i)}</span>${i.videoUrl?'<span class="badge good">▶ Video</span>':""}<h3>${esc(i.title)}</h3><p>${esc(i.summary||i.question||"")}</p><div class="meta">${q.status==="completed"?'<span class="badge good">✓ erledigt</span>':q.status==="working"?'<span class="badge warn">in Arbeit</span>':""}${q.helps.length?`<span class="badge warn">${q.helps.length} Hilfe(n)</span>`:""}</div><button class="primary openItem" data-id="${i.id}">${q.status==="not_started"?(cat==="Lernen"?"Öffnen":"Starten"):"Weiter"}</button></div>`}).join("")}</div>`
-  }).join("");
-  $$(".openItem").forEach(b=>b.onclick=()=>openItem(b.dataset.id))
-}
-function openItem(id){currentItem=data.items.find(i=>i.id===id);let q=p(currentStudent.id,id);q.status=q.status==="completed"?"completed":"working";q.updatedAt=Date.now();save();log("opened",id);renderWork();$("#workDialog").showModal()}
-
-function renderWork(){
-  if(currentItem.kind==="lesson")renderLesson();
-  else if(currentItem.type==="mcq")renderMCQ();
-  else if(currentItem.type==="cloze")renderCloze();
-  else if(currentItem.type==="builder")renderBuilder();
-  else if(currentItem.type==="guided")renderGuided();
-}
-function commonTop(i){return `<span class="badge">GSEL 2 · ${kindLabel(i)}</span><h2>${esc(i.title)}</h2>`}
-function bottomClose(){return `<div class="rowEnd"><button id="closeWork" class="ghost">Schließen</button></div>`}
-function wireClose(){ $("#closeWork").onclick=()=>{$("#workDialog").close();renderStudent()} }
-function finishItem(msg="✓ Erledigt gespeichert."){let q=p(currentStudent.id,currentItem.id);q.status="completed";q.updatedAt=Date.now();save();log("completed",currentItem.id);$("#feedback").innerHTML=`<div class="feedback ok">${msg}</div>`;renderStudent()}
-
-function renderLesson(){
-  const i=currentItem,q=p(currentStudent.id,i.id);
-  $("#workInside").innerHTML=commonTop(i)+
-    i.sections.map(s=>`<div class="lessonSection"><h3>${esc(s.heading)}</h3><div>${esc(s.text)}</div></div>`).join("")+
-    (i.memory?`<div class="merksatz">💡 ${esc(i.memory)}</div>`:"")+
-    (i.videoUrl?`<div class="videoCard"><h3>▶ Lernvideo / Doku</h3><p>${esc(i.videoLabel||"Video öffnen")}</p><button id="videoBtn" class="primary">Video öffnen</button></div>`:"")+
-    `<div class="note">Hier musst du nichts beantworten. Du kannst den Stoff einfach lesen oder anschauen.</div>
-     <div class="rowEnd"><button id="readDone" class="primary">${q.status==="completed"?"✓ Gelesen":"Als gelesen markieren"}</button></div>`+bottomClose();
-  if($("#videoBtn"))$("#videoBtn").onclick=()=>{log("video",i.id);window.open(i.videoUrl,"_blank","noopener")};
-  $("#readDone").onclick=()=>finishItem("✓ Als gelesen gespeichert.");
-  wireClose();
-}
-
-function renderMCQ(){
-  const i=currentItem,q=p(currentStudent.id,i.id);
-  $("#workInside").innerHTML=commonTop(i)+`<div class="question">${esc(i.question)}</div><div id="choices">${i.options.map((o,n)=>`<button class="choice" data-n="${n}">${esc(o)}</button>`).join("")}</div><div id="feedback"></div>${helpHtml(i,q)}<div class="actions"><button id="helpBtn" class="ghost">Ich brauche Hilfe</button></div>`+bottomClose();
-  let selected=null;$$(".choice").forEach(b=>b.onclick=()=>{$$(".choice").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");selected=Number(b.dataset.n)});
-  const check=document.createElement("button");check.className="primary";check.textContent="Antwort prüfen";$("#choices").after(check);
-  check.onclick=()=>{if(selected===null){$("#feedback").innerHTML='<div class="feedback no">Wähle zuerst eine Antwort.</div>';return}q.attempts++;q.updatedAt=Date.now();let ok=selected===i.correct;log("checked",i.id,{ok});if(ok){$$(".choice")[selected].classList.add("correct");finishItem("✓ Richtig. Diese Aufgabe ist erledigt.")}else{$$(".choice")[selected].classList.add("wrong");$("#feedback").innerHTML='<div class="feedback no">Noch nicht richtig. Versuche es noch einmal.</div>';save()}};
-  wireHelp(i,q);wireClose()
-}
-function helpHtml(i,q){return `<div id="helps">${q.helps.map(n=>i.helps?.[n-1]?`<div class="helpBox"><strong>Hilfe ${n}</strong>${esc(i.helps[n-1])}</div>`:"").join("")}</div>`}
-function wireHelp(i,q){if(!$("#helpBtn"))return;$("#helpBtn").onclick=()=>{let n=q.helps.length+1;if(!i.helps?.[n-1]){$("#feedback").innerHTML='<div class="feedback no">Keine weitere Hilfe hinterlegt.</div>';return}q.helps.push(n);q.updatedAt=Date.now();save();log("help",i.id,{level:n});$("#helps").innerHTML+=`<div class="helpBox"><strong>Hilfe ${n}</strong>${esc(i.helps[n-1])}</div>`}}
-
-function renderCloze(){
-  const i=currentItem,q=p(currentStudent.id,i.id);
-  let line=esc(i.template);
-  i.gaps.forEach((g,n)=>{const opts=['<option value="">Bitte wählen</option>',...g.options.map((o,k)=>`<option value="${k}">${esc(o)}</option>`)].join("");line=line.replace(`{${n}}`,`<select class="inlineSelect gap" data-n="${n}">${opts}</select>`)});
-  $("#workInside").innerHTML=commonTop(i)+`<div class="question">${esc(i.question)}</div><div class="lessonSection clozeLine">${line}</div><button id="checkBtn" class="primary">Prüfen</button><div id="feedback"></div>${helpHtml(i,q)}<div class="actions" style="margin-top:10px"><button id="helpBtn" class="ghost">Ich brauche Hilfe</button></div>`+bottomClose();
-  $("#checkBtn").onclick=()=>{let vals=$$(".gap").map(x=>x.value);if(vals.some(v=>v==="")){$("#feedback").innerHTML='<div class="feedback no">Fülle zuerst alle Lücken aus.</div>';return}let ok=vals.every((v,n)=>Number(v)===i.gaps[n].correct);q.attempts++;log("checked",i.id,{ok});if(ok)finishItem("✓ Alles richtig.");else $("#feedback").innerHTML='<div class="feedback no">Noch ist mindestens eine Lücke falsch. Schau noch einmal.</div>';save()};
-  wireHelp(i,q);wireClose()
-}
-
-function renderBuilder(){
-  const i=currentItem,q=p(currentStudent.id,i.id);let selected=[];
-  $("#workInside").innerHTML=commonTop(i)+`<div class="question">${esc(i.question)}</div><div class="chips" id="chips">${i.parts.map((x,n)=>`<button class="chip" data-n="${n}">${esc(x)}</button>`).join("")}</div><div class="builderOut" id="builderOut">Tippe die Satzteile in der richtigen Reihenfolge an.</div><div class="actions" style="margin-top:10px"><button id="resetBuilder" class="ghost">Neu anfangen</button><button id="checkBtn" class="primary">Prüfen</button></div><div id="feedback"></div>${helpHtml(i,q)}<div class="actions" style="margin-top:10px"><button id="helpBtn" class="ghost">Ich brauche Hilfe</button></div>`+bottomClose();
-  function redraw(){ $("#builderOut").textContent=selected.length?selected.map(n=>i.parts[n]).join(" "):"Tippe die Satzteile in der richtigen Reihenfolge an.";$$(".chip").forEach(b=>b.classList.toggle("used",selected.includes(Number(b.dataset.n))))}
-  $$(".chip").forEach(b=>b.onclick=()=>{let n=Number(b.dataset.n);if(!selected.includes(n)){selected.push(n);redraw()}});
-  $("#resetBuilder").onclick=()=>{selected=[];redraw()};
-  $("#checkBtn").onclick=()=>{let ok=JSON.stringify(selected)===JSON.stringify(i.correctOrder);q.attempts++;q.answer=selected.map(n=>i.parts[n]).join(" ");log("checked",i.id,{ok});if(ok)finishItem("✓ Der Satz ist richtig aufgebaut.");else $("#feedback").innerHTML='<div class="feedback no">Die Reihenfolge stimmt noch nicht. Versuche es noch einmal.</div>';save()};
-  wireHelp(i,q);wireClose()
-}
-
-function renderGuided(){
-  const i=currentItem,q=p(currentStudent.id,i.id);
-  $("#workInside").innerHTML=commonTop(i)+
-    `<div class="homeworkIntro"><strong>Deine Hausaufgabe:</strong><p>${esc(i.question)}</p></div>
-     ${i.relatedLesson?`<button id="lessonBtn" class="ghost">📖 Lernstoff dazu öffnen</button><div class="note">Der Lernstoff enthält die Informationen, aber nicht die fertige Hausaufgaben-Antwort.</div>`:""}
-     <div id="guidedSteps">${i.steps.map((s,n)=>`<div class="stepBox"><h3>${n+1}. ${esc(s.prompt)}</h3>${s.options.map((o,k)=>`<button class="choice guidedChoice" data-step="${n}" data-opt="${k}">${esc(o)}</button>`).join("")}</div>`).join("")}</div>
-     <button id="checkBtn" class="primary">Meine Auswahl prüfen</button>
-     <div id="feedback"></div>${helpHtml(i,q)}
-     <div class="actions" style="margin-top:10px"><button id="helpBtn" class="ghost">Ich brauche Hilfe</button></div>
-     <div id="finalArea"></div>`+bottomClose();
-  let answers=Array(i.steps.length).fill(null);
-  $$(".guidedChoice").forEach(b=>b.onclick=()=>{let s=Number(b.dataset.step);answers[s]=Number(b.dataset.opt);$$(`.guidedChoice[data-step="${s}"]`).forEach(x=>x.classList.remove("selected"));b.classList.add("selected")});
-  $("#checkBtn").onclick=()=>{if(answers.some(x=>x===null)){$("#feedback").innerHTML='<div class="feedback no">Beantworte zuerst alle kleinen Schritte.</div>';return}let ok=answers.every((v,n)=>v===i.steps[n].correct);q.attempts++;log("checked",i.id,{ok});if(!ok){$("#feedback").innerHTML='<div class="feedback no">Mindestens eine Auswahl passt noch nicht. Prüfe die Schritte noch einmal.</div>';save();return}q.answer=i.finalText;q.status="completed";q.updatedAt=Date.now();save();log("completed",i.id);$("#feedback").innerHTML='<div class="feedback ok">✓ Die wichtigen Informationen sind richtig ausgewählt.</div>';$("#finalArea").innerHTML=`<div class="finalBox"><strong>Endfassung zum Abschreiben:</strong><br>${esc(i.finalText)}</div><div class="note">Diese Endfassung entsteht erst, nachdem die einzelnen Schritte richtig gelöst wurden.</div>`;renderStudent()};
-  if($("#lessonBtn"))$("#lessonBtn").onclick=()=>{let lesson=data.items.find(x=>x.id===i.relatedLesson);if(lesson){currentItem=lesson;renderLesson()}};
-  wireHelp(i,q);wireClose()
-}
-
-
-function assignAllItems(){const ids=data.students.map(s=>s.id);data.items.forEach(i=>i.studentIds=[...ids])}
-function openStudent(id=null){if(!teacherRoom){alert('Bitte zuerst unter Online einen Lernraum erstellen.');return}const s=id?data.students.find(x=>x.id===id):null;$("#studentId").value=s?.id||"";$("#studentLabel").value=s?.label||"";$("#studentNewCode").value=(s&&codeCache[s.id])||String(Math.floor(1000+Math.random()*9000));$("#studentDialog").showModal()}
-$("#cancelStudent").onclick=()=>$("#studentDialog").close();
-$("#studentForm").onsubmit=async e=>{e.preventDefault();if(!teacherRoom)return;const oldId=$("#studentId").value||null,code=$("#studentNewCode").value.trim(),label=$("#studentLabel").value.trim();try{const sid=await rpc('lerninsel_teacher_upsert_student',{p_room_id:teacherRoom.roomId,p_student_id:oldId,p_label:label,p_student_code:code},true);codeCache[sid]=code;saveCodes();$("#studentDialog").close();await teacherPull();await teacherSync()}catch(e){alert('Schüler konnte nicht gespeichert werden: '+e.message)}};
-async function createRoom(){const el=$("#onlineMsg");if(!API_OK){if(el)el.textContent="Supabase ist nicht konfiguriert.";return}try{if(el)el.textContent="Lernraum wird erstellt …";const code=publicCode();const roomId=await rpc("lerninsel_create_room",{p_name:"Lerninsel",p_public_code:code},true);teacherRoom={roomId,publicCode:code,name:'Lerninsel'};localStorage.setItem(ROOM_KEY,JSON.stringify(teacherRoom));await teacherSync();renderTeacher();if(el)el.textContent="✓ Lernraum erstellt."}catch(e){if(el)el.textContent="Fehler: "+e.message}}
-async function teacherSync(){if(!teacherRoom||!API_OK)return;const el=$("#onlineMsg");try{if(el)el.textContent="Synchronisiere …";assignAllItems();save();const assignments=[];for(const st of data.students)for(const item of data.items)assignments.push({studentId:st.id,itemId:item.id});await rpc("lerninsel_teacher_sync_content",{p_room_id:teacherRoom.roomId,p_payload:{items:data.items,assignments}},true);if(el)el.textContent="✓ Lernmaterial und Zuweisungen sind online."}catch(e){if(el)el.textContent="Synchronisierung fehlgeschlagen: "+e.message}}
-async function teacherPull(){if(!teacherRoom||!API_OK){renderTeacher();return}try{const r=await rpc("lerninsel_teacher_get_state",{p_room_id:teacherRoom.roomId},true);if(r){const old=data.students;data.students=(r.students||[]).map(s=>({id:s.id,label:s.label,code:codeCache[s.id]||''}));data.progress=r.progress||{};data.events=(r.events||[]).map(e=>({id:e.id,sid:e.studentId,itemId:e.itemId,type:e.type,detail:e.detail,at:e.at}));assignAllItems();save();renderTeacher()}}catch(e){console.error(e);renderTeacher()}}
-async function createParentInvite(studentId){if(!teacherRoom)return;const code=inviteCode();try{await rpc('lerninsel_teacher_create_parent_invite',{p_room_id:teacherRoom.roomId,p_student_id:studentId,p_invite_code:code},true);$('#inviteCodeShow').textContent=code;$('#inviteDialog').showModal()}catch(e){alert('Elterncode konnte nicht erstellt werden: '+e.message)}}
-$('#closeInvite').onclick=()=>$('#inviteDialog').close();
-
-if(!data.items.length){
-const S=["s1"];
-data.items=[
-{id:"lesson-basics",kind:"lesson",type:"lesson",title:"Was sind Piraten?",summary:"Piraten, Kaperfahrer und Kaperbrief einfach erklärt",studentIds:S,
- sections:[
-  {heading:"Was sind Piraten?",text:"Piraten überfallen Schiffe oder Orte an der Küste. Sie nehmen Waren oder Geld als Beute. Piraten handeln ohne staatliche Erlaubnis."},
-  {heading:"Was ist ein Kaperfahrer?",text:"Ein Kaperfahrer greift ebenfalls Schiffe an. Er hat dafür aber eine Erlaubnis von einem Herrscher oder Staat. Meist gilt diese Erlaubnis nur im Krieg und nur gegen bestimmte Feinde."},
-  {heading:"Was ist ein Kaperbrief oder Freibrief?",text:"Der Kaperbrief ist die schriftliche Erlaubnis für einen Kaperfahrer. Darin steht, dass er bestimmte feindliche Schiffe angreifen darf."},
-  {heading:"Warum wurden Kaperbriefe vergeben?",text:"Ein Herrscher konnte damit dem Gegner schaden, ohne alle Schiffe und Soldaten selbst stellen zu müssen. Kaperfahrer bekamen dafür einen Teil der Beute."}],
- memory:"Pirat = ohne staatliche Erlaubnis. Kaperfahrer = mit Kaperbrief."},
-{id:"lesson-vitalien",kind:"lesson",type:"lesson",title:"Die Vitalienbrüder",summary:"Störtebeker, Kaperfahrt und die Hanse",studentIds:S,
- sections:[
-  {heading:"Am Anfang",text:"Die Vitalienbrüder waren zunächst Kaperfahrer. Sie kämpften im Ostseeraum und durften feindliche Schiffe angreifen."},
-  {heading:"Später",text:"Später griffen sie auch Handelsschiffe an. Das schadete besonders der Hanse. Deshalb wurden die Vitalienbrüder zu Feinden der Hansestädte."},
-  {heading:"Klaus Störtebeker",text:"Klaus Störtebeker ist der bekannteste Name aus dieser Gruppe. Über ihn entstanden später viele Geschichten und Legenden."}],
- memory:"Vitalienbrüder: zuerst Kaperfahrer, später Angriffe auf Handelsschiffe – dadurch Feinde der Hanse."},
-{id:"lesson-portroyal",kind:"lesson",type:"lesson",title:"Port Royal",summary:"Warum Port Royal für Piraten wichtig war",studentIds:S,
- sections:[
-  {heading:"Wo lag Port Royal?",text:"Port Royal lag auf Jamaika in der Karibik."},
-  {heading:"Warum war die Stadt wichtig?",text:"Port Royal hatte einen großen Hafen. Schiffe konnten dort anlegen. In der Stadt gab es Geschäfte, Tavernen, Märkte und andere Angebote. Viele Piraten und Freibeuter hielten sich dort auf."},
-  {heading:"Was geschah 1692?",text:"1692 zerstörte ein starkes Erdbeben einen großen Teil von Port Royal."}],
- memory:"Port Royal = Hafenstadt auf Jamaika, wichtiger Ort für Piraten und Freibeuter."},
-{id:"lesson-anne",kind:"lesson",type:"lesson",title:"Anne Bonny und Mary Read",summary:"Die beiden Piratinnen und die ZDF-Doku",studentIds:S,videoUrl:zdf,videoLabel:"ZDF-Doku: „Legendäre Piraten – Anne Bonny und Mary Read“",
- sections:[
-  {heading:"Anne Bonny",text:"Anne Bonny lernte den Piraten Calico Jack Rackham kennen. Sie ging mit ihm zur See und wurde Piratin."},
-  {heading:"Frauen an Bord",text:"Anne Bonny und Mary Read trugen zeitweise Männerkleidung. Kleidung zeigte damals stark, ob jemand als Mann oder Frau angesehen wurde. Deshalb konnten Frauen an Bord für Männer gehalten werden."},
-  {heading:"Piratenjäger",text:"Manche Piraten wurden begnadigt. Danach konnten sie als Piratenjäger arbeiten und legal Geld oder Kopfgeld verdienen."},
-  {heading:"Der Prozess",text:"Anne Bonny und Mary Read wurden 1720 wegen Piraterie zum Tode verurteilt. Beide waren schwanger. Deshalb wurde die Hinrichtung aufgeschoben. Mary Read starb später im Gefängnis. Was danach mit Anne Bonny geschah, ist nicht sicher bekannt."}],
- memory:"Bei Anne Bonny ist das spätere Schicksal nicht sicher bekannt."},
-
-{id:"p1",kind:"practice",type:"mcq",title:"Was ist ein Pirat?",summary:"Eine von vier Antworten ist richtig.",question:"Welche Erklärung passt zu einem Piraten?",options:["Ein Mensch, der ohne staatliche Erlaubnis Schiffe überfällt und Beute macht.","Ein Händler, der Waren über das Meer bringt.","Ein Soldat, der nur an Land kämpft.","Ein Fischer mit einem großen Schiff."],correct:0,helps:["Piraten nehmen Beute.","Sie brauchen dafür keine staatliche Erlaubnis."],studentIds:S},
-{id:"p2",kind:"practice",type:"mcq",title:"Was ist ein Kaperbrief?",summary:"Kaperbrief/Freibrief erkennen",question:"Was ist ein Kaperbrief?",options:["Eine Schatzkarte.","Eine schriftliche Erlaubnis, bestimmte feindliche Schiffe anzugreifen.","Ein Kaufvertrag für ein Schiff.","Ein Brief von einem Piraten an die Hanse."],correct:1,helps:["Es geht um eine offizielle Erlaubnis.","Ein Herrscher oder Staat konnte diese Erlaubnis geben."],studentIds:S},
-{id:"p3",kind:"practice",type:"mcq",title:"Warum gab es Kaperbriefe?",summary:"Warum Herrscher Kaperfahrer einsetzten",question:"Warum vergaben Herrscher Kaperbriefe?",options:["Damit der Gegner geschwächt wurde und der Herrscher nicht alle Schiffe selbst stellen musste.","Damit Piraten Urlaub machen konnten.","Damit Piraten überall kostenlos einkaufen konnten.","Damit alle Schiffe friedlich blieben."],correct:0,helps:["Denke an Krieg.","Private Schiffe konnten dem Gegner schaden."],studentIds:S},
-{id:"p4",kind:"practice",type:"cloze",title:"Pirat oder Kaperfahrer?",summary:"Lückentext mit Auswahl",question:"Setze die passenden Wörter ein.",template:"Ein Pirat handelt {0}. Ein Kaperfahrer hat einen {1}.",gaps:[{options:["ohne staatliche Erlaubnis","nur in einem Hafen","als Händler"],correct:0},{options:["Kaperbrief","Stadtplan","Fischereischein"],correct:0}],helps:["Pirat = keine offizielle Erlaubnis.","Das Dokument heißt Kaperbrief."],studentIds:S},
-{id:"p5",kind:"practice",type:"builder",title:"Satzbausteine: Kaperbrief",summary:"Setze den Satz richtig zusammen.",question:"Baue einen richtigen Erklärungssatz.",parts:["von einem Herrscher.","Ein Kaperbrief","feindliche Schiffe anzugreifen.","ist eine Erlaubnis,"],correctOrder:[1,3,0,2],helps:["Der Satz beginnt mit „Ein Kaperbrief“.","Danach kommt „ist eine Erlaubnis,“."],studentIds:S},
-{id:"p6",kind:"practice",type:"mcq",title:"Vitalienbrüder und Hanse",summary:"Warum wurden sie Gegner der Hanse?",question:"Warum wurden die Vitalienbrüder zu Feinden der Hanse?",options:["Weil sie später Handelsschiffe angriffen.","Weil sie keine Schiffe hatten.","Weil sie nach Jamaika zogen.","Weil sie nur Fischer waren."],correct:0,helps:["Die Hanse lebte vom Handel.","Was geschah mit Handelsschiffen?"],studentIds:S},
-{id:"p7",kind:"practice",type:"cloze",title:"Port Royal",summary:"Wichtige Begriffe einsetzen",question:"Fülle die Lücken aus.",template:"Port Royal lag auf {0}. Die Stadt hatte einen wichtigen {1}. 1692 zerstörte ein {2} einen großen Teil der Stadt.",gaps:[{options:["Jamaika","Island","England"],correct:0},{options:["Hafen","Flughafen","Bahnhof"],correct:0},{options:["Erdbeben","Schneesturm","Vulkanausbruch"],correct:0}],helps:["Port Royal lag in der Karibik.","Schiffe brauchen einen Hafen."],studentIds:S},
-
-{id:"h1",kind:"homework",type:"guided",title:"Anne Bonny – Aufgabe 1",summary:"Wie wurde Anne Bonny zur Piratin?",question:"Beschreibe, wie Anne Bonny zu einer Piratin wurde.",relatedLesson:"lesson-anne",studentIds:S,helps:["Wen lernte Anne kennen?","Was tat sie danach?"],
- steps:[
-  {prompt:"Wen lernte Anne Bonny kennen?",options:["Calico Jack","Klaus Störtebeker","Blackbeard","Kolumbus"],correct:0},
-  {prompt:"Was tat Anne später?",options:["Sie ging mit Calico Jack auf ein Schiff.","Sie wurde Königin.","Sie blieb immer an Land.","Sie arbeitete für die Hanse."],correct:0}],
- finalText:"Anne Bonny lernte Calico Jack kennen. Später ging sie mit ihm auf ein Schiff und wurde Piratin."},
-{id:"h2",kind:"homework",type:"guided",title:"Anne Bonny & Mary Read – Aufgabe 2",summary:"Warum blieben Frauen an Bord manchmal unerkannt?",question:"Erkläre, wieso Frauen an Bord eines Piratenschiffs oft unerkannt blieben.",relatedLesson:"lesson-anne",studentIds:S,helps:["Welche Kleidung trugen sie?","Wofür wurde diese Kleidung gehalten?"],
- steps:[
-  {prompt:"Welche Kleidung trugen Anne und Mary zeitweise?",options:["Männerkleidung","Ballkleider","Uniformen der Hanse","Badeanzüge"],correct:0},
-  {prompt:"Was glaubten andere deshalb?",options:["Dass sie Männer waren.","Dass sie Königinnen waren.","Dass sie Ärzte waren.","Dass sie Händlerinnen waren."],correct:0}],
- finalText:"Anne Bonny und Mary Read trugen Männerkleidung. Deshalb hielten andere Menschen sie für Männer."},
-{id:"h3",kind:"homework",type:"guided",title:"Piratenjäger – Aufgabe 3",summary:"Wie wurden Piraten zu Piratenjägern?",question:"Erkläre, wie aus Piraten Piratenjäger wurden.",relatedLesson:"lesson-anne",studentIds:S,helps:["Was konnte mit Piraten zuerst geschehen?","Warum konnte die neue Arbeit Geld bringen?"],
- steps:[
-  {prompt:"Was geschah mit manchen Piraten zuerst?",options:["Sie wurden begnadigt.","Sie wurden Könige.","Sie bekamen ein Schloss.","Sie wurden Händler."],correct:0},
-  {prompt:"Was konnten sie danach tun?",options:["Als Piratenjäger legal Geld und Kopfgeld verdienen.","Nur noch fischen.","Keine Schiffe mehr sehen.","In Port Royal Bürgermeister werden."],correct:0}],
- finalText:"Manche Piraten wurden begnadigt. Danach konnten sie als Piratenjäger legal Geld und Kopfgeld verdienen."},
-{id:"h4",kind:"homework",type:"guided",title:"Prozess – Aufgabe 4",summary:"Prozess und Ende von Anne Bonny und Mary Read",question:"Beschreibe, wie der Prozess gegen Anne Bonny und Mary Read verlief und wie ihr Leben endete.",relatedLesson:"lesson-anne",studentIds:S,
- helps:["Welche Strafe bekamen beide?","Warum wurde die Hinrichtung nicht sofort durchgeführt?","Was geschah mit Mary? Was wissen wir über Anne?"],
- steps:[
-  {prompt:"Welche Strafe bekamen beide?",options:["Sie wurden zum Tode verurteilt.","Sie mussten nur eine Geldstrafe zahlen.","Sie wurden sofort freigelassen.","Sie wurden zur Hanse geschickt."],correct:0},
-  {prompt:"Warum wurde die Hinrichtung aufgeschoben?",options:["Beide waren schwanger.","Das Gefängnis war voll.","Das Schiff war kaputt.","Der Richter war krank."],correct:0},
-  {prompt:"Was geschah mit Mary Read?",options:["Sie starb später im Gefängnis.","Sie wurde Königin.","Sie floh nach Hamburg.","Sie wurde Händlerin."],correct:0},
-  {prompt:"Was wissen wir sicher über Anne Bonnys späteres Leben?",options:["Ihr weiteres Schicksal ist nicht sicher bekannt.","Sie wurde 100 Jahre alt.","Sie lebte sicher in Port Royal.","Sie wurde Piratenjägerin."],correct:0}],
- finalText:"Anne Bonny und Mary Read wurden zum Tode verurteilt. Weil beide schwanger waren, wurde die Hinrichtung aufgeschoben. Mary Read starb später im Gefängnis. Was danach mit Anne Bonny geschah, ist nicht sicher bekannt."}
-];save()
-}
-assignAllItems();
-if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
-setInterval(()=>{if(!$("#teacherView").classList.contains("hidden"))teacherPull()},15000);
-home();
+if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{})}
 </script>
 </body>
 </html>
