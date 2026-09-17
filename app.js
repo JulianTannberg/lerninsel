@@ -18,6 +18,7 @@ const KEYS = {
 const SUBJECTS = [
   {id:"mathe", name:"Mathe", icon:"➗"},
   {id:"englisch", name:"Englisch", icon:"🇬🇧"},
+  {id:"deutsch", name:"Deutsch", icon:"📖"},
   {id:"gsel1", name:"GSEL 1", icon:"🗺️"},
   {id:"gsel2", name:"GSEL 2", icon:"🏴‍☠️"},
   {id:"natur", name:"Natur", icon:"🌿"}
@@ -246,7 +247,115 @@ const DEFAULT_CONTENT = [
    question:"Was gehörte zu den Aufgaben mittelalterlicher Klöster?",options:["Bildung sowie Armen- und Krankenfürsorge","Nur der Bau von Burgen","Nur Handel mit Schiffen","Nur das Einsammeln von Steuern"],correct:0},
   {id:"g1-staende-quiz-6",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"quiz",type:"mcq",title:"Quizfrage 6",
    question:"Warum wurde die Ständeordnung später kritisiert?",options:["Weil manche die Bedeutung der Bauern und die Gleichheit der Menschen stärker betonten.","Weil es keine Bauern mehr gab.","Weil Ritter keine Rüstungen mehr trugen.","Weil Klöster verboten wurden."],correct:0}
+,
+  {id:"d-balladen-lesson-1",subject:"deutsch",topic:"Balladen",kind:"lesson",type:"lesson",title:"Balladen erkennen",summary:"Geschichte, Spannung, Gefühle und Gedichtform.",sections:[
+    {heading:"Was ist eine Ballade?",text:"Eine Ballade erzählt eine Geschichte in Gedichtform. In den Unterrichtsnotizen werden besonders Geschichte/Handlung, Spannung, Gefühle und die Gedichtform als Merkmale genannt."},
+    {heading:"John Maynard",text:"In der Ballade fährt ein Schiff über den Eriesee. Auf dem Schiff bricht Feuer aus. John Maynard bleibt am Steuer, bringt das Schiff zum Ufer und rettet die Fahrgäste. Er selbst stirbt und wird anschließend geehrt."},
+    {heading:"Inhaltsangabe",text:"Eine Inhaltsangabe ist kurz und sachlich. Sie wird im Präsens, in eigenen Worten, in der dritten Person und in zeitlicher Reihenfolge geschrieben. Eigene Meinung und künstliche Spannung gehören nicht hinein."}
+  ],memory:"Inhaltsangabe = Präsens + sachlich + eigene Worte + richtige Reihenfolge."},
+  {id:"d-balladen-practice-1",subject:"deutsch",topic:"Balladen",kind:"practice",type:"mcq",title:"Regel der Inhaltsangabe",question:"Welche Formulierung passt zu einer Inhaltsangabe?",options:["Das Schiff fährt über den Eriesee.","Ich finde John Maynard unglaublich mutig!","Plötzlich passiert etwas unfassbar Schreckliches!","Du musst dir vorstellen, wie schlimm das ist."],correct:0},
+  {id:"d-balladen-practice-2",subject:"deutsch",topic:"Balladen",kind:"practice",type:"mcq",title:"Welche Zeitform?",question:"In welcher Zeitform wird die Inhaltsangabe geschrieben?",options:["Präsens","Präteritum","Futur","Perfekt"],correct:0},
+  {id:"d-balladen-homework-main",subject:"deutsch",topic:"Balladen",kind:"homework",type:"writing",title:"John Maynard: Hauptteil schreiben",summary:"Aus den Stichpunkten der Tafel einen zusammenhängenden Hauptteil schreiben.",question:"Schreibe aus den Stichpunkten einen sachlichen Hauptteil der Inhaltsangabe. Nutze Präsens und eigene Worte.",bullets:["Der Steuermann fährt das Schiff über den Eriesee.","Es bricht ein Feuer auf dem Schiff aus.","Die Menschen auf dem Boot bekommen Angst.","John Maynard hält trotz des Feuers durch.","Der Strand ist die Rettung für das Boot und John Maynard hält darauf zu.","Alle werden gerettet. John Maynard gibt sein Leben für die Fahrgäste.","Die Menschen ehren John Maynard mit Blumen und beerdigen ihn.","Die Menschen trauern um John Maynard und danken ihm."],helps:["Beginne mit der Fahrt über den Eriesee und schreibe danach, dass Feuer ausbricht.","Schreibe anschließend, wie die Menschen reagieren und dass John Maynard trotz des Feuers am Steuer bleibt.","Beende den Hauptteil mit Rettung, Tod John Maynards, Ehrung und Trauer. Bleibe sachlich und im Präsens."],finalText:"Das Schiff fährt über den Eriesee. Während der Fahrt bricht auf dem Schiff ein Feuer aus und die Fahrgäste bekommen Angst. John Maynard bleibt trotz des Feuers am Steuer und steuert das Schiff auf das rettende Ufer zu. Die Fahrgäste werden gerettet, John Maynard stirbt jedoch. Anschließend ehren und beerdigen ihn die Menschen. Sie trauern um ihn und danken ihm für die Rettung."},
+
+  {id:"n-optik-lesson-symbols",subject:"natur",topic:"Licht und Optik",kind:"lesson",type:"lesson",title:"Schattenwurf: G, g, B und b",summary:"Die vier Zeichen sicher unterscheiden.",diagram:"shadow-symbols",sections:[
+    {heading:"G – Gegenstandsgröße",text:"G ist die Größe bzw. Höhe des Gegenstands. Sie wird senkrecht am Gegenstand gemessen."},
+    {heading:"g – Gegenstandsweite",text:"g ist der Abstand von der Lichtquelle bis zum Gegenstand. Sie wird waagerecht entlang der optischen Achse gemessen."},
+    {heading:"B – Bildgröße",text:"B ist die Größe bzw. Höhe des Schattenbildes auf dem Schirm. Sie wird senkrecht am Schirm gemessen."},
+    {heading:"b – Bildweite",text:"b ist der Abstand von der Lichtquelle bis zum Schirm bzw. Bild. Sie wird waagerecht entlang der optischen Achse gemessen."}
+  ],memory:"Großbuchstaben G und B = Größen/Höhen. Kleinbuchstaben g und b = Weiten/Abstände von der Lichtquelle."},
+  {id:"n-optik-practice-symbol-g",subject:"natur",topic:"Licht und Optik",kind:"practice",type:"flashcard",title:"G",question:"Wofür steht G?",answer:"G = Gegenstandsgröße: die Höhe des Gegenstands."},
+  {id:"n-optik-practice-symbol-gsmall",subject:"natur",topic:"Licht und Optik",kind:"practice",type:"flashcard",title:"g",question:"Wofür steht g?",answer:"g = Gegenstandsweite: Abstand von der Lichtquelle zum Gegenstand."},
+  {id:"n-optik-practice-symbol-B",subject:"natur",topic:"Licht und Optik",kind:"practice",type:"flashcard",title:"B",question:"Wofür steht B?",answer:"B = Bildgröße: Höhe des Schattenbildes auf dem Schirm."},
+  {id:"n-optik-practice-symbol-bsmall",subject:"natur",topic:"Licht und Optik",kind:"practice",type:"flashcard",title:"b",question:"Wofür steht b?",answer:"b = Bildweite: Abstand von der Lichtquelle bis zum Schirm/Bild."},
+  {id:"n-optik-practice-where",subject:"natur",topic:"Licht und Optik",kind:"practice",type:"mcq",title:"Was wird waagerecht eingetragen?",question:"Welche beiden Größen sind Abstände von der Lichtquelle und werden entlang der Achse eingetragen?",options:["g und b","G und B","G und g","B und b"],correct:0},
+  {id:"n-optik-lesson-shadow",subject:"natur",topic:"Licht und Optik",kind:"lesson",type:"lesson",title:"Schattenwurf konstruieren",summary:"Randstrahlen Schritt für Schritt zeichnen.",diagram:"shadow-construction",sections:[
+    {heading:"1. Lichtquelle markieren",text:"Die punktförmige Lichtquelle ist der gemeinsame Startpunkt der Randstrahlen."},
+    {heading:"2. Randstrahlen zeichnen",text:"Ziehe mit dem Lineal einen Strahl von der Lichtquelle über die obere Kante des Gegenstands bis zum Schirm. Wiederhole das über die untere Kante."},
+    {heading:"3. Schatten ablesen",text:"Zwischen den beiden Treffpunkten auf dem Schirm liegt das Schattenbild. Dort wird B gemessen."},
+    {heading:"4. Größen eintragen",text:"G am Gegenstand, B am Schirm, g von Lichtquelle bis Gegenstand und b von Lichtquelle bis Schirm."}
+  ],memory:"Randstrahlen gehen immer von der Lichtquelle über die Kanten des Gegenstands bis zum Schirm."},
+  {id:"n-optik-lesson-reflection",subject:"natur",topic:"Licht und Optik",kind:"lesson",type:"lesson",title:"Spiegelung mit dem Geodreieck",summary:"Lot, Winkel und reflektierten Strahl richtig einzeichnen.",diagram:"reflection",sections:[
+    {heading:"1. Auftreffpunkt finden",text:"Markiere den Punkt, an dem der einfallende Lichtstrahl den Spiegel trifft."},
+    {heading:"2. Lot zeichnen",text:"Lege das Geodreieck so an, dass du durch den Auftreffpunkt eine Linie im rechten Winkel (90°) zum Spiegel zeichnen kannst. Diese Hilfslinie heißt Lot."},
+    {heading:"3. Einfallswinkel messen",text:"Miss den Winkel zwischen einfallendem Strahl und Lot – nicht zwischen Strahl und Spiegel."},
+    {heading:"4. Gleichen Winkel abtragen",text:"Trage auf der anderen Seite des Lots genau denselben Winkel ab und zeichne dort den reflektierten Strahl."}
+  ],memory:"Reflexionsgesetz: Einfallswinkel = Reflexionswinkel. Beide Winkel werden zum Lot gemessen."},
+  {id:"n-optik-practice-reflection",subject:"natur",topic:"Licht und Optik",kind:"practice",type:"mcq",title:"Wo wird der Winkel gemessen?",question:"Zwischen welchen Linien misst man Einfalls- und Reflexionswinkel?",options:["Zwischen Lichtstrahl und Lot","Zwischen Lichtstrahl und Spiegel","Zwischen Spiegel und Tischkante","Zwischen zwei beliebigen Strahlen"],correct:0},
+  {id:"n-optik-lesson-corner",subject:"natur",topic:"Licht und Optik",kind:"lesson",type:"lesson",title:"Winkelspiegel",summary:"Zwei Spiegelungen nacheinander verstehen.",sections:[
+    {heading:"Zweimal spiegeln",text:"Bei einem rechtwinkligen Winkelspiegel wird der Lichtstrahl zuerst an einem Spiegel und danach am zweiten Spiegel reflektiert. An jedem Spiegel gilt erneut: Einfallswinkel = Reflexionswinkel."},
+    {heading:"Beim Zeichnen",text:"Arbeite immer nur an einem Auftreffpunkt: Lot einzeichnen, gleichen Winkel auf die andere Seite übertragen, Strahl bis zum nächsten Spiegel verlängern und dort wiederholen."}
+  ],memory:"Beim Winkelspiegel dieselben vier Schritte zweimal nacheinander anwenden."},
+  {id:"n-optik-quiz-1",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quiz G",question:"Was bedeutet G?",options:["Gegenstandsgröße","Gegenstandsweite","Bildgröße","Bildweite"],correct:0},
+  {id:"n-optik-quiz-2",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quiz g",question:"Was bedeutet g?",options:["Gegenstandsweite","Gegenstandsgröße","Bildweite","Bildgröße"],correct:0},
+  {id:"n-optik-quiz-3",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quiz B",question:"Was bedeutet B?",options:["Bildgröße","Bildweite","Gegenstandsgröße","Gegenstandsweite"],correct:0},
+  {id:"n-optik-quiz-4",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quiz b",question:"Was bedeutet b?",options:["Bildweite","Bildgröße","Gegenstandsweite","Gegenstandsgröße"],correct:0},
+  {id:"n-optik-quiz-5",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quiz Reflexion",question:"Was gilt am ebenen Spiegel?",options:["Einfallswinkel = Reflexionswinkel","Einfallswinkel ist immer 90°","Reflexionswinkel ist immer 45°","Das Lot ist parallel zum Spiegel"],correct:0},
+
+  {id:"n-arbeit-lesson-1",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"lesson",type:"lesson",title:"Das muss für die Arbeit sitzen",summary:"Schattenwurf, Lochblende und Spiegelung in kleinen Schritten wiederholen.",sections:[
+    {heading:"1. Schattenwurf",text:"Merke zuerst die vier Zeichen: G = Gegenstandsgröße, g = Gegenstandsweite, B = Bildgröße, b = Bildweite. G und B sind Höhen. g und b sind Abstände von der Lichtquelle."},
+    {heading:"2. Schatten konstruieren",text:"Zeichne Randstrahlen von der punktförmigen Lichtquelle über die obere und untere Kante des Gegenstands bis zum Schirm. Die beiden Treffpunkte begrenzen den Schatten."},
+    {heading:"3. Lochblende",text:"Von jedem betrachteten Punkt gelangt nur ein schmaler Lichtstrahl durch das Loch. Die Strahlen kreuzen sich an der Öffnung. Deshalb erscheint das Bild auf dem Schirm auf dem Kopf und seitenverkehrt."},
+    {heading:"4. Ebene Spiegel",text:"Am Auftreffpunkt zuerst das Lot im rechten Winkel zum Spiegel zeichnen. Einfallswinkel und Reflexionswinkel werden immer zum Lot gemessen und sind gleich groß."},
+    {heading:"5. Winkelspiegel",text:"Bei zwei senkrecht zueinander stehenden Spiegeln wird zweimal reflektiert. An jedem Auftreffpunkt gilt wieder: erst Lot, dann gleichen Winkel auf der anderen Seite einzeichnen."}
+  ],memory:"Reihenfolge beim Spiegel: Auftreffpunkt → Lot → Winkel zum Lot → gleichen Winkel abtragen → reflektierten Strahl zeichnen."},
+  {id:"n-arbeit-practice-1",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"G oder g?",question:"Gesucht ist der Abstand von der Lichtquelle bis zum Gegenstand. Welches Zeichen gehört dazu?",options:["g","G","b","B"],correct:0},
+  {id:"n-arbeit-practice-2",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"B oder b?",question:"Gesucht ist die Höhe des Schattenbildes auf dem Schirm. Welches Zeichen gehört dazu?",options:["B","b","G","g"],correct:0},
+  {id:"n-arbeit-practice-3",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"Randstrahl",question:"Wie wird beim Schattenwurf ein Randstrahl gezeichnet?",options:["Von der Lichtquelle über eine Kante des Gegenstands bis zum Schirm","Vom Gegenstand parallel zum Schirm","Nur vom Gegenstand bis zur Lichtquelle","Waagerecht durch die Bildmitte"],correct:0},
+  {id:"n-arbeit-practice-4",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"Lochblende",question:"Warum steht das Bild einer Kerzenflamme bei einer Lochblende auf dem Kopf?",options:["Die Lichtstrahlen kreuzen sich an der kleinen Öffnung","Der Schirm dreht das Bild um","Die Flamme spiegelt sich am Loch","Das Licht läuft immer nach unten"],correct:0},
+  {id:"n-arbeit-practice-5",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"Größere Lochblende",question:"Was passiert laut dem Unterrichtsmaterial, wenn die Öffnung der Lochblende größer wird?",options:["Das Bild wird heller, aber unschärfer","Das Bild wird kleiner und dunkler","Das Bild dreht sich um","Die Bildmitte verschwindet"],correct:0},
+  {id:"n-arbeit-practice-6",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"Lot richtig zeichnen",question:"Wie liegt das Lot zum Spiegel?",options:["Senkrecht, also im 90°-Winkel","Parallel zum Spiegel","Immer waagerecht","Immer im 45°-Winkel"],correct:0},
+  {id:"n-arbeit-practice-7",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"Winkel richtig messen",question:"Ein Lichtstrahl trifft einen Spiegel. Zwischen welchen Linien wird der Einfallswinkel gemessen?",options:["Zwischen einfallendem Strahl und Lot","Zwischen einfallendem Strahl und Spiegel","Zwischen Lot und Spiegel","Zwischen Spiegel und Blattrand"],correct:0},
+  {id:"n-arbeit-practice-8",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"Reflexionsgesetz anwenden",question:"Der Einfallswinkel zum Lot beträgt 32°. Wie groß ist der Reflexionswinkel?",options:["32°","58°","64°","90°"],correct:0},
+  {id:"n-arbeit-practice-9",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"flashcard",title:"Zeichen-Blitzcheck",question:"Nenne G, g, B und b in dieser Reihenfolge.",answer:"G = Gegenstandsgröße · g = Gegenstandsweite · B = Bildgröße · b = Bildweite"},
+  {id:"n-arbeit-quiz-1",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"quiz",type:"mcq",title:"Probe 1",question:"Welche beiden Größen sind Höhen?",options:["G und B","g und b","G und g","B und b"],correct:0},
+  {id:"n-arbeit-quiz-2",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"quiz",type:"mcq",title:"Probe 2",question:"Welche beiden Größen werden von der Lichtquelle aus als Abstand gemessen?",options:["g und b","G und B","G und b","g und B"],correct:0},
+  {id:"n-arbeit-quiz-3",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"quiz",type:"mcq",title:"Probe 3",question:"Was zeichnest du beim ebenen Spiegel als Erstes am Auftreffpunkt?",options:["Das Lot","Den Reflexionswinkel","Den Schirm","Die Bildweite"],correct:0},
+  {id:"n-arbeit-quiz-4",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"quiz",type:"mcq",title:"Probe 4",question:"Ein Einfallswinkel beträgt 47°. Welcher Reflexionswinkel gehört dazu?",options:["47°","43°","94°","90°"],correct:0},
+  {id:"n-arbeit-quiz-5",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"quiz",type:"mcq",title:"Probe 5",question:"Was bleibt bei einer größeren Lochblendenöffnung nach dem Arbeitsblatt grundsätzlich erhalten?",options:["Die Bildanordnung bzw. Bildmitte","Die gleiche Schärfe","Die gleiche Helligkeit","Die gleiche Lochgröße"],correct:0},
+  {id:"n-arbeit-quiz-6",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"quiz",type:"mcq",title:"Probe 6",question:"Was machst du am zweiten Spiegel eines Winkelspiegels?",options:["Das Reflexionsverfahren mit neuem Lot wiederholen","Den Strahl gerade durch den Spiegel zeichnen","Nur den ersten Winkel kopieren, ohne Lot","Den Strahl stoppen"],correct:0}
+
+,
+  {id:"n-light-basics-lesson-1",subject:"natur",topic:"Licht und Sehen",kind:"lesson",type:"lesson",title:"Lichtquellen und Sehen",summary:"Die Grundlagen aus den Arbeitsblättern.",sections:[
+    {heading:"Warum brauchen wir Licht?",text:"Ohne Licht können wir nicht sehen. Unsere wichtigste natürliche Lichtquelle ist die Sonne."},
+    {heading:"Natürliche und künstliche Lichtquellen",text:"Auf dem Arbeitsblatt stehen als Beispiele Sonne, Mond, Glühwürmchen, Taschenlampe und Fahrradlicht. Sonne und Glühwürmchen sind natürliche Lichtquellen; Taschenlampe und Fahrradlicht sind künstlich."},
+    {heading:"Selbstleuchtend oder beleuchtet?",text:"Nicht alles, was hell erscheint, leuchtet selbst. Der Mond wird von der Sonne beleuchtet. Sonne, Taschenlampe, Fahrradlicht und Glühwürmchen senden selbst Licht aus."},
+    {heading:"Wie sehen wir ein Buch?",text:"Licht von einer Lichtquelle fällt auf das Buch. Vom Buch gelangt Licht weiter in unser Auge. Erst dann können wir das Buch sehen."}
+  ],memory:"Sehen: Lichtquelle → Gegenstand → Auge. Der Mond wird beleuchtet und leuchtet nicht selbst."},
+  {id:"n-light-basics-practice-1",subject:"natur",topic:"Licht und Sehen",kind:"practice",type:"mcq",title:"Der Mond",question:"Welche Aussage passt zum Arbeitsblatt?",options:["Der Mond wird beleuchtet.","Der Mond ist eine künstliche Lichtquelle.","Der Mond erzeugt sein Licht mit Strom.","Der Mond ist eine Taschenlampe."],correct:0},
+  {id:"n-light-basics-practice-2",subject:"natur",topic:"Licht und Sehen",kind:"practice",type:"mcq",title:"So können wir lesen",question:"Welcher Lichtweg ist richtig, wenn du ein beleuchtetes Buch liest?",options:["Lichtquelle → Buch → Auge","Auge → Buch → Lichtquelle","Buch → Lichtquelle → Auge","Auge → Lichtquelle → Buch"],correct:0},
+  {id:"n-light-spread-lesson",subject:"natur",topic:"Ausbreitung des Lichts",kind:"lesson",type:"lesson",title:"Licht breitet sich geradlinig aus",summary:"Lichtstrahl, Lichtbündel und Blenden verstehen.",sections:[
+    {heading:"Geradlinig",text:"Die Aufgaben mit den Blenden zeigen: Licht breitet sich geradlinig aus. Damit Licht durch mehrere Öffnungen gelangt, müssen die Öffnungen auf dem geraden Lichtweg liegen."},
+    {heading:"Lichtstrahl",text:"Einen sehr schmal gedachten Lichtweg nennt man Lichtstrahl."},
+    {heading:"Lichtbündel",text:"Viele Lichtstrahlen zusammen bilden ein Lichtbündel."}
+  ],memory:"Licht breitet sich geradlinig aus. Viele Lichtstrahlen zusammen = Lichtbündel."},
+  {id:"n-light-spread-practice",subject:"natur",topic:"Ausbreitung des Lichts",kind:"practice",type:"mcq",title:"Blenden",question:"Warum kann Licht durch mehrere Blenden bis zum Auge gelangen?",options:["Weil die passenden Öffnungen auf einem geraden Lichtweg liegen.","Weil Licht um jede Ecke läuft.","Weil jede Blende neues Licht erzeugt.","Weil das Auge Licht aussendet."],correct:0},
+
+  {id:"e-vocab-lesson-1",subject:"englisch",topic:"Vokabeln & Sätze",kind:"lesson",type:"lesson",title:"Sich vorstellen",summary:"Fragen und Antworten aus dem Englischheft.",sections:[
+    {heading:"Name",text:"What's your name? – My name is Omar. / I'm Omar."},
+    {heading:"Wohnort",text:"Where do you live? – I live in Manchester. That's in England."},
+    {heading:"Sport",text:"What sports do you like? – I like running and football."},
+    {heading:"Weitere Wörter",text:"I was = ich war · nice to meet you = schön, dich kennenzulernen · to buy = kaufen"}
+  ],memory:"What's your name? · Where do you live? · What sports do you like?"},
+  {id:"e-vocab-city",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"flashcard",title:"city",question:"city",answer:"die Stadt / die Großstadt"},
+  {id:"e-vocab-town",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"flashcard",title:"town",question:"town",answer:"die Stadt"},
+  {id:"e-vocab-street",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"flashcard",title:"street",question:"street",answer:"die Straße"},
+  {id:"e-vocab-walk",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"flashcard",title:"walk",question:"walk",answer:"(zu Fuß) gehen / wandern"},
+  {id:"e-vocab-bus",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"flashcard",title:"bus",question:"bus",answer:"der Bus"},
+  {id:"e-vocab-underground",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"flashcard",title:"underground",question:"underground",answer:"die U-Bahn"},
+  {id:"e-vocab-train",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"flashcard",title:"train",question:"train",answer:"der Zug"},
+  {id:"e-vocab-car",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"flashcard",title:"car",question:"car",answer:"das Auto"},
+  {id:"e-vocab-ticket",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"flashcard",title:"ticket",question:"ticket",answer:"die Eintrittskarte"},
+  {id:"e-sentence-name",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"mcq",title:"What's your name?",question:"Welche Antwort passt zu „What's your name?“",options:["My name is Omar.","I live in Manchester.","I like football.","That's in England."],correct:0},
+  {id:"e-sentence-live",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"mcq",title:"Where do you live?",question:"Welche Antwort passt zu „Where do you live?“",options:["I live in Manchester.","My name is Omar.","I was.","Nice to meet you."],correct:0},
+  {id:"e-sentence-sports",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"mcq",title:"Sports",question:"Welche Antwort passt zu „What sports do you like?“",options:["I like running and football.","I live in Manchester.","My name is Omar.","To buy."],correct:0}
+
 ];
+
+const CUSTOM_VOCAB_KEY="lerninsel_v8_custom_vocab";
+function getCustomVocab(){try{return JSON.parse(localStorage.getItem(CUSTOM_VOCAB_KEY)||"[]")||[]}catch{return[]}}
+function vocabItem(v){return {id:v.id,subject:"englisch",topic:v.topic||"Vokabeln & Sätze",kind:"practice",type:"flashcard",title:v.en,question:v.en,answer:v.de,customVocab:true}}
+function mergeCustomVocab(){getCustomVocab().forEach(v=>{if(!DEFAULT_CONTENT.some(i=>i.id===v.id))DEFAULT_CONTENT.push(vocabItem(v))})}
+mergeCustomVocab();
 
 let role = localStorage.getItem(KEYS.role);
 let authSession = JSON.parse(localStorage.getItem(KEYS.teacherAuth) || "null");
@@ -595,6 +704,9 @@ function openItem(id){
 }
 
 function lessonExtra(i){
+  if(i.diagram==="shadow-symbols")return `<div class="lessonSection softDiagram"><h3>So liegen die vier Größen</h3><svg viewBox="0 0 760 300" class="learnSvg" aria-label="Schattenwurf mit G g B b"><line x1="40" y1="150" x2="720" y2="150" stroke="#a9b8ca" stroke-dasharray="8 8"/><circle cx="90" cy="150" r="13" fill="#f2b84b"/><text x="55" y="125">Lichtquelle</text><line x1="330" y1="105" x2="330" y2="195" stroke="#536b88" stroke-width="10"/><line x1="690" y1="60" x2="690" y2="240" stroke="#536b88" stroke-width="10"/><line x1="90" y1="150" x2="690" y2="60" stroke="#e7a84a" stroke-width="3"/><line x1="90" y1="150" x2="690" y2="240" stroke="#e7a84a" stroke-width="3"/><text x="345" y="105" font-size="30" font-weight="800">G</text><text x="705" y="70" font-size="30" font-weight="800">B</text><path d="M90 225 H330" stroke="#7d6bc5" stroke-width="5"/><text x="195" y="260" font-size="28" font-weight="800">g</text><path d="M90 280 H690" stroke="#7d6bc5" stroke-width="5"/><text x="380" y="295" font-size="28" font-weight="800">b</text></svg><div class="memoryGrid"><b>G = Gegenstandsgröße</b><b>g = Gegenstandsweite</b><b>B = Bildgröße</b><b>b = Bildweite</b></div></div>`;
+  if(i.diagram==="shadow-construction")return `<div class="lessonSection softDiagram"><h3>Die zwei Randstrahlen</h3><svg viewBox="0 0 760 260" class="learnSvg"><line x1="50" y1="135" x2="710" y2="135" stroke="#b5c1cf" stroke-dasharray="8 8"/><circle cx="90" cy="135" r="12" fill="#f2b84b"/><line x1="330" y1="95" x2="330" y2="175" stroke="#526b87" stroke-width="9"/><line x1="690" y1="45" x2="690" y2="225" stroke="#526b87" stroke-width="9"/><line x1="90" y1="135" x2="690" y2="45" stroke="#d87c69" stroke-width="4"/><line x1="90" y1="135" x2="690" y2="225" stroke="#d87c69" stroke-width="4"/><text x="160" y="70" font-size="22">Randstrahl</text><text x="350" y="90" font-size="22">Gegenstand</text><text x="610" y="30" font-size="22">Schirm</text></svg></div>`;
+  if(i.diagram==="reflection")return `<div class="lessonSection softDiagram"><h3>Spiegelung: immer zuerst das Lot</h3><svg viewBox="0 0 760 330" class="learnSvg"><line x1="100" y1="250" x2="660" y2="250" stroke="#526b87" stroke-width="10"/><circle cx="380" cy="250" r="8" fill="#263a54"/><line x1="380" y1="250" x2="380" y2="45" stroke="#91a3b7" stroke-width="3" stroke-dasharray="8 7"/><line x1="150" y1="70" x2="380" y2="250" stroke="#d87c69" stroke-width="5"/><line x1="380" y1="250" x2="610" y2="70" stroke="#6b8fd4" stroke-width="5"/><path d="M380 170 A80 80 0 0 0 317 201" fill="none" stroke="#7d6bc5" stroke-width="4"/><path d="M380 170 A80 80 0 0 1 443 201" fill="none" stroke="#7d6bc5" stroke-width="4"/><text x="390" y="65" font-size="24" font-weight="800">Lot (90° zum Spiegel)</text><text x="270" y="175" font-size="24">α</text><text x="470" y="175" font-size="24">β</text><text x="275" y="300" font-size="24">Spiegel</text></svg><div class="merksatz">α = β · Die Winkel werden zum Lot gemessen.</div></div>`;
   if(i.diagram!=="three-estates")return "";
   return `
     <div class="lessonSection" style="background:#f4f7fb">
@@ -880,6 +992,7 @@ function renderPracticeBuilder(i){
 
 /* Homework */
 function renderHomework(i){
+  if(i.type==="writing")return renderWritingHomework(i);
   const p=progressFor(i.id);let answers=Array(i.steps.length).fill(null);
   const shownSteps=i.steps.map(s=>({...s,shownOptions:shuffledOptions(s.options)}));
   $("#workInside").innerHTML=`<span class="badge">${esc(subjectMeta(i.subject).name)} · Hausaufgabe</span><h2>${esc(i.title)}</h2>
@@ -896,6 +1009,23 @@ function renderHomework(i){
     if(!ok){$("#homeFeedback").innerHTML='<div class="feedback no">Mindestens eine Auswahl passt noch nicht. Prüfe die Schritte noch einmal.</div>';return}
     await completeItem(i,i.finalText);$("#homeFeedback").innerHTML='<div class="feedback ok">✓ Richtig ausgewählt.</div>';$("#finalArea").innerHTML=`<div class="finalBox"><strong>Endfassung zum Abschreiben:</strong><br>${esc(i.finalText)}</div>`
   };
+  $("#closeHomework").onclick=()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)}
+}
+
+
+function renderWritingHomework(i){
+  const p=progressFor(i.id);let helpCount=0;
+  $("#workInside").innerHTML=`<span class="badge">${esc(subjectMeta(i.subject).name)} · Hausaufgabe</span><h2>${esc(i.title)}</h2>
+    <div class="homeworkIntro"><strong>Deine Aufgabe:</strong><p>${esc(i.question)}</p></div>
+    <div class="softPanel"><strong>Stichpunkte von der Tafel</strong><ol>${(i.bullets||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>
+    <div class="checkStrip"><span>✓ Präsens</span><span>✓ sachlich</span><span>✓ eigene Worte</span><span>✓ richtige Reihenfolge</span></div>
+    <label class="writeLabel">Dein Hauptteil<textarea id="writingAnswer" rows="9" placeholder="Schreibe hier deinen Hauptteil …">${esc(p.answer||"")}</textarea></label>
+    <div class="actions"><button id="writingHelp" class="ghost">💡 Hilfe</button><button id="writingSave" class="primary">✓ Für heute fertig</button></div>
+    <div id="writingHelpArea"></div><div id="writingFeedback"></div><button id="closeHomework" class="ghost big" style="margin-top:10px">Schließen</button>`;
+  addDialogClose("#workDialog",()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)});$("#workDialog").showModal();
+  $("#writingAnswer").oninput=()=>{p.answer=$("#writingAnswer").value;p.status="working";p.updatedAt=Date.now();saveLocal()};
+  $("#writingHelp").onclick=()=>{if(!$("#writingAnswer").value.trim()){$("#writingFeedback").innerHTML='<div class="feedback no">Schreibe zuerst selbst einen Anfang. Danach bekommst du die erste Hilfe.</div>';return}if(helpCount<(i.helps||[]).length){helpCount++;$("#writingHelpArea").innerHTML=(i.helps||[]).slice(0,helpCount).map((h,n)=>`<div class="helpBox"><strong>Hilfe ${n+1}</strong>${esc(h)}</div>`).join("")}else{$("#writingHelpArea").innerHTML+=`<div class="helpBox"><strong>Beispiel – erst mit deiner Fassung vergleichen</strong>${esc(i.finalText)}</div>`}};
+  $("#writingSave").onclick=async()=>{const a=$("#writingAnswer").value.trim();if(!a){$("#writingFeedback").innerHTML='<div class="feedback no">Schreibe zuerst deinen Hauptteil.</div>';return}await completeItem(i,a);$("#writingFeedback").innerHTML='<div class="feedback ok">✓ Gespeichert. Deine eigene Fassung bleibt erhalten.</div>'};
   $("#closeHomework").onclick=()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)}
 }
 
@@ -1106,8 +1236,8 @@ function renderTeacherPane(tab){
     p.innerHTML=`<div class="card"><h3>Fächer & Themen</h3><p class="small">Ein Fach kann beliebig viele Themen enthalten. Lernen, Üben, Hausaufgaben und Quiz gehören jeweils zum Thema.</p>
       ${Object.entries(groups).map(([k,arr])=>{const [s,t]=k.split("|");return `<div class="itemRow"><div><strong>${esc(subjectMeta(s).name)} · ${esc(t)}</strong>
         <div class="small">${arr.filter(x=>x.kind==="lesson").length} Lernen · ${arr.filter(x=>x.kind==="practice").length} Übungen · ${arr.filter(x=>x.kind==="homework").length} Hausaufgaben · ${arr.filter(x=>x.kind==="quiz").length} Quizfragen</div></div></div>`}).join("")}
-      <button id="syncDefaultContent" class="primary big" style="margin-top:12px">${teacherRoom?"Lerninhalte synchronisieren":"Zuerst Lernraum erstellen"}</button></div>`;
-    $("#syncDefaultContent").disabled=!teacherRoom;$("#syncDefaultContent").onclick=teacherSyncDefault
+      <div class="actions" style="margin-top:12px"><button id="addVocabBtn" class="ghost big">+ Englisch-Vokabeln</button><button id="syncDefaultContent" class="primary big">${teacherRoom?"Lerninhalte synchronisieren":"Zuerst Lernraum erstellen"}</button></div></div>`;
+    $("#syncDefaultContent").disabled=!teacherRoom;$("#syncDefaultContent").onclick=teacherSyncDefault;$("#addVocabBtn").onclick=teacherAddVocab
   }
   if(tab==="students"){
     p.innerHTML=`<div class="card"><div class="subjectHead"><div><h3>Schüler</h3><p class="small">Andere Schüler sehen nur Spitzname und Avatar.</p></div>
@@ -1139,6 +1269,15 @@ function renderTeacherPane(tab){
       <button id="startLiveTeacher" class="primary big" ${teacherRoom&&topics.length?"":"disabled"}>Live-Quiz erstellen</button><div id="teacherLiveArea"></div></div>`;
     $("#startLiveTeacher").onclick=teacherStartLiveQuiz
   }
+}
+function teacherAddVocab(){
+  const raw=prompt("Neue Vokabeln eingeben – eine pro Zeile:\nEnglisch | Deutsch\n\nBeispiel:\nschool | die Schule\nfriend | der Freund / die Freundin");
+  if(!raw)return;
+  const rows=raw.split(/\n+/).map(x=>x.trim()).filter(Boolean);const added=[];
+  for(const row of rows){const parts=row.split("|");if(parts.length<2)continue;const en=parts.shift().trim(),de=parts.join("|").trim();if(!en||!de)continue;added.push({id:"e-custom-"+uid(),en,de,topic:"Vokabeln & Sätze"})}
+  if(!added.length){toast("Bitte im Format Englisch | Deutsch eingeben.");return}
+  const all=getCustomVocab();all.push(...added);localStorage.setItem(CUSTOM_VOCAB_KEY,JSON.stringify(all));added.forEach(v=>DEFAULT_CONTENT.push(vocabItem(v)));
+  toast(`✓ ${added.length} Vokabel${added.length===1?"":"n"} hinzugefügt. Jetzt Lerninhalte synchronisieren.`);renderTeacherPane("content")
 }
 async function teacherCreateRoom(){
   try{
@@ -1256,3 +1395,17 @@ async function renderStudentLive(){
 
 $("#resetDeviceBtn").onclick=resetDevice;
 boot();
+
+
+(function addSoftModernStyles(){
+ const st=document.createElement("style");st.id="softModern20260917";st.textContent=`
+ :root{--softLilac:#f2efff;--softBlue:#eef6ff;--softGold:#fff7df}
+ .card,.topicSection,.lessonSection,.homeworkIntro,.stepBox,.finalBox{border-radius:22px!important;box-shadow:0 8px 28px rgba(46,66,95,.055)!important}
+ .topicSections{gap:16px}.topicSection{border:1px solid #e7ebf2!important}.primary,.ghost,.choice{border-radius:14px!important}
+ .softPanel{background:linear-gradient(135deg,#eef6ff,#f5f2ff);border:1px solid #dde7f5;border-radius:20px;padding:16px;margin:14px 0;line-height:1.55}.softPanel li{margin:6px 0}
+ .checkStrip{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.checkStrip span{background:#eef8ef;border:1px solid #d8eddc;border-radius:999px;padding:6px 10px;font-size:.88rem}
+ .writeLabel textarea{margin-top:8px;min-height:180px;border-radius:16px!important;border:1px solid #cfdbea!important;padding:14px!important;line-height:1.55}
+ .softDiagram{background:linear-gradient(135deg,#f7fbff,#f6f3ff)!important}.learnSvg{display:block;width:100%;height:auto;max-height:360px}.memoryGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.memoryGrid b{background:white;border:1px solid #dfe7f1;border-radius:14px;padding:10px;text-align:center}
+ @media(max-width:680px){.card,.topicSection,.lessonSection{border-radius:18px!important}.topicSections{display:block}.topicSection{margin-bottom:12px}.memoryGrid{grid-template-columns:1fr}.learnSvg{max-height:250px}.softPanel{padding:13px}.checkStrip span{font-size:.8rem}.actions{display:grid;grid-template-columns:1fr}.actions button{width:100%}.writeLabel textarea{min-height:220px}.lessonSection{overflow-x:auto}}
+ `;document.head.appendChild(st)
+})();
