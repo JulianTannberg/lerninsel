@@ -1457,7 +1457,7 @@ async function teacherCreateStudent(){
   try{
     await rpc("lerninsel_teacher_upsert_student",{p_room_id:teacherRoom.roomId,p_student_id:null,p_label:label,p_student_code:code},true);
     alert(`Schülerzugang für ${label}\n\nKlasse: ${teacherRoom.name}\nLernraum: ${teacherRoom.publicCode}\nSchülercode: ${code}\n\nBitte die beiden Codes jetzt weitergeben.`);await teacherPull()
-  }catch(e){if(msg)msg.textContent="Schüler konnte nicht angelegt werden. Bitte erneut versuchen.";toast("Schüler konnte nicht angelegt werden.");if(button)button.disabled=false}
+  }catch(e){const reason=e?.message?` (${e.message})`:"";if(msg)msg.textContent="Schüler konnte nicht angelegt werden"+reason;toast("Schüler konnte nicht angelegt werden.");if(button)button.disabled=false}
 }
 async function teacherDeleteStudent(id){
   if(!confirm("Schüler wirklich löschen?"))return;
