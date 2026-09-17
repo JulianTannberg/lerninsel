@@ -362,6 +362,8 @@ let authSession = JSON.parse(localStorage.getItem(KEYS.teacherAuth) || "null");
 let teacherRoom = JSON.parse(localStorage.getItem(KEYS.teacherRoom) || "null");
 let studentSession = JSON.parse(localStorage.getItem(KEYS.studentSession) || "null");
 let parentSession = JSON.parse(localStorage.getItem(KEYS.parentSession) || "null");
+let teacherTestMode = false;
+let teacherTestReturnSession = null;
 
 let state = {
   student:null,
@@ -432,10 +434,12 @@ function progressFor(id){
 }
 function pointsTotal(){return Object.values(state.progress||{}).filter(p=>p?.rewarded===true).length}
 function gameTokensAvailable(){
+  if(teacherTestMode)return 1;
   const spent = Number(state.profile?.games_spent||0);
   return Math.max(0, Math.floor(pointsTotal()/4)-spent);
 }
 function saveLocal(){
+  if(teacherTestMode)return;
   localStorage.setItem(KEYS.localProgress,JSON.stringify(state.progress));
   if(state.profile)localStorage.setItem(KEYS.localProfile,JSON.stringify(state.profile));
 }
@@ -616,14 +620,14 @@ function updateGameButton(){
   const b=$("#gameTopBtn");
   if(role!=="student"||!state.student){b.classList.add("hidden");return}
   b.classList.remove("hidden");
-  const n=gameTokensAvailable();b.textContent=n>0?`🎮 Spiel (${n})`:`🎮 Spiel 🔒`;
+  const n=gameTokensAvailable();b.textContent=teacherTestMode?"🎮 Spiel testen":n>0?`🎮 Spiel (${n})`:`🎮 Spiel 🔒`;
   b.onclick=openGame
 }
 function renderProfileBar(){
   return `<div class="card profileBar">
     <div class="profileLeft"><div class="avatar">${esc(state.profile?.avatar||"🦊")}</div>
       <div><strong>${esc(state.profile?.nickname||state.student?.label||"Schüler")}</strong>
-      <div class="small">${pointsTotal()} Inselpunkte · ${gameTokensAvailable()} Spielrunde(n)</div></div></div>
+      <div class="small">${teacherTestMode?"Testmodus · keine Speicherung":`${pointsTotal()} Inselpunkte · ${gameTokensAvailable()} Spielrunde(n)`}</div></div></div>
     <button id="editProfileBtn" class="ghost">Profil</button>
   </div>`
 }
@@ -1099,6 +1103,13 @@ function renderProfileSetup(first){
 /* Global reward game */
 async function openGame(){
   const tokens=gameTokensAvailable();
+  if(teacherTestMode){
+    $("#gameInside").innerHTML=`<span class="sectionTitle">Testmodus</span><h2>🐚 Muschel-Sammler</h2>
+      <p>Das Spiel ist zum Testen auch mit 0 Punkten freigeschaltet. Das Ergebnis wird nicht gespeichert.</p>
+      <button id="startShellGame" class="primary big">Spiel testen</button>`;
+    addDialogClose("#gameDialog");$("#gameDialog").showModal();
+    $("#startShellGame").onclick=consumeGameTokenAndStart;return
+  }
   if(tokens<=0){
     $("#gameInside").innerHTML=`<span class="sectionTitle">Minispiel</span><h2>🔒 Noch gesperrt</h2>
       <p>Für jeweils <strong>4 Inselpunkte</strong> bekommst du eine Spielrunde.</p>
@@ -1112,6 +1123,7 @@ async function openGame(){
   $("#startShellGame").onclick=consumeGameTokenAndStart
 }
 async function consumeGameTokenAndStart(){
+  if(teacherTestMode){startShellGame();return}
   if(studentSession?.demo){
     state.profile.games_spent=Number(state.profile.games_spent||0)+1;saveLocal();startShellGame();return
   }
@@ -1138,7 +1150,8 @@ function startShellGame(){
 async function finishShellGame(score){
   const old=Number(state.profile?.game_best||0);if(score>old){
     state.profile.game_best=score;
-    if(studentSession?.demo)saveLocal();
+    if(teacherTestMode){}
+    else if(studentSession?.demo)saveLocal();
     else rpc("lerninsel_student_save_game_best",{p_public_code:studentSession.roomCode,p_student_code:studentSession.studentCode,p_score:score}).catch(()=>{})
   }
   $("#gameInside").innerHTML=`<div style="text-align:center"><span class="sectionTitle">Spiel vorbei</span><div class="scoreBig">${score}</div><p>Muscheln gesammelt</p>
@@ -1184,11 +1197,13 @@ function renderParentState(r){
 
 /* ---------------- TEACHER ---------------- */
 async function bootTeacher(){
-  $("#gameTopBtn").classList.add("hidden");$("#teacherLogoutBtn").classList.remove("hidden");$("#teacherLogoutBtn").onclick=teacherLogout;
+  teacherTestMode=false;
+  $("#gameTopBtn").classList.add("hidden");$("#teacherLogoutBtn").classList.remove("hidden");$("#teacherLogoutBtn").textContent="Abmelden";$("#teacherLogoutBtn").onclick=teacherLogout;
   if(await ensureAuth())await openTeacher();else renderTeacherLogin()
 }
 function renderTeacherLogin(){
   $("#teacherLogoutBtn").classList.add("hidden");
+  $("#teacherLogoutBtn").textContent="Abmelden";
   MAIN.innerHTML=`<div class="card authCard"><span class="sectionTitle">Lehrer</span><h2>Lehrerbereich</h2>
     <label>E-Mail<input id="teacherEmail" type="email" autocomplete="username"></label>
     <label>Passwort<input id="teacherPassword" type="password" autocomplete="current-password"></label>
@@ -1223,7 +1238,7 @@ function renderTeacher(){
   const room=teacherRoom?`<span class="badge good">Lernraum ${esc(teacherRoom.publicCode)}</span>`:'<span class="badge warn">Noch kein Lernraum</span>';
   MAIN.innerHTML=`<div class="card"><span class="sectionTitle">Lehrerbereich</span><h2 style="margin:.3rem 0">Lerninsel verwalten</h2>${room}</div>
     <div class="tabs"><button class="tab active" data-tab="content">Inhalte</button><button class="tab" data-tab="students">Schüler</button>
-    <button class="tab" data-tab="progress">Lernstand</button><button class="tab" data-tab="live">Live-Quiz</button><button class="tab" data-tab="online">Online</button></div>
+    <button class="tab" data-tab="progress">Lernstand</button><button class="tab" data-tab="live">Live-Quiz</button><button class="tab" data-tab="test">Testen</button><button class="tab" data-tab="online">Online</button></div>
     <div id="teacherPane"></div>`;
   $$("[data-tab]").forEach(b=>b.onclick=()=>{$$("[data-tab]").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderTeacherPane(b.dataset.tab)});
   renderTeacherPane("content")
@@ -1236,16 +1251,16 @@ function renderTeacherPane(tab){
     p.innerHTML=`<div class="card"><h3>Fächer & Themen</h3><p class="small">Ein Fach kann beliebig viele Themen enthalten. Lernen, Üben, Hausaufgaben und Quiz gehören jeweils zum Thema.</p>
       ${Object.entries(groups).map(([k,arr])=>{const [s,t]=k.split("|");return `<div class="itemRow"><div><strong>${esc(subjectMeta(s).name)} · ${esc(t)}</strong>
         <div class="small">${arr.filter(x=>x.kind==="lesson").length} Lernen · ${arr.filter(x=>x.kind==="practice").length} Übungen · ${arr.filter(x=>x.kind==="homework").length} Hausaufgaben · ${arr.filter(x=>x.kind==="quiz").length} Quizfragen</div></div></div>`}).join("")}
-      <div class="actions" style="margin-top:12px"><button id="addVocabBtn" class="ghost big">+ Englisch-Vokabeln</button><button id="syncDefaultContent" class="primary big">${teacherRoom?"Lerninhalte synchronisieren":"Zuerst Lernraum erstellen"}</button></div></div>`;
-    $("#syncDefaultContent").disabled=!teacherRoom;$("#syncDefaultContent").onclick=teacherSyncDefault;$("#addVocabBtn").onclick=teacherAddVocab
+      <div class="actions" style="margin-top:12px"><button id="addVocabBtn" class="ghost big">+ Englisch-Vokabeln</button><button id="syncDefaultContent" class="primary big">${teacherRoom?"Lerninhalte synchronisieren":"Lernraum erstellen"}</button></div></div>`;
+    $("#syncDefaultContent").onclick=teacherRoom?teacherSyncDefault:teacherCreateRoom;$("#addVocabBtn").onclick=teacherAddVocab
   }
   if(tab==="students"){
     p.innerHTML=`<div class="card"><div class="subjectHead"><div><h3>Schüler</h3><p class="small">Andere Schüler sehen nur Spitzname und Avatar.</p></div>
-      <button id="newStudent" class="primary" ${teacherRoom?"":"disabled"}>+ Schüler</button></div>
+      <button id="newStudent" class="primary">${teacherRoom?"+ Schüler":"Lernraum erstellen"}</button></div>
       <div class="studentTable">${(state.teacher.students||[]).map(s=>{const pr=state.teacher.profiles.find(x=>x.studentId===s.id)||{};
         return `<div class="studentRow"><div><strong>${esc(s.label)}</strong><div class="small">${esc(pr.avatar||"")} ${esc(pr.nickname||"noch kein Profil")}</div></div>
           <div class="actions" style="flex:0 0 auto"><button class="ghost parentCodeBtn" data-id="${s.id}">Elterncode</button><button class="ghost deleteStudent" data-id="${s.id}">Löschen</button></div></div>`}).join("")||'<div class="small">Noch keine Schüler.</div>'}</div></div>`;
-    $("#newStudent").onclick=teacherCreateStudent;
+    $("#newStudent").onclick=teacherRoom?teacherCreateStudent:teacherCreateRoom;
     $$(".parentCodeBtn").forEach(b=>b.onclick=()=>teacherCreateParentCode(b.dataset.id));
     $$(".deleteStudent").forEach(b=>b.onclick=()=>teacherDeleteStudent(b.dataset.id))
   }
@@ -1269,6 +1284,42 @@ function renderTeacherPane(tab){
       <button id="startLiveTeacher" class="primary big" ${teacherRoom&&topics.length?"":"disabled"}>Live-Quiz erstellen</button><div id="teacherLiveArea"></div></div>`;
     $("#startLiveTeacher").onclick=teacherStartLiveQuiz
   }
+  if(tab==="test"){
+    p.innerHTML=`<div class="card"><h3>🧪 Schüleransicht testen</h3><p>Hier kannst du alle Fächer, Übungen, Quizze und das Spiel ausprobieren.</p>
+      <p class="small">Der Test beginnt mit 0 Punkten. Nichts davon wird als echter Lernstand gespeichert.</p>
+      <button id="startTeacherTest" class="primary big">Schüleransicht öffnen</button></div>`;
+    $("#startTeacherTest").onclick=startTeacherTest
+  }
+}
+
+function startTeacherTest(){
+  teacherTestMode=true;
+  teacherTestReturnSession=studentSession;
+  role="student";
+  studentSession={demo:true,teacherTest:true};
+  state.student={id:"teacher-test",label:"Test-Schüler"};
+  state.items=DEFAULT_CONTENT.map(x=>structuredClone(x));
+  state.progress={};
+  state.profile={nickname:"Test",avatar:"🦊",games_spent:0,game_best:0};
+  state.currentSubject=null;state.currentTopic=null;state.practice=null;state.quiz=null;state.live=null;
+  $("#teacherLogoutBtn").classList.remove("hidden");
+  $("#teacherLogoutBtn").textContent="← Lehreransicht";
+  $("#teacherLogoutBtn").onclick=exitTeacherTest;
+  openStudentHome()
+}
+
+async function exitTeacherTest(){
+  ["#workDialog","#profileDialog","#gameDialog","#liveDialog"].forEach(closeDialog);
+  teacherTestMode=false;
+  role="teacher";
+  studentSession=teacherTestReturnSession;
+  teacherTestReturnSession=null;
+  state.student=null;state.items=[];state.progress={};state.profile=null;
+  state.currentSubject=null;state.currentTopic=null;state.practice=null;state.quiz=null;state.live=null;
+  $("#gameTopBtn").classList.add("hidden");
+  $("#teacherLogoutBtn").textContent="Abmelden";
+  $("#teacherLogoutBtn").onclick=teacherLogout;
+  await openTeacher()
 }
 function teacherAddVocab(){
   const raw=prompt("Neue Vokabeln eingeben – eine pro Zeile:\nEnglisch | Deutsch\n\nBeispiel:\nschool | die Schule\nfriend | der Freund / die Freundin");
