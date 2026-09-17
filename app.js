@@ -9,6 +9,7 @@ const KEYS = {
   role: "lerninsel_v8_role",
   teacherAuth: "lerninsel_v8_teacher_auth",
   teacherRoom: "lerninsel_v8_teacher_room",
+  teacherCodes: "lerninsel_v9_teacher_codes",
   studentSession: "lerninsel_v8_student_session",
   parentSession: "lerninsel_v8_parent_session",
   localProgress: "lerninsel_v8_local_progress",
@@ -455,6 +456,33 @@ function randomToken(len=8){const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";const
 function roomCode(){return randomToken(8).match(/.{1,4}/g).join("-")}
 function parentCode(){return randomToken(10).match(/.{1,5}/g).join("-")}
 function quizCode(){return String(Math.floor(100000+Math.random()*900000))}
+function teacherCodeVault(){
+  try{
+    const v=JSON.parse(localStorage.getItem(KEYS.teacherCodes)||"{}");
+    return {students:v?.students||{},parents:v?.parents||{}}
+  }catch{return {students:{},parents:{}}}
+}
+function saveTeacherAccessCode(kind,id,data){
+  const v=teacherCodeVault();v[kind]??={};v[kind][id]={...data,roomId:teacherRoom?.roomId,updatedAt:Date.now()};
+  localStorage.setItem(KEYS.teacherCodes,JSON.stringify(v))
+}
+function deleteTeacherAccessCode(kind,id){
+  const v=teacherCodeVault();if(v[kind])delete v[kind][id];localStorage.setItem(KEYS.teacherCodes,JSON.stringify(v))
+}
+function savedTeacherAccessCode(kind,id){
+  const x=teacherCodeVault()?.[kind]?.[id];return x&&x.roomId===teacherRoom?.roomId?x:null
+}
+function teacherAccessText(kind,id){
+  const x=savedTeacherAccessCode(kind,id);if(!x)return "";
+  const isStudent=kind==="students";
+  const person=isStudent?(state.teacher.students||[]).find(s=>s.id===id):(state.teacher.parents||[]).find(p=>p.id===id);
+  const student=isStudent?person:(state.teacher.students||[]).find(s=>s.id===person?.studentId);
+  return ["Lerninsel – "+(isStudent?"Schülerzugang":"Elternzugang"),"https://lerninsel.memyo.de","Klasse: "+(teacherRoom?.name||""),"Lernraum-Code: "+(teacherRoom?.publicCode||""),student?"Schüler: "+student.label:"",!isStudent&&person?"Elternzugang: "+person.label:"",(isStudent?"Schülercode: ":"Elterncode: ")+x.code].filter(Boolean).join("\n")
+}
+async function copyTeacherAccess(kind,id){
+  const text=teacherAccessText(kind,id);if(!text){toast("Der bisherige Code kann nicht ausgelesen werden. Bitte einen neuen vergeben.");return}
+  try{await navigator.clipboard.writeText(text);toast("✓ Zugangsdaten kopiert.")}catch{prompt("Zugangsdaten kopieren:",text)}
+}
 function shuffledOptions(options){
   const arr=(options||[]).map((text,originalIndex)=>({text,originalIndex}));
   for(let i=arr.length-1;i>0;i--){
@@ -1443,19 +1471,23 @@ function renderTeacherPane(tab){
   }
   if(tab==="students"){
     const suggestedCode=String(Math.floor(100000+Math.random()*900000));
-    p.innerHTML=`<div class="card"><span class="sectionTitle">${esc(teacherRoom?.name||"Klasse")}</span><h3>Schüler und Eltern</h3><p class="small">Jeder Schüler erhält einen eigenen Code. Eltern bekommen einen getrennten Elterncode.</p>
+    p.innerHTML=`<div class="card"><span class="sectionTitle">${esc(teacherRoom?.name||"Klasse")}</span><h3>Schüler und Eltern</h3><p class="small">Neue und neu vergebene Codes kannst du hier erneut kopieren. Ältere Codes wurden nur verschlüsselt gespeichert und müssen einmal neu vergeben werden.</p>
       ${teacherRoom?`<div class="teacherForm"><h4>Neuen Schüler anlegen</h4><label>Name oder Kürzel<input id="studentLabel" placeholder="z. B. Niklas"></label>
         <label>Persönlicher Schülercode<input id="studentCode" inputmode="numeric" maxlength="12" value="${suggestedCode}"></label>
         <button id="newStudent" class="primary big" style="margin-top:10px">Schüler anlegen</button><p id="studentCreateMsg" class="small"></p></div>`:
         `<p>Noch kein Lernraum vorhanden.</p><button id="newStudent" class="primary big">Lernraum erstellen</button>`}
-      <div class="studentTable">${(state.teacher.students||[]).map(s=>{const pr=state.teacher.profiles.find(x=>x.studentId===s.id)||{};
+      <div class="studentTable">${(state.teacher.students||[]).map(s=>{const pr=state.teacher.profiles.find(x=>x.studentId===s.id)||{},studentCode=savedTeacherAccessCode("students",s.id);
         const parents=(state.teacher.parents||[]).filter(x=>x.studentId===s.id&&x.active);
         return `<div class="libraryItem"><div class="studentRow" style="border:0;padding:0"><div><strong>${esc(s.label)}</strong><div class="small">${esc(pr.avatar||"")} ${esc(pr.nickname||"noch kein Profil")} · ${parents.length} ${parents.length===1?"Elternzugang":"Elternzugänge"}</div></div><div class="actions" style="flex:0 0 auto"><button class="ghost showParentForm" data-id="${s.id}">+ Eltern</button><button class="ghost deleteStudent" data-id="${s.id}">Löschen</button></div></div>
-          ${parents.length?`<div class="savedWords">${parents.map(x=>`<span>👪 ${esc(x.label)}</span>`).join("")}</div>`:""}
+          <div class="teacherForm"><strong>🎒 Schülercode: ${studentCode?`<code>${esc(studentCode.code)}</code>`:"nicht auslesbar"}</strong><div class="actions" style="margin-top:8px"><button class="ghost copyAccess" data-kind="students" data-id="${s.id}" ${studentCode?"":"disabled"}>Zugang kopieren</button><button class="ghost resetStudentCode" data-id="${s.id}">Code neu vergeben</button></div>${studentCode?"":'<div class="small">Der alte Code wurde nur verschlüsselt gespeichert.</div>'}</div>
+          ${parents.map(x=>{const pc=savedTeacherAccessCode("parents",x.id);return `<div class="studentRow"><div><strong>👪 ${esc(x.label)}</strong><div class="small">Elterncode: ${pc?`<code>${esc(pc.code)}</code>`:"nicht auslesbar"}</div></div><div class="actions"><button class="ghost copyAccess" data-kind="parents" data-id="${x.id}" ${pc?"":"disabled"}>Kopieren</button><button class="ghost resetParentCode" data-id="${x.id}">Code neu</button></div></div>`}).join("")}
           <div class="parentForm hidden" data-parent-form="${s.id}"><label>Name/Bezeichnung<input class="parentLabel" placeholder="z. B. Mutter"></label><label>Elterncode<input class="parentAccessCode" value="${parentCode()}"></label><button class="primary big createParentAccess" data-id="${s.id}">Elternzugang erstellen</button><p class="small parentMsg"></p></div></div>`}).join("")||'<div class="small">Noch keine Schüler.</div>'}</div></div>`;
     $("#newStudent").onclick=teacherRoom?teacherCreateStudent:teacherCreateRoom;
     $$(".showParentForm").forEach(b=>b.onclick=()=>document.querySelector(`[data-parent-form="${b.dataset.id}"]`)?.classList.toggle("hidden"));
     $$(".createParentAccess").forEach(b=>b.onclick=()=>teacherCreateParentAccess(b.dataset.id));
+    $$(".copyAccess").forEach(b=>b.onclick=()=>copyTeacherAccess(b.dataset.kind,b.dataset.id));
+    $$(".resetStudentCode").forEach(b=>b.onclick=()=>teacherResetStudentCode(b.dataset.id));
+    $$(".resetParentCode").forEach(b=>b.onclick=()=>teacherResetParentCode(b.dataset.id));
     $$(".deleteStudent").forEach(b=>b.onclick=()=>teacherDeleteStudent(b.dataset.id))
   }
   if(tab==="progress"){
@@ -1593,22 +1625,48 @@ async function teacherCreateStudent(){
   if(!code||code.length<4){if(msg)msg.textContent="Bitte einen Schülercode mit mindestens vier Zeichen eingeben.";return}
   if(button)button.disabled=true;if(msg)msg.textContent="Schüler wird angelegt …";
   try{
-    await rpc("lerninsel_teacher_upsert_student",{p_room_id:teacherRoom.roomId,p_student_id:null,p_label:label,p_student_code:code},true);
+    const studentId=await rpc("lerninsel_teacher_upsert_student",{p_room_id:teacherRoom.roomId,p_student_id:null,p_label:label,p_student_code:code},true);
+    saveTeacherAccessCode("students",studentId,{code,label});
     alert(`Schülerzugang für ${label}\n\nKlasse: ${teacherRoom.name}\nLernraum: ${teacherRoom.publicCode}\nSchülercode: ${code}\n\nBitte die beiden Codes jetzt weitergeben.`);await teacherPull()
   }catch(e){const reason=e?.message?` (${e.message})`:"";if(msg)msg.textContent="Schüler konnte nicht angelegt werden"+reason;toast("Schüler konnte nicht angelegt werden.");if(button)button.disabled=false}
 }
 async function teacherDeleteStudent(id){
   if(!confirm("Schüler wirklich löschen?"))return;
-  try{await rpc("lerninsel_teacher_delete_student",{p_room_id:teacherRoom.roomId,p_student_id:id},true);await teacherPull()}catch{toast("Löschen fehlgeschlagen.")}
+  try{
+    const parentIds=(state.teacher.parents||[]).filter(x=>x.studentId===id).map(x=>x.id);
+    await rpc("lerninsel_teacher_delete_student",{p_room_id:teacherRoom.roomId,p_student_id:id},true);
+    deleteTeacherAccessCode("students",id);parentIds.forEach(x=>deleteTeacherAccessCode("parents",x));await teacherPull()
+  }catch{toast("Löschen fehlgeschlagen.")}
 }
 async function teacherCreateParentAccess(studentId){
   const form=document.querySelector(`[data-parent-form="${studentId}"]`),label=form?.querySelector(".parentLabel")?.value.trim(),code=form?.querySelector(".parentAccessCode")?.value.trim(),msg=form?.querySelector(".parentMsg");
   if(!label){if(msg)msg.textContent="Bitte eine Bezeichnung eingeben, zum Beispiel Mutter oder Vater.";return}
   if(!code||code.length<6){if(msg)msg.textContent="Der Elterncode ist zu kurz.";return}
   try{
-    await rpc("lerninsel_teacher_create_parent_access",{p_room_id:teacherRoom.roomId,p_student_id:studentId,p_label:label,p_parent_code:code},true);
+    const parentId=await rpc("lerninsel_teacher_create_parent_access",{p_room_id:teacherRoom.roomId,p_student_id:studentId,p_label:label,p_parent_code:code},true);
+    saveTeacherAccessCode("parents",parentId,{code,label,studentId});
     alert(`Elternzugang für ${label}\n\nKlasse: ${teacherRoom.name}\nLernraum: ${teacherRoom.publicCode}\nElterncode: ${code}\n\nBitte den Code jetzt weitergeben.`);await teacherPull()
   }catch(e){if(msg)msg.textContent="Elternzugang konnte nicht erstellt werden. Bitte die v9-SQL-Datei prüfen."}
+}
+async function teacherResetStudentCode(studentId){
+  const student=(state.teacher.students||[]).find(x=>x.id===studentId);if(!student)return;
+  if(!confirm("Für "+student.label+" einen neuen Schülercode vergeben? Der alte Code funktioniert danach nicht mehr."))return;
+  const code=String(Math.floor(100000+Math.random()*900000));
+  try{
+    await rpc("lerninsel_teacher_upsert_student",{p_room_id:teacherRoom.roomId,p_student_id:studentId,p_label:student.label,p_student_code:code},true);
+    saveTeacherAccessCode("students",studentId,{code,label:student.label});
+    alert("Neuer Schülercode für "+student.label+": "+code);await teacherPull()
+  }catch(e){toast("Schülercode konnte nicht neu vergeben werden.")}
+}
+async function teacherResetParentCode(parentId){
+  const parent=(state.teacher.parents||[]).find(x=>x.id===parentId);if(!parent)return;
+  if(!confirm("Für "+parent.label+" einen neuen Elterncode vergeben? Der alte Code funktioniert danach nicht mehr."))return;
+  const code=parentCode();
+  try{
+    await rpc("lerninsel_teacher_reset_parent_access",{p_room_id:teacherRoom.roomId,p_parent_id:parentId,p_parent_code:code},true);
+    saveTeacherAccessCode("parents",parentId,{code,label:parent.label,studentId:parent.studentId});
+    alert("Neuer Elterncode für "+parent.label+": "+code);await teacherPull()
+  }catch(e){toast("Bitte zuerst die beigefügte SQL-Datei für die Code-Verwaltung in Supabase ausführen.")}
 }
 
 /* Live quiz: polling, Supabase migration required */
