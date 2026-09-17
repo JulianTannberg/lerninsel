@@ -255,7 +255,21 @@ const DEFAULT_CONTENT = [
   ],memory:"Inhaltsangabe = Präsens + sachlich + eigene Worte + richtige Reihenfolge."},
   {id:"d-balladen-practice-1",subject:"deutsch",topic:"Balladen",kind:"practice",type:"mcq",title:"Regel der Inhaltsangabe",question:"Welche Formulierung passt zu einer Inhaltsangabe?",options:["Das Schiff fährt über den Eriesee.","Ich finde John Maynard unglaublich mutig!","Plötzlich passiert etwas unfassbar Schreckliches!","Du musst dir vorstellen, wie schlimm das ist."],correct:0},
   {id:"d-balladen-practice-2",subject:"deutsch",topic:"Balladen",kind:"practice",type:"mcq",title:"Welche Zeitform?",question:"In welcher Zeitform wird die Inhaltsangabe geschrieben?",options:["Präsens","Präteritum","Futur","Perfekt"],correct:0},
-  {id:"d-balladen-homework-main",subject:"deutsch",topic:"Balladen",kind:"homework",type:"writing",title:"John Maynard: Hauptteil schreiben",summary:"Aus den Stichpunkten der Tafel einen zusammenhängenden Hauptteil schreiben.",question:"Schreibe aus den Stichpunkten einen sachlichen Hauptteil der Inhaltsangabe. Nutze Präsens und eigene Worte.",bullets:["Der Steuermann fährt das Schiff über den Eriesee.","Es bricht ein Feuer auf dem Schiff aus.","Die Menschen auf dem Boot bekommen Angst.","John Maynard hält trotz des Feuers durch.","Der Strand ist die Rettung für das Boot und John Maynard hält darauf zu.","Alle werden gerettet. John Maynard gibt sein Leben für die Fahrgäste.","Die Menschen ehren John Maynard mit Blumen und beerdigen ihn.","Die Menschen trauern um John Maynard und danken ihm."],helps:["Beginne mit der Fahrt über den Eriesee und schreibe danach, dass Feuer ausbricht.","Schreibe anschließend, wie die Menschen reagieren und dass John Maynard trotz des Feuers am Steuer bleibt.","Beende den Hauptteil mit Rettung, Tod John Maynards, Ehrung und Trauer. Bleibe sachlich und im Präsens."],finalText:"Das Schiff fährt über den Eriesee. Während der Fahrt bricht auf dem Schiff ein Feuer aus und die Fahrgäste bekommen Angst. John Maynard bleibt trotz des Feuers am Steuer und steuert das Schiff auf das rettende Ufer zu. Die Fahrgäste werden gerettet, John Maynard stirbt jedoch. Anschließend ehren und beerdigen ihn die Menschen. Sie trauern um ihn und danken ihm für die Rettung."},
+  {
+    id:"d-balladen-homework-main",subject:"deutsch",topic:"Balladen",kind:"homework",type:"writing",
+    title:"John Maynard: Inhaltsangabe Schritt für Schritt",
+    summary:"Aus Einleitung und vier kleinen Abschnitten entsteht deine vollständige Inhaltsangabe.",
+    question:"Beginne mit dem Einleitungssatz und bearbeite danach die Handlung in vier Abschnitten. Nutze die Satzhilfe nur, wenn du nicht weiterkommst.",
+    bullets:["Der Steuermann fährt das Schiff über den Eriesee.","Es bricht ein Feuer auf dem Schiff aus.","Die Menschen auf dem Boot bekommen Angst.","John Maynard hält trotz des Feuers durch.","Der Strand ist die Rettung für das Boot und John Maynard hält darauf zu.","Alle werden gerettet. John Maynard gibt sein Leben für die Fahrgäste.","Die Menschen ehren John Maynard mit Blumen und beerdigen ihn.","Die Menschen trauern um John Maynard und danken ihm."],
+    guidedParts:[
+      {heading:"1. Einleitungssatz",prompt:"Nenne Titel, Autor, Textsorte und das Thema der Ballade in einem Satz.",bullets:["Titel: John Maynard","Autor: Theodor Fontane","Textsorte: Ballade","Thema: Ein Steuermann rettet die Fahrgäste eines brennenden Schiffes und stirbt dabei."],starter:"Die Ballade „…“ von … handelt von …",example:"Die Ballade „John Maynard“ von Theodor Fontane handelt von einem Steuermann, der die Fahrgäste eines brennenden Schiffes rettet und dabei stirbt."},
+      {heading:"2. Fahrt und Feuer",prompt:"Schreibe ein oder zwei Sätze: Wo fährt das Schiff und was geschieht während der Fahrt?",bullets:["Der Steuermann fährt das Schiff über den Eriesee.","Auf dem Schiff bricht ein Feuer aus."],starter:"Das Schiff fährt … Während der Fahrt …",example:"Das Schiff fährt über den Eriesee. Während der Fahrt bricht auf dem Schiff ein Feuer aus."},
+      {heading:"3. Angst und Durchhalten",prompt:"Wie reagieren die Menschen? Was tut John Maynard trotzdem?",bullets:["Die Fahrgäste bekommen Angst.","John Maynard bleibt trotz des Feuers am Steuer.","Er hält auf das rettende Ufer zu."],starter:"Die Fahrgäste … Trotzdem bleibt John Maynard …",example:"Die Fahrgäste bekommen Angst. Trotzdem bleibt John Maynard am Steuer und hält auf das rettende Ufer zu."},
+      {heading:"4. Rettung und Tod",prompt:"Was geschieht am Ufer? Was passiert mit John Maynard?",bullets:["Alle Fahrgäste werden gerettet.","John Maynard gibt sein Leben für die Menschen."],starter:"Am Ufer werden … John Maynard jedoch …",example:"Am Ufer werden alle Fahrgäste gerettet. John Maynard jedoch stirbt, weil er sein Leben für die Menschen gibt."},
+      {heading:"5. Ehrung und Trauer",prompt:"Wie reagieren die Menschen nach seinem Tod?",bullets:["Die Menschen ehren und beerdigen John Maynard.","Sie trauern um ihn und danken ihm."],starter:"Anschließend … Die Menschen …",example:"Anschließend ehren und beerdigen die Menschen John Maynard. Sie trauern um ihn und danken ihm für die Rettung."}
+    ],
+    finalText:"Die Ballade „John Maynard“ von Theodor Fontane handelt von einem Steuermann, der die Fahrgäste eines brennenden Schiffes rettet und dabei stirbt. Das Schiff fährt über den Eriesee. Während der Fahrt bricht auf dem Schiff ein Feuer aus. Die Fahrgäste bekommen Angst. Trotzdem bleibt John Maynard am Steuer und hält auf das rettende Ufer zu. Am Ufer werden alle Fahrgäste gerettet. John Maynard jedoch stirbt, weil er sein Leben für die Menschen gibt. Anschließend ehren und beerdigen die Menschen John Maynard. Sie trauern um ihn und danken ihm für die Rettung."
+  },
 
   {id:"n-optik-lesson-symbols",subject:"natur",topic:"Licht und Optik",kind:"lesson",type:"lesson",title:"Schattenwurf: G, g, B und b",summary:"Die vier Zeichen sicher unterscheiden.",diagram:"shadow-symbols",sections:[
     {heading:"G – Gegenstandsgröße",text:"G ist die Größe bzw. Höhe des Gegenstands. Sie wird senkrecht am Gegenstand gemessen."},
@@ -353,9 +367,55 @@ const DEFAULT_CONTENT = [
 
 const CUSTOM_VOCAB_KEY="lerninsel_v8_custom_vocab";
 function getCustomVocab(){try{return JSON.parse(localStorage.getItem(CUSTOM_VOCAB_KEY)||"[]")||[]}catch{return[]}}
-function vocabItem(v){return {id:v.id,subject:"englisch",topic:v.topic||"Vokabeln & Sätze",kind:"practice",type:"flashcard",title:v.en,question:v.en,answer:v.de,customVocab:true}}
+function vocabItem(v){return {id:v.id,subject:"englisch",topic:v.topic||"Vokabeln & Sätze",kind:"practice",type:"vocab",title:v.en,question:v.en,answer:v.de,en:v.en,de:v.de,customVocab:true}}
 function mergeCustomVocab(){getCustomVocab().forEach(v=>{if(!DEFAULT_CONTENT.some(i=>i.id===v.id))DEFAULT_CONTENT.push(vocabItem(v))})}
 mergeCustomVocab();
+
+function isVocabItem(i){
+  return i?.subject==="englisch"&&i?.kind==="practice"&&["vocab","flashcard"].includes(i?.type)&&!!i?.question&&!!i?.answer
+}
+function vocabParts(i){return {en:String(i.en||i.question||"").trim(),de:String(i.de||i.answer||"").trim()}}
+function vocabRecord(i,direction){
+  const p=progressFor(i.id);p.vocab??={};p.vocab[direction]??={streak:0,nextDue:0,lastSeen:0};
+  return p.vocab[direction]
+}
+function vocabIntervalDays(streak){return [0,1,3,7,14,30,60][Math.min(Math.max(0,streak),6)]}
+function vocabDueEntries(items){
+  const now=Date.now(),due=[];
+  items.filter(isVocabItem).forEach(i=>["en-de","de-en"].forEach(direction=>{
+    const rec=vocabRecord(i,direction);
+    if(!rec.nextDue||rec.nextDue<=now)due.push({...i,_vocabDirection:direction,_practiceKey:i.id+"::"+direction,_dueAt:rec.nextDue||0})
+  }));
+  for(let n=due.length-1;n>0;n--){const j=Math.floor(Math.random()*(n+1));[due[n],due[j]]=[due[j],due[n]]}
+  return due.sort((a,b)=>(a._dueAt||0)-(b._dueAt||0))
+}
+function preparePracticeItems(items){
+  const normal=items.filter(i=>!isVocabItem(i));
+  return [...vocabDueEntries(items).slice(0,12),...normal]
+}
+function normalizeVocabAnswer(value){
+  return String(value||"").toLocaleLowerCase("de-DE").replace(/[’‘]/g,"'").replace(/[.,!?;:"]/g,"").replace(/\s+/g," ").trim()
+}
+function vocabAnswerVariants(raw,direction){
+  const out=new Set();
+  String(raw||"").split(/\s*[\/;]\s*/).filter(Boolean).forEach(part=>{
+    const withParentheses=part.replace(/[()]/g," ");
+    const withoutParentheses=part.replace(/\([^)]*\)/g," ");
+    [withParentheses,withoutParentheses].forEach(v=>{
+      const n=normalizeVocabAnswer(v);if(!n)return;out.add(n);
+      if(direction==="en-de")out.add(n.replace(/^(der|die|das|ein|eine)\s+/,""))
+    })
+  });
+  return [...out]
+}
+function recordVocabResult(i,direction,ok){
+  const rec=vocabRecord(i,direction),p=progressFor(i.id),now=Date.now();
+  rec.lastSeen=now;
+  if(ok){rec.streak=(rec.streak||0)+1;rec.nextDue=now+vocabIntervalDays(rec.streak)*86400000}
+  else{rec.streak=0;rec.nextDue=now}
+  p.attempts=(p.attempts||0)+1;p.updatedAt=now;saveLocal();
+  syncStudentProgress(i.id);studentEvent(i.id,"vocab_checked",{direction,ok,streak:rec.streak,nextDue:rec.nextDue})
+}
 
 let role = localStorage.getItem(KEYS.role);
 let authSession = JSON.parse(localStorage.getItem(KEYS.teacherAuth) || "null");
@@ -694,8 +754,8 @@ function renderTopic(subjectId,topic){
       <section class="card topicSection"><h3>📖 Lernen</h3><p class="hint">Erst lesen und verstehen. Beim Tippen auf „Gelesen“ wird gespeichert und die Seite schließt automatisch.</p>
         <div class="lessonList">${lessons.map(itemRow).join("")||'<div class="small">Noch nichts hinterlegt.</div>'}</div>
       </section>
-      <section class="card topicSection"><h3>🧠 Üben</h3><p class="hint">Eine Aufgabe nach der anderen. Falsche oder unsichere Aufgaben kommen am Ende noch einmal.</p>
-        ${practice.length?`<button id="startPractice" class="primary big">Übungsrunde starten · ${practiceDone}/${practice.length} erledigt</button>`:'<div class="small">Noch keine Übungen.</div>'}
+      <section class="card topicSection"><h3>🧠 Üben</h3><p class="hint">${practice.some(isVocabItem)?"Vokabeln werden in beide Richtungen geschrieben. Richtige Wörter kommen seltener, bleiben aber im Wiederholungsplan.":"Eine Aufgabe nach der anderen. Falsche oder unsichere Aufgaben kommen am Ende noch einmal."}</p>
+        ${practice.length?`<button id="startPractice" class="primary big">${practice.some(isVocabItem)?"Schreibtraining starten":"Übungsrunde starten"} · ${practiceDone}/${practice.length} erledigt</button>`:'<div class="small">Noch keine Übungen.</div>'}
       </section>
       <section class="card topicSection"><h3>✏️ Hausaufgaben</h3><p class="hint">Die echte Aufgabe zuerst. Hilfen führen Schritt für Schritt weiter.</p>
         <div class="homeworkList">${home.map(itemRow).join("")||'<div class="small">Noch keine Hausaufgaben.</div>'}</div>
@@ -765,7 +825,9 @@ function renderLesson(i){
 
 /* Practice session */
 function startPractice(items){
-  state.practice={queue:[...items],retry:[],index:0,round:1,current:null,locked:false};
+  const prepared=preparePracticeItems(items);
+  state.practice={queue:prepared.length?prepared:[...items.filter(i=>!isVocabItem(i))],retry:[],index:0,round:1,current:null,locked:false};
+  if(!state.practice.queue.length){state.practice=null;toast("✓ Für heute sind alle Vokabeln wiederholt.");return}
   nextPractice()
 }
 function nextPractice(){
@@ -783,11 +845,12 @@ function practiceHead(){
   const s=state.practice;
   return `<div class="sessionHead"><span>${s.round===1?`Aufgabe ${s.index} von ${s.queue.length}`:`Wiederholung · ${s.index} von ${s.queue.length}`}</span><span>${s.round===1?"Üben":"Nochmal dran"}</span></div>`
 }
-function retryPractice(i,msg){
+function retryPractice(i,msg,delay=850){
   const s=state.practice;if(!s||s.locked)return;s.locked=true;
-  if(!s.retry.some(x=>x.id===i.id))s.retry.push(i);
+  const key=i._practiceKey||i.id;
+  if(!s.retry.some(x=>(x._practiceKey||x.id)===key))s.retry.push(i);
   const f=$("#practiceFeedback");if(f)f.innerHTML=`<div class="feedback no">${esc(msg)}</div>`;
-  setTimeout(nextPractice,850)
+  setTimeout(nextPractice,delay)
 }
 async function correctPractice(i,msg="✓ Richtig!"){
   const s=state.practice;if(!s||s.locked)return;s.locked=true;
@@ -797,6 +860,7 @@ async function correctPractice(i,msg="✓ Richtig!"){
 }
 function renderPracticeItem(i){
   if(i.type==="mcq")renderPracticeMCQ(i);
+  else if(isVocabItem(i))renderVocabWriting(i);
   else if(i.type==="flashcard")renderFlashcard(i);
   else if(i.type==="cloze")renderPracticeCloze(i);
   else if(i.type==="builder")renderPracticeBuilder(i);
@@ -974,6 +1038,29 @@ function renderPracticeMCQ(i){
     if(selected===i.correct)correctPractice(i);else retryPractice(i,"Noch nicht richtig. Diese Frage kommt am Ende noch einmal.")
   }
 }
+function renderVocabWriting(i){
+  const direction=i._vocabDirection||"en-de",parts=vocabParts(i);
+  const prompt=direction==="en-de"?parts.en:parts.de;
+  const expected=direction==="en-de"?parts.de:parts.en;
+  const instruction=direction==="en-de"?"Schreibe die deutsche Bedeutung.":"Schreibe das englische Wort.";
+  $("#workInside").innerHTML=practiceHead()+`<span class="badge">🇬🇧 Vokabeln · ${direction==="en-de"?"Englisch → Deutsch":"Deutsch → Englisch"}</span>
+    <div class="small">${esc(instruction)}</div><div class="question">${esc(prompt)}</div>
+    <label class="writeLabel">Deine Antwort<input id="vocabWriteAnswer" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Antwort eintippen …"></label>
+    <button id="checkVocabWrite" class="primary big">Prüfen</button><div id="practiceFeedback"></div>`;
+  const input=$("#vocabWriteAnswer"),check=$("#checkVocabWrite");
+  input.focus();
+  const submit=()=>{
+    if(state.practice?.locked)return;
+    const answer=input.value.trim();
+    if(!answer){$("#practiceFeedback").innerHTML='<div class="feedback no">Schreibe zuerst eine Antwort.</div>';return}
+    const ok=vocabAnswerVariants(expected,direction).includes(normalizeVocabAnswer(answer));
+    recordVocabResult(i,direction,ok);
+    if(ok)correctPractice(i,"✓ Richtig geschrieben!");
+    else retryPractice(i,`Noch nicht richtig. Richtig wäre: ${expected}`,1700)
+  };
+  check.onclick=submit;
+  input.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();submit()}})
+}
 function renderFlashcard(i){
   $("#workInside").innerHTML=practiceHead()+`<span class="badge">${esc(subjectMeta(i.subject).name)} · Flashkarte</span>
     <div class="flashcard"><div id="flashFront"><div class="small">Überlege zuerst selbst.</div><div class="front">${esc(i.question)}</div></div>
@@ -1036,7 +1123,58 @@ function renderHomework(i){
 }
 
 
+function renderGuidedWritingHomework(i){
+  const p=progressFor(i.id),parts=i.guidedParts||[];
+  let answers=Array.isArray(p.guidedAnswers)?p.guidedAnswers.slice(0,parts.length):[];
+  while(answers.length<parts.length)answers.push("");
+  const checks={...(p.guidedChecks||{})},helpLevels=Array(parts.length).fill(0);
+  const combinedText=()=>answers.map(x=>(x||"").trim()).filter(Boolean).join("\n\n");
+  const checked=k=>checks[k]?"checked":"";
+  $("#workInside").innerHTML=`<span class="badge">${esc(subjectMeta(i.subject).name)} · Hausaufgabe</span><h2>${esc(i.title)}</h2>
+    ${homeworkDateText(i)?`<div class="badge warn">📅 ${esc(homeworkDateText(i))}</div>`:""}${originalPagesHtml(i)}
+    <div class="homeworkIntro"><strong>Deine Aufgabe:</strong><p>${esc(i.question)}</p></div>
+    ${parts.map((part,n)=>`<div class="stepBox guidedWritingStep">
+      <h3>${esc(part.heading)}</h3><p>${esc(part.prompt)}</p>
+      <div class="softPanel"><strong>Diese Stichpunkte gehören hierhin:</strong><ul>${part.bullets.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+      <label class="writeLabel">Deine Sätze<textarea class="guidedTextPart" data-part="${n}" rows="4" placeholder="Schreibe hier mit deinen eigenen Worten …">${esc(answers[n]||"")}</textarea></label>
+      <button class="ghost guidedPartHelp" data-help-part="${n}">💡 Satzanfang</button>
+      <div class="guidedPartHelpArea" id="guidedHelp${n}"></div>
+    </div>`).join("")}
+    <div class="finalBox"><strong>Deine Inhaltsangabe bisher:</strong><div id="guidedCombined" style="white-space:pre-wrap;margin-top:8px">${esc(combinedText()||"Deine Abschnitte werden hier zusammengesetzt.")}</div></div>
+    <div class="lessonSection"><strong>Zum Schluss selbst prüfen:</strong>
+      <label><input class="writingCheck" data-check="intro" type="checkbox" ${checked("intro")}> Titel, Autor, Textsorte und Thema stehen in der Einleitung.</label>
+      <label><input class="writingCheck" data-check="present" type="checkbox" ${checked("present")}> Ich habe im Präsens geschrieben.</label>
+      <label><input class="writingCheck" data-check="factual" type="checkbox" ${checked("factual")}> Mein Text ist sachlich.</label>
+      <label><input class="writingCheck" data-check="own" type="checkbox" ${checked("own")}> Ich habe eigene Worte benutzt.</label>
+      <label><input class="writingCheck" data-check="order" type="checkbox" ${checked("order")}> Die Reihenfolge stimmt.</label>
+    </div>
+    <button id="guidedWritingSave" class="primary big">✓ Für heute fertig</button>
+    <div id="writingFeedback"></div><button id="closeHomework" class="ghost big" style="margin-top:10px">Schließen</button>`;
+  addDialogClose("#workDialog",()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)});$("#workDialog").showModal();
+  const refreshCombined=()=>{const out=$("#guidedCombined");if(out)out.textContent=combinedText()||"Deine Abschnitte werden hier zusammengesetzt."};
+  $$(".guidedTextPart").forEach(el=>el.oninput=()=>{
+    const n=+el.dataset.part;answers[n]=el.value;p.guidedAnswers=answers;p.answer=combinedText();p.status="working";p.updatedAt=Date.now();saveLocal();refreshCombined()
+  });
+  $$(".guidedPartHelp").forEach(button=>button.onclick=()=>{
+    const n=+button.dataset.helpPart,part=parts[n];helpLevels[n]=Math.min(2,helpLevels[n]+1);
+    $("#guidedHelp"+n).innerHTML=`<div class="helpBox"><strong>${helpLevels[n]===1?"Satzanfang":"Beispiel zum Vergleichen"}</strong>
+      <p>${esc(helpLevels[n]===1?part.starter:part.example)}</p></div>`;
+    button.textContent=helpLevels[n]===1?"💡 Noch mehr Hilfe":"✓ Alle Hilfen angezeigt";
+    if(helpLevels[n]>=2)button.disabled=true
+  });
+  $$(".writingCheck").forEach(c=>c.onchange=()=>{checks[c.dataset.check]=c.checked;p.guidedChecks=checks;saveLocal()});
+  $("#guidedWritingSave").onclick=async()=>{
+    const missing=answers.findIndex(x=>!(x||"").trim());
+    if(missing>=0){$("#writingFeedback").innerHTML=`<div class="feedback no">Bearbeite zuerst Abschnitt ${missing+1}.</div>`;return}
+    if(["intro","present","factual","own","order"].some(k=>!checks[k])){$("#writingFeedback").innerHTML='<div class="feedback no">Prüfe deinen Text und setze danach alle fünf Haken.</div>';return}
+    const answer=combinedText();p.guidedAnswers=answers;p.guidedChecks=checks;await completeItem(i,answer);
+    $("#writingFeedback").innerHTML='<div class="feedback ok">✓ Gespeichert. Deine eigene Inhaltsangabe wurde übernommen.</div>'
+  };
+  $("#closeHomework").onclick=()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)}
+}
+
 function renderWritingHomework(i){
+  if((i.guidedParts||[]).length)return renderGuidedWritingHomework(i);
   const p=progressFor(i.id);let helpCount=0;
   $("#workInside").innerHTML=`<span class="badge">${esc(subjectMeta(i.subject).name)} · Hausaufgabe</span><h2>${esc(i.title)}</h2>
     ${homeworkDateText(i)?`<div class="badge warn">📅 ${esc(homeworkDateText(i))}</div>`:""}${originalPagesHtml(i)}
