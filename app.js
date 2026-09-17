@@ -291,7 +291,7 @@ const DEFAULT_CONTENT = [
   {id:"n-optik-quiz-4",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quiz b",question:"Was bedeutet b?",options:["Bildweite","Bildgröße","Gegenstandsweite","Gegenstandsgröße"],correct:0},
   {id:"n-optik-quiz-5",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quiz Reflexion",question:"Was gilt am ebenen Spiegel?",options:["Einfallswinkel = Reflexionswinkel","Einfallswinkel ist immer 90°","Reflexionswinkel ist immer 45°","Das Lot ist parallel zum Spiegel"],correct:0},
 
-  {id:"n-arbeit-lesson-1",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"lesson",type:"lesson",title:"Das muss für die Arbeit sitzen",summary:"Schattenwurf, Lochblende und Spiegelung in kleinen Schritten wiederholen.",sections:[
+  {id:"n-arbeit-lesson-1",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"lesson",type:"lesson",title:"Das muss für die Arbeit sitzen",summary:"Schattenwurf, Lochblende und Spiegelung in kleinen Schritten wiederholen.",resourceUrl:"Natur_Optik_Probe-Arbeit_Lerninsel.pdf",resourceLabel:"Vierseitige Probe-Arbeit als PDF",sections:[
     {heading:"1. Schattenwurf",text:"Merke zuerst die vier Zeichen: G = Gegenstandsgröße, g = Gegenstandsweite, B = Bildgröße, b = Bildweite. G und B sind Höhen. g und b sind Abstände von der Lichtquelle."},
     {heading:"2. Schatten konstruieren",text:"Zeichne Randstrahlen von der punktförmigen Lichtquelle über die obere und untere Kante des Gegenstands bis zum Schirm. Die beiden Treffpunkte begrenzen den Schatten."},
     {heading:"3. Lochblende",text:"Von jedem betrachteten Punkt gelangt nur ein schmaler Lichtstrahl durch das Loch. Die Strahlen kreuzen sich an der Öffnung. Deshalb erscheint das Bild auf dem Schirm auf dem Kopf und seitenverkehrt."},
@@ -364,13 +364,16 @@ let studentSession = JSON.parse(localStorage.getItem(KEYS.studentSession) || "nu
 let parentSession = JSON.parse(localStorage.getItem(KEYS.parentSession) || "null");
 let teacherTestMode = false;
 let teacherTestReturnSession = null;
+let teacherActiveTab = "content";
+let teacherContentFilter = "all";
+let teacherContentSearch = "";
 
 let state = {
   student:null,
   items:[],
   progress:{},
   profile:null,
-  teacher:{students:[],items:[],progress:{},events:[],profiles:[]},
+  teacher:{rooms:[],students:[],items:[],progress:{},events:[],profiles:[],parents:[],library:[]},
   currentSubject:null,
   currentTopic:null,
   practice:null,
@@ -379,6 +382,14 @@ let state = {
 };
 
 function esc(s=""){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+function isoToday(){return new Date().toISOString().slice(0,10)}
+function formatDate(v){if(!v)return "";const d=new Date(v+"T12:00:00");return Number.isNaN(d.getTime())?v:d.toLocaleDateString("de-DE")}
+function homeworkDateText(i){const a=i.assignedDate?`aufgegeben ${formatDate(i.assignedDate)}`:"";const d=i.dueDate?`Abgabe ${formatDate(i.dueDate)}`:"";return [a,d].filter(Boolean).join(" · ")}
+function itemCategory(i){if(i.category)return i.category;if(i.kind==="homework")return "homework";if(i.customVocab)return "vocab";return "learning"}
+function originalPagesHtml(i){
+  const pages=i.originalPages||[];if(!pages.length)return "";
+  return `<div class="lessonSection"><h3>Originalseiten${i.sourcePages?` · ${esc(i.sourcePages)}`:""}</h3><div class="pageGallery">${pages.map((p,n)=>p.type==="application/pdf"?`<a class="pagePdf" href="${p.dataUrl}" target="_blank" rel="noopener">📄 ${esc(p.name||`Seite ${n+1}`)}</a>`:`<a href="${p.dataUrl}" target="_blank" rel="noopener"><img src="${p.dataUrl}" alt="Originalseite ${n+1}"></a>`).join("")}</div><div class="small">Zum Vergrößern auf eine Seite tippen.</div></div>`
+}
 function uid(){return crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2)+Date.now()}
 function randomToken(len=8){const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";const a=new Uint8Array(len);crypto.getRandomValues(a);return [...a].map(n=>chars[n%chars.length]).join("")}
 function roomCode(){return randomToken(8).match(/.{1,4}/g).join("-")}
@@ -634,7 +645,10 @@ function renderProfileBar(){
 function renderStudentDashboard(){
   updateGameButton();
   const items=state.items||[];
-  MAIN.innerHTML=renderProfileBar()+`
+  const pending=items.filter(i=>i.kind==="homework"&&i.assignedDate&&progressFor(i.id).status!=="completed").sort((a,b)=>(a.dueDate||"9999").localeCompare(b.dueDate||"9999"));
+  const today=isoToday();
+  MAIN.innerHTML=renderProfileBar()+`${pending.length?`<div class="card homeOverview"><span class="sectionTitle">Unerledigte Hausaufgaben</span><h3 style="margin:.35rem 0 .7rem">Noch zu erledigen</h3>
+    ${pending.map(i=>`<button class="homeLink ${i.dueDate&&i.dueDate<today?"overdue":""}" data-home-id="${esc(i.id)}"><span><strong>${esc(subjectMeta(i.subject).name)} · ${esc(i.title)}</strong><span class="small" style="display:block">${esc(i.topic)}${homeworkDateText(i)?` · ${esc(homeworkDateText(i))}`:""}</span></span><span>Öffnen →</span></button>`).join("")}</div>`:""}
     <div class="subjectHead"><div><span class="sectionTitle">Fächer</span><h2 style="margin:.3rem 0">Was möchtest du machen?</h2></div>
     <button id="liveJoinBtn" class="ghost">⚡ Live-Quiz</button></div>
     <div class="grid" id="subjectGrid"></div>`;
@@ -647,6 +661,7 @@ function renderStudentDashboard(){
     </button>`
   }).join("");
   $$("[data-subject]").forEach(b=>b.onclick=()=>renderSubject(b.dataset.subject));
+  $$("[data-home-id]").forEach(b=>b.onclick=()=>openItem(b.dataset.homeId));
   $("#editProfileBtn").onclick=()=>renderProfileSetup(false);
   $("#liveJoinBtn").onclick=renderLiveJoin;
 }
@@ -698,11 +713,12 @@ function renderTopic(subjectId,topic){
 function itemRow(i){
   const p=progressFor(i.id);
   return `<div class="itemRow"><div><h4>${esc(i.title)}</h4><p>${esc(i.summary||"")}</p>
+    ${i.kind==="homework"&&homeworkDateText(i)?`<div class="small">📅 ${esc(homeworkDateText(i))}</div>`:""}
     ${p.status==="completed"?'<span class="badge good">✓ erledigt</span>':p.status==="working"?'<span class="badge warn">in Arbeit</span>':""}
     </div><button class="primary openItem" data-id="${i.id}">${p.status==="completed"?"Nochmal":"Öffnen"}</button></div>`
 }
 function openItem(id){
-  const i=state.items.find(x=>x.id===id);if(!i)return;markWorking(i);
+  const i=state.items.find(x=>x.id===id);if(!i)return;state.currentSubject=i.subject;state.currentTopic=i.topic;markWorking(i);
   if(i.kind==="lesson")renderLesson(i);
   else if(i.kind==="homework")renderHomework(i)
 }
@@ -732,10 +748,12 @@ function renderLesson(i){
   const p=progressFor(i.id);
   $("#workInside").innerHTML=`
     <span class="badge">${esc(subjectMeta(i.subject).name)} · Lernen</span><h2>${esc(i.title)}</h2>
+    ${originalPagesHtml(i)}
     ${lessonExtra(i)}
     ${(i.sections||[]).map(s=>`<div class="lessonSection"><h3>${esc(s.heading)}</h3><div>${esc(s.text)}</div></div>`).join("")}
     ${i.memory?`<div class="merksatz">💡 ${esc(i.memory)}</div>`:""}
     ${i.videoUrl?`<div class="videoCard"><h3 style="margin-top:0">▶ Lernvideo</h3><p class="small">${esc(i.videoLabel||"Video öffnen")}</p><a class="primary big" style="display:block;text-align:center;text-decoration:none" href="${esc(i.videoUrl)}" target="_blank" rel="noopener">Video öffnen</a></div>`:""}
+    ${i.resourceUrl?`<div class="videoCard"><h3 style="margin-top:0">📄 Arbeitsblatt</h3><p class="small">${esc(i.resourceLabel||"PDF öffnen")}</p><a class="primary big" style="display:block;text-align:center;text-decoration:none" href="${esc(i.resourceUrl)}" target="_blank" rel="noopener">PDF öffnen</a></div>`:""}
     <button id="readDone" class="primary big">${p.status==="completed"?"✓ Gelesen":"Gelesen"}</button>`;
   addDialogClose("#workDialog",()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)});
   $("#workDialog").showModal();
@@ -1000,6 +1018,7 @@ function renderHomework(i){
   const p=progressFor(i.id);let answers=Array(i.steps.length).fill(null);
   const shownSteps=i.steps.map(s=>({...s,shownOptions:shuffledOptions(s.options)}));
   $("#workInside").innerHTML=`<span class="badge">${esc(subjectMeta(i.subject).name)} · Hausaufgabe</span><h2>${esc(i.title)}</h2>
+    ${homeworkDateText(i)?`<div class="badge warn">📅 ${esc(homeworkDateText(i))}</div>`:""}${originalPagesHtml(i)}
     <div class="homeworkIntro"><strong>Deine Aufgabe:</strong><p>${esc(i.question)}</p></div>
     ${shownSteps.map((s,n)=>`<div class="stepBox"><h3>${n+1}. ${esc(s.prompt)}</h3>${s.shownOptions.map(o=>`<button class="choice guidedChoice" data-step="${n}" data-opt="${o.originalIndex}">${esc(o.text)}</button>`).join("")}</div>`).join("")}
     <button id="checkHomework" class="primary big">Meine Auswahl prüfen</button><div id="homeFeedback"></div><div id="finalArea">${p.answer?`<div class="finalBox"><strong>Endfassung:</strong><br>${esc(p.answer)}</div>`:""}</div>
@@ -1020,15 +1039,15 @@ function renderHomework(i){
 function renderWritingHomework(i){
   const p=progressFor(i.id);let helpCount=0;
   $("#workInside").innerHTML=`<span class="badge">${esc(subjectMeta(i.subject).name)} · Hausaufgabe</span><h2>${esc(i.title)}</h2>
+    ${homeworkDateText(i)?`<div class="badge warn">📅 ${esc(homeworkDateText(i))}</div>`:""}${originalPagesHtml(i)}
     <div class="homeworkIntro"><strong>Deine Aufgabe:</strong><p>${esc(i.question)}</p></div>
-    <div class="softPanel"><strong>Stichpunkte von der Tafel</strong><ol>${(i.bullets||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>
-    <div class="checkStrip"><span>✓ Präsens</span><span>✓ sachlich</span><span>✓ eigene Worte</span><span>✓ richtige Reihenfolge</span></div>
-    <label class="writeLabel">Dein Hauptteil<textarea id="writingAnswer" rows="9" placeholder="Schreibe hier deinen Hauptteil …">${esc(p.answer||"")}</textarea></label>
+    ${(i.bullets||[]).length?`<div class="softPanel"><strong>Stichpunkte von der Tafel</strong><ol>${i.bullets.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div><div class="checkStrip"><span>✓ Präsens</span><span>✓ sachlich</span><span>✓ eigene Worte</span><span>✓ richtige Reihenfolge</span></div>`:""}
+    <label class="writeLabel">Deine Antwort<textarea id="writingAnswer" rows="9" placeholder="Schreibe hier deine Antwort …">${esc(p.answer||"")}</textarea></label>
     <div class="actions"><button id="writingHelp" class="ghost">💡 Hilfe</button><button id="writingSave" class="primary">✓ Für heute fertig</button></div>
     <div id="writingHelpArea"></div><div id="writingFeedback"></div><button id="closeHomework" class="ghost big" style="margin-top:10px">Schließen</button>`;
   addDialogClose("#workDialog",()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)});$("#workDialog").showModal();
   $("#writingAnswer").oninput=()=>{p.answer=$("#writingAnswer").value;p.status="working";p.updatedAt=Date.now();saveLocal()};
-  $("#writingHelp").onclick=()=>{if(!$("#writingAnswer").value.trim()){$("#writingFeedback").innerHTML='<div class="feedback no">Schreibe zuerst selbst einen Anfang. Danach bekommst du die erste Hilfe.</div>';return}if(helpCount<(i.helps||[]).length){helpCount++;$("#writingHelpArea").innerHTML=(i.helps||[]).slice(0,helpCount).map((h,n)=>`<div class="helpBox"><strong>Hilfe ${n+1}</strong>${esc(h)}</div>`).join("")}else{$("#writingHelpArea").innerHTML+=`<div class="helpBox"><strong>Beispiel – erst mit deiner Fassung vergleichen</strong>${esc(i.finalText)}</div>`}};
+  $("#writingHelp").onclick=()=>{if(!$("#writingAnswer").value.trim()){$("#writingFeedback").innerHTML='<div class="feedback no">Schreibe zuerst selbst einen Anfang. Danach bekommst du die erste Hilfe.</div>';return}if(helpCount<(i.helps||[]).length){helpCount++;$("#writingHelpArea").innerHTML=(i.helps||[]).slice(0,helpCount).map((h,n)=>`<div class="helpBox"><strong>Hilfe ${n+1}</strong>${esc(h)}</div>`).join("")}else if(i.finalText){$("#writingHelpArea").innerHTML+=`<div class="helpBox"><strong>Beispiel – erst mit deiner Fassung vergleichen</strong>${esc(i.finalText)}</div>`}else{$("#writingFeedback").innerHTML='<div class="feedback ok">Mehr Hilfen sind nicht hinterlegt. Deine eigene Antwort bleibt maßgeblich.</div>'}};
   $("#writingSave").onclick=async()=>{const a=$("#writingAnswer").value.trim();if(!a){$("#writingFeedback").innerHTML='<div class="feedback no">Schreibe zuerst deinen Hauptteil.</div>';return}await completeItem(i,a);$("#writingFeedback").innerHTML='<div class="feedback ok">✓ Gespeichert. Deine eigene Fassung bleibt erhalten.</div>'};
   $("#closeHomework").onclick=()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)}
 }
@@ -1218,50 +1237,87 @@ async function openTeacher(){
   $("#teacherLogoutBtn").classList.remove("hidden");
   try{
     const rooms=await rpc("lerninsel_teacher_list_rooms",{},true);
+    state.teacher.rooms=Array.isArray(rooms)?rooms:[];
     if(Array.isArray(rooms)&&rooms.length){
       const saved=teacherRoom&&rooms.find(r=>r.id===teacherRoom.roomId),r=saved||rooms[0];
       teacherRoom={roomId:r.id,publicCode:r.publicCode,name:r.name};localStorage.setItem(KEYS.teacherRoom,JSON.stringify(teacherRoom));
       await teacherPull()
-    }else{teacherRoom=null;renderTeacher()}
+    }else{teacherRoom=null;state.teacher.library=[];renderTeacher()}
   }catch(e){renderTeacher();toast("Lehrerbereich konnte nicht vollständig geladen werden.")}
 }
 async function teacherPull(){
   if(!teacherRoom){renderTeacher();return}
   try{
     const r=await rpc("lerninsel_teacher_get_state",{p_room_id:teacherRoom.roomId},true);
-    state.teacher.students=r?.students||[];state.teacher.items=r?.items||[];state.teacher.progress=r?.progress||{};state.teacher.events=r?.events||[];
+    state.teacher.students=r?.students||[];state.teacher.items=r?.items||[];state.teacher.progress=r?.progress||{};state.teacher.events=r?.events||[];state.teacher.parents=r?.parents||[];
     try{state.teacher.profiles=await rpc("lerninsel_teacher_get_profiles",{p_room_id:teacherRoom.roomId},true)||[]}catch{state.teacher.profiles=[]}
+    try{state.teacher.library=await rpc("lerninsel_teacher_library_get",{},true)||[]}catch{state.teacher.library=[]}
   }catch{}
   renderTeacher()
 }
 function renderTeacher(){
   const room=teacherRoom?`<span class="badge good">Lernraum ${esc(teacherRoom.publicCode)}</span>`:'<span class="badge warn">Noch kein Lernraum</span>';
-  MAIN.innerHTML=`<div class="card"><span class="sectionTitle">Lehrerbereich</span><h2 style="margin:.3rem 0">Lerninsel verwalten</h2>${room}</div>
-    <div class="tabs"><button class="tab active" data-tab="content">Inhalte</button><button class="tab" data-tab="students">Schüler</button>
-    <button class="tab" data-tab="progress">Lernstand</button><button class="tab" data-tab="live">Live-Quiz</button><button class="tab" data-tab="test">Testen</button><button class="tab" data-tab="online">Online</button></div>
+  const rooms=state.teacher.rooms||[];
+  MAIN.innerHTML=`<div class="card"><span class="sectionTitle">Lehrerbereich</span><h2 style="margin:.3rem 0">Lerninsel verwalten</h2>${room}
+    <div class="classBar"><label>Aktuelle Klasse<select id="teacherRoomSelect" ${rooms.length?"":"disabled"}>${rooms.map(r=>`<option value="${r.id}" ${teacherRoom?.roomId===r.id?"selected":""}>${esc(r.name)} · ${esc(r.publicCode)}</option>`).join("")||'<option>Noch keine Klasse</option>'}</select></label><button id="newClassTop" class="ghost">+ Neue Klasse</button></div></div>
+    <div class="tabs"><button class="tab ${teacherActiveTab==="content"?"active":""}" data-tab="content">Inhalte</button><button class="tab ${teacherActiveTab==="students"?"active":""}" data-tab="students">Schüler</button>
+    <button class="tab ${teacherActiveTab==="progress"?"active":""}" data-tab="progress">Lernstand</button><button class="tab ${teacherActiveTab==="live"?"active":""}" data-tab="live">Live-Quiz</button><button class="tab ${teacherActiveTab==="test"?"active":""}" data-tab="test">Testen</button><button class="tab ${teacherActiveTab==="online"?"active":""}" data-tab="online">Online</button></div>
     <div id="teacherPane"></div>`;
-  $$("[data-tab]").forEach(b=>b.onclick=()=>{$$("[data-tab]").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderTeacherPane(b.dataset.tab)});
-  renderTeacherPane("content")
+  $$("[data-tab]").forEach(b=>b.onclick=()=>{teacherActiveTab=b.dataset.tab;$$("[data-tab]").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderTeacherPane(teacherActiveTab)});
+  if($("#teacherRoomSelect"))$("#teacherRoomSelect").onchange=async e=>{const r=rooms.find(x=>x.id===e.target.value);if(!r)return;teacherRoom={roomId:r.id,publicCode:r.publicCode,name:r.name};localStorage.setItem(KEYS.teacherRoom,JSON.stringify(teacherRoom));await teacherPull()};
+  $("#newClassTop").onclick=()=>{teacherActiveTab="online";renderTeacher()};
+  renderTeacherPane(teacherActiveTab)
+}
+function teacherRoomChecks(selected=[],className="roomAssign"){
+  const chosen=new Set(selected||[]),rooms=state.teacher.rooms||[];
+  return `<div class="roomChecks">${rooms.map(r=>`<label class="roomCheck"><input type="checkbox" class="${className}" value="${r.id}" ${chosen.has(r.id)?"checked":""}>${esc(r.name)}</label>`).join("")||'<span class="small">Zuerst eine Klasse anlegen.</span>'}</div>`
+}
+function selectedRoomIds(selector){return $$(selector).filter(x=>x.checked).map(x=>x.value)}
+function libraryKindLabel(i){return itemCategory(i)==="bookpages"?"Buchseiten":itemCategory(i)==="homework"?"Hausaufgabe":itemCategory(i)==="vocab"?"Vokabel":"Lerninhalt"}
+function libraryEntryHtml(entry){
+  const i=entry.item||{},active=new Set(entry.roomIds||[]),rooms=state.teacher.rooms||[];
+  return `<div class="libraryItem"><div><span class="badge">${esc(libraryKindLabel(i))}</span><h4>${esc(i.title||"Ohne Titel")}</h4><div class="small">${esc(subjectMeta(i.subject).name)} · ${esc(i.topic||"")}${homeworkDateText(i)?` · ${esc(homeworkDateText(i))}`:""}</div></div>
+    <div class="roomChecks">${rooms.map(r=>`<label class="roomCheck"><input type="checkbox" class="libraryRoomToggle" data-item-id="${esc(i.id)}" data-room-id="${r.id}" ${active.has(r.id)?"checked":""}>${esc(r.name)}</label>`).join("")}</div></div>`
 }
 function renderTeacherPane(tab){
   const p=$("#teacherPane");if(!p)return;
   if(tab==="content"){
-    const items=state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT;
-    const groups={};items.forEach(i=>{const k=`${i.subject}|${i.topic}`;(groups[k]??=[]).push(i)});
-    p.innerHTML=`<div class="card"><h3>Fächer & Themen</h3><p class="small">Ein Fach kann beliebig viele Themen enthalten. Lernen, Üben, Hausaufgaben und Quiz gehören jeweils zum Thema.</p>
-      ${Object.entries(groups).map(([k,arr])=>{const [s,t]=k.split("|");return `<div class="itemRow"><div><strong>${esc(subjectMeta(s).name)} · ${esc(t)}</strong>
-        <div class="small">${arr.filter(x=>x.kind==="lesson").length} Lernen · ${arr.filter(x=>x.kind==="practice").length} Übungen · ${arr.filter(x=>x.kind==="homework").length} Hausaufgaben · ${arr.filter(x=>x.kind==="quiz").length} Quizfragen</div></div></div>`}).join("")}
-      <div class="actions" style="margin-top:12px"><button id="addVocabBtn" class="ghost big">+ Englisch-Vokabeln</button><button id="syncDefaultContent" class="primary big">${teacherRoom?"Lerninhalte synchronisieren":"Lernraum erstellen"}</button></div></div>`;
-    $("#syncDefaultContent").onclick=teacherRoom?teacherSyncDefault:teacherCreateRoom;$("#addVocabBtn").onclick=teacherAddVocab
+    const all=state.teacher.library||[];
+    const q=teacherContentSearch.toLowerCase();
+    const filtered=all.filter(e=>{const i=e.item||{},cat=itemCategory(i);return (teacherContentFilter==="all"||cat===teacherContentFilter)&&(!q||`${i.title||""} ${i.topic||""} ${subjectMeta(i.subject).name}`.toLowerCase().includes(q))});
+    const defaultRooms=teacherRoom?[teacherRoom.roomId]:[];
+    p.innerHTML=`<div class="card"><span class="sectionTitle">Dauerhafte Inhaltsbibliothek</span><h3>Inhalte und Klassen</h3><p class="small">Ein Haken zeigt den Inhalt in einer Klasse. Entfernst du ihn, bleiben Inhalt und bisheriger Lernstand erhalten.</p>
+      <div class="libraryTools"><input id="contentSearch" placeholder="Inhalte suchen …" value="${esc(teacherContentSearch)}"><select id="contentFilter"><option value="all">Alle Inhalte</option><option value="bookpages" ${teacherContentFilter==="bookpages"?"selected":""}>Buchseiten</option><option value="homework" ${teacherContentFilter==="homework"?"selected":""}>Hausaufgaben</option><option value="vocab" ${teacherContentFilter==="vocab"?"selected":""}>Englisch-Vokabeln</option><option value="learning" ${teacherContentFilter==="learning"?"selected":""}>Weitere Lerninhalte</option></select></div>
+      ${all.length?filtered.map(libraryEntryHtml).join("")||'<p class="small">Keine passenden Inhalte gefunden.</p>':`<div class="teacherForm"><strong>Noch keine zentrale Bibliothek geladen.</strong><p class="small">Die bisherigen Lerninhalte können übernommen und der aktuellen Klasse zugewiesen werden.</p></div>`}
+      <button id="seedLibrary" class="ghost big" ${teacherRoom?"":"disabled"}>${all.length?"Grundinhalte für diese Klasse ergänzen":"Vorhandene Lerninhalte übernehmen"}</button>
+    </div>
+    <div class="card" style="margin-top:12px"><h3>Neue Inhalte anlegen</h3>
+      <details class="teacherForm"><summary><strong>🇬🇧 Englisch-Vokabel</strong></summary><div class="formGrid"><label>Englisch<input id="vocabEnglish" placeholder="z. B. school"></label><label>Deutsch<input id="vocabGerman" placeholder="z. B. die Schule"></label></div>${teacherRoomChecks(defaultRooms,"vocabRoom")}<button id="addVocabBtn" class="primary big" style="margin-top:10px">Vokabel speichern</button><p id="vocabMsg" class="small"></p></details>
+      <details class="teacherForm"><summary><strong>📖 Buchseiten mit Zusammenfassung</strong></summary><div class="formGrid"><label>Fach<select id="bookSubject">${SUBJECTS.map(s=>`<option value="${s.id}">${s.icon} ${esc(s.name)}</option>`).join("")}</select></label><label>Worum geht es?<input id="bookTopic" placeholder="z. B. Ständeordnung"></label></div><label>Seitenangabe<input id="bookPages" placeholder="z. B. Seiten 42–43"></label><label>Originalseiten fotografieren oder auswählen<input id="bookFiles" type="file" accept="image/*,application/pdf" multiple></label><label>Zusammenfassung<textarea id="bookSummary" rows="6" placeholder="Einfache Zusammenfassung der Buchseiten …"></textarea></label>${teacherRoomChecks(defaultRooms,"bookRoom")}<button id="saveBookPages" class="primary big">Buchseiten speichern</button><p id="bookMsg" class="small"></p></details>
+      <details class="teacherForm"><summary><strong>✏️ Hausaufgabe</strong></summary><div class="formGrid"><label>Fach<select id="homeSubject">${SUBJECTS.map(s=>`<option value="${s.id}">${s.icon} ${esc(s.name)}</option>`).join("")}</select></label><label>Thema<input id="homeTopic" placeholder="z. B. Balladen"></label><label>Aufgegeben am<input id="homeAssigned" type="date" value="${isoToday()}"></label><label>Abgabe bis<input id="homeDue" type="date"></label></div><label>Titel<input id="homeTitle" placeholder="z. B. John Maynard – Hauptteil"></label><label>Foto der Aufgabe<input id="homeFiles" type="file" accept="image/*,application/pdf" multiple></label><label>Aufgabe<textarea id="homeQuestion" rows="4" placeholder="Was soll erledigt werden?"></textarea></label><label>Hilfen – eine pro Zeile<textarea id="homeHelps" rows="4" placeholder="Erste Hilfe …&#10;Zweite Hilfe …"></textarea></label>${teacherRoomChecks(defaultRooms,"homeRoom")}<button id="saveHomework" class="primary big">Hausaufgabe speichern</button><p id="homeMsg" class="small"></p></details>
+    </div>`;
+    $("#contentSearch").onchange=e=>{teacherContentSearch=e.target.value;renderTeacherPane("content")};
+    $("#contentFilter").onchange=e=>{teacherContentFilter=e.target.value;renderTeacherPane("content")};
+    if($("#seedLibrary"))$("#seedLibrary").onclick=teacherSeedLibrary;
+    if($("#addVocabBtn"))$("#addVocabBtn").onclick=teacherAddVocab;
+    $("#saveBookPages").onclick=teacherSaveBookPages;$("#saveHomework").onclick=teacherSaveHomework;
+    $$(".libraryRoomToggle").forEach(x=>x.onchange=()=>teacherToggleLibraryRoom(x.dataset.itemId,x.dataset.roomId,x.checked))
   }
   if(tab==="students"){
-    p.innerHTML=`<div class="card"><div class="subjectHead"><div><h3>Schüler</h3><p class="small">Andere Schüler sehen nur Spitzname und Avatar.</p></div>
-      <button id="newStudent" class="primary">${teacherRoom?"+ Schüler":"Lernraum erstellen"}</button></div>
+    const suggestedCode=String(Math.floor(100000+Math.random()*900000));
+    p.innerHTML=`<div class="card"><span class="sectionTitle">${esc(teacherRoom?.name||"Klasse")}</span><h3>Schüler und Eltern</h3><p class="small">Jeder Schüler erhält einen eigenen Code. Eltern bekommen einen getrennten Elterncode.</p>
+      ${teacherRoom?`<div class="teacherForm"><h4>Neuen Schüler anlegen</h4><label>Name oder Kürzel<input id="studentLabel" placeholder="z. B. Niklas"></label>
+        <label>Persönlicher Schülercode<input id="studentCode" inputmode="numeric" maxlength="12" value="${suggestedCode}"></label>
+        <button id="newStudent" class="primary big" style="margin-top:10px">Schüler anlegen</button><p id="studentCreateMsg" class="small"></p></div>`:
+        `<p>Noch kein Lernraum vorhanden.</p><button id="newStudent" class="primary big">Lernraum erstellen</button>`}
       <div class="studentTable">${(state.teacher.students||[]).map(s=>{const pr=state.teacher.profiles.find(x=>x.studentId===s.id)||{};
-        return `<div class="studentRow"><div><strong>${esc(s.label)}</strong><div class="small">${esc(pr.avatar||"")} ${esc(pr.nickname||"noch kein Profil")}</div></div>
-          <div class="actions" style="flex:0 0 auto"><button class="ghost parentCodeBtn" data-id="${s.id}">Elterncode</button><button class="ghost deleteStudent" data-id="${s.id}">Löschen</button></div></div>`}).join("")||'<div class="small">Noch keine Schüler.</div>'}</div></div>`;
+        const parents=(state.teacher.parents||[]).filter(x=>x.studentId===s.id&&x.active);
+        return `<div class="libraryItem"><div class="studentRow" style="border:0;padding:0"><div><strong>${esc(s.label)}</strong><div class="small">${esc(pr.avatar||"")} ${esc(pr.nickname||"noch kein Profil")} · ${parents.length} ${parents.length===1?"Elternzugang":"Elternzugänge"}</div></div><div class="actions" style="flex:0 0 auto"><button class="ghost showParentForm" data-id="${s.id}">+ Eltern</button><button class="ghost deleteStudent" data-id="${s.id}">Löschen</button></div></div>
+          ${parents.length?`<div class="savedWords">${parents.map(x=>`<span>👪 ${esc(x.label)}</span>`).join("")}</div>`:""}
+          <div class="parentForm hidden" data-parent-form="${s.id}"><label>Name/Bezeichnung<input class="parentLabel" placeholder="z. B. Mutter"></label><label>Elterncode<input class="parentAccessCode" value="${parentCode()}"></label><button class="primary big createParentAccess" data-id="${s.id}">Elternzugang erstellen</button><p class="small parentMsg"></p></div></div>`}).join("")||'<div class="small">Noch keine Schüler.</div>'}</div></div>`;
     $("#newStudent").onclick=teacherRoom?teacherCreateStudent:teacherCreateRoom;
-    $$(".parentCodeBtn").forEach(b=>b.onclick=()=>teacherCreateParentCode(b.dataset.id));
+    $$(".showParentForm").forEach(b=>b.onclick=()=>document.querySelector(`[data-parent-form="${b.dataset.id}"]`)?.classList.toggle("hidden"));
+    $$(".createParentAccess").forEach(b=>b.onclick=()=>teacherCreateParentAccess(b.dataset.id));
     $$(".deleteStudent").forEach(b=>b.onclick=()=>teacherDeleteStudent(b.dataset.id))
   }
   if(tab==="progress"){
@@ -1272,9 +1328,9 @@ function renderTeacherPane(tab){
         <div class="kpi"><strong>${Object.values(prog?.[s.id]||{}).filter(x=>x?.rewarded).length}</strong><span class="small">Inselpunkte</span></div></div></div>`}).join("")||'<div class="card">Noch keine Schüler.</div>'
   }
   if(tab==="online"){
-    p.innerHTML=`<div class="card"><h3>Online</h3>${teacherRoom?`<div class="liveCode">${esc(teacherRoom.publicCode)}</div><p class="small">Diesen Lernraum-Code bekommen Schüler und Eltern.</p>
-      <button id="refreshTeacher" class="ghost big">Lernstand aktualisieren</button>`:`<p>Noch kein Lernraum.</p><button id="createRoom" class="primary big">Lernraum erstellen</button>`}</div>`;
-    if($("#createRoom"))$("#createRoom").onclick=teacherCreateRoom;if($("#refreshTeacher"))$("#refreshTeacher").onclick=teacherPull
+    p.innerHTML=`<div class="card"><h3>${teacherRoom?esc(teacherRoom.name):"Noch keine Klasse"}</h3>${teacherRoom?`<div class="liveCode">${esc(teacherRoom.publicCode)}</div><p class="small">Diesen Lernraum-Code bekommen Schüler und Eltern.</p><div class="teacherForm"><h4>Klasse benennen</h4><label>Klassenname<input id="renameRoomName" value="${esc(teacherRoom.name||"")}" placeholder="z. B. 7e"></label><button id="renameRoom" class="ghost big">Namen speichern</button><p id="renameRoomMsg" class="small"></p></div><button id="refreshTeacher" class="ghost big">Daten aktualisieren</button>`:""}
+      <div class="teacherForm"><h4>Neue Klasse / neuen Lernraum erstellen</h4><label>Name der Klasse<input id="newRoomName" placeholder="z. B. 7e"></label><button id="createRoom" class="primary big">Klasse erstellen</button><p id="createRoomMsg" class="small"></p></div></div>`;
+    $("#createRoom").onclick=teacherCreateRoom;if($("#refreshTeacher"))$("#refreshTeacher").onclick=teacherPull;if($("#renameRoom"))$("#renameRoom").onclick=teacherRenameRoom
   }
   if(tab==="live"){
     const items=state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT;
@@ -1298,7 +1354,7 @@ function startTeacherTest(){
   role="student";
   studentSession={demo:true,teacherTest:true};
   state.student={id:"teacher-test",label:"Test-Schüler"};
-  state.items=DEFAULT_CONTENT.map(x=>structuredClone(x));
+  state.items=(state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT).map(x=>structuredClone(x));
   state.progress={};
   state.profile={nickname:"Test",avatar:"🦊",games_spent:0,game_best:0};
   state.currentSubject=null;state.currentTopic=null;state.practice=null;state.quiz=null;state.live=null;
@@ -1321,47 +1377,100 @@ async function exitTeacherTest(){
   $("#teacherLogoutBtn").onclick=teacherLogout;
   await openTeacher()
 }
-function teacherAddVocab(){
-  const raw=prompt("Neue Vokabeln eingeben – eine pro Zeile:\nEnglisch | Deutsch\n\nBeispiel:\nschool | die Schule\nfriend | der Freund / die Freundin");
-  if(!raw)return;
-  const rows=raw.split(/\n+/).map(x=>x.trim()).filter(Boolean);const added=[];
-  for(const row of rows){const parts=row.split("|");if(parts.length<2)continue;const en=parts.shift().trim(),de=parts.join("|").trim();if(!en||!de)continue;added.push({id:"e-custom-"+uid(),en,de,topic:"Vokabeln & Sätze"})}
-  if(!added.length){toast("Bitte im Format Englisch | Deutsch eingeben.");return}
-  const all=getCustomVocab();all.push(...added);localStorage.setItem(CUSTOM_VOCAB_KEY,JSON.stringify(all));added.forEach(v=>DEFAULT_CONTENT.push(vocabItem(v)));
-  toast(`✓ ${added.length} Vokabel${added.length===1?"":"n"} hinzugefügt. Jetzt Lerninhalte synchronisieren.`);renderTeacherPane("content")
+async function teacherAddVocab(){
+  const en=$("#vocabEnglish")?.value.trim(),de=$("#vocabGerman")?.value.trim(),msg=$("#vocabMsg");
+  if(!en||!de){if(msg)msg.textContent="Bitte Englisch und Deutsch ausfüllen.";return}
+  const v={id:"e-custom-"+uid(),en,de,topic:"Vokabeln & Sätze"};
+  if(msg)msg.textContent="Vokabel wird gespeichert …";
+  try{await teacherLibraryUpsert(vocabItem(v),selectedRoomIds(".vocabRoom"));toast("✓ Vokabel gespeichert.")}catch(e){if(msg)msg.textContent="Speichern nicht möglich. Bitte zuerst die v9-SQL-Datei in Supabase ausführen."}
 }
 async function teacherCreateRoom(){
+  const input=$("#newRoomName"),name=input?.value.trim();
+  if(!input){teacherActiveTab="online";renderTeacher();return}
+  if(!name){$("#createRoomMsg").textContent="Bitte einen Klassennamen eingeben.";return}
   try{
-    const code=roomCode(),id=await rpc("lerninsel_create_room",{p_name:"Lerninsel",p_public_code:code},true);
-    teacherRoom={roomId:id,publicCode:code,name:"Lerninsel"};localStorage.setItem(KEYS.teacherRoom,JSON.stringify(teacherRoom));renderTeacher()
-  }catch(e){toast("Lernraum konnte nicht erstellt werden.")}
+    const code=roomCode(),id=await rpc("lerninsel_create_room",{p_name:name,p_public_code:code},true);
+    teacherRoom={roomId:id,publicCode:code,name};localStorage.setItem(KEYS.teacherRoom,JSON.stringify(teacherRoom));toast("✓ Klasse erstellt: "+name);await openTeacher()
+  }catch(e){$("#createRoomMsg").textContent="Klasse konnte nicht erstellt werden."}
 }
-async function teacherSyncDefault(){
+async function teacherRenameRoom(){
+  const name=$("#renameRoomName")?.value.trim(),msg=$("#renameRoomMsg");if(!name){if(msg)msg.textContent="Bitte einen Klassennamen eingeben.";return}
+  try{await rpc("lerninsel_teacher_rename_room",{p_room_id:teacherRoom.roomId,p_name:name},true);teacherRoom.name=name;localStorage.setItem(KEYS.teacherRoom,JSON.stringify(teacherRoom));toast("✓ Klassenname gespeichert.");await openTeacher()}
+  catch(e){if(msg)msg.textContent="Name konnte nicht gespeichert werden. Bitte die v9-SQL-Datei prüfen."}
+}
+async function teacherLibraryUpsert(item,roomIds){
+  await rpc("lerninsel_teacher_library_upsert",{p_item:item,p_room_ids:roomIds||[]},true);
+  await teacherPull()
+}
+async function teacherSeedLibrary(){
   if(!teacherRoom)return;
+  try{await rpc("lerninsel_teacher_library_seed",{p_items:DEFAULT_CONTENT,p_room_id:teacherRoom.roomId},true);toast("✓ Lerninhalte übernommen.");await teacherPull()}
+  catch(e){toast("Bitte zuerst supabase_v9_klassen_inhalte.sql in Supabase ausführen.")}
+}
+async function teacherSyncDefault(){return teacherSeedLibrary()}
+async function teacherToggleLibraryRoom(itemId,roomId,checked){
+  const entry=(state.teacher.library||[]).find(e=>e.item?.id===itemId);if(!entry)return;
+  const ids=new Set(entry.roomIds||[]);if(checked)ids.add(roomId);else ids.delete(roomId);
+  try{await teacherLibraryUpsert(entry.item,[...ids]);toast(checked?"✓ Inhalt eingeblendet.":"✓ Inhalt ausgeblendet, aber nicht gelöscht.")}catch(e){toast("Zuweisung konnte nicht gespeichert werden.");await teacherPull()}
+}
+function fileAsDataUrl(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)})}
+async function fileToStoredPage(file){
+  if(file.type==="application/pdf"){
+    if(file.size>5*1024*1024)throw new Error("PDF ist größer als 5 MB.");
+    return {name:file.name,type:file.type,dataUrl:await fileAsDataUrl(file)}
+  }
+  const raw=await fileAsDataUrl(file);
+  const img=await new Promise((resolve,reject)=>{const x=new Image();x.onload=()=>resolve(x);x.onerror=reject;x.src=raw});
+  const max=1600,scale=Math.min(1,max/Math.max(img.naturalWidth,img.naturalHeight)),canvas=document.createElement("canvas");
+  canvas.width=Math.max(1,Math.round(img.naturalWidth*scale));canvas.height=Math.max(1,Math.round(img.naturalHeight*scale));canvas.getContext("2d").drawImage(img,0,0,canvas.width,canvas.height);
+  return {name:file.name.replace(/\.[^.]+$/,"")+".jpg",type:"image/jpeg",dataUrl:canvas.toDataURL("image/jpeg",.8)}
+}
+async function storedPagesFromInput(selector,msg){
+  const files=[...($(selector)?.files||[])];if(!files.length)throw new Error("Bitte mindestens eine Originalseite auswählen.");
+  if(files.length>6)throw new Error("Bitte höchstens sechs Seiten auf einmal auswählen.");
+  if(msg)msg.textContent="Originalseiten werden vorbereitet …";
+  const pages=[];for(const f of files)pages.push(await fileToStoredPage(f));return pages
+}
+async function teacherSaveBookPages(){
+  const subject=$("#bookSubject").value,topic=$("#bookTopic").value.trim(),sourcePages=$("#bookPages").value.trim(),summary=$("#bookSummary").value.trim(),msg=$("#bookMsg");
+  if(!topic||!summary){msg.textContent="Bitte Thema und Zusammenfassung ausfüllen.";return}
   try{
-    const assignments=[];(state.teacher.students||[]).forEach(s=>DEFAULT_CONTENT.forEach(i=>assignments.push({studentId:s.id,itemId:i.id})));
-    await rpc("lerninsel_teacher_sync_content",{p_room_id:teacherRoom.roomId,p_payload:{items:DEFAULT_CONTENT,assignments}},true);
-    toast("✓ Neue Struktur synchronisiert.");await teacherPull()
-  }catch(e){toast("Synchronisierung fehlgeschlagen.")}
+    const originalPages=await storedPagesFromInput("#bookFiles",msg);
+    const item={id:"book-"+uid(),subject,topic,kind:"lesson",type:"lesson",category:"bookpages",title:`Buchseiten – ${topic}`,summary:`Originalseiten und Zusammenfassung${sourcePages?` · ${sourcePages}`:""}`,sourcePages,originalPages,sections:[{heading:"Zusammenfassung",text:summary}],memory:"Die Originalseiten bleiben zusammen mit dieser Zusammenfassung gespeichert."};
+    await teacherLibraryUpsert(item,selectedRoomIds(".bookRoom"));toast("✓ Buchseiten gespeichert.")
+  }catch(e){msg.textContent=e.message||"Buchseiten konnten nicht gespeichert werden."}
+}
+async function teacherSaveHomework(){
+  const subject=$("#homeSubject").value,topic=$("#homeTopic").value.trim(),assignedDate=$("#homeAssigned").value,dueDate=$("#homeDue").value,title=$("#homeTitle").value.trim(),question=$("#homeQuestion").value.trim(),msg=$("#homeMsg");
+  if(!topic||!assignedDate||!title||!question){msg.textContent="Bitte Fach, Thema, Aufgabedatum, Titel und Aufgabe ausfüllen.";return}
+  try{
+    const originalPages=await storedPagesFromInput("#homeFiles",msg),helps=$("#homeHelps").value.split(/\n+/).map(x=>x.trim()).filter(Boolean);
+    const item={id:"home-"+uid(),subject,topic,kind:"homework",type:"writing",category:"homework",title:`Hausaufgabe – ${title}`,summary:homeworkDateText({assignedDate,dueDate}),assignedDate,dueDate,originalPages,question,helps,bullets:[],finalText:""};
+    await teacherLibraryUpsert(item,selectedRoomIds(".homeRoom"));toast("✓ Hausaufgabe gespeichert.")
+  }catch(e){msg.textContent=e.message||"Hausaufgabe konnte nicht gespeichert werden."}
 }
 async function teacherCreateStudent(){
-  const label=prompt("Name oder Kürzel für den Schüler:");if(!label)return;
-  const code=prompt("Persönlicher Schülercode:",String(Math.floor(100000+Math.random()*900000)));if(!code)return;
+  const label=$("#studentLabel")?.value.trim(),code=$("#studentCode")?.value.trim(),msg=$("#studentCreateMsg"),button=$("#newStudent");
+  if(!label){if(msg)msg.textContent="Bitte einen Namen oder ein Kürzel eingeben.";return}
+  if(!code||code.length<4){if(msg)msg.textContent="Bitte einen Schülercode mit mindestens vier Zeichen eingeben.";return}
+  if(button)button.disabled=true;if(msg)msg.textContent="Schüler wird angelegt …";
   try{
-    await rpc("lerninsel_teacher_upsert_student",{p_room_id:teacherRoom.roomId,p_student_id:null,p_label:label.trim(),p_student_code:code.trim()},true);
-    toast("Schüler angelegt. Code: "+code);await teacherPull()
-  }catch(e){toast("Schüler konnte nicht angelegt werden.")}
+    await rpc("lerninsel_teacher_upsert_student",{p_room_id:teacherRoom.roomId,p_student_id:null,p_label:label,p_student_code:code},true);
+    alert(`Schülerzugang für ${label}\n\nKlasse: ${teacherRoom.name}\nLernraum: ${teacherRoom.publicCode}\nSchülercode: ${code}\n\nBitte die beiden Codes jetzt weitergeben.`);await teacherPull()
+  }catch(e){if(msg)msg.textContent="Schüler konnte nicht angelegt werden. Bitte erneut versuchen.";toast("Schüler konnte nicht angelegt werden.");if(button)button.disabled=false}
 }
 async function teacherDeleteStudent(id){
   if(!confirm("Schüler wirklich löschen?"))return;
   try{await rpc("lerninsel_teacher_delete_student",{p_room_id:teacherRoom.roomId,p_student_id:id},true);await teacherPull()}catch{toast("Löschen fehlgeschlagen.")}
 }
-async function teacherCreateParentCode(studentId){
-  const code=parentCode();
+async function teacherCreateParentAccess(studentId){
+  const form=document.querySelector(`[data-parent-form="${studentId}"]`),label=form?.querySelector(".parentLabel")?.value.trim(),code=form?.querySelector(".parentAccessCode")?.value.trim(),msg=form?.querySelector(".parentMsg");
+  if(!label){if(msg)msg.textContent="Bitte eine Bezeichnung eingeben, zum Beispiel Mutter oder Vater.";return}
+  if(!code||code.length<6){if(msg)msg.textContent="Der Elterncode ist zu kurz.";return}
   try{
-    await rpc("lerninsel_teacher_create_parent_code",{p_room_id:teacherRoom.roomId,p_student_id:studentId,p_parent_code:code},true);
-    alert(`Elternzugang\n\nLernraum: ${teacherRoom.publicCode}\nElterncode: ${code}\n\nDer alte Elterncode dieses Schülers wird dadurch ersetzt.`)
-  }catch(e){toast("Elterncode-Funktion ist noch nicht in Supabase eingerichtet.")}
+    await rpc("lerninsel_teacher_create_parent_access",{p_room_id:teacherRoom.roomId,p_student_id:studentId,p_label:label,p_parent_code:code},true);
+    alert(`Elternzugang für ${label}\n\nKlasse: ${teacherRoom.name}\nLernraum: ${teacherRoom.publicCode}\nElterncode: ${code}\n\nBitte den Code jetzt weitergeben.`);await teacherPull()
+  }catch(e){if(msg)msg.textContent="Elternzugang konnte nicht erstellt werden. Bitte die v9-SQL-Datei prüfen."}
 }
 
 /* Live quiz: polling, Supabase migration required */
