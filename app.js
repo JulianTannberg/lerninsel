@@ -177,9 +177,7 @@ const DEFAULT_CONTENT = [
   {
     id:"g1-staende-lernen-verteilung",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"lesson",type:"lesson",
     title:"Unterrichtsbild: Die mittelalterliche Ständegesellschaft",summary:"Das neue Tafelbild mit Gruppen, Aufgaben und Größenverhältnissen.",
-    sourcePages:"Unterrichtsbild",originalPages:[
-      {name:"Die mittelalterliche Ständegesellschaft",type:"image/jpeg",dataUrl:"media/gsel1_mittelalterliche_staendegesellschaft.jpg"}
-    ],
+    diagram:"estate-pyramid",
     sections:[
       {heading:"Die Ordnung galt als gottgewollt",text:"Das Schaubild zeigt die Gesellschaft als feste, von Gott gewollte Ordnung. Der Stand wurde meist durch die Geburt bestimmt und blieb gewöhnlich bis zum Tod bestehen. Die Ordnung war streng hierarchisch."},
       {heading:"König, Geistliche und Adel",text:"An der Spitze steht der König. Zum ersten Stand gehören Geistliche wie Bischöfe, Äbte, Pfarrer, Mönche und Nonnen. Zum zweiten Stand gehören Adlige wie Herzöge, Grafen und Ritter. Zusammen bilden diese oberen Gruppen im Schaubild nur ungefähr 1 Prozent der Bevölkerung."},
@@ -254,6 +252,85 @@ const DEFAULT_CONTENT = [
     ],
     finalText:"Der Zeichner stellt die Ständeordnung als von Gott gewollt dar. Christus steht über den drei Ständen. Die Geistlichen sollen beten, der Adel soll beschützen und die Bauern beziehungsweise Arbeitenden sollen arbeiten. Dadurch wirkt die Aufteilung der Gesellschaft wie eine feste, von Gott bestimmte Ordnung."
   },
+  {
+    id:"g1-staende-homework-aufgabe5-s13",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"homework",type:"choicewriting",
+    title:"Hausaufgabe – Aufgabe 5, Seite 13",summary:"Buchseite 13 · wähle den Buchweg A oder B",assignedDate:"2026-09-22",
+    question:"Aufgabe 5 hat im Buch zwei Varianten. Wähle den Buchweg A oder B, der dir zugeteilt wurde, und verfasse deine Antwort.",
+    variants:[
+      {
+        id:"A",title:"Buchweg A – Lebenswege früher und heute",
+        question:"Wie steht es heute mit der Zugehörigkeit durch Geburt? Frage deine Eltern, ob sie anders leben als deine Großeltern.",
+        guide:["Frage nach Beruf, Ausbildung, Wohnort oder Alltag deiner Großeltern.","Vergleiche damit das Leben deiner Eltern.","Erkläre, ob die Geburt heute noch genauso stark über den eigenen Lebensweg entscheidet wie im Mittelalter."],
+        starter:"Meine Eltern leben anders als meine Großeltern, weil …",
+        example:"Meine Eltern leben in einigen Bereichen anders als meine Großeltern. Sie konnten ihren Beruf und ihren Wohnort freier wählen. Heute entscheidet die Geburt nicht mehr wie im Mittelalter über einen festen Stand, trotzdem können Herkunft und Geld weiterhin Einfluss auf die Möglichkeiten eines Menschen haben."
+      },
+      {
+        id:"B",title:"Buchweg B – bewusst einfach leben",
+        question:"Auch heute leben Menschen bewusst einfach, zum Beispiel in einem Orden. Recherchiere Beispiele.",
+        guide:["Suche ein oder zwei konkrete Gemeinschaften oder Orden aus.","Beschreibe kurz, worauf die Menschen verzichten und warum.","Mögliche Beispiele sind Franziskaner, Klarissen oder andere klösterliche Gemeinschaften."],
+        starter:"Ein Beispiel für bewusst einfaches Leben ist …",
+        example:"Ein Beispiel sind die Franziskaner. Sie orientieren sich am Vorbild von Franz von Assisi und legen Wert auf ein einfaches Leben, Gemeinschaft und Hilfe für andere. Auch Klarissen leben in einer klösterlichen Gemeinschaft und verzichten auf persönlichen Luxus."
+      }
+    ]
+  },
+  {
+    id:"g1-staende-roleplay-1",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"practice",type:"roleplay",
+    title:"Rollenspiel: Ein Tag im Mittelalter",question:"Wähle eine Rolle und entscheide in zwei Alltagssituationen.",
+    roles:[
+      {
+        id:"bauer",icon:"🌾",name:"Bauer oder Bäuerin",profile:"Du gehörst zum dritten Stand. Du arbeitest auf dem Land, erzeugst Lebensmittel und musst häufig Abgaben oder Dienste leisten.",
+        scenes:[
+          {title:"Die Ernte",text:"Die Erntezeit beginnt. Der Grundherr fordert außerdem einen Teil deiner Ernte.",options:[
+            {text:"Ich arbeite auf dem Feld und leiste die verlangten Abgaben.",feedback:"Das entspricht dem Alltag vieler abhängiger Bauern. Sie arbeiteten hart und mussten Abgaben oder Dienste leisten."},
+            {text:"Ich bestimme ab heute selbst über das ganze Land.",feedback:"Das wäre für die meisten Bauern nicht möglich gewesen. Über Land und Rechte bestimmten meist Grundherren und Adlige."}
+          ]},
+          {title:"Gefahr für das Dorf",text:"Räuber bedrohen die Umgebung. Von welchem Stand wird Schutz erwartet?",options:[
+            {text:"Vom Adel und von den Rittern.",feedback:"Genau. Nach der Vorstellung der Ständeordnung sollte der zweite Stand die Menschen und das Land beschützen."},
+            {text:"Nur von den Bauernkindern.",feedback:"Nein. Schutz und Verteidigung wurden dem Adel und den Rittern als Aufgabe zugeschrieben."}
+          ]}
+        ],summary:"Du hast erlebt, wie viel Arbeit der dritte Stand leistete und wie wenig frei viele Bauern über ihr Leben bestimmen konnten."
+      },
+      {
+        id:"ritter",icon:"🛡️",name:"Ritter oder Adlige",profile:"Du gehörst zum zweiten Stand. Du besitzt mehr Rechte und sollst herrschen, Land verwalten und Schutz bieten.",
+        scenes:[
+          {title:"Unruhe im Gebiet",text:"Ein Dorf bittet um Schutz. Welche Aufgabe passt zu deinem Stand?",options:[
+            {text:"Ich organisiere den Schutz des Gebiets.",feedback:"Das passt zur mittelalterlichen Vorstellung: Der Adel sollte beschützen und verteidigen."},
+            {text:"Ich ziehe ins Kloster und leite den Gottesdienst.",feedback:"Gebet und kirchliche Aufgaben gehörten vor allem zum ersten Stand, den Geistlichen."}
+          ]},
+          {title:"Leben mit Vorrechten",text:"Wer hatte in der Ständeordnung meist mehr Land und politische Rechte?",options:[
+            {text:"Adlige und hohe Geistliche.",feedback:"Richtig. Die oberen Stände besaßen meist mehr Land, Ansehen und Rechte als Bauern."},
+            {text:"Alle Menschen genau gleich.",feedback:"Nein. Rechte und Lebensbedingungen waren je nach Stand sehr ungleich verteilt."}
+          ]}
+        ],summary:"Du hast erlebt, dass der Adel Schutz bieten sollte, zugleich aber deutlich mehr Rechte und Besitz hatte."
+      },
+      {
+        id:"kloster",icon:"🙏",name:"Mönch oder Nonne",profile:"Du gehörst zum ersten Stand. Dein Alltag besteht aus Gebet, Arbeit und dem Leben in einer klösterlichen Gemeinschaft.",
+        scenes:[
+          {title:"Ein kranker Reisender",text:"Ein kranker Mensch bittet am Kloster um Hilfe.",options:[
+            {text:"Das Kloster versorgt ihn nach seinen Möglichkeiten.",feedback:"Das passt. Klöster übernahmen im Mittelalter unter anderem Kranken- und Armenfürsorge."},
+            {text:"Das Kloster ist ausschließlich für Ritterturniere da.",feedback:"Nein. Klöster waren Orte des Gebets, der Arbeit, Bildung und Fürsorge."}
+          ]},
+          {title:"Der Tagesablauf",text:"Was gehört besonders zum Leben in einem Kloster?",options:[
+            {text:"Beten und arbeiten.",feedback:"Richtig. Gebet, Arbeit, Gehorsam und das gemeinschaftliche Leben prägten den Alltag."},
+            {text:"Nur Handel und Feste feiern.",feedback:"Nein. Klosterleben war von Regeln, Gebet, Arbeit und Verzicht geprägt."}
+          ]}
+        ],summary:"Du hast erlebt, dass Klöster religiöse Orte waren, aber auch Bildung, Arbeit und Hilfe für andere ermöglichten."
+      },
+      {
+        id:"handwerk",icon:"🔨",name:"Handwerker oder Handwerkerin",profile:"Du gehörst zum dritten Stand und lebst in einer Stadt. Du lernst und arbeitest in einem Handwerk.",
+        scenes:[
+          {title:"In der Werkstatt",text:"Was prägt deinen Alltag am stärksten?",options:[
+            {text:"Ich stelle Waren her und lerne mein Handwerk.",feedback:"Das passt. Lehrlinge, Gesellen und Meister arbeiteten in städtischen Werkstätten."},
+            {text:"Ich entscheide als König über das ganze Reich.",feedback:"Nein. Ein Handwerker gehörte zum arbeitenden dritten Stand, nicht zum Königtum."}
+          ]},
+          {title:"Stand durch Geburt",text:"Kannst du deinen gesellschaftlichen Stand völlig frei auswählen?",options:[
+            {text:"Meist nicht; Herkunft und Geburt bestimmen sehr viel.",feedback:"Richtig. Ein Wechsel war möglich, aber für die meisten Menschen selten und schwierig."},
+            {text:"Ja, jeder wechselt seinen Stand jedes Jahr.",feedback:"Nein. Die Ständeordnung war fest und wurde meist durch Geburt bestimmt."}
+          ]}
+        ],summary:"Du hast erlebt, dass auch Stadtbewohner arbeiteten und zur Gesellschaft gehörten, ihre Möglichkeiten aber von Herkunft und Ordnung begrenzt waren."
+      }
+    ]
+  },
 
   {id:"g1-staende-quiz-1",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"quiz",type:"mcq",title:"Quizfrage 1",
    question:"Wer gehörte zum ersten Stand?",options:["Geistliche","Bauern","Ritter","Händler"],correct:0},
@@ -302,11 +379,7 @@ const DEFAULT_CONTENT = [
   {id:"n-optik-practice-symbol-B",subject:"natur",topic:"Licht und Optik",kind:"practice",type:"flashcard",title:"B",question:"Wofür steht B?",answer:"B = Bildgröße: Höhe des Schattenbildes auf dem Schirm."},
   {id:"n-optik-practice-symbol-bsmall",subject:"natur",topic:"Licht und Optik",kind:"practice",type:"flashcard",title:"b",question:"Wofür steht b?",answer:"b = Bildweite: Abstand von der Lichtquelle bis zum Schirm/Bild."},
   {id:"n-optik-practice-where",subject:"natur",topic:"Licht und Optik",kind:"practice",type:"mcq",title:"Was wird waagerecht eingetragen?",question:"Welche beiden Größen sind Abstände von der Lichtquelle und werden entlang der Achse eingetragen?",options:["g und b","G und B","G und g","B und b"],correct:0},
-  {id:"n-optik-lesson-shadow",subject:"natur",topic:"Licht und Optik",kind:"lesson",type:"lesson",title:"Schattenwurf konstruieren",summary:"Randstrahlen Schritt für Schritt zeichnen.",diagram:"shadow-construction",
-   sourcePages:"Arbeitsblatt Schattenbilder · Vorder- und Rückseite",originalPages:[
-     {name:"Schattenbilder · Seite 1",type:"image/jpeg",dataUrl:"media/natur_schattenbilder_seite_1.jpg"},
-     {name:"Schattenbilder · Seite 2",type:"image/jpeg",dataUrl:"media/natur_schattenbilder_seite_2.jpg"}
-   ],sections:[
+  {id:"n-optik-lesson-shadow",subject:"natur",topic:"Licht und Optik",kind:"lesson",type:"lesson",title:"Schattenwurf konstruieren",summary:"Randstrahlen Schritt für Schritt zeichnen.",diagram:"shadow-construction",sections:[
     {heading:"1. Lichtquelle markieren",text:"Die punktförmige Lichtquelle ist der gemeinsame Startpunkt der Randstrahlen."},
     {heading:"2. Randstrahlen zeichnen",text:"Ziehe mit dem Lineal einen Strahl von der Lichtquelle über die obere Kante des Gegenstands bis zum Schirm. Wiederhole das über die untere Kante."},
     {heading:"3. Schatten ablesen",text:"Zwischen den beiden Treffpunkten auf dem Schirm liegt das Schattenbild. Dort wird B gemessen."},
@@ -505,7 +578,7 @@ function homeworkDateText(i){const a=i.assignedDate?`aufgegeben ${formatDate(i.a
 function itemCategory(i){if(i.category)return i.category;if(i.kind==="homework")return "homework";if(i.customVocab)return "vocab";return "learning"}
 function originalPagesHtml(i){
   const pages=i.originalPages||[];if(!pages.length)return "";
-  return `<div class="lessonSection"><h3>Originalseiten${i.sourcePages?` · ${esc(i.sourcePages)}`:""}</h3><div class="pageGallery">${pages.map((p,n)=>p.type==="application/pdf"?`<a class="pagePdf" href="${p.dataUrl}" target="_blank" rel="noopener">📄 ${esc(p.name||`Seite ${n+1}`)}</a>`:`<a href="${p.dataUrl}" target="_blank" rel="noopener"><img src="${p.dataUrl}" alt="Originalseite ${n+1}"></a>`).join("")}</div><div class="small">Zum Vergrößern auf eine Seite tippen.</div></div>`
+  return `<details class="lessonSection"><summary style="cursor:pointer;font-weight:850">📷 Originalseiten bei Bedarf anzeigen${i.sourcePages?` · ${esc(i.sourcePages)}`:""}</summary><div class="pageGallery">${pages.map((p,n)=>p.type==="application/pdf"?`<a class="pagePdf" href="${p.dataUrl}" target="_blank" rel="noopener">📄 ${esc(p.name||`Seite ${n+1}`)}</a>`:`<a href="${p.dataUrl}" target="_blank" rel="noopener"><img src="${p.dataUrl}" alt="Originalseite ${n+1}"></a>`).join("")}</div><div class="small">Zum Vergrößern auf eine Seite tippen.</div></details>`
 }
 function uid(){return crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2)+Date.now()}
 function randomToken(len=8){const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";const a=new Uint8Array(len);crypto.getRandomValues(a);return [...a].map(n=>chars[n%chars.length]).join("")}
@@ -890,6 +963,48 @@ function lessonExtra(i){
   if(i.diagram==="shadow-symbols")return `<div class="lessonSection softDiagram"><h3>So liegen die vier Größen</h3><svg viewBox="0 0 760 300" class="learnSvg" aria-label="Schattenwurf mit G g B b"><line x1="40" y1="150" x2="720" y2="150" stroke="#a9b8ca" stroke-dasharray="8 8"/><circle cx="90" cy="150" r="13" fill="#f2b84b"/><text x="55" y="125">Lichtquelle</text><line x1="330" y1="105" x2="330" y2="195" stroke="#536b88" stroke-width="10"/><line x1="690" y1="60" x2="690" y2="240" stroke="#536b88" stroke-width="10"/><line x1="90" y1="150" x2="690" y2="60" stroke="#e7a84a" stroke-width="3"/><line x1="90" y1="150" x2="690" y2="240" stroke="#e7a84a" stroke-width="3"/><text x="345" y="105" font-size="30" font-weight="800">G</text><text x="705" y="70" font-size="30" font-weight="800">B</text><path d="M90 225 H330" stroke="#7d6bc5" stroke-width="5"/><text x="195" y="260" font-size="28" font-weight="800">g</text><path d="M90 280 H690" stroke="#7d6bc5" stroke-width="5"/><text x="380" y="295" font-size="28" font-weight="800">b</text></svg><div class="memoryGrid"><b>G = Gegenstandsgröße</b><b>g = Gegenstandsweite</b><b>B = Bildgröße</b><b>b = Bildweite</b></div></div>`;
   if(i.diagram==="shadow-construction")return `<div class="lessonSection softDiagram"><h3>Die zwei Randstrahlen</h3><svg viewBox="0 0 760 260" class="learnSvg"><line x1="50" y1="135" x2="710" y2="135" stroke="#b5c1cf" stroke-dasharray="8 8"/><circle cx="90" cy="135" r="12" fill="#f2b84b"/><line x1="330" y1="95" x2="330" y2="175" stroke="#526b87" stroke-width="9"/><line x1="690" y1="45" x2="690" y2="225" stroke="#526b87" stroke-width="9"/><line x1="90" y1="135" x2="690" y2="45" stroke="#d87c69" stroke-width="4"/><line x1="90" y1="135" x2="690" y2="225" stroke="#d87c69" stroke-width="4"/><text x="160" y="70" font-size="22">Randstrahl</text><text x="350" y="90" font-size="22">Gegenstand</text><text x="610" y="30" font-size="22">Schirm</text></svg></div>`;
   if(i.diagram==="reflection")return `<div class="lessonSection softDiagram"><h3>Spiegelung: immer zuerst das Lot</h3><svg viewBox="0 0 760 330" class="learnSvg"><line x1="100" y1="250" x2="660" y2="250" stroke="#526b87" stroke-width="10"/><circle cx="380" cy="250" r="8" fill="#263a54"/><line x1="380" y1="250" x2="380" y2="45" stroke="#91a3b7" stroke-width="3" stroke-dasharray="8 7"/><line x1="150" y1="70" x2="380" y2="250" stroke="#d87c69" stroke-width="5"/><line x1="380" y1="250" x2="610" y2="70" stroke="#6b8fd4" stroke-width="5"/><path d="M380 170 A80 80 0 0 0 317 201" fill="none" stroke="#7d6bc5" stroke-width="4"/><path d="M380 170 A80 80 0 0 1 443 201" fill="none" stroke="#7d6bc5" stroke-width="4"/><text x="390" y="65" font-size="24" font-weight="800">Lot (90° zum Spiegel)</text><text x="270" y="175" font-size="24">α</text><text x="470" y="175" font-size="24">β</text><text x="275" y="300" font-size="24">Spiegel</text></svg><div class="merksatz">α = β · Die Winkel werden zum Lot gemessen.</div></div>`;
+  if(i.diagram==="estate-pyramid")return `
+    <div class="lessonSection softDiagram">
+      <h3>Die mittelalterliche Ständegesellschaft</h3>
+      <div class="merksatz" style="margin-top:0">☀️ Die Ordnung wurde als <strong>gottgewollt</strong> dargestellt. Der Stand wurde meistens durch die Geburt bestimmt.</div>
+      <svg viewBox="0 0 680 650" class="learnSvg" role="img" aria-label="Pyramide der mittelalterlichen Ständegesellschaft mit Geistlichen, Adel, Bauern und Stadtbewohnern">
+        <g aria-label="König">
+          <path d="M300 62 L320 34 L340 62 L365 34 L360 82 L280 82 L275 34 Z" fill="#d7ae45" stroke="#6b5a35" stroke-width="4" stroke-linejoin="round"/>
+          <text x="390" y="70" font-size="28" font-weight="800" fill="#31445f">König</text>
+        </g>
+        <polygon points="320,100 250,230 390,230" fill="#b87370" stroke="#405269" stroke-width="4" stroke-linejoin="round"/>
+        <polygon points="250,230 390,230 455,350 185,350" fill="#71829b" stroke="#405269" stroke-width="4" stroke-linejoin="round"/>
+        <polygon points="185,350 395,350 505,610 45,610" fill="#738b69" stroke="#405269" stroke-width="4" stroke-linejoin="round"/>
+        <polygon points="395,350 455,350 595,610 505,610" fill="#a7ba76" stroke="#405269" stroke-width="4" stroke-linejoin="round"/>
+
+        <g fill="#fff" text-anchor="middle">
+          <text x="320" y="174" font-size="27" font-weight="900">Geistliche</text>
+          <text x="320" y="204" font-size="20">1. Stand · betet</text>
+          <text x="320" y="284" font-size="31" font-weight="900">Adlige</text>
+          <text x="320" y="320" font-size="21">2. Stand · schützt</text>
+          <text x="275" y="430" font-size="34" font-weight="900">„Volk“</text>
+          <text x="275" y="472" font-size="29" font-weight="800">Bauern · ca. 90 %</text>
+          <text x="275" y="510" font-size="22">3. Stand · arbeitet</text>
+          <text x="275" y="548" font-size="20">oft unfrei und abhängig</text>
+          <text x="275" y="580" font-size="20">Knechte und Mägde</text>
+        </g>
+        <g fill="#263a42" text-anchor="middle">
+          <text x="492" y="445" font-size="23" font-weight="900" transform="rotate(68 492 445)">Stadtbewohner</text>
+          <text x="520" y="532" font-size="22" font-weight="900" transform="rotate(68 520 532)">ca. 9 %</text>
+        </g>
+        <path d="M474 150 C560 150 560 330 474 330" fill="none" stroke="#7f8c9d" stroke-width="4"/>
+        <text x="570" y="225" font-size="28" font-weight="900" fill="#31445f" text-anchor="middle">ca. 1 %</text>
+        <text x="570" y="258" font-size="18" fill="#52657c" text-anchor="middle">Geistliche</text>
+        <text x="570" y="282" font-size="18" fill="#52657c" text-anchor="middle">und Adel</text>
+      </svg>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:9px">
+        <div class="softPanel"><strong>🙏 Geistliche · beten</strong><div class="small">Bischöfe, Äbte, Pfarrer, Mönche und Nonnen</div></div>
+        <div class="softPanel"><strong>🛡️ Adlige · schützen</strong><div class="small">Herzöge, Grafen und Ritter</div></div>
+        <div class="softPanel"><strong>🌾 Bauern · arbeiten</strong><div class="small">Mit etwa 90 % die größte Gruppe; häufig unfrei oder feudalabhängig</div></div>
+        <div class="softPanel"><strong>🏘️ Stadtbevölkerung · ca. 9 %</strong><div class="small">Kaufleute, Patrizier, Handwerksmeister, Händler, Gesellen, Lohnarbeiter, Randgruppen und Bettler</div></div>
+      </div>
+      <div class="small" style="margin-top:12px"><strong>Wichtig:</strong> Die Pyramide zeigt eine streng hierarchische Gesellschaft. Die Kleidung war ebenfalls durch feste Regeln bestimmt.</div>
+    </div>`;
   if(i.diagram!=="three-estates")return "";
   return `
     <div class="lessonSection" style="background:#f4f7fb">
@@ -911,8 +1026,8 @@ function renderLesson(i){
   const p=progressFor(i.id);
   $("#workInside").innerHTML=`
     <span class="badge">${esc(subjectMeta(i.subject).name)} · Lernen</span><h2>${esc(i.title)}</h2>
-    ${originalPagesHtml(i)}
     ${lessonExtra(i)}
+    ${originalPagesHtml(i)}
     ${(i.sections||[]).map(s=>`<div class="lessonSection"><h3>${esc(s.heading)}</h3><div>${esc(s.text)}</div></div>`).join("")}
     ${i.memory?`<div class="merksatz">💡 ${esc(i.memory)}</div>`:""}
     ${i.videoUrl?`<div class="videoCard"><h3 style="margin-top:0">▶ Lernvideo</h3><p class="small">${esc(i.videoLabel||"Video öffnen")}</p><a class="primary big" style="display:block;text-align:center;text-decoration:none" href="${esc(i.videoUrl)}" target="_blank" rel="noopener">Video öffnen</a></div>`:""}
@@ -977,6 +1092,7 @@ async function correctPractice(i,msg="✓ Richtig!"){
 function renderPracticeItem(i){
   if(i._vocabMode==="flashcard")renderVocabFlashcard(i);
   else if(i.type==="mcq")renderPracticeMCQ(i);
+  else if(i.type==="roleplay")renderRoleplay(i);
   else if(isVocabItem(i))renderVocabWriting(i);
   else if(i.type==="flashcard")renderFlashcard(i);
   else if(i.type==="cloze")renderPracticeCloze(i);
@@ -984,6 +1100,39 @@ function renderPracticeItem(i){
   else if(i.type==="anglemeasure")renderAngleMeasure(i);
   addDialogClose("#workDialog",abortWorkDialog);
   $("#workDialog").showModal()
+}
+
+function renderRoleplay(i){
+  let roleChoice=null,sceneIndex=0,answered=false;
+  const renderRoleChoice=()=>{
+    $("#workInside").innerHTML=practiceHead()+`<span class="badge">${esc(subjectMeta(i.subject).name)} · Rollenspiel</span>
+      <h2>${esc(i.title)}</h2><p>${esc(i.question)}</p>
+      <div class="grid">${(i.roles||[]).map(r=>`<button class="card rolePick" data-role="${esc(r.id)}" style="text-align:left"><div style="font-size:2rem">${esc(r.icon)}</div><strong>${esc(r.name)}</strong><div class="small">${esc(r.profile)}</div></button>`).join("")}</div>
+      <div id="practiceFeedback"></div>`;
+    $$(".rolePick").forEach(b=>b.onclick=()=>{roleChoice=(i.roles||[]).find(r=>r.id===b.dataset.role);sceneIndex=0;renderScene()})
+  };
+  const renderScene=()=>{
+    const scene=roleChoice.scenes[sceneIndex];answered=false;
+    $("#workInside").innerHTML=practiceHead()+`<span class="badge">${esc(roleChoice.icon)} ${esc(roleChoice.name)}</span>
+      <div class="lessonSection"><strong>Deine Rolle</strong><p>${esc(roleChoice.profile)}</p></div>
+      <div class="small">Situation ${sceneIndex+1} von ${roleChoice.scenes.length}</div><h2>${esc(scene.title)}</h2><div class="question">${esc(scene.text)}</div>
+      <div>${scene.options.map((o,n)=>`<button class="choice roleOption" data-opt="${n}">${esc(o.text)}</button>`).join("")}</div>
+      <div id="practiceFeedback"></div><button id="roleNext" class="primary big hidden">${sceneIndex+1<roleChoice.scenes.length?"Nächste Situation":"Rollenspiel abschließen"}</button>`;
+    $$(".roleOption").forEach(b=>b.onclick=()=>{
+      if(answered)return;answered=true;const option=scene.options[+b.dataset.opt];
+      $$(".roleOption").forEach(x=>x.disabled=true);b.classList.add("selected");
+      $("#practiceFeedback").innerHTML=`<div class="feedback ok">${esc(option.feedback)}</div>`;$("#roleNext").classList.remove("hidden")
+    });
+    $("#roleNext").onclick=async()=>{
+      if(!answered)return;
+      if(sceneIndex+1<roleChoice.scenes.length){sceneIndex++;renderScene();return}
+      await completeItem(i,roleChoice.name);
+      $("#workInside").innerHTML=practiceHead()+`<span class="badge good">✓ Rollenspiel beendet</span><h2>${esc(roleChoice.icon)} ${esc(roleChoice.name)}</h2>
+        <div class="finalBox">${esc(roleChoice.summary)}</div><button id="finishRoleplay" class="primary big">Weiter</button>`;
+      $("#finishRoleplay").onclick=nextPractice
+    }
+  };
+  renderRoleChoice()
 }
 
 function ensureAngleStyles(){
@@ -1242,6 +1391,7 @@ function renderPracticeBuilder(i){
 
 /* Homework */
 function renderHomework(i){
+  if(i.type==="choicewriting")return renderChoiceWritingHomework(i);
   if(i.type==="writing")return renderWritingHomework(i);
   const p=progressFor(i.id);let answers=Array(i.steps.length).fill(null);
   const shownSteps=i.steps.map(s=>({...s,shownOptions:shuffledOptions(s.options)}));
@@ -1261,6 +1411,33 @@ function renderHomework(i){
     await completeItem(i,i.finalText);$("#homeFeedback").innerHTML='<div class="feedback ok">✓ Richtig ausgewählt.</div>';$("#finalArea").innerHTML=`<div class="finalBox"><strong>Endfassung zum Abschreiben:</strong><br>${esc(i.finalText)}</div>`
   };
   $("#closeHomework").onclick=()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)}
+}
+
+function renderChoiceWritingHomework(i){
+  const p=progressFor(i.id),variants=i.variants||[];
+  p.variantAnswers??={};let selected=p.choiceVariant||"";
+  const shell=()=>{
+    $("#workInside").innerHTML=`<span class="badge">${esc(subjectMeta(i.subject).name)} · Hausaufgabe</span><h2>${esc(i.title)}</h2>
+      ${homeworkDateText(i)?`<div class="badge warn">📅 ${esc(homeworkDateText(i))}</div>`:""}${originalPagesHtml(i)}
+      <div class="homeworkIntro"><strong>Deine Aufgabe:</strong><p>${esc(i.question)}</p></div>
+      <div class="grid">${variants.map(v=>`<button class="choice variantPick ${selected===v.id?"selected":""}" data-variant="${esc(v.id)}"><strong>${esc(v.title)}</strong></button>`).join("")}</div>
+      <div id="variantWork"></div><button id="closeHomework" class="ghost big" style="margin-top:10px">Schließen</button>`;
+    $$(".variantPick").forEach(b=>b.onclick=()=>{selected=b.dataset.variant;p.choiceVariant=selected;p.updatedAt=Date.now();saveLocal();shell();renderVariant()});
+    $("#closeHomework").onclick=()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)}
+  };
+  const renderVariant=()=>{
+    if(!selected)return;const v=variants.find(x=>x.id===selected),target=$("#variantWork");if(!v||!target)return;
+    target.innerHTML=`<div class="stepBox"><h3>${esc(v.title)}</h3><p>${esc(v.question)}</p>
+      <div class="softPanel"><strong>So kannst du vorgehen:</strong><ol>${(v.guide||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>
+      <label class="writeLabel">Deine Antwort<textarea id="choiceWritingAnswer" rows="8" placeholder="Schreibe hier deine eigene Antwort …">${esc(p.variantAnswers[selected]||"")}</textarea></label>
+      <div class="actions"><button id="choiceWritingHelp" class="ghost">💡 Satzanfang</button><button id="choiceWritingSave" class="primary">✓ Für heute fertig</button></div>
+      <div id="choiceWritingHelpArea"></div><div id="choiceWritingFeedback"></div></div>`;
+    $("#choiceWritingAnswer").oninput=()=>{p.variantAnswers[selected]=$("#choiceWritingAnswer").value;p.answer=p.variantAnswers[selected];p.status="working";p.updatedAt=Date.now();saveLocal()};
+    let helpLevel=0;
+    $("#choiceWritingHelp").onclick=()=>{helpLevel++;$("#choiceWritingHelpArea").innerHTML=`<div class="helpBox"><strong>${helpLevel===1?"Satzanfang":"Beispiel zum Vergleichen"}</strong><p>${esc(helpLevel===1?v.starter:v.example)}</p></div>`;if(helpLevel>=2)$("#choiceWritingHelp").disabled=true};
+    $("#choiceWritingSave").onclick=async()=>{const answer=$("#choiceWritingAnswer").value.trim();if(!answer){$("#choiceWritingFeedback").innerHTML='<div class="feedback no">Schreibe zuerst deine Antwort.</div>';return}p.variantAnswers[selected]=answer;await completeItem(i,`Variante ${selected}: ${answer}`);$("#choiceWritingFeedback").innerHTML='<div class="feedback ok">✓ Gespeichert. Deine eigene Antwort bleibt erhalten.</div>'}
+  };
+  shell();renderVariant();addDialogClose("#workDialog",()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)});$("#workDialog").showModal()
 }
 
 
@@ -1741,7 +1918,7 @@ async function teacherSeedLibrary(){
 }
 async function teacherSeedNotebookOptics(){
   if(!teacherRoom)return;
-  const items=DEFAULT_CONTENT.filter(item=>item.subject==="natur"||item.id.startsWith("g1-staende-lernen-verteilung")||item.id.startsWith("g1-staende-practice-verteilung"));
+  const items=DEFAULT_CONTENT.filter(item=>item.subject==="natur"||item.id.startsWith("g1-staende-"));
   try{await rpc("lerninsel_teacher_library_seed",{p_items:items,p_room_id:teacherRoom.roomId},true);toast("✓ Natur und GSEL 1 wurden aktualisiert.");await teacherPull()}
   catch(error){toast("Die neuen Natur- und GSEL-Inhalte konnten nicht übernommen werden.")}
 }

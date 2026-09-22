@@ -1,22 +1,35 @@
-LERNINSEL v9.0.9 – NATUR „LICHT“ UND GSEL 1
+LERNINSEL v9.0.13 – OHNE UNTERRICHTSFOTOS
 
 NEU IN DIESER VERSION
+
+- Die abfotografierten Buch-, Arbeitsblatt- und Unterrichtsbilder sind nicht
+  mehr Bestandteil der App oder der ZIP. Sie dienten nur als Vorlage zum
+  Übernehmen der Lerninhalte.
+- Das fotografierte Unterrichtsbild zur mittelalterlichen Ständegesellschaft
+  wurde als saubere, auf dem Handy lesbare Grafik direkt in der App
+  nachgezeichnet.
+- Die Pyramide zeigt Geistliche, Adel, Bauern und Stadtbevölkerung mit
+  Aufgaben, Beispielen und den Prozentangaben 1 %, 90 % und 9 %.
+
+GSEL 1:
+- Die Inhalte der Buchseiten 12 und 13 sind als richtige Lerntexte und
+  Aufgaben übernommen – ohne die Fotos der Seiten anzuzeigen.
+- Die Hausaufgabe „Aufgabe 5, Seite 13“ erscheint mit Aufgabedatum 22.09.2026.
+- Da das Buch Aufgabe 5 in die Wege A und B aufteilt, wählt der Schüler in
+  der App zuerst die passende Variante. Zu beiden gibt es schrittweise Hilfen.
+- Neu ist das interaktive Rollenspiel „Ein Tag im Mittelalter“ mit den Rollen
+  Bauer/Bäuerin, Ritter/Adlige, Mönch/Nonne und Handwerker/in.
 
 Natur:
 - Die bisherigen Themen „Licht und Sehen“, „Ausbreitung des Lichts“ und
   „Licht und Optik“ erscheinen gemeinsam als ein Thema „Licht“.
 - „Üben für die Arbeit“ steht in Natur ganz unten.
-- Die beiden neuen Arbeitsblattfotos zu Schattenbildern sind beim Lerninhalt
-  „Schattenwurf konstruieren“ hinterlegt und können vergrößert werden.
+- Die Inhalte der beiden Arbeitsblätter zu Schattenbildern wurden in
+  verständliche Lernschritte und Übungen übertragen. Die Fotos selbst werden
+  nicht verwendet.
 - Neue Übungen behandeln die Begriffe am Schattenbild, die optische Achse,
   die punktförmige Lichtquelle, die richtige Anordnung sowie eine
   Konstruktionsaufgabe mit G, g, B und b.
-
-GSEL 1:
-- Das neue Unterrichtsbild „Die mittelalterliche Ständegesellschaft“ ist im
-  Thema „Die drei Stände im Mittelalter“ enthalten.
-- Dazu gibt es eine einfache Zusammenfassung und neue Übungen zu den
-  Größenverhältnissen und zur gottgewollten Ordnung.
 
 WICHTIG: DIE ALTEN CODES BLEIBEN ERHALTEN
 
@@ -31,18 +44,16 @@ INSTALLATION AUF GITHUB
    - sw.js
    - manifest.webmanifest
 
-2. Den Ordner „media“ mit allen drei Bildern ebenfalls hochladen. Im
-   Repository muss danach ein Ordner „media“ sichtbar sein.
-
-3. Warten, bis GitHub Pages die Änderung veröffentlicht hat. Danach die
+2. Es müssen keine Fotos hochgeladen werden. Warten, bis GitHub Pages die
+   Änderung veröffentlicht hat. Danach die
    Lerninsel auf dem Handy vollständig schließen und neu öffnen.
 
-4. Im Lehrerbereich „Inhalte“ öffnen und einmal auf
+3. Im Lehrerbereich „Inhalte“ öffnen und einmal auf
    „Neue Natur- und GSEL-Inhalte übernehmen“ tippen. Dadurch werden die
    bestehenden Natur-Inhalte unter „Licht“ zusammengeführt und die neuen
-   Übungen sowie das GSEL-Bild der aktuellen Klasse hinzugefügt.
+   Übungen sowie die nachgezeichnete Ständepyramide hinzugefügt.
 
-Für weitere Klassen Schritt 4 in jeder Klasse wiederholen.
+Für weitere Klassen Schritt 3 in jeder Klasse wiederholen.
 
 SUPABASE
 
