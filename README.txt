@@ -1,8 +1,19 @@
-LERNINSEL v9.0.6 – Englisch-Flashkarten und Schreibtraining
+LERNINSEL v9.0.7 – Fächer pro Raum und Schüler pausieren
 
 In GitHub im Repository "lerninsel" ersetzen:
 - app.js
 - sw.js
+
+Danach einmal in Supabase im SQL Editor vollständig ausführen:
+- supabase_v9_0_7_faecher_pause.sql
+
+Fächerfreigabe:
+- Im Lehrerbereich unter „Schüler“ können Fächer für den ganzen Raum
+  pausiert oder fortgesetzt werden.
+- Zusätzlich kann jedes Fach für einzelne Schüler pausiert werden.
+- Pausierte Fächer werden in der Schüler- und Elternansicht ausgeblendet.
+- Inhalte, bisherige Lernstände und Zugangscodes bleiben erhalten.
+- Die Fächer heißen Mathe, Englisch, Deutsch, GSEL 1, GSEL 2 und Natur.
 
 Die neue Deutsch-Hausaufgabe führt jetzt vom Einleitungssatz mit Titel,
 Autor, Textsorte und Thema über vier kleine Abschnitte zur vollständigen

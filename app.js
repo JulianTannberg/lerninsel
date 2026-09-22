@@ -453,7 +453,7 @@ let state = {
   items:[],
   progress:{},
   profile:null,
-  teacher:{rooms:[],students:[],items:[],progress:{},events:[],profiles:[],parents:[],library:[]},
+  teacher:{rooms:[],students:[],items:[],progress:{},events:[],profiles:[],parents:[],library:[],roomSubjects:{},studentSubjects:{}},
   currentSubject:null,
   currentTopic:null,
   practice:null,
@@ -545,6 +545,15 @@ function addDialogClose(dialogId,onClose){
 function toast(msg){const d=document.createElement("div");d.className="toast";d.textContent=msg;document.body.appendChild(d);setTimeout(()=>d.remove(),1900)}
 function closeDialog(id){const d=$(id); if(d?.open)d.close()}
 function subjectMeta(id){return SUBJECTS.find(s=>s.id===id)||{id,name:id,icon:"📚"}}
+function roomSubjectEnabled(subjectId){return state.teacher.roomSubjects?.[subjectId]!==false}
+function studentSubjectEnabled(studentId,subjectId){return state.teacher.studentSubjects?.[studentId]?.[subjectId]!==false}
+function subjectEnabledForStudent(studentId,subjectId){return roomSubjectEnabled(subjectId)&&studentSubjectEnabled(studentId,subjectId)}
+function teacherSubjectChecks(studentId=null){
+  return `<div class="roomChecks">${SUBJECTS.map(s=>{
+    const roomOn=roomSubjectEnabled(s.id),checked=studentId?studentSubjectEnabled(studentId,s.id):roomOn;
+    return `<label class="roomCheck"><input type="checkbox" class="${studentId?"studentSubjectToggle":"roomSubjectToggle"}" data-subject-id="${s.id}" ${studentId?`data-student-id="${studentId}"`:""} ${checked?"checked":""} ${studentId&&!roomOn?"disabled":""}>${s.icon} ${esc(s.name)}${studentId&&!roomOn?" · Raum pausiert":""}</label>`
+  }).join("")}</div>`
+}
 function kindName(k){return ({lesson:"Lernen",practice:"Üben",homework:"Hausaufgaben",quiz:"Quiz"})[k]||k}
 function progressFor(id){
   state.progress[id] ??= {status:"not_started",attempts:0,helps:[],rewarded:false,answer:null,updatedAt:null};
@@ -1485,6 +1494,7 @@ async function teacherPull(){
   try{
     const r=await rpc("lerninsel_teacher_get_state",{p_room_id:teacherRoom.roomId},true);
     state.teacher.students=r?.students||[];state.teacher.items=r?.items||[];state.teacher.progress=r?.progress||{};state.teacher.events=r?.events||[];state.teacher.parents=r?.parents||[];
+    state.teacher.roomSubjects=r?.roomSubjects||{};state.teacher.studentSubjects=r?.studentSubjects||{};
     try{state.teacher.profiles=await rpc("lerninsel_teacher_get_profiles",{p_room_id:teacherRoom.roomId},true)||[]}catch{state.teacher.profiles=[]}
     try{state.teacher.library=await rpc("lerninsel_teacher_library_get",{},true)||[]}catch{state.teacher.library=[]}
   }catch{}
@@ -1545,6 +1555,7 @@ function renderTeacherPane(tab){
   if(tab==="students"){
     const suggestedCode=String(Math.floor(100000+Math.random()*900000));
     p.innerHTML=`<div class="card"><span class="sectionTitle">${esc(teacherRoom?.name||"Klasse")}</span><h3>Schüler und Eltern</h3><p class="small">Neue und neu vergebene Codes kannst du hier erneut kopieren. Ältere Codes wurden nur verschlüsselt gespeichert und müssen einmal neu vergeben werden.</p>
+      ${teacherRoom?`<div class="teacherForm"><h4>Fächer für den ganzen Raum</h4><p class="small">Ohne Haken ist das Fach für alle Schüler pausiert. Inhalte und Lernstände bleiben erhalten.</p>${teacherSubjectChecks()}</div>`:""}
       ${teacherRoom?`<div class="teacherForm"><h4>Neuen Schüler anlegen</h4><label>Name oder Kürzel<input id="studentLabel" placeholder="z. B. Niklas"></label>
         <label>Persönlicher Schülercode<input id="studentCode" inputmode="numeric" maxlength="12" value="${suggestedCode}"></label>
         <button id="newStudent" class="primary big" style="margin-top:10px">Schüler anlegen</button><p id="studentCreateMsg" class="small"></p></div>`:
@@ -1552,6 +1563,7 @@ function renderTeacherPane(tab){
       <div class="studentTable">${(state.teacher.students||[]).map(s=>{const pr=state.teacher.profiles.find(x=>x.studentId===s.id)||{},studentCode=savedTeacherAccessCode("students",s.id);
         const parents=(state.teacher.parents||[]).filter(x=>x.studentId===s.id&&x.active);
         return `<div class="libraryItem"><div class="studentRow" style="border:0;padding:0"><div><strong>${esc(s.label)}</strong><div class="small">${esc(pr.avatar||"")} ${esc(pr.nickname||"noch kein Profil")} · ${parents.length} ${parents.length===1?"Elternzugang":"Elternzugänge"}</div></div><div class="actions" style="flex:0 0 auto"><button class="ghost showParentForm" data-id="${s.id}">+ Eltern</button><button class="ghost deleteStudent" data-id="${s.id}">Löschen</button></div></div>
+          <div class="teacherForm"><strong>Fächer für ${esc(s.label)}</strong><p class="small">Ohne Haken ist das Fach nur für diesen Schüler pausiert.</p>${teacherSubjectChecks(s.id)}</div>
           <div class="teacherForm"><strong>🎒 Schülercode: ${studentCode?`<code>${esc(studentCode.code)}</code>`:"nicht auslesbar"}</strong><div class="actions" style="margin-top:8px"><button class="ghost copyAccess" data-kind="students" data-id="${s.id}" ${studentCode?"":"disabled"}>Zugang kopieren</button><button class="ghost resetStudentCode" data-id="${s.id}">Code neu vergeben</button></div>${studentCode?"":'<div class="small">Der alte Code wurde nur verschlüsselt gespeichert.</div>'}</div>
           ${parents.map(x=>{const pc=savedTeacherAccessCode("parents",x.id);return `<div class="studentRow"><div><strong>👪 ${esc(x.label)}</strong><div class="small">Elterncode: ${pc?`<code>${esc(pc.code)}</code>`:"nicht auslesbar"}</div></div><div class="actions"><button class="ghost copyAccess" data-kind="parents" data-id="${x.id}" ${pc?"":"disabled"}>Kopieren</button><button class="ghost resetParentCode" data-id="${x.id}">Code neu</button></div></div>`}).join("")}
           <div class="parentForm hidden" data-parent-form="${s.id}"><label>Name/Bezeichnung<input class="parentLabel" placeholder="z. B. Mutter"></label><label>Elterncode<input class="parentAccessCode" value="${parentCode()}"></label><button class="primary big createParentAccess" data-id="${s.id}">Elternzugang erstellen</button><p class="small parentMsg"></p></div></div>`}).join("")||'<div class="small">Noch keine Schüler.</div>'}</div></div>`;
@@ -1561,12 +1573,14 @@ function renderTeacherPane(tab){
     $$(".copyAccess").forEach(b=>b.onclick=()=>copyTeacherAccess(b.dataset.kind,b.dataset.id));
     $$(".resetStudentCode").forEach(b=>b.onclick=()=>teacherResetStudentCode(b.dataset.id));
     $$(".resetParentCode").forEach(b=>b.onclick=()=>teacherResetParentCode(b.dataset.id));
-    $$(".deleteStudent").forEach(b=>b.onclick=()=>teacherDeleteStudent(b.dataset.id))
+    $$(".deleteStudent").forEach(b=>b.onclick=()=>teacherDeleteStudent(b.dataset.id));
+    $$(".roomSubjectToggle").forEach(x=>x.onchange=()=>teacherSetRoomSubject(x.dataset.subjectId,x.checked));
+    $$(".studentSubjectToggle").forEach(x=>x.onchange=()=>teacherSetStudentSubject(x.dataset.studentId,x.dataset.subjectId,x.checked))
   }
   if(tab==="progress"){
     const prog=state.teacher.progress||{};
     p.innerHTML=(state.teacher.students||[]).map(s=>{
-      const arr=state.teacher.items||DEFAULT_CONTENT,d=arr.filter(i=>i.kind!=="quiz"&&prog?.[s.id]?.[i.id]?.status==="completed").length,total=arr.filter(i=>i.kind!=="quiz").length;
+      const arr=(state.teacher.items||DEFAULT_CONTENT).filter(i=>subjectEnabledForStudent(s.id,i.subject)),d=arr.filter(i=>i.kind!=="quiz"&&prog?.[s.id]?.[i.id]?.status==="completed").length,total=arr.filter(i=>i.kind!=="quiz").length;
       return `<div class="card" style="margin-bottom:10px"><h3>${esc(s.label)}</h3><div class="kpiGrid"><div class="kpi"><strong>${d}/${total}</strong><span class="small">erledigt</span></div>
         <div class="kpi"><strong>${Object.values(prog?.[s.id]||{}).filter(x=>x?.rewarded).length}</strong><span class="small">Inselpunkte</span></div></div></div>`}).join("")||'<div class="card">Noch keine Schüler.</div>'
   }
@@ -1576,7 +1590,7 @@ function renderTeacherPane(tab){
     $("#createRoom").onclick=teacherCreateRoom;if($("#refreshTeacher"))$("#refreshTeacher").onclick=teacherPull;if($("#renameRoom"))$("#renameRoom").onclick=teacherRenameRoom
   }
   if(tab==="live"){
-    const items=state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT;
+    const items=(state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT).filter(i=>roomSubjectEnabled(i.subject));
     const topics=[...new Map(items.filter(i=>i.kind==="quiz").map(i=>[`${i.subject}|${i.topic}`,{subject:i.subject,topic:i.topic}])).values()];
     p.innerHTML=`<div class="card"><h3>⚡ Live-Quiz</h3><p class="small">Wie bei einem Klassenquiz: gleicher Fragensatz, Zeit läuft, richtige schnelle Antworten bringen mehr Punkte.</p>
       <label>Thema<select id="liveTopic">${topics.map(x=>`<option value="${x.subject}|${esc(x.topic)}">${esc(subjectMeta(x.subject).name)} · ${esc(x.topic)}</option>`).join("")}</select></label>
@@ -1597,7 +1611,7 @@ function startTeacherTest(){
   role="student";
   studentSession={demo:true,teacherTest:true};
   state.student={id:"teacher-test",label:"Test-Schüler"};
-  state.items=(state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT).map(x=>structuredClone(x));
+  state.items=(state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT).filter(i=>roomSubjectEnabled(i.subject)).map(x=>structuredClone(x));
   state.progress={};
   state.profile={nickname:"Test",avatar:"🦊",games_spent:0,game_best:0};
   state.currentSubject=null;state.currentTopic=null;state.practice=null;state.quiz=null;state.live=null;
@@ -1698,6 +1712,20 @@ async function teacherToggleLibraryRoom(itemId,roomId,checked){
   const entry=(state.teacher.library||[]).find(e=>e.item?.id===itemId);if(!entry)return;
   const ids=new Set(entry.roomIds||[]);if(checked)ids.add(roomId);else ids.delete(roomId);
   try{await teacherLibraryUpsert(entry.item,[...ids]);toast(checked?"✓ Inhalt eingeblendet.":"✓ Inhalt ausgeblendet, aber nicht gelöscht.")}catch(e){toast("Zuweisung konnte nicht gespeichert werden.");await teacherPull()}
+}
+async function teacherSetRoomSubject(subjectId,active){
+  if(!teacherRoom)return;
+  try{
+    await rpc("lerninsel_teacher_set_room_subject",{p_room_id:teacherRoom.roomId,p_subject_id:subjectId,p_active:active},true);
+    toast(active?"✓ Fach für den Raum fortgesetzt.":"✓ Fach für den Raum pausiert.");await teacherPull()
+  }catch(e){toast("Fach konnte nicht geändert werden. Bitte zuerst die neue SQL-Datei ausführen.");await teacherPull()}
+}
+async function teacherSetStudentSubject(studentId,subjectId,active){
+  if(!teacherRoom)return;
+  try{
+    await rpc("lerninsel_teacher_set_student_subject",{p_room_id:teacherRoom.roomId,p_student_id:studentId,p_subject_id:subjectId,p_active:active},true);
+    toast(active?"✓ Fach für den Schüler fortgesetzt.":"✓ Fach für den Schüler pausiert.");await teacherPull()
+  }catch(e){toast("Fach konnte nicht geändert werden. Bitte zuerst die neue SQL-Datei ausführen.");await teacherPull()}
 }
 function fileAsDataUrl(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)})}
 async function fileToStoredPage(file){
