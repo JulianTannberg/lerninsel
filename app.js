@@ -300,11 +300,26 @@ const DEFAULT_CONTENT = [
     {heading:"Zweimal spiegeln",text:"Bei einem rechtwinkligen Winkelspiegel wird der Lichtstrahl zuerst an einem Spiegel und danach am zweiten Spiegel reflektiert. An jedem Spiegel gilt erneut: Einfallswinkel = Reflexionswinkel."},
     {heading:"Beim Zeichnen",text:"Arbeite immer nur an einem Auftreffpunkt: Lot einzeichnen, gleichen Winkel auf die andere Seite übertragen, Strahl bis zum nächsten Spiegel verlängern und dort wiederholen."}
   ],memory:"Beim Winkelspiegel dieselben vier Schritte zweimal nacheinander anwenden."},
-  {id:"n-optik-quiz-1",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quiz G",question:"Was bedeutet G?",options:["Gegenstandsgröße","Gegenstandsweite","Bildgröße","Bildweite"],correct:0},
-  {id:"n-optik-quiz-2",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quiz g",question:"Was bedeutet g?",options:["Gegenstandsweite","Gegenstandsgröße","Bildweite","Bildgröße"],correct:0},
-  {id:"n-optik-quiz-3",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quiz B",question:"Was bedeutet B?",options:["Bildgröße","Bildweite","Gegenstandsgröße","Gegenstandsweite"],correct:0},
-  {id:"n-optik-quiz-4",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quiz b",question:"Was bedeutet b?",options:["Bildweite","Bildgröße","Gegenstandsweite","Gegenstandsgröße"],correct:0},
-  {id:"n-optik-quiz-5",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quiz Reflexion",question:"Was gilt am ebenen Spiegel?",options:["Einfallswinkel = Reflexionswinkel","Einfallswinkel ist immer 90°","Reflexionswinkel ist immer 45°","Das Lot ist parallel zum Spiegel"],correct:0},
+  {id:"n-optik-quiz-1",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quizfrage 1",question:"Welche der folgenden Lichtquellen ist eine beleuchtete Lichtquelle?",options:["Sonne","Glühwürmchen","Mond","Taschenlampe"],correct:2,
+   explanations:["Die Sonne erzeugt ihr Licht selbst und ist daher eine selbstleuchtende Lichtquelle.","Das Glühwürmchen erzeugt eigenes Licht und zählt zu den selbstleuchtenden Lichtquellen.","Der Mond leuchtet nicht von selbst, sondern wird von der Sonne beleuchtet.","Eine Taschenlampe erzeugt selbst Licht und ist somit eine selbstleuchtende Lichtquelle."]},
+  {id:"n-optik-quiz-2",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quizfrage 2",question:"Wie breitet sich Licht laut den Versuchen auf den Arbeitsblättern aus?",options:["In Wellenlinien","Geradlinig","In Bogenform um Hindernisse herum","Von einer Lichtquelle aus nur in eine Richtung"],correct:1,
+   explanations:["Laut Arbeitsblatt breitet sich Licht nicht in Wellenlinien aus.","Die Versuche mit Blenden zeigen, dass sich Licht geradlinig ausbreitet.","Licht breitet sich geradlinig aus und macht keine Bögen um Hindernisse.","Eine Lichtquelle kann Licht in verschiedene Richtungen aussenden; die einzelnen Lichtwege verlaufen geradlinig."]},
+  {id:"n-optik-quiz-3",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quizfrage 3",question:"Wie wird ein sehr schmales Lichtbündel bezeichnet?",options:["Lichtstrahl","Optische Achse","Einfallslot","Lichtquelle"],correct:0,
+   explanations:["Ein sehr schmales Lichtbündel nennt man Lichtstrahl.","Die optische Achse ist die gestrichelte Hilfslinie bei Schattenkonstruktionen.","Das Einfallslot ist eine Senkrechte auf einer Spiegelfläche.","Eine Lichtquelle sendet Licht aus, ist aber kein Lichtbündel."]},
+  {id:"n-optik-quiz-4",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quizfrage 4",question:"Wie gelangt Licht beim Lesen eines Buches in das Auge?",options:["Das Auge sendet Strahlen aus, die auf das Buch treffen.","Das Buch erzeugt eigenes Licht, das ins Auge fällt.","Licht einer Quelle trifft auf das Buch und fällt von dort ins Auge.","Licht wandert vom Auge zur Lampe und wird auf das Buch geworfen."],correct:2,
+   explanations:["Das Auge sendet keine Strahlen aus; das Licht kommt von einer Lichtquelle.","Das Buch leuchtet nicht von selbst, sondern muss beleuchtet werden.","Man kann ein Buch nur lesen, wenn Licht einer Quelle darauf trifft und vom Buch ins Auge gelangt.","Der Lichtweg verläuft von der Lichtquelle über das Objekt zum Auge."]},
+  {id:"n-optik-quiz-5",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quizfrage 5",question:"Wie lautet das Reflexionsgesetz an einem ebenen Spiegel?",options:["Der Einfallswinkel ist doppelt so groß wie der Reflexionswinkel.","Der Einfallswinkel ist genauso groß wie der Reflexionswinkel.","Der Reflexionswinkel ist stets kleiner als der Einfallswinkel.","Der Einfallswinkel ist unabhängig vom Reflexionswinkel."],correct:1,
+   explanations:["Einfallswinkel und Reflexionswinkel sind gleich groß.","Das Reflexionsgesetz besagt: Einfallswinkel = Reflexionswinkel.","Der Reflexionswinkel ist nicht kleiner, sondern gleich groß wie der Einfallswinkel.","Beide Winkel sind miteinander gekoppelt und stets gleich groß."]},
+  {id:"n-optik-quiz-6",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quizfrage 6",question:"Was versteht man unter dem Lot (Einfallslot) bei der Reflexion am Spiegel?",options:["Eine Waagerechte parallel zur Spiegelfläche","Den reflektierten Lichtstrahl","Eine Linie, die senkrecht auf der Spiegeloberfläche steht","Den Winkel zwischen Einfall und Reflexion"],correct:2,
+   explanations:["Das Lot steht senkrecht auf dem Spiegel, nicht parallel dazu.","Der reflektierte Lichtstrahl ist nicht das Lot.","Das Lot wird im 90-Grad-Winkel senkrecht zur Spiegeloberfläche gezeichnet.","Das Lot ist eine Hilfslinie zur Messung von Einfalls- und Reflexionswinkel."]},
+  {id:"n-optik-quiz-7",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quizfrage 7",question:"Was bewirkt ein rechtwinkliger Winkelspiegel mit einem einfallenden Lichtstrahl?",options:["Er absorbiert das Licht vollständig.","Er wirft das Licht in die Richtung zurück, aus der es kam.","Er lenkt das Licht immer senkrecht nach oben ab.","Er lässt das Licht ohne Richtungsänderung durch."],correct:1,
+   explanations:["Der Winkelspiegel reflektiert das Licht und absorbiert es nicht vollständig.","Durch die zweimalige Reflexion am rechtwinkligen Spiegel wird das Licht in die Herkunftsrichtung zurückgeworfen.","Die Richtung hängt vom einfallenden Strahl ab; sie ist nicht immer senkrecht nach oben.","Ein Spiegel reflektiert Licht und lässt es nicht ohne Richtungsänderung hindurch."]},
+  {id:"n-optik-quiz-8",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quizfrage 8",question:"Wofür steht der Kleinbuchstabe g bei der Schattenkonstruktion?",options:["Gegenstandsgröße","Gegenstandsweite","Bildgröße","Bildweite"],correct:1,
+   explanations:["Für die Gegenstandsgröße steht der Großbuchstabe G.","Der Kleinbuchstabe g bezeichnet den Abstand zwischen Lichtquelle und Gegenstand.","Für die Bildgröße oder Schattengröße steht der Großbuchstabe B.","Für die Bildweite steht der Kleinbuchstabe b."]},
+  {id:"n-optik-quiz-9",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quizfrage 9",question:"Wie heißt die gestrichelte Mittellinie bei der Schattenkonstruktion?",options:["Einfallslot","Lichtstrahl","Optische Achse","Schattenlinie"],correct:2,
+   explanations:["Das Einfallslot wird bei Spiegelreflexionen verwendet.","Lichtstrahlen werden als durchgezogene Linien von der Lichtquelle gezeichnet.","Die gestrichelte Orientierungslinie in der Mitte heißt optische Achse.","Der Begriff Schattenlinie wird nicht für diese Achse verwendet."]},
+  {id:"n-optik-quiz-10",subject:"natur",topic:"Licht und Optik",kind:"quiz",type:"mcq",title:"Quizfrage 10",question:"Was passiert mit dem Bild auf dem Schirm, wenn die Öffnung einer Lochblende vergrößert wird?",options:["Das Bild wird schärfer und kleiner.","Die Lichtflecken werden größer und überschneiden sich.","Das Bild verschwindet vollständig.","Die Anordnung der Lichtpunkte kehrt sich um."],correct:1,
+   explanations:["Durch eine größere Öffnung wird das Bild unschärfer, nicht schärfer.","Bei einer größeren Öffnung wachsen die Lichtflecken und überschneiden sich; das Bild wird heller, aber unschärfer.","Es fällt weiterhin Licht hindurch; das Bild wird lediglich unschärfer.","Die Reihenfolge der Lichtflecken bleibt auch bei größerer Öffnung unverändert."]},
 
   {id:"n-arbeit-lesson-1",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"lesson",type:"lesson",title:"Das muss für die Arbeit sitzen",summary:"Schattenwurf, Lochblende und Spiegelung in kleinen Schritten wiederholen.",resourceUrl:"Natur_Optik_Probe-Arbeit_Lerninsel.pdf",resourceLabel:"Vierseitige Probe-Arbeit als PDF",sections:[
     {heading:"1. Schattenwurf",text:"Merke zuerst die vier Zeichen: G = Gegenstandsgröße, g = Gegenstandsweite, B = Bildgröße, b = Bildweite. G und B sind Höhen. g und b sind Abstände von der Lichtquelle."},
@@ -336,7 +351,7 @@ const DEFAULT_CONTENT = [
     {heading:"Selbstleuchtend oder beleuchtet?",text:"Nicht alles, was hell erscheint, leuchtet selbst. Der Mond wird von der Sonne beleuchtet. Sonne, Taschenlampe, Fahrradlicht und Glühwürmchen senden selbst Licht aus."},
     {heading:"Wie sehen wir ein Buch?",text:"Licht von einer Lichtquelle fällt auf das Buch. Vom Buch gelangt Licht weiter in unser Auge. Erst dann können wir das Buch sehen."}
   ],memory:"Sehen: Lichtquelle → Gegenstand → Auge. Der Mond wird beleuchtet und leuchtet nicht selbst."},
-  {id:"n-light-basics-practice-1",subject:"natur",topic:"Licht und Sehen",kind:"practice",type:"mcq",title:"Der Mond",question:"Welche Aussage passt zum Arbeitsblatt?",options:["Der Mond wird beleuchtet.","Der Mond ist eine künstliche Lichtquelle.","Der Mond erzeugt sein Licht mit Strom.","Der Mond ist eine Taschenlampe."],correct:0},
+  {id:"n-light-basics-practice-1",subject:"natur",topic:"Licht und Sehen",kind:"practice",type:"mcq",title:"Der Mond",question:"Welche Aussage passt zum Arbeitsblatt?",options:["Der Mond wird von der Sonne beleuchtet.","Der Mond erzeugt sein Licht selbst.","Der Mond ist eine künstliche Lichtquelle.","Der Mond reflektiert nur bei Vollmond Licht."],correct:0},
   {id:"n-light-basics-practice-2",subject:"natur",topic:"Licht und Sehen",kind:"practice",type:"mcq",title:"So können wir lesen",question:"Welcher Lichtweg ist richtig, wenn du ein beleuchtetes Buch liest?",options:["Lichtquelle → Buch → Auge","Auge → Buch → Lichtquelle","Buch → Lichtquelle → Auge","Auge → Lichtquelle → Buch"],correct:0},
   {id:"n-light-spread-lesson",subject:"natur",topic:"Ausbreitung des Lichts",kind:"lesson",type:"lesson",title:"Licht breitet sich geradlinig aus",summary:"Lichtstrahl, Lichtbündel und Blenden verstehen.",sections:[
     {heading:"Geradlinig",text:"Die Aufgaben mit den Blenden zeigen: Licht breitet sich geradlinig aus. Damit Licht durch mehrere Öffnungen gelangt, müssen die Öffnungen auf dem geraden Lichtweg liegen."},
@@ -381,18 +396,22 @@ function vocabRecord(i,direction){
   return p.vocab[direction]
 }
 function vocabIntervalDays(streak){return [0,1,3,7,14,30,60][Math.min(Math.max(0,streak),6)]}
-function vocabDueEntries(items){
+function vocabDueEntries(items,direction="de-en"){
   const now=Date.now(),due=[];
-  items.filter(isVocabItem).forEach(i=>["en-de","de-en"].forEach(direction=>{
+  items.filter(isVocabItem).forEach(i=>{
     const rec=vocabRecord(i,direction);
     if(!rec.nextDue||rec.nextDue<=now)due.push({...i,_vocabDirection:direction,_practiceKey:i.id+"::"+direction,_dueAt:rec.nextDue||0})
-  }));
+  });
   for(let n=due.length-1;n>0;n--){const j=Math.floor(Math.random()*(n+1));[due[n],due[j]]=[due[j],due[n]]}
   return due.sort((a,b)=>(a._dueAt||0)-(b._dueAt||0))
 }
 function preparePracticeItems(items){
-  const normal=items.filter(i=>!isVocabItem(i));
-  return [...vocabDueEntries(items).slice(0,12),...normal]
+  return items.filter(i=>!isVocabItem(i))
+}
+function shuffledItems(items){
+  const out=[...items];
+  for(let n=out.length-1;n>0;n--){const j=Math.floor(Math.random()*(n+1));[out[n],out[j]]=[out[j],out[n]]}
+  return out
 }
 function normalizeVocabAnswer(value){
   return String(value||"").toLocaleLowerCase("de-DE").replace(/[’‘]/g,"'").replace(/[.,!?;:"]/g,"").replace(/\s+/g," ").trim()
@@ -774,6 +793,8 @@ function renderTopic(subjectId,topic){
   state.currentSubject=subjectId;state.currentTopic=topic;
   const s=subjectMeta(subjectId), all=state.items.filter(i=>i.subject===subjectId&&i.topic===topic);
   const lessons=all.filter(i=>i.kind==="lesson"),practice=all.filter(i=>i.kind==="practice"),home=all.filter(i=>i.kind==="homework"),quiz=all.filter(i=>i.kind==="quiz");
+  const vocab=practice.filter(isVocabItem),otherPractice=practice.filter(i=>!isVocabItem(i));
+  const vocabDue=vocab.length?vocabDueEntries(vocab,"de-en").length:0;
   const practiceDone=practice.filter(i=>progressFor(i.id).status==="completed").length;
   MAIN.innerHTML=renderProfileBar()+`
     <button id="backTopics" class="ghost back">← ${esc(s.name)}</button>
@@ -782,8 +803,13 @@ function renderTopic(subjectId,topic){
       <section class="card topicSection"><h3>📖 Lernen</h3><p class="hint">Erst lesen und verstehen. Beim Tippen auf „Gelesen“ wird gespeichert und die Seite schließt automatisch.</p>
         <div class="lessonList">${lessons.map(itemRow).join("")||'<div class="small">Noch nichts hinterlegt.</div>'}</div>
       </section>
-      <section class="card topicSection"><h3>🧠 Üben</h3><p class="hint">${practice.some(isVocabItem)?"Vokabeln werden in beide Richtungen geschrieben. Richtige Wörter kommen seltener, bleiben aber im Wiederholungsplan.":"Eine Aufgabe nach der anderen. Falsche oder unsichere Aufgaben kommen am Ende noch einmal."}</p>
-        ${practice.length?`<button id="startPractice" class="primary big">${practice.some(isVocabItem)?"Schreibtraining starten":"Übungsrunde starten"} · ${practiceDone}/${practice.length} erledigt</button>`:'<div class="small">Noch keine Übungen.</div>'}
+      <section class="card topicSection"><h3>🧠 Üben</h3>
+        ${vocab.length?`<div class="lessonSection"><h4 style="margin-top:0">🃏 Flashkarten</h4><p class="hint">Vorderseite ansehen, überlegen und die Karte zum Prüfen umdrehen.</p>
+          <label class="writeLabel">Richtung<select id="vocabCardDirection"><option value="de-en" selected>Deutsch → Englisch</option><option value="en-de">Englisch → Deutsch</option></select></label>
+          <button id="startVocabCards" class="primary big">Flashkarten starten · ${vocab.length} Wörter</button></div>
+          <div class="lessonSection"><h4 style="margin-top:0">⌨️ Schreiben</h4><p class="hint">Das deutsche Wort wird gezeigt, die englische Übersetzung muss selbst geschrieben werden. Richtige Wörter kommen mit größerem Abstand wieder.</p>
+          <button id="startVocabWriting" class="primary big">Schreibtraining starten · ${vocabDue?vocabDue+" fällig":"heute alles wiederholen"}</button></div>`:""}
+        ${otherPractice.length?`<p class="hint">Weitere Aufgaben kommen bei Fehlern am Ende noch einmal.</p><button id="startPractice" class="${vocab.length?"ghost":"primary"} big">${vocab.length?"Weitere Englisch-Übungen":"Übungsrunde starten"} · ${practiceDone}/${practice.length} erledigt</button>`:(!vocab.length?'<div class="small">Noch keine Übungen.</div>':"")}
       </section>
       <section class="card topicSection"><h3>✏️ Hausaufgaben</h3><p class="hint">Die echte Aufgabe zuerst. Hilfen führen Schritt für Schritt weiter.</p>
         <div class="homeworkList">${home.map(itemRow).join("")||'<div class="small">Noch keine Hausaufgaben.</div>'}</div>
@@ -795,7 +821,9 @@ function renderTopic(subjectId,topic){
   $("#backTopics").onclick=()=>renderSubject(subjectId);
   $("#editProfileBtn").onclick=()=>renderProfileSetup(false);
   $$(".openItem").forEach(b=>b.onclick=()=>openItem(b.dataset.id));
-  if($("#startPractice"))$("#startPractice").onclick=()=>startPractice(practice);
+  if($("#startVocabCards"))$("#startVocabCards").onclick=()=>startVocabFlashcards(vocab,$("#vocabCardDirection").value);
+  if($("#startVocabWriting"))$("#startVocabWriting").onclick=()=>startVocabWriting(vocab);
+  if($("#startPractice"))$("#startPractice").onclick=()=>startPractice(otherPractice);
   if($("#startSoloQuiz"))$("#startSoloQuiz").onclick=()=>startSoloQuiz(quiz);
 }
 function itemRow(i){
@@ -855,7 +883,20 @@ function renderLesson(i){
 function startPractice(items){
   const prepared=preparePracticeItems(items);
   state.practice={queue:prepared.length?prepared:[...items.filter(i=>!isVocabItem(i))],retry:[],index:0,round:1,current:null,locked:false};
-  if(!state.practice.queue.length){state.practice=null;toast("✓ Für heute sind alle Vokabeln wiederholt.");return}
+  if(!state.practice.queue.length){state.practice=null;toast("Noch keine weiteren Übungen vorhanden.");return}
+  nextPractice()
+}
+function startVocabWriting(items){
+  let queue=vocabDueEntries(items,"de-en").slice(0,12);
+  if(!queue.length)queue=shuffledItems(items.filter(isVocabItem)).slice(0,12).map(i=>({...i,_vocabDirection:"de-en",_practiceKey:i.id+"::de-en"}));
+  state.practice={queue,retry:[],index:0,round:1,current:null,locked:false};
+  if(!queue.length){state.practice=null;toast("Noch keine Vokabeln vorhanden.");return}
+  nextPractice()
+}
+function startVocabFlashcards(items,direction="de-en"){
+  const queue=shuffledItems(items.filter(isVocabItem)).map(i=>({...i,_vocabMode:"flashcard",_vocabDirection:direction,_practiceKey:i.id+"::card::"+direction}));
+  state.practice={queue,retry:[],index:0,round:1,current:null,locked:false};
+  if(!queue.length){state.practice=null;toast("Noch keine Vokabeln vorhanden.");return}
   nextPractice()
 }
 function nextPractice(){
@@ -887,7 +928,8 @@ async function correctPractice(i,msg="✓ Richtig!"){
   setTimeout(nextPractice,520)
 }
 function renderPracticeItem(i){
-  if(i.type==="mcq")renderPracticeMCQ(i);
+  if(i._vocabMode==="flashcard")renderVocabFlashcard(i);
+  else if(i.type==="mcq")renderPracticeMCQ(i);
   else if(isVocabItem(i))renderVocabWriting(i);
   else if(i.type==="flashcard")renderFlashcard(i);
   else if(i.type==="cloze")renderPracticeCloze(i);
@@ -1067,12 +1109,10 @@ function renderPracticeMCQ(i){
   }
 }
 function renderVocabWriting(i){
-  const direction=i._vocabDirection||"en-de",parts=vocabParts(i);
-  const prompt=direction==="en-de"?parts.en:parts.de;
-  const expected=direction==="en-de"?parts.de:parts.en;
-  const instruction=direction==="en-de"?"Schreibe die deutsche Bedeutung.":"Schreibe das englische Wort.";
-  $("#workInside").innerHTML=practiceHead()+`<span class="badge">🇬🇧 Vokabeln · ${direction==="en-de"?"Englisch → Deutsch":"Deutsch → Englisch"}</span>
-    <div class="small">${esc(instruction)}</div><div class="question">${esc(prompt)}</div>
+  const direction="de-en",parts=vocabParts(i);
+  const prompt=parts.de,expected=parts.en;
+  $("#workInside").innerHTML=practiceHead()+`<span class="badge">🇬🇧 Schreiben · Deutsch → Englisch</span>
+    <div class="small">Schreibe das englische Wort.</div><div class="question">${esc(prompt)}</div>
     <label class="writeLabel">Deine Antwort<input id="vocabWriteAnswer" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Antwort eintippen …"></label>
     <button id="checkVocabWrite" class="primary big">Prüfen</button><div id="practiceFeedback"></div>`;
   const input=$("#vocabWriteAnswer"),check=$("#checkVocabWrite");
@@ -1088,6 +1128,32 @@ function renderVocabWriting(i){
   };
   check.onclick=submit;
   input.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();submit()}})
+}
+function renderVocabFlashcard(i){
+  const direction=i._vocabDirection||"de-en",parts=vocabParts(i);
+  const prompt=direction==="de-en"?parts.de:parts.en;
+  const answer=direction==="de-en"?parts.en:parts.de;
+  $("#workInside").innerHTML=practiceHead()+`<span class="badge">🇬🇧 Flashkarten · ${direction==="de-en"?"Deutsch → Englisch":"Englisch → Deutsch"}</span>
+    <div id="vocabFlipCard" class="flashcard" role="button" tabindex="0" aria-label="Karte umdrehen">
+      <div id="vocabCardFront"><div class="small">Vorderseite · tippe zum Umdrehen</div><div class="front">${esc(prompt)}</div></div>
+      <div id="vocabCardBack" class="hidden"><div class="small">Rückseite · tippe zum Zurückdrehen</div><div class="backText">${esc(answer)}</div></div>
+    </div>
+    <button id="flipVocabCard" class="primary big">Karte umdrehen</button>
+    <div id="vocabCardRate" class="actions hidden" style="margin-top:10px">
+      <button class="ghost" data-vocab-rate="no">Nicht gewusst</button><button class="ghost" data-vocab-rate="maybe">Unsicher</button><button class="primary" data-vocab-rate="yes">Gewusst</button>
+    </div><div id="practiceFeedback"></div>`;
+  let back=false;
+  const flip=()=>{
+    back=!back;
+    $("#vocabCardFront").classList.toggle("hidden",back);
+    $("#vocabCardBack").classList.toggle("hidden",!back);
+    $("#flipVocabCard").textContent=back?"Zur Vorderseite":"Karte umdrehen";
+    if(back)$("#vocabCardRate").classList.remove("hidden")
+  };
+  $("#vocabFlipCard").onclick=flip;
+  $("#vocabFlipCard").onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();flip()}};
+  $("#flipVocabCard").onclick=flip;
+  $$("[data-vocab-rate]").forEach(b=>b.onclick=()=>{if(b.dataset.vocabRate==="yes")correctPractice(i,"✓ Gewusst.");else retryPractice(i,b.dataset.vocabRate==="maybe"?"Unsicher – die Karte kommt später noch einmal.":"Nicht gewusst – die Karte kommt später noch einmal.")})
 }
 function renderFlashcard(i){
   $("#workInside").innerHTML=practiceHead()+`<span class="badge">${esc(subjectMeta(i.subject).name)} · Flashkarte</span>
@@ -1220,35 +1286,38 @@ function renderWritingHomework(i){
 
 /* Solo quiz */
 function startSoloQuiz(items){
-  state.quiz={items:[...items],index:0,score:0,correct:0,timer:null,deadline:0,answered:false};
+  state.quiz={items:[...items],index:0,score:0,correct:0,timer:null,answered:false};
   renderSoloQuizQuestion()
 }
 function renderSoloQuizQuestion(){
   const q=state.quiz;if(!q)return;
   if(q.index>=q.items.length){finishSoloQuiz();return}
-  const i=q.items[q.index];q.answered=false;q.deadline=Date.now()+15000;
+  const i=q.items[q.index];q.answered=false;
   const shown=shuffledOptions(i.options);
-  $("#workInside").innerHTML=`<div class="sessionHead"><span>Quiz · Frage ${q.index+1} von ${q.items.length}</span><span class="quizTimer" id="quizTimer">15</span></div>
+  $("#workInside").innerHTML=`<div class="sessionHead"><span>Quiz · Frage ${q.index+1} von ${q.items.length}</span></div>
     <span class="badge">${esc(subjectMeta(i.subject).name)} · ${esc(i.topic)}</span>
     <div class="question">${esc(i.question)}</div>
-    <div>${shown.map(o=>`<button class="choice quizOption" data-qopt="${o.originalIndex}">${esc(o.text)}</button>`).join("")}</div>
-    <div id="quizFeedback"></div>`;
+    <div>${shown.map(o=>`<button class="choice quizOption" data-qopt="${o.originalIndex}" style="text-align:left"><span style="display:block;font-weight:700">${esc(o.text)}</span><span class="quizAnswerExplanation hidden" style="display:block;margin-top:8px;font-weight:400;line-height:1.45"></span></button>`).join("")}</div>
+    <div id="quizFeedback"></div><button id="quizNext" class="primary big hidden">Weiter</button>`;
   addDialogClose("#workDialog",abortWorkDialog);
   $("#workDialog").showModal();
   $$("[data-qopt]").forEach(b=>b.onclick=()=>answerSoloQuiz(i,+b.dataset.qopt));
-  clearInterval(q.timer);q.timer=setInterval(()=>{
-    const left=Math.max(0,Math.ceil((q.deadline-Date.now())/1000));if($("#quizTimer"))$("#quizTimer").textContent=left;
-    if(left<=0){clearInterval(q.timer);if(!q.answered)answerSoloQuiz(i,null)}
-  },250)
 }
 function answerSoloQuiz(i,opt){
   const q=state.quiz;if(!q||q.answered)return;q.answered=true;clearInterval(q.timer);
   const ok=opt===i.correct;let gained=0;
   if(ok){gained=1;q.score+=1;q.correct++}
-  $$("[data-qopt]").forEach(b=>{b.disabled=true;if(+b.dataset.qopt===i.correct)b.classList.add("correct");else if(opt!==null&&+b.dataset.qopt===opt)b.classList.add("wrong")});
-  $("#quizFeedback").innerHTML=`<div class="feedback ${ok?"ok":"no"}">${ok?`✓ Richtig · +${gained} Punkt`:`${opt===null?"Zeit um.":"Nicht richtig."} Richtige Antwort ist markiert.`}</div>`;
+  $$("[data-qopt]").forEach(b=>{
+    const index=+b.dataset.qopt;b.disabled=true;b.style.opacity="1";
+    if(index===i.correct)b.classList.add("correct");else if(index===opt)b.classList.add("wrong");
+    const explanation=b.querySelector(".quizAnswerExplanation");
+    explanation.textContent=(i.explanations||[])[index]||(index===i.correct?"Diese Antwort ist richtig.":"Diese Antwort ist nicht richtig.");
+    explanation.classList.remove("hidden")
+  });
+  $("#quizFeedback").innerHTML=`<div class="feedback ${ok?"ok":"no"}">${ok?`✓ Richtig · +${gained} Punkt`:"Noch nicht richtig. Lies dir die Erklärungen in Ruhe durch."}</div>`;
   studentEvent(i.id,"checked",{ok,quiz:true,score:gained});
-  setTimeout(()=>{q.index++;renderSoloQuizQuestion()},850)
+  $("#quizNext").classList.remove("hidden");
+  $("#quizNext").onclick=()=>{q.index++;renderSoloQuizQuestion()}
 }
 function finishSoloQuiz(){
   const q=state.quiz;clearInterval(q.timer);
@@ -1456,8 +1525,10 @@ function renderTeacherPane(tab){
       <div class="libraryTools"><input id="contentSearch" placeholder="Inhalte suchen …" value="${esc(teacherContentSearch)}"><select id="contentFilter"><option value="all">Alle Inhalte</option><option value="bookpages" ${teacherContentFilter==="bookpages"?"selected":""}>Buchseiten</option><option value="homework" ${teacherContentFilter==="homework"?"selected":""}>Hausaufgaben</option><option value="vocab" ${teacherContentFilter==="vocab"?"selected":""}>Englisch-Vokabeln</option><option value="learning" ${teacherContentFilter==="learning"?"selected":""}>Weitere Lerninhalte</option></select></div>
       ${all.length?filtered.map(libraryEntryHtml).join("")||'<p class="small">Keine passenden Inhalte gefunden.</p>':`<div class="teacherForm"><strong>Noch keine zentrale Bibliothek geladen.</strong><p class="small">Die bisherigen Lerninhalte können übernommen und der aktuellen Klasse zugewiesen werden.</p></div>`}
       <button id="seedLibrary" class="ghost big" ${teacherRoom?"":"disabled"}>${all.length?"Grundinhalte für diese Klasse ergänzen":"Vorhandene Lerninhalte übernehmen"}</button>
+      <button id="seedNotebookOptics" class="ghost big" ${teacherRoom?"":"disabled"}>Neues Optik-Quiz für diese Klasse übernehmen</button>
     </div>
     <div class="card" style="margin-top:12px"><h3>Neue Inhalte anlegen</h3>
+      <details class="teacherForm"><summary><strong>🧠 NotebookLM-Quiz importieren</strong></summary><p class="small">Den vollständigen JSON-Text aus NotebookLM hier einfügen. Jede Antwort sollte eine eigene Erklärung enthalten.</p><div class="formGrid"><label>Fach<select id="notebookSubject">${SUBJECTS.map(s=>`<option value="${s.id}" ${s.id==="natur"?"selected":""}>${s.icon} ${esc(s.name)}</option>`).join("")}</select></label><label>Thema<input id="notebookTopic" placeholder="z. B. Licht und Optik"></label></div><label>NotebookLM-JSON<textarea id="notebookJson" rows="10" placeholder='{"title":"…","questions":[…]}'></textarea></label>${teacherRoomChecks(defaultRooms,"notebookRoom")}<button id="importNotebookQuiz" class="primary big">Quiz importieren</button><p id="notebookMsg" class="small"></p></details>
       <details class="teacherForm"><summary><strong>🇬🇧 Englisch-Vokabel</strong></summary><div class="formGrid"><label>Englisch<input id="vocabEnglish" placeholder="z. B. school"></label><label>Deutsch<input id="vocabGerman" placeholder="z. B. die Schule"></label></div>${teacherRoomChecks(defaultRooms,"vocabRoom")}<button id="addVocabBtn" class="primary big" style="margin-top:10px">Vokabel speichern</button><p id="vocabMsg" class="small"></p></details>
       <details class="teacherForm"><summary><strong>📖 Buchseiten mit Zusammenfassung</strong></summary><div class="formGrid"><label>Fach<select id="bookSubject">${SUBJECTS.map(s=>`<option value="${s.id}">${s.icon} ${esc(s.name)}</option>`).join("")}</select></label><label>Worum geht es?<input id="bookTopic" placeholder="z. B. Ständeordnung"></label></div><label>Seitenangabe<input id="bookPages" placeholder="z. B. Seiten 42–43"></label><label>Originalseiten fotografieren oder auswählen<input id="bookFiles" type="file" accept="image/*,application/pdf" multiple></label><label>Zusammenfassung<textarea id="bookSummary" rows="6" placeholder="Einfache Zusammenfassung der Buchseiten …"></textarea></label>${teacherRoomChecks(defaultRooms,"bookRoom")}<button id="saveBookPages" class="primary big">Buchseiten speichern</button><p id="bookMsg" class="small"></p></details>
       <details class="teacherForm"><summary><strong>✏️ Hausaufgabe</strong></summary><div class="formGrid"><label>Fach<select id="homeSubject">${SUBJECTS.map(s=>`<option value="${s.id}">${s.icon} ${esc(s.name)}</option>`).join("")}</select></label><label>Thema<input id="homeTopic" placeholder="z. B. Balladen"></label><label>Aufgegeben am<input id="homeAssigned" type="date" value="${isoToday()}"></label><label>Abgabe bis<input id="homeDue" type="date"></label></div><label>Titel<input id="homeTitle" placeholder="z. B. John Maynard – Hauptteil"></label><label>Foto der Aufgabe<input id="homeFiles" type="file" accept="image/*,application/pdf" multiple></label><label>Aufgabe<textarea id="homeQuestion" rows="4" placeholder="Was soll erledigt werden?"></textarea></label><label>Hilfen – eine pro Zeile<textarea id="homeHelps" rows="4" placeholder="Erste Hilfe …&#10;Zweite Hilfe …"></textarea></label>${teacherRoomChecks(defaultRooms,"homeRoom")}<button id="saveHomework" class="primary big">Hausaufgabe speichern</button><p id="homeMsg" class="small"></p></details>
@@ -1465,6 +1536,8 @@ function renderTeacherPane(tab){
     $("#contentSearch").onchange=e=>{teacherContentSearch=e.target.value;renderTeacherPane("content")};
     $("#contentFilter").onchange=e=>{teacherContentFilter=e.target.value;renderTeacherPane("content")};
     if($("#seedLibrary"))$("#seedLibrary").onclick=teacherSeedLibrary;
+    $("#seedNotebookOptics").onclick=teacherSeedNotebookOptics;
+    $("#importNotebookQuiz").onclick=teacherImportNotebookQuiz;
     if($("#addVocabBtn"))$("#addVocabBtn").onclick=teacherAddVocab;
     $("#saveBookPages").onclick=teacherSaveBookPages;$("#saveHomework").onclick=teacherSaveHomework;
     $$(".libraryRoomToggle").forEach(x=>x.onchange=()=>teacherToggleLibraryRoom(x.dataset.itemId,x.dataset.roomId,x.checked))
@@ -1547,6 +1620,43 @@ async function exitTeacherTest(){
   $("#teacherLogoutBtn").onclick=teacherLogout;
   await openTeacher()
 }
+function stableTextId(text){
+  let hash=2166136261;
+  for(const char of String(text)){hash^=char.charCodeAt(0);hash=Math.imul(hash,16777619)}
+  return (hash>>>0).toString(36)
+}
+function parseNotebookQuizJson(raw){
+  const cleaned=String(raw||"").trim().replace(/^```(?:json)?\s*/i,"").replace(/\s*```$/,"");
+  const data=JSON.parse(cleaned);
+  if(!data||typeof data!=="object"||!Array.isArray(data.questions)||!data.questions.length)throw new Error("Keine Fragen gefunden.");
+  if(data.questions.length>50)throw new Error("Bitte höchstens 50 Fragen auf einmal importieren.");
+  const questions=data.questions.map((question,index)=>{
+    if(!question||typeof question.question!=="string"||!question.question.trim())throw new Error(`Frage ${index+1} enthält keinen Fragetext.`);
+    if(!Array.isArray(question.answers)||question.answers.length<2||question.answers.length>6)throw new Error(`Frage ${index+1} benötigt zwei bis sechs Antworten.`);
+    const answers=question.answers.map((answer,answerIndex)=>{
+      if(!answer||typeof answer.text!=="string"||!answer.text.trim())throw new Error(`Antwort ${answerIndex+1} bei Frage ${index+1} ist leer.`);
+      if(typeof answer.explanation!=="string"||!answer.explanation.trim())throw new Error(`Bei Frage ${index+1} fehlt eine Erklärung.`);
+      return {text:answer.text.trim(),correct:answer.correct===true,explanation:answer.explanation.trim()}
+    });
+    if(answers.filter(answer=>answer.correct).length!==1)throw new Error(`Frage ${index+1} muss genau eine richtige Antwort haben.`);
+    return {question:question.question.trim(),answers}
+  });
+  return {title:String(data.title||"NotebookLM-Quiz").trim()||"NotebookLM-Quiz",questions}
+}
+async function teacherImportNotebookQuiz(){
+  const msg=$("#notebookMsg"),button=$("#importNotebookQuiz"),subject=$("#notebookSubject")?.value,raw=$("#notebookJson")?.value;
+  try{
+    const quiz=parseNotebookQuizJson(raw),topic=$("#notebookTopic")?.value.trim()||quiz.title,roomIds=selectedRoomIds(".notebookRoom");
+    if(!roomIds.length)throw new Error("Bitte mindestens eine Klasse auswählen.");
+    button.disabled=true;msg.textContent=`${quiz.questions.length} Fragen werden gespeichert …`;
+    for(const [index,question] of quiz.questions.entries()){
+      const correct=question.answers.findIndex(answer=>answer.correct);
+      const item={id:`quiz-${subject}-${stableTextId(`${topic}|${question.question}`)}`,subject,topic,kind:"quiz",type:"mcq",category:"learning",title:`${quiz.title} · Frage ${index+1}`,question:question.question,options:question.answers.map(answer=>answer.text),correct,explanations:question.answers.map(answer=>answer.explanation),source:"NotebookLM"};
+      await rpc("lerninsel_teacher_library_upsert",{p_item:item,p_room_ids:roomIds},true)
+    }
+    toast(`✓ ${quiz.questions.length} Quizfragen importiert.`);await teacherPull()
+  }catch(error){msg.textContent=error?.message||"Das Quiz konnte nicht importiert werden.";if(button)button.disabled=false}
+}
 async function teacherAddVocab(){
   const en=$("#vocabEnglish")?.value.trim(),de=$("#vocabGerman")?.value.trim(),msg=$("#vocabMsg");
   if(!en||!de){if(msg)msg.textContent="Bitte Englisch und Deutsch ausfüllen.";return}
@@ -1576,6 +1686,12 @@ async function teacherSeedLibrary(){
   if(!teacherRoom)return;
   try{await rpc("lerninsel_teacher_library_seed",{p_items:DEFAULT_CONTENT,p_room_id:teacherRoom.roomId},true);toast("✓ Lerninhalte übernommen.");await teacherPull()}
   catch(e){toast("Bitte zuerst supabase_v9_klassen_inhalte.sql in Supabase ausführen.")}
+}
+async function teacherSeedNotebookOptics(){
+  if(!teacherRoom)return;
+  const items=DEFAULT_CONTENT.filter(item=>item.id.startsWith("n-optik-quiz-"));
+  try{await rpc("lerninsel_teacher_library_seed",{p_items:items,p_room_id:teacherRoom.roomId},true);toast("✓ Neues Optik-Quiz übernommen.");await teacherPull()}
+  catch(error){toast("Das Optik-Quiz konnte nicht übernommen werden.")}
 }
 async function teacherSyncDefault(){return teacherSeedLibrary()}
 async function teacherToggleLibraryRoom(itemId,roomId,checked){
