@@ -1,8 +1,16 @@
-LERNINSEL v9.0.7 – Fächer pro Raum und Schüler pausieren
+LERNINSEL v9.0.8 – Weiches Design in Beige und Rauchblau
 
 In GitHub im Repository "lerninsel" ersetzen:
+- index.html
 - app.js
 - sw.js
+- manifest.webmanifest
+
+Design:
+- warmer, heller Beigeton im Hintergrund
+- ruhige rauchblaue Buttons und Flächen
+- weichere Karten, Rundungen und Schatten
+- weniger harte Kontraste
 
 Danach einmal in Supabase im SQL Editor vollständig ausführen:
 - supabase_v9_0_7_faecher_pause.sql

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#31445f">
+<meta name="theme-color" content="#5b7280">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
@@ -80,6 +80,37 @@ label{display:block;font-weight:700;margin:11px 0 5px}input,select,textarea{widt
  .top{align-items:flex-start}.brand p{display:none}.itemRow{align-items:flex-start;flex-direction:column}.itemRow .primary{width:100%}
  .tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.formGrid,.libraryTools,.classBar{grid-template-columns:1fr}.avatarGrid{grid-template-columns:repeat(4,1fr)}.profileBar{align-items:flex-start}.topActions{flex-direction:column}.homeLink{align-items:flex-start;flex-direction:column}
 }
+
+/* v9.0.8: weiches Beige und Rauchblau */
+:root{
+ --bg:#f3eee6;--card:#fffaf3;--ink:#2b3540;--muted:#748087;--line:#ded6ca;
+ --accent:#5b7280;--accent2:#8499a4;--soft:#e7edef;--good:#e4eee7;
+ --warn:#f5ead2;--bad:#f3e3df;--purple:#6d8290;--sea:#e6eef0
+}
+body{min-height:100vh;background:linear-gradient(160deg,#f6f1e9 0%,#f1ece4 46%,#e8eef0 100%) fixed}
+.brandIcon{width:46px;height:46px;border-radius:16px;background:linear-gradient(145deg,#708894,#506875);box-shadow:0 7px 18px rgba(67,88,100,.18)}
+.card{background:rgba(255,250,243,.95);border-color:rgba(218,208,195,.85);border-radius:22px;padding:17px;box-shadow:0 8px 26px rgba(72,82,86,.065)}
+.primary,.ghost,.choice,.chip,.tab{border-radius:15px;transition:background .15s ease,transform .15s ease}
+.primary,.tab.active{background:linear-gradient(145deg,#647d8b,#526a78);color:#fff;box-shadow:0 5px 14px rgba(71,93,105,.14)}
+.primary:disabled{box-shadow:none}.ghost,.choice,.chip,.tab{background:rgba(255,253,249,.84);border-color:#d9d2c8;color:#354652}
+.badge{padding:5px 9px}.avatar{background:#e5ecee}.token{background:#f5ead2}
+.itemRow,.studentRow,.libraryItem,.homeLink{background:#fffdf9;border-color:var(--line);border-radius:17px}
+dialog{background:#fffaf3;border:1px solid #d8d0c5;border-radius:24px;box-shadow:0 22px 70px rgba(49,60,66,.25)}
+dialog::backdrop{background:rgba(48,58,63,.42);backdrop-filter:blur(2px)}
+.lessonSection,.homeworkIntro{background:#f6efe5;border:1px solid #e8dfd2;border-radius:17px}
+.merksatz{background:#e8eff1;border-left-color:#718c9a;border-radius:13px}.videoCard{background:#eaf0f2;border-color:#d5e0e3;border-radius:17px}
+.choice.selected{outline-color:#9aadb5;background:#edf2f3}.choice.correct{border-color:#9db7a2}.choice.wrong{border-color:#cfa6a0}
+.feedback,.sessionHead{border-radius:14px}.sessionHead{background:#e7eef0}
+.flashcard{background:linear-gradient(160deg,#fffdf9,#edf2f3);border-color:#d8d2c9;border-radius:22px;box-shadow:0 8px 22px rgba(76,91,98,.07)}
+.builderOut,.homeworkIntro{background:#f6f1ea}.builderOut{border-color:#aebbc0;border-radius:14px}
+.stepBox{border-color:#dfd7cc;border-radius:17px}.finalBox{background:#eaf0f1;border-color:#aebdc3;border-radius:17px}
+input,select,textarea{padding:12px;border-color:#d8d0c5;border-radius:14px;background:#fffdf9;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:3px solid rgba(118,143,155,.22);border-color:#8399a4}
+.teacherForm,.parentForm,.kpi{background:#edf2f3;border-color:#d6e0e2;border-radius:19px}
+.savedWords span{background:#fffdf9}.roomCheck{background:#f4efe8;padding:8px 11px}.roomCheck input{accent-color:var(--accent)}
+.pageGallery img{background:#e9eff0;border-radius:16px}.pagePdf,.liveCode{background:#e7eef0;border-radius:18px}.homeLink.overdue{border-color:#cda29c;background:#fbefec}
+.avatarChoice{background:#fffdf9;border-radius:16px}.avatarChoice.selected{outline-color:#9aadb5}
+.toast{background:#fffaf3;border-radius:17px;box-shadow:0 9px 30px rgba(54,67,73,.17)}
 </style>
 </head>
 <body>
