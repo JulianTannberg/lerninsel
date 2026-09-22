@@ -175,6 +175,21 @@ const DEFAULT_CONTENT = [
     memory:"1. Stand = Geistliche · 2. Stand = Adel · 3. Stand = Bauern und andere arbeitende Menschen."
   },
   {
+    id:"g1-staende-lernen-verteilung",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"lesson",type:"lesson",
+    title:"Unterrichtsbild: Die mittelalterliche Ständegesellschaft",summary:"Das neue Tafelbild mit Gruppen, Aufgaben und Größenverhältnissen.",
+    sourcePages:"Unterrichtsbild",originalPages:[
+      {name:"Die mittelalterliche Ständegesellschaft",type:"image/jpeg",dataUrl:"media/gsel1_mittelalterliche_staendegesellschaft.jpg"}
+    ],
+    sections:[
+      {heading:"Die Ordnung galt als gottgewollt",text:"Das Schaubild zeigt die Gesellschaft als feste, von Gott gewollte Ordnung. Der Stand wurde meist durch die Geburt bestimmt und blieb gewöhnlich bis zum Tod bestehen. Die Ordnung war streng hierarchisch."},
+      {heading:"König, Geistliche und Adel",text:"An der Spitze steht der König. Zum ersten Stand gehören Geistliche wie Bischöfe, Äbte, Pfarrer, Mönche und Nonnen. Zum zweiten Stand gehören Adlige wie Herzöge, Grafen und Ritter. Zusammen bilden diese oberen Gruppen im Schaubild nur ungefähr 1 Prozent der Bevölkerung."},
+      {heading:"Bauern",text:"Die Bauern bilden mit ungefähr 90 Prozent den mit Abstand größten Teil der Bevölkerung. Viele von ihnen sind unfrei oder von einem Feudalherrn abhängig. Auch Knechte und Mägde gehören zu diesem Bereich."},
+      {heading:"Stadtbewohner und Randgruppen",text:"Ungefähr 9 Prozent leben im städtischen Bereich. Genannt werden Kaufleute und Patrizier, Handwerksmeister, Händler, Gesellen und Lohnarbeiter. Außerdem zeigt das Bild Randgruppen und Bettler."},
+      {heading:"Die drei Aufgaben",text:"Der erste Stand betet, der zweite Stand schützt und der dritte Stand arbeitet. Diese einfache Einteilung sollte erklären und rechtfertigen, warum die Gruppen unterschiedliche Rechte, Aufgaben und Lebensbedingungen hatten."}
+    ],
+    memory:"Obere Stände ca. 1 % · Bauern ca. 90 % · Stadtbevölkerung und weitere Gruppen ca. 9 %."
+  },
+  {
     id:"g1-staende-lernen-m2",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"lesson",type:"lesson",
     title:"M2 verstehen: Was zeigt das Bild?",summary:"Das Bild Schritt für Schritt erklärt.",
     diagram:"three-estates",
@@ -223,6 +238,10 @@ const DEFAULT_CONTENT = [
    title:"Aufgabe: M2",question:"Welche Aussage passt am besten zu M2?",options:["Jeder Stand hat eine bestimmte Aufgabe, und die Ordnung wird als von Gott gewollt dargestellt.","Alle Menschen hatten dieselben Rechte.","Jeder konnte seinen Stand frei wählen.","Nur Bauern gehörten zur Gesellschaft."],correct:0},
   {id:"g1-staende-practice-mcq3",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"practice",type:"mcq",
    title:"Aufgabe: Kloster",question:"Welche Aufgabe hatten Klöster zusätzlich zum Gebet?",options:["Sie halfen bei Bildung, Kranken- und Armenfürsorge.","Sie waren nur Burgen für Ritter.","Sie dienten nur als Märkte.","Sie waren ausschließlich Gefängnisse."],correct:0},
+  {id:"g1-staende-practice-verteilung-1",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"practice",type:"mcq",
+   title:"Größte Gruppe",question:"Welche Gruppe stellt im neuen Schaubild ungefähr 90 Prozent der Bevölkerung?",options:["Bauern","Geistliche","Adlige","Kaufleute und Patrizier"],correct:0},
+  {id:"g1-staende-practice-verteilung-2",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"practice",type:"mcq",
+   title:"Gottgewollte Ordnung",question:"Was bedeutet im Schaubild „gottgewollte Ordnung“?",options:["Die Einteilung der Gesellschaft wurde als von Gott bestimmt dargestellt.","Jeder durfte seinen Stand täglich wechseln.","Nur der König durfte beten.","Alle Menschen hatten dieselben Rechte."],correct:0},
 
   {
     id:"g1-staende-homework-m2",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"homework",type:"guided",
@@ -283,7 +302,11 @@ const DEFAULT_CONTENT = [
   {id:"n-optik-practice-symbol-B",subject:"natur",topic:"Licht und Optik",kind:"practice",type:"flashcard",title:"B",question:"Wofür steht B?",answer:"B = Bildgröße: Höhe des Schattenbildes auf dem Schirm."},
   {id:"n-optik-practice-symbol-bsmall",subject:"natur",topic:"Licht und Optik",kind:"practice",type:"flashcard",title:"b",question:"Wofür steht b?",answer:"b = Bildweite: Abstand von der Lichtquelle bis zum Schirm/Bild."},
   {id:"n-optik-practice-where",subject:"natur",topic:"Licht und Optik",kind:"practice",type:"mcq",title:"Was wird waagerecht eingetragen?",question:"Welche beiden Größen sind Abstände von der Lichtquelle und werden entlang der Achse eingetragen?",options:["g und b","G und B","G und g","B und b"],correct:0},
-  {id:"n-optik-lesson-shadow",subject:"natur",topic:"Licht und Optik",kind:"lesson",type:"lesson",title:"Schattenwurf konstruieren",summary:"Randstrahlen Schritt für Schritt zeichnen.",diagram:"shadow-construction",sections:[
+  {id:"n-optik-lesson-shadow",subject:"natur",topic:"Licht und Optik",kind:"lesson",type:"lesson",title:"Schattenwurf konstruieren",summary:"Randstrahlen Schritt für Schritt zeichnen.",diagram:"shadow-construction",
+   sourcePages:"Arbeitsblatt Schattenbilder · Vorder- und Rückseite",originalPages:[
+     {name:"Schattenbilder · Seite 1",type:"image/jpeg",dataUrl:"media/natur_schattenbilder_seite_1.jpg"},
+     {name:"Schattenbilder · Seite 2",type:"image/jpeg",dataUrl:"media/natur_schattenbilder_seite_2.jpg"}
+   ],sections:[
     {heading:"1. Lichtquelle markieren",text:"Die punktförmige Lichtquelle ist der gemeinsame Startpunkt der Randstrahlen."},
     {heading:"2. Randstrahlen zeichnen",text:"Ziehe mit dem Lineal einen Strahl von der Lichtquelle über die obere Kante des Gegenstands bis zum Schirm. Wiederhole das über die untere Kante."},
     {heading:"3. Schatten ablesen",text:"Zwischen den beiden Treffpunkten auf dem Schirm liegt das Schattenbild. Dort wird B gemessen."},
@@ -337,6 +360,12 @@ const DEFAULT_CONTENT = [
   {id:"n-arbeit-practice-7",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"Winkel richtig messen",question:"Ein Lichtstrahl trifft einen Spiegel. Zwischen welchen Linien wird der Einfallswinkel gemessen?",options:["Zwischen einfallendem Strahl und Lot","Zwischen einfallendem Strahl und Spiegel","Zwischen Lot und Spiegel","Zwischen Spiegel und Blattrand"],correct:0},
   {id:"n-arbeit-practice-8",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"Reflexionsgesetz anwenden",question:"Der Einfallswinkel zum Lot beträgt 32°. Wie groß ist der Reflexionswinkel?",options:["32°","58°","64°","90°"],correct:0},
   {id:"n-arbeit-practice-9",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"flashcard",title:"Zeichen-Blitzcheck",question:"Nenne G, g, B und b in dieser Reihenfolge.",answer:"G = Gegenstandsgröße · g = Gegenstandsweite · B = Bildgröße · b = Bildweite"},
+  {id:"n-arbeit-practice-shadow-terms",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"Begriffe am Schattenbild",question:"Welche vier Begriffe sollen auf der ersten Zeichnung des Arbeitsblatts zugeordnet werden?",options:["Gegenstand, Beobachtungsschirm, punktförmige Lichtquelle und Schattenbild","Spiegel, Lot, Einfallswinkel und Reflexionswinkel","Linse, Brennpunkt, Prisma und Spektrum","Lampe, Auge, Buch und Mond"],correct:0},
+  {id:"n-arbeit-practice-shadow-axis",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"Optische Achse",question:"Was ist die optische Achse oA in der Schattenkonstruktion?",options:["Eine gedachte Mittellinie, auf der Lichtquelle, Gegenstand und Schirm mittig und senkrecht angeordnet werden","Der obere Randstrahl","Die Höhe des Schattens","Die Oberfläche des Schirms"],correct:0},
+  {id:"n-arbeit-practice-shadow-point",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"Punktförmige Lichtquelle",question:"Warum eignet sich für die genaue Konstruktion eine punktförmige Lichtquelle?",options:["Weil genau festgelegt ist, von welchem Punkt die Randstrahlen beginnen und wo der Schatten begrenzt ist","Weil sie keinen Schatten erzeugt","Weil ihre Strahlen gekrümmt verlaufen","Weil der Schirm dadurch überflüssig wird"],correct:0},
+  {id:"n-arbeit-practice-shadow-position",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"Mittig und senkrecht",question:"Warum stehen Gegenstand und Schirm mittig und senkrecht auf der optischen Achse?",options:["Damit Größe und Lage des Schattenbildes eindeutig bestimmt werden können","Damit das Licht um den Gegenstand herumläuft","Damit G und g gleich groß sind","Damit kein Randstrahl gezeichnet werden muss"],correct:0},
+  {id:"n-arbeit-practice-shadow-calc",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"Konstruktionsaufgabe mit Zahlen",question:"Auf dem Arbeitsblatt gilt G = 2 cm, g = 6 cm und b = 9 cm. Wie groß wird das Schattenbild B?",options:["3 cm","2 cm","6 cm","9 cm"],correct:0},
+  {id:"n-arbeit-practice-shadow-nearer",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"practice",type:"mcq",title:"Gegenstand näher an der Lichtquelle",question:"Was geschieht mit dem Schattenbild, wenn derselbe Gegenstand näher an die punktförmige Lichtquelle rückt und der Schirm stehen bleibt?",options:["Das Schattenbild wird größer","Das Schattenbild wird kleiner","Das Schattenbild bleibt immer gleich groß","Es entsteht grundsätzlich kein Schatten mehr"],correct:0},
   {id:"n-arbeit-quiz-1",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"quiz",type:"mcq",title:"Probe 1",question:"Welche beiden Größen sind Höhen?",options:["G und B","g und b","G und g","B und b"],correct:0},
   {id:"n-arbeit-quiz-2",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"quiz",type:"mcq",title:"Probe 2",question:"Welche beiden Größen werden von der Lichtquelle aus als Abstand gemessen?",options:["g und b","G und B","G und b","g und B"],correct:0},
   {id:"n-arbeit-quiz-3",subject:"natur",topic:"Vorbereitung auf die Arbeit",kind:"quiz",type:"mcq",title:"Probe 3",question:"Was zeichnest du beim ebenen Spiegel als Erstes am Auftreffpunkt?",options:["Das Lot","Den Reflexionswinkel","Den Schirm","Die Bildweite"],correct:0},
@@ -380,6 +409,14 @@ const DEFAULT_CONTENT = [
   {id:"e-sentence-sports",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"mcq",title:"Sports",question:"Welche Antwort passt zu „What sports do you like?“",options:["I like running and football.","I live in Manchester.","My name is Omar.","To buy."],correct:0}
 
 ];
+
+const NATUR_LIGHT_TOPICS = new Set(["Licht und Optik","Licht und Sehen","Ausbreitung des Lichts"]);
+function normalizeBuiltInTopic(item){
+  if(item?.subject==="natur"&&NATUR_LIGHT_TOPICS.has(item.topic))item.topic="Licht";
+  if(item?.subject==="natur"&&item.topic==="Vorbereitung auf die Arbeit")item.topic="Üben für die Arbeit";
+  return item
+}
+DEFAULT_CONTENT.forEach(normalizeBuiltInTopic);
 
 const CUSTOM_VOCAB_KEY="lerninsel_v8_custom_vocab";
 function getCustomVocab(){try{return JSON.parse(localStorage.getItem(CUSTOM_VOCAB_KEY)||"[]")||[]}catch{return[]}}
@@ -691,7 +728,7 @@ async function bootStudent(){
     try{
       const r=await rpc("lerninsel_student_login",{p_public_code:studentSession.roomCode,p_student_code:studentSession.studentCode});
       if(r?.student){
-        state.student=r.student;state.items=r.items||[];state.progress=r.progress||{};
+        state.student=r.student;state.items=(r.items||[]).map(normalizeBuiltInTopic);state.progress=r.progress||{};
         await loadStudentProfile();
         await openStudentHome();return
       }
@@ -717,7 +754,7 @@ function renderStudentLogin(){
       const r=await rpc("lerninsel_student_login",{p_public_code:room,p_student_code:code});
       if(!r?.student)throw new Error("Code nicht gefunden.");
       studentSession={roomCode:room,studentCode:code};localStorage.setItem(KEYS.studentSession,JSON.stringify(studentSession));
-      state.student=r.student;state.items=r.items||[];state.progress=r.progress||{};
+      state.student=r.student;state.items=(r.items||[]).map(normalizeBuiltInTopic);state.progress=r.progress||{};
       await loadStudentProfile();await openStudentHome()
     }catch(e){m.textContent="Anmeldung nicht möglich. Bitte Codes prüfen."}
   };
@@ -784,6 +821,7 @@ function renderStudentDashboard(){
 function renderSubject(subjectId){
   state.currentSubject=subjectId;const s=subjectMeta(subjectId);
   const topics=[...new Set(state.items.filter(i=>i.subject===subjectId).map(i=>i.topic))];
+  if(subjectId==="natur")topics.sort((a,b)=>Number(a==="Üben für die Arbeit")-Number(b==="Üben für die Arbeit"));
   MAIN.innerHTML=renderProfileBar()+`
     <button id="backSubjects" class="ghost back">← Fächer</button>
     <div class="subjectHead"><div><span class="sectionTitle">${s.icon} ${esc(s.name)}</span><h2 style="margin:.3rem 0">Themen</h2></div></div>
@@ -1447,7 +1485,7 @@ function renderParentLogin(){
   }
 }
 function renderParentState(r){
-  const items=r.items||[],prog=r.progress||{},profile=r.profile||{};
+  const items=(r.items||[]).map(normalizeBuiltInTopic),prog=r.progress||{},profile=r.profile||{};
   const nonQuiz=items.filter(i=>i.kind!=="quiz"),done=nonQuiz.filter(i=>prog[i.id]?.status==="completed").length;
   const byTopic={};nonQuiz.forEach(i=>{const k=`${i.subject}|${i.topic}`;(byTopic[k]??=[]).push(i)});
   MAIN.innerHTML=`<div class="card profileBar"><div class="profileLeft"><div class="avatar">${esc(profile.avatar||"🙂")}</div>
@@ -1493,7 +1531,7 @@ async function teacherPull(){
   if(!teacherRoom){renderTeacher();return}
   try{
     const r=await rpc("lerninsel_teacher_get_state",{p_room_id:teacherRoom.roomId},true);
-    state.teacher.students=r?.students||[];state.teacher.items=r?.items||[];state.teacher.progress=r?.progress||{};state.teacher.events=r?.events||[];state.teacher.parents=r?.parents||[];
+    state.teacher.students=r?.students||[];state.teacher.items=(r?.items||[]).map(normalizeBuiltInTopic);state.teacher.progress=r?.progress||{};state.teacher.events=r?.events||[];state.teacher.parents=r?.parents||[];
     state.teacher.roomSubjects=r?.roomSubjects||{};state.teacher.studentSubjects=r?.studentSubjects||{};
     try{state.teacher.profiles=await rpc("lerninsel_teacher_get_profiles",{p_room_id:teacherRoom.roomId},true)||[]}catch{state.teacher.profiles=[]}
     try{state.teacher.library=await rpc("lerninsel_teacher_library_get",{},true)||[]}catch{state.teacher.library=[]}
@@ -1535,10 +1573,10 @@ function renderTeacherPane(tab){
       <div class="libraryTools"><input id="contentSearch" placeholder="Inhalte suchen …" value="${esc(teacherContentSearch)}"><select id="contentFilter"><option value="all">Alle Inhalte</option><option value="bookpages" ${teacherContentFilter==="bookpages"?"selected":""}>Buchseiten</option><option value="homework" ${teacherContentFilter==="homework"?"selected":""}>Hausaufgaben</option><option value="vocab" ${teacherContentFilter==="vocab"?"selected":""}>Englisch-Vokabeln</option><option value="learning" ${teacherContentFilter==="learning"?"selected":""}>Weitere Lerninhalte</option></select></div>
       ${all.length?filtered.map(libraryEntryHtml).join("")||'<p class="small">Keine passenden Inhalte gefunden.</p>':`<div class="teacherForm"><strong>Noch keine zentrale Bibliothek geladen.</strong><p class="small">Die bisherigen Lerninhalte können übernommen und der aktuellen Klasse zugewiesen werden.</p></div>`}
       <button id="seedLibrary" class="ghost big" ${teacherRoom?"":"disabled"}>${all.length?"Grundinhalte für diese Klasse ergänzen":"Vorhandene Lerninhalte übernehmen"}</button>
-      <button id="seedNotebookOptics" class="ghost big" ${teacherRoom?"":"disabled"}>Neues Optik-Quiz für diese Klasse übernehmen</button>
+      <button id="seedNotebookOptics" class="ghost big" ${teacherRoom?"":"disabled"}>Neue Natur- und GSEL-Inhalte übernehmen</button>
     </div>
     <div class="card" style="margin-top:12px"><h3>Neue Inhalte anlegen</h3>
-      <details class="teacherForm"><summary><strong>🧠 NotebookLM-Quiz importieren</strong></summary><p class="small">Den vollständigen JSON-Text aus NotebookLM hier einfügen. Jede Antwort sollte eine eigene Erklärung enthalten.</p><div class="formGrid"><label>Fach<select id="notebookSubject">${SUBJECTS.map(s=>`<option value="${s.id}" ${s.id==="natur"?"selected":""}>${s.icon} ${esc(s.name)}</option>`).join("")}</select></label><label>Thema<input id="notebookTopic" placeholder="z. B. Licht und Optik"></label></div><label>NotebookLM-JSON<textarea id="notebookJson" rows="10" placeholder='{"title":"…","questions":[…]}'></textarea></label>${teacherRoomChecks(defaultRooms,"notebookRoom")}<button id="importNotebookQuiz" class="primary big">Quiz importieren</button><p id="notebookMsg" class="small"></p></details>
+      <details class="teacherForm"><summary><strong>🧠 NotebookLM-Quiz importieren</strong></summary><p class="small">Den vollständigen JSON-Text aus NotebookLM hier einfügen. Jede Antwort sollte eine eigene Erklärung enthalten.</p><div class="formGrid"><label>Fach<select id="notebookSubject">${SUBJECTS.map(s=>`<option value="${s.id}" ${s.id==="natur"?"selected":""}>${s.icon} ${esc(s.name)}</option>`).join("")}</select></label><label>Thema<input id="notebookTopic" placeholder="z. B. Licht"></label></div><label>NotebookLM-JSON<textarea id="notebookJson" rows="10" placeholder='{"title":"…","questions":[…]}'></textarea></label>${teacherRoomChecks(defaultRooms,"notebookRoom")}<button id="importNotebookQuiz" class="primary big">Quiz importieren</button><p id="notebookMsg" class="small"></p></details>
       <details class="teacherForm"><summary><strong>🇬🇧 Englisch-Vokabel</strong></summary><div class="formGrid"><label>Englisch<input id="vocabEnglish" placeholder="z. B. school"></label><label>Deutsch<input id="vocabGerman" placeholder="z. B. die Schule"></label></div>${teacherRoomChecks(defaultRooms,"vocabRoom")}<button id="addVocabBtn" class="primary big" style="margin-top:10px">Vokabel speichern</button><p id="vocabMsg" class="small"></p></details>
       <details class="teacherForm"><summary><strong>📖 Buchseiten mit Zusammenfassung</strong></summary><div class="formGrid"><label>Fach<select id="bookSubject">${SUBJECTS.map(s=>`<option value="${s.id}">${s.icon} ${esc(s.name)}</option>`).join("")}</select></label><label>Worum geht es?<input id="bookTopic" placeholder="z. B. Ständeordnung"></label></div><label>Seitenangabe<input id="bookPages" placeholder="z. B. Seiten 42–43"></label><label>Originalseiten fotografieren oder auswählen<input id="bookFiles" type="file" accept="image/*,application/pdf" multiple></label><label>Zusammenfassung<textarea id="bookSummary" rows="6" placeholder="Einfache Zusammenfassung der Buchseiten …"></textarea></label>${teacherRoomChecks(defaultRooms,"bookRoom")}<button id="saveBookPages" class="primary big">Buchseiten speichern</button><p id="bookMsg" class="small"></p></details>
       <details class="teacherForm"><summary><strong>✏️ Hausaufgabe</strong></summary><div class="formGrid"><label>Fach<select id="homeSubject">${SUBJECTS.map(s=>`<option value="${s.id}">${s.icon} ${esc(s.name)}</option>`).join("")}</select></label><label>Thema<input id="homeTopic" placeholder="z. B. Balladen"></label><label>Aufgegeben am<input id="homeAssigned" type="date" value="${isoToday()}"></label><label>Abgabe bis<input id="homeDue" type="date"></label></div><label>Titel<input id="homeTitle" placeholder="z. B. John Maynard – Hauptteil"></label><label>Foto der Aufgabe<input id="homeFiles" type="file" accept="image/*,application/pdf" multiple></label><label>Aufgabe<textarea id="homeQuestion" rows="4" placeholder="Was soll erledigt werden?"></textarea></label><label>Hilfen – eine pro Zeile<textarea id="homeHelps" rows="4" placeholder="Erste Hilfe …&#10;Zweite Hilfe …"></textarea></label>${teacherRoomChecks(defaultRooms,"homeRoom")}<button id="saveHomework" class="primary big">Hausaufgabe speichern</button><p id="homeMsg" class="small"></p></details>
@@ -1611,7 +1649,7 @@ function startTeacherTest(){
   role="student";
   studentSession={demo:true,teacherTest:true};
   state.student={id:"teacher-test",label:"Test-Schüler"};
-  state.items=(state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT).filter(i=>roomSubjectEnabled(i.subject)).map(x=>structuredClone(x));
+  state.items=(state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT).filter(i=>roomSubjectEnabled(i.subject)).map(x=>normalizeBuiltInTopic(structuredClone(x)));
   state.progress={};
   state.profile={nickname:"Test",avatar:"🦊",games_spent:0,game_best:0};
   state.currentSubject=null;state.currentTopic=null;state.practice=null;state.quiz=null;state.live=null;
@@ -1703,9 +1741,9 @@ async function teacherSeedLibrary(){
 }
 async function teacherSeedNotebookOptics(){
   if(!teacherRoom)return;
-  const items=DEFAULT_CONTENT.filter(item=>item.id.startsWith("n-optik-quiz-"));
-  try{await rpc("lerninsel_teacher_library_seed",{p_items:items,p_room_id:teacherRoom.roomId},true);toast("✓ Neues Optik-Quiz übernommen.");await teacherPull()}
-  catch(error){toast("Das Optik-Quiz konnte nicht übernommen werden.")}
+  const items=DEFAULT_CONTENT.filter(item=>item.subject==="natur"||item.id.startsWith("g1-staende-lernen-verteilung")||item.id.startsWith("g1-staende-practice-verteilung"));
+  try{await rpc("lerninsel_teacher_library_seed",{p_items:items,p_room_id:teacherRoom.roomId},true);toast("✓ Natur und GSEL 1 wurden aktualisiert.");await teacherPull()}
+  catch(error){toast("Die neuen Natur- und GSEL-Inhalte konnten nicht übernommen werden.")}
 }
 async function teacherSyncDefault(){return teacherSeedLibrary()}
 async function teacherToggleLibraryRoom(itemId,roomId,checked){
