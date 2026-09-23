@@ -570,6 +570,29 @@ function normalizeBuiltInTopic(item){
 }
 DEFAULT_CONTENT.forEach(normalizeBuiltInTopic);
 
+// The schoolbook Sandokan unit is part of this app version, not a manual library
+// import. In already-created classes the server may still return only the old
+// pirate homework. Overlay only this book unit for classes that already have
+// the GSEL 2 / Piraten topic. Other subjects, custom content and progress remain.
+const SANDOKAN_CONTENT = DEFAULT_CONTENT.filter(item=>item.id.startsWith("g2-sandokan-"));
+const RETIRED_PIRATE_HOMEWORK = new Set(["g2-piraten-homework-1","g2-piraten-homework-2"]);
+function restoreSandokanProgress(){
+  if(!studentSession||studentSession.demo)return;
+  try{
+    const k=`lerninsel_sandokan_${studentSession.roomCode}_${studentSession.studentCode}`;
+    const saved=JSON.parse(localStorage.getItem(k)||"{}");
+    // Only backfill locally overlaid items: server progress always wins.
+    for(const item of SANDOKAN_CONTENT)if(!state.progress[item.id]&&saved[item.id])state.progress[item.id]=saved[item.id];
+  }catch{}
+}
+function withCurrentSandokan(items){
+  if(!Array.isArray(items) || !items.some(item=>item.subject==="gsel2" && item.topic==="Piraten"))return items;
+  const freshIds=new Set(SANDOKAN_CONTENT.map(item=>item.id));
+  const kept=items.filter(item=>!RETIRED_PIRATE_HOMEWORK.has(item.id) && !freshIds.has(item.id));
+  // Keep the established pirate lessons and quiz, then add the current unit.
+  return [...kept,...SANDOKAN_CONTENT.map(item=>structuredClone(item))];
+}
+
 const CUSTOM_VOCAB_KEY="lerninsel_v8_custom_vocab";
 function getCustomVocab(){try{return JSON.parse(localStorage.getItem(CUSTOM_VOCAB_KEY)||"[]")||[]}catch{return[]}}
 function vocabItem(v){return {id:v.id,subject:"englisch",topic:v.topic||"Vokabeln & Sätze",kind:"practice",type:"vocab",title:v.en,question:v.en,answer:v.de,en:v.en,de:v.de,customVocab:true}}
@@ -757,6 +780,11 @@ function gameTokensAvailable(){
 function saveLocal(){
   if(teacherTestMode)return;
   localStorage.setItem(KEYS.localProgress,JSON.stringify(state.progress));
+  if(studentSession&&!studentSession.demo){
+    const k=`lerninsel_sandokan_${studentSession.roomCode}_${studentSession.studentCode}`;
+    const onlySandokan=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("g2-sandokan-")));
+    localStorage.setItem(k,JSON.stringify(onlySandokan));
+  }
   if(state.profile)localStorage.setItem(KEYS.localProfile,JSON.stringify(state.profile));
 }
 function setRole(r){
@@ -880,7 +908,7 @@ async function bootStudent(){
     try{
       const r=await rpc("lerninsel_student_login",{p_public_code:studentSession.roomCode,p_student_code:studentSession.studentCode});
       if(r?.student){
-        state.student=r.student;state.items=(r.items||[]).map(normalizeBuiltInTopic);state.progress=r.progress||{};
+        state.student=r.student;state.items=withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic));state.progress=r.progress||{};restoreSandokanProgress();
         await loadStudentProfile();
         await openStudentHome();return
       }
@@ -906,7 +934,7 @@ function renderStudentLogin(){
       const r=await rpc("lerninsel_student_login",{p_public_code:room,p_student_code:code});
       if(!r?.student)throw new Error("Code nicht gefunden.");
       studentSession={roomCode:room,studentCode:code};localStorage.setItem(KEYS.studentSession,JSON.stringify(studentSession));
-      state.student=r.student;state.items=(r.items||[]).map(normalizeBuiltInTopic);state.progress=r.progress||{};
+      state.student=r.student;state.items=withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic));state.progress=r.progress||{};restoreSandokanProgress();
       await loadStudentProfile();await openStudentHome()
     }catch(e){m.textContent="Anmeldung nicht möglich. Bitte Codes prüfen."}
   };
@@ -914,7 +942,7 @@ function renderStudentLogin(){
 }
 function loadDemoStudent(){
   state.student={id:"demo",label:"Demo-Schüler"};
-  state.items=DEFAULT_CONTENT.map(x=>structuredClone(x));
+  state.items=withCurrentSandokan(DEFAULT_CONTENT.map(x=>structuredClone(x)));
   state.progress=JSON.parse(localStorage.getItem(KEYS.localProgress)||"{}");
   state.profile=JSON.parse(localStorage.getItem(KEYS.localProfile)||"null")||{nickname:"Fiete",avatar:"🦊",games_spent:0,game_best:0}
 }
@@ -992,6 +1020,9 @@ function renderTopic(subjectId,topic){
   state.currentSubject=subjectId;state.currentTopic=topic;
   const s=subjectMeta(subjectId), all=state.items.filter(i=>i.subject===subjectId&&i.topic===topic);
   const lessons=all.filter(i=>i.kind==="lesson"),practice=all.filter(i=>i.kind==="practice"),home=all.filter(i=>i.kind==="homework"),quiz=all.filter(i=>i.kind==="quiz");
+  if(subjectId==="gsel2"&&topic==="Piraten")lessons.sort((a,b)=>Number(b.id==="g2-sandokan-lesson")-Number(a.id==="g2-sandokan-lesson"));
+  // Page 14–15 book questions belong together, shown before other assignments.
+  home.sort((a,b)=>Number(!a.id?.startsWith("g2-sandokan-q"))-Number(!b.id?.startsWith("g2-sandokan-q")));
   const vocab=practice.filter(isVocabItem),otherPractice=practice.filter(i=>!isVocabItem(i));
   const vocabDue=vocab.length?vocabDueEntries(vocab,"de-en").length:0;
   const practiceDone=practice.filter(i=>progressFor(i.id).status==="completed").length;
@@ -1011,6 +1042,7 @@ function renderTopic(subjectId,topic){
         ${otherPractice.length?`<p class="hint">Weitere Aufgaben kommen bei Fehlern am Ende noch einmal.</p><button id="startPractice" class="${vocab.length?"ghost":"primary"} big">${vocab.length?"Weitere Englisch-Übungen":"Übungsrunde starten"} · ${practiceDone}/${practice.length} erledigt</button>`:(!vocab.length?'<div class="small">Noch keine Übungen.</div>':"")}
       </section>
       <section class="card topicSection"><h3>✏️ Hausaufgaben</h3><p class="hint">Die echte Aufgabe zuerst. Hilfen führen Schritt für Schritt weiter.</p>
+        ${subjectId==="gsel2"&&topic==="Piraten"&&home.some(i=>i.id.startsWith("g2-sandokan-q"))?'<h4 class="sandokanHomeworkTitle">Sandokan · Buchseiten 14–15 · Aufgaben 1–5</h4>':""}
         <div class="homeworkList">${home.map(itemRow).join("")||'<div class="small">Noch keine Hausaufgaben.</div>'}</div>
       </section>
       <section class="card topicSection"><h3>🏆 Quiz</h3><p class="hint">Themengebundenes Zeitquiz. Richtige und schnelle Antworten bringen mehr Quizpunkte.</p>
@@ -1830,8 +1862,8 @@ function renderTeacherPane(tab){
       ${all.length?filtered.map(libraryEntryHtml).join("")||'<p class="small">Keine passenden Inhalte gefunden.</p>':`<div class="teacherForm"><strong>Noch keine zentrale Bibliothek geladen.</strong><p class="small">Die bisherigen Lerninhalte können übernommen und der aktuellen Klasse zugewiesen werden.</p></div>`}
       <button id="seedLibrary" class="ghost big" ${teacherRoom?"":"disabled"}>${all.length?"Grundinhalte für diese Klasse ergänzen":"Vorhandene Lerninhalte übernehmen"}</button>
       <button id="seedNotebookOptics" class="ghost big" ${teacherRoom?"":"disabled"}>Neue Natur-, GSEL- und Hausaufgaben übernehmen</button>
-      <button id="seedSandokan" class="ghost big" ${teacherRoom?"":"disabled"}>GSEL 2: Sandokan mit Fragen übernehmen</button>
-      <p class="small">Enthält GSEL 1: „Aufgabe 5, Seite 13“ und das Rollenspiel sowie GSEL 2: Sandokan.</p>
+      <button id="seedSandokan" class="ghost big" ${teacherRoom?"":"disabled"}>Sandokan dauerhaft für diese Klasse speichern</button>
+      <p class="small">Die neue App zeigt Sandokan bereits automatisch in GSEL 2. Hier kannst du die fünf Hausaufgaben dauerhaft der Klasse zuweisen und die beiden alten Piraten-Hausaufgaben ausblenden.</p>
     </div>
     <div class="card" style="margin-top:12px"><h3>Neue Inhalte anlegen</h3>
       <details class="teacherForm"><summary><strong>🧠 NotebookLM-Quiz importieren</strong></summary><p class="small">Den vollständigen JSON-Text aus NotebookLM hier einfügen. Jede Antwort sollte eine eigene Erklärung enthalten.</p><div class="formGrid"><label>Fach<select id="notebookSubject">${SUBJECTS.map(s=>`<option value="${s.id}" ${s.id==="natur"?"selected":""}>${s.icon} ${esc(s.name)}</option>`).join("")}</select></label><label>Thema<input id="notebookTopic" placeholder="z. B. Licht"></label></div><label>NotebookLM-JSON<textarea id="notebookJson" rows="10" placeholder='{"title":"…","questions":[…]}'></textarea></label>${teacherRoomChecks(defaultRooms,"notebookRoom")}<button id="importNotebookQuiz" class="primary big">Quiz importieren</button><p id="notebookMsg" class="small"></p></details>
@@ -1908,7 +1940,7 @@ function startTeacherTest(){
   role="student";
   studentSession={demo:true,teacherTest:true};
   state.student={id:"teacher-test",label:"Test-Schüler"};
-  state.items=(state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT).filter(i=>roomSubjectEnabled(i.subject)).map(x=>normalizeBuiltInTopic(structuredClone(x)));
+  state.items=withCurrentSandokan((state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT).filter(i=>roomSubjectEnabled(i.subject)).map(x=>normalizeBuiltInTopic(structuredClone(x))));
   state.progress={};
   state.profile={nickname:"Test",avatar:"🦊",games_spent:0,game_best:0};
   state.currentSubject=null;state.currentTopic=null;state.practice=null;state.quiz=null;state.live=null;
@@ -2011,14 +2043,28 @@ async function teacherSeedNotebookOptics(){
 }
 async function teacherSeedSandokan(){
   if(!teacherRoom)return;
-  const items=DEFAULT_CONTENT.filter(item=>item.id.startsWith("g2-sandokan-"));
+  const items=SANDOKAN_CONTENT;
   try{
     await rpc("lerninsel_teacher_library_seed",{p_items:items,p_room_id:teacherRoom.roomId},true);
     await teacherPull();
-    const got=(state.teacher.items||[]).some(item=>item.id==="g2-sandokan-lesson");
-    if(got)toast("✓ Sandokan und Fragen sind jetzt in GSEL 2.");
-    else alert("Sandokan konnte in der aktuellen Klasse noch nicht bestätigt werden. Bitte die Klasse prüfen und erneut versuchen.");
-  }catch(error){alert("Sandokan konnte nicht übernommen werden. Bitte die Lehreranmeldung und Supabase-Verbindung prüfen.")}
+    const got=items.filter(item=>item.kind==="lesson"||item.kind==="homework")
+      .every(item=>(state.teacher.items||[]).some(saved=>saved.id===item.id));
+    if(!got){alert("Sandokan ist noch nicht vollständig in dieser Klasse angekommen. Bitte erneut versuchen.");return}
+    // Remove only room assignments. No old content or student progress is deleted.
+    let retired=0;
+    for(const oldId of RETIRED_PIRATE_HOMEWORK){
+      const entry=(state.teacher.library||[]).find(e=>e.item?.id===oldId);
+      if(entry?.roomIds?.includes(teacherRoom.roomId)){
+        await rpc("lerninsel_teacher_library_upsert",{
+          p_item:entry.item,
+          p_room_ids:entry.roomIds.filter(id=>id!==teacherRoom.roomId)
+        },true);
+        retired++;
+      }
+    }
+    if(retired)await teacherPull();
+    toast("✓ Sandokan übernommen, alte Piraten-Hausaufgaben ausgeblendet.");
+  }catch(error){alert("Die dauerhafte Übernahme ist fehlgeschlagen. In der Schüleransicht sind die aktuellen Sandokan-Inhalte trotzdem sichtbar, sobald die neuen App-Dateien geladen sind.")}
 }
 async function teacherSyncDefault(){return teacherSeedLibrary()}
 async function teacherToggleLibraryRoom(itemId,roomId,checked){
