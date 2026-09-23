@@ -1,6 +1,32 @@
-LERNINSEL v9.0.13 – OHNE UNTERRICHTSFOTOS
+LERNINSEL v9.0.15 – GSEL 2: SANDOKAN
+
+NEU:
+- GSEL 2 → Piraten → Lernen → Sandokan: Buchseiten 14/15 vereinfacht.
+- Link zur ARD Mediathek: Fernsehmehrteiler von 1976 (Abrufbarkeit kann wechseln).
+- Fünf Fragen aus den Buchseiten jeweils mit eigener Schreibantwort, schrittweisen Hilfen und Vergleichstext.
+- Vier zusätzliche Übungsfragen zur Wiederholung.
+- Keine Fotos der Buchseiten in der App.
+
+SO KOMMT SANDOKAN IN DIE BESTEHENDE KLASSE:
+1. Dateien index.html, app.js, sw.js und manifest.webmanifest ins GitHub-Repository „lerninsel“ hochladen bzw. ersetzen.
+2. Nach Veröffentlichung die Lerninsel neu öffnen. Lehrerbereich → Inhalte → „GSEL 2: Sandokan mit Fragen übernehmen“ tippen.
+3. Die Übernahme für jede gewünschte Klasse wiederholen. Bestehende Schülercodes und Lernstände bleiben erhalten.
+4. In der Schüleransicht unter GSEL 2 → Piraten findest du „Sandokan“, die Übungsrunde und die Fragen unter Hausaufgaben.
+
+Hinweis: Es wurde kein Unterrichtsfoto übernommen. M2 bis M4 sind im Schulbuch nachzuschlagen. M4 zeigt das Jahr 1914, nicht die Zeit um 1845.
+Neue SQL-Datei ist für diese Erweiterung nicht notwendig.
+
+---
+
+LERNINSEL v9.0.14 – HAUSAUFGABEN-UPDATE
 
 NEU IN DIESER VERSION
+
+- Die App lädt die aktuelle Programmdatei jetzt zuverlässig statt einer alten
+  Handy-Zwischenspeicherung. Dadurch erscheint die neue GSEL-Hausaufgabe nach
+  der Übernahme tatsächlich in der ausgewählten Klasse.
+- Der Aktualisieren-Knopf prüft anschließend selbst, ob „Aufgabe 5, Seite 13“
+  angekommen ist, und zeigt nur dann die Erfolgsmeldung.
 
 - Die abfotografierten Buch-, Arbeitsblatt- und Unterrichtsbilder sind nicht
   mehr Bestandteil der App oder der ZIP. Sie dienten nur als Vorlage zum
@@ -49,7 +75,7 @@ INSTALLATION AUF GITHUB
    Lerninsel auf dem Handy vollständig schließen und neu öffnen.
 
 3. Im Lehrerbereich „Inhalte“ öffnen und einmal auf
-   „Neue Natur- und GSEL-Inhalte übernehmen“ tippen. Dadurch werden die
+   „Neue Natur-, GSEL- und Hausaufgaben übernehmen“ tippen. Dadurch werden die
    bestehenden Natur-Inhalte unter „Licht“ zusammengeführt und die neuen
    Übungen sowie die nachgezeichnete Ständepyramide hinzugefügt.
 

@@ -60,6 +60,85 @@ const DEFAULT_CONTENT = [
     memory:"Port Royal war ein wichtiger Hafen in der Karibik. Anne Bonny und Mary Read wurden als Piratinnen berühmt."
   },
 
+  // Sandokan: nach den Buchseiten 14–15 vereinfacht, ohne die Buchfotos.
+  {
+    id:"g2-sandokan-lesson",subject:"gsel2",topic:"Piraten",kind:"lesson",type:"lesson",
+    title:"Sandokan",summary:"Der Tiger von Malaysia – Buchseiten 14–15 einfach erklärt.",
+    videoUrl:"https://www.ardmediathek.de/serie/Y3JpZDovL21kci5kZS9zZW5kZXJlaWhlbi9jOGUyMjc5MS01MDJlLTQxZDAtYWJkNS1hOGVkNmQ3ZTIzNDE",
+    videoLabel:"Sandokan – Der Tiger von Malaysia (ARD Mediathek, Fernsehmehrteiler von 1976). Die Verfügbarkeit einzelner Teile kann sich ändern.",
+    sections:[
+      {heading:"Wer ist Sandokan?",text:"Sandokan ist die Hauptfigur in den Abenteuerromanen von Emilio Salgari. Er trägt den Beinamen „Tiger von Malaysia“. In der Geschichte ist er ein Pirat, der mit seinen Gefährten gegen europäische Kolonialherren kämpft. Sein Gegenspieler ist James Brooke."},
+      {heading:"Was bedeutet Kolonialherrschaft?",text:"Kolonialherrschaft bedeutet: Ein fremder Staat oder dessen Vertreter bestimmen über ein Gebiet und seine Menschen. Sie kontrollieren zum Beispiel Handel, Land und politische Entscheidungen. Manche Einheimische wehrten sich dagegen."},
+      {heading:"Die Fernsehserie von 1976",text:"In der italienischen Fernsehserie spielt Kabir Bedi die Hauptfigur. Sandokan kämpft im 19. Jahrhundert von der Insel Mompracem aus gegen die britischen Eroberer. Sein Freund Yanez unterstützt ihn. Auch die Engländerin Marianna spielt eine wichtige Rolle. Das ist eine Abenteuergeschichte, kein Dokumentarfilm."},
+      {heading:"Gab es Sandokan wirklich?",text:"Der Buchtext berichtet von einem Mann namens Sandokan, der im 19. Jahrhundert am Fluss Kinabatangan im Norden Borneos gelebt haben soll. Bewohner der Region erzählten von ihm, und der Text verweist auf eine Familie mit diesem Namen. Ob dieser Mann genau der Romanfigur entspricht, ist nicht gesichert."},
+      {heading:"Sandokan und Syarif Osman",text:"Laut Buchtext kämpfte Sandokan an der Seite von Syarif Osman gegen die britische Herrschaft. Osman soll eine rote Fahne mit einem Tigerkopf benutzt haben. Sandokan soll 1845 geholfen haben, eine Festung gegen die Briten zu verteidigen. Diese Angaben sind überlieferte Berichte, keine gesicherten Einzelheiten über die Romanfigur."},
+      {heading:"Warum nennen manche Menschen ihn einen Freiheitskämpfer?",text:"Wer die britische Kolonialherrschaft ablehnte, konnte Sandokan als Verteidiger seiner Heimat ansehen. Andere sahen in ihm einen Piraten. Beides zeigt, dass Menschen dieselbe Person unterschiedlich beurteilen können. Für eine Bewertung muss man ihre Handlungen und die Sicht der Betroffenen betrachten."},
+      {heading:"Wo liegt Mompracem?",text:"Mompracem ist in den Romanen Sandokans Insel und sein Zufluchtsort. Alte Karten zeigen tatsächlich eine Insel mit diesem Namen vor der Küste Borneos. Später verschwand der Name von den Karten. Journalisten vermuteten, dass sie der heutigen Insel Keraman (auch Kuraman geschrieben) entspricht. Das ist eine Vermutung, kein sicherer Beweis."},
+      {heading:"Die Karten M2 bis M4 verstehen",text:"M2 zeigt Südostasien: Malaysia liegt auf der Malaiischen Halbinsel und teilweise auf Borneo, Indonesien umfasst unter anderem Sumatra und Java. Sandakan liegt an der Nordostküste Borneos im heutigen malaysischen Bundesstaat Sabah. M3 zeigt die vermutete Lage Mompracems vor Nordwestborneo. M4 zeigt Kolonialgebiete um 1914 – also deutlich später als die für Sandokan genannten Ereignisse um 1845."},
+      {heading:"Kolonialmächte um 1914 (M4)",text:"Britischer Einfluss: heutiges Malaysia und Singapur, außerdem das britische Schutzgebiet Brunei. Niederländische Herrschaft: das heutige Indonesien. Französische Herrschaft: die heutigen Staaten Vietnam, Laos und Kambodscha. Portugiesische Herrschaft: der östliche Teil Timors, heute Timor-Leste. Das sind die heutigen Ländernamen; die damaligen Staaten und Grenzen waren anders."}
+    ],
+    memory:"Merke: Romanfigur, überlieferte Geschichte und historische Belege sind nicht dasselbe. Die Karte M4 zeigt die Lage 1914, nicht genau die Zeit um 1845."
+  },
+  {
+    id:"g2-sandokan-q1",subject:"gsel2",topic:"Piraten",kind:"homework",type:"writing",
+    title:"Sandokan – Aufgabe 1: Karte M2",summary:"Sandakan auf der Übersichtskarte finden.",
+    question:"Setze den Ortspunkt und den Namen der Stadt Sandakan in die Karte M2 in deinem Buch ein. Beschreibe kurz, wo du die Stadt einzeichnest.",
+    helps:[
+      "Suche auf M2 zuerst die große Insel Borneo. Der nördliche Teil gehört zu Malaysia.",
+      "Sandakan liegt im Nordosten von Borneo, im Bundesstaat Sabah, an der Küste zur Sulusee. Zeichne den Punkt dort ein."
+    ],
+    finalText:"Ich zeichne Sandakan an der Nordostküste der Insel Borneo in den malaysischen Bundesstaat Sabah ein. Die Stadt liegt an der Sulusee."
+  },
+  {
+    id:"g2-sandokan-q2",subject:"gsel2",topic:"Piraten",kind:"homework",type:"writing",
+    title:"Sandokan – Aufgabe 2: Film",summary:"Kurze Inhaltsangabe zum Fernsehmehrteiler.",
+    question:"Informiere dich über den Film bzw. Fernsehmehrteiler Sandokan von 1976. Schreibe mit eigenen Worten eine kurze Inhaltsangabe weiter. Die Buchseite gibt den Anfang vor: Sandokan kämpft im 19. Jahrhundert von Mompracem aus gegen die Engländer; sein Gegner ist James Brooke.",
+    helps:[
+      "Denke an drei Fragen: Wer ist die Hauptfigur? Gegen wen kämpft sie? Welche Menschen sind an ihrer Seite?",
+      "Wichtige Namen: Sandokan, sein Freund Yanez, sein Gegner James Brooke und Marianna. Schreibe sachlich im Präsens; erfinde keine Filmszenen."
+    ],
+    finalText:"In dem Fernsehmehrteiler kämpft der Pirat Sandokan im 19. Jahrhundert gegen die britischen Eroberer in Südostasien. Sein Gegner ist James Brooke, der in Sarawak Macht ausübt. Von Mompracem aus versucht Sandokan, sich gegen ihn zu wehren. Sein Freund Yanez unterstützt ihn. Außerdem lernt Sandokan die Engländerin Marianna kennen."
+  },
+  {
+    id:"g2-sandokan-q3",subject:"gsel2",topic:"Piraten",kind:"homework",type:"writing",
+    title:"Sandokan – Aufgabe 3: Kolonialmächte",summary:"Heutige Länder mit Karte M4 zuordnen.",
+    question:"Bestimme mit M4, welche heutigen Gebiete und Staaten in dieser Region unter britischer, niederländischer, portugiesischer oder französischer Herrschaft standen. Beachte: M4 zeigt 1914, nicht genau das Jahr 1845.",
+    helps:[
+      "Lies die Legende unter M4. Suche zuerst die alten Namen Britisch-Malaya, Niederländisch-Ostindien, Französisch-Indochina und Osttimor.",
+      "Übersetze die damaligen Bezeichnungen in heutige Ländernamen. Hinweis: Ein Schutzgebiet ist nicht genau dasselbe wie eine direkt verwaltete Kolonie."
+    ],
+    finalText:"Um 1914: Großbritannien – Teile des heutigen Malaysia und Singapur; Brunei stand unter britischem Schutz. Niederlande – das heutige Indonesien. Frankreich – das heutige Vietnam, Laos und Kambodscha. Portugal – Osttimor, heute Timor-Leste. Die Grenzen und Herrschaftsformen waren nicht überall so wie heute."
+  },
+  {
+    id:"g2-sandokan-q4",subject:"gsel2",topic:"Piraten",kind:"homework",type:"writing",
+    title:"Sandokan – Aufgabe 4: Mompracem",summary:"Die vermutete Lage der Insel beschreiben.",
+    question:"Beschreibe mit M3 und dem Text „Wo liegt Mompracem?“ die genaue Lage der Insel Mompracem. Unterscheide zwischen der Karte und der Vermutung der Journalisten.",
+    helps:[
+      "Sieh auf M3: Welche große Insel liegt südöstlich davon? Welche Stadt ist in der Nähe?",
+      "Nutze Ortsbegriffe: vor der Nordwestküste Borneos, im Südchinesischen Meer, vor dem heutigen Malaysia. Der Buchtext vermutet, dass Mompracem die heutige Insel Keraman/Kuraman ist."
+    ],
+    finalText:"Mompracem soll vor der Nordwestküste Borneos im Südchinesischen Meer gelegen haben, vor dem heutigen malaysischen Bundesstaat Sabah. Auf M3 liegt sie im Bereich nahe Kota Kinabalu. Der Buchtext berichtet, dass Journalisten Mompracem mit der heutigen Insel Keraman/Kuraman in Verbindung bringen. Das ist jedoch nicht sicher bewiesen."
+  },
+  {
+    id:"g2-sandokan-q5",subject:"gsel2",topic:"Piraten",kind:"homework",type:"writing",
+    title:"Sandokan – Aufgabe 5: Freiheitskämpfer?",summary:"Die Aussage eines Bewohners aus Sarawak begründet bewerten.",
+    question:"„Sandokan war kein Krimineller, sondern ein Freiheitskämpfer.“ Bewerte diese Aussage eines Bewohners aus Sarawak. Begründe deine Meinung mit dem Text und erkläre, warum jemand anderer Meinung sein könnte.",
+    helps:[
+      "Sammle zuerst zwei Informationen aus dem Text: Gegen wen soll Sandokan gekämpft haben? Mit wem war er verbündet?",
+      "Schreibe mindestens einen Satz, der die Aussage unterstützt, und einen Gegenpunkt. Unterscheide zwischen der Romanfigur, überlieferten Berichten und sicheren historischen Belegen.",
+      "Ein möglicher Aufbau: „Ich kann die Aussage verstehen, weil ... Allerdings ... Deshalb denke ich ...“"
+    ],
+    finalText:"Ich kann die Aussage verstehen, weil Sandokan laut dem Text zusammen mit Syarif Osman gegen die britische Kolonialherrschaft kämpfte. Menschen aus der Region konnten ihn deshalb als Verteidiger ihrer Heimat ansehen. Gleichzeitig wird Sandokan als Pirat beschrieben. Ohne genauere Belege zu seinen Handlungen lässt sich nicht sicher sagen, ob er ausschließlich ein Freiheitskämpfer war. Wichtig ist, aus wessen Sicht man ihn beurteilt."
+  },
+  {id:"g2-sandokan-practice-1",subject:"gsel2",topic:"Piraten",kind:"practice",type:"mcq",
+   title:"Wo liegt Sandakan?",question:"Wo liegt die Stadt Sandakan heute?",options:["An der Nordostküste Borneos in Malaysia","Auf Java in Indonesien","Auf der Malaiischen Halbinsel bei Kuala Lumpur","Im Osten von Thailand"],correct:0},
+  {id:"g2-sandokan-practice-2",subject:"gsel2",topic:"Piraten",kind:"practice",type:"mcq",
+   title:"Wer war James Brooke?",question:"Welche Rolle spielt James Brooke in der Sandokan-Geschichte?",options:["Sandokans britischer Gegenspieler","Sandokans Freund Yanez","Der Schriftsteller des Romans","Der Kapitän der Vitalienbrüder"],correct:0},
+  {id:"g2-sandokan-practice-3",subject:"gsel2",topic:"Piraten",kind:"practice",type:"mcq",
+   title:"Was ist über Mompracem sicher?",question:"Was lässt sich aus dem Text über Mompracem ableiten?",options:["Alte Karten zeigen eine Insel mit diesem Namen, die heutige Zuordnung bleibt unsicher","Mompracem war sicher Java","Es gab die Insel nachweislich nie","Mompracem liegt heute mitten in Bangkok"],correct:0},
+  {id:"g2-sandokan-practice-4",subject:"gsel2",topic:"Piraten",kind:"practice",type:"mcq",
+   title:"Was zeigt M4?",question:"Warum kann M4 nicht alle Machtverhältnisse zur Zeit des historischen Sandokan genau zeigen?",options:["Weil M4 die Verhältnisse von 1914 zeigt, Sandokans Geschichte aber um 1845 spielt","Weil M4 nur die Karibik zeigt","Weil M4 gar keine Grenzen enthält","Weil Malaysia in Europa liegt"],correct:0},
+
   {id:"g2-piraten-practice-fc1",subject:"gsel2",topic:"Piraten",kind:"practice",type:"flashcard",
    title:"Flashkarte: Pirat",question:"Was ist ein Pirat?",answer:"Ein Pirat überfällt Schiffe oder Küstenorte und handelt dabei ohne staatliche Erlaubnis."},
   {id:"g2-piraten-practice-fc2",subject:"gsel2",topic:"Piraten",kind:"practice",type:"flashcard",
@@ -1750,7 +1829,9 @@ function renderTeacherPane(tab){
       <div class="libraryTools"><input id="contentSearch" placeholder="Inhalte suchen …" value="${esc(teacherContentSearch)}"><select id="contentFilter"><option value="all">Alle Inhalte</option><option value="bookpages" ${teacherContentFilter==="bookpages"?"selected":""}>Buchseiten</option><option value="homework" ${teacherContentFilter==="homework"?"selected":""}>Hausaufgaben</option><option value="vocab" ${teacherContentFilter==="vocab"?"selected":""}>Englisch-Vokabeln</option><option value="learning" ${teacherContentFilter==="learning"?"selected":""}>Weitere Lerninhalte</option></select></div>
       ${all.length?filtered.map(libraryEntryHtml).join("")||'<p class="small">Keine passenden Inhalte gefunden.</p>':`<div class="teacherForm"><strong>Noch keine zentrale Bibliothek geladen.</strong><p class="small">Die bisherigen Lerninhalte können übernommen und der aktuellen Klasse zugewiesen werden.</p></div>`}
       <button id="seedLibrary" class="ghost big" ${teacherRoom?"":"disabled"}>${all.length?"Grundinhalte für diese Klasse ergänzen":"Vorhandene Lerninhalte übernehmen"}</button>
-      <button id="seedNotebookOptics" class="ghost big" ${teacherRoom?"":"disabled"}>Neue Natur- und GSEL-Inhalte übernehmen</button>
+      <button id="seedNotebookOptics" class="ghost big" ${teacherRoom?"":"disabled"}>Neue Natur-, GSEL- und Hausaufgaben übernehmen</button>
+      <button id="seedSandokan" class="ghost big" ${teacherRoom?"":"disabled"}>GSEL 2: Sandokan mit Fragen übernehmen</button>
+      <p class="small">Enthält GSEL 1: „Aufgabe 5, Seite 13“ und das Rollenspiel sowie GSEL 2: Sandokan.</p>
     </div>
     <div class="card" style="margin-top:12px"><h3>Neue Inhalte anlegen</h3>
       <details class="teacherForm"><summary><strong>🧠 NotebookLM-Quiz importieren</strong></summary><p class="small">Den vollständigen JSON-Text aus NotebookLM hier einfügen. Jede Antwort sollte eine eigene Erklärung enthalten.</p><div class="formGrid"><label>Fach<select id="notebookSubject">${SUBJECTS.map(s=>`<option value="${s.id}" ${s.id==="natur"?"selected":""}>${s.icon} ${esc(s.name)}</option>`).join("")}</select></label><label>Thema<input id="notebookTopic" placeholder="z. B. Licht"></label></div><label>NotebookLM-JSON<textarea id="notebookJson" rows="10" placeholder='{"title":"…","questions":[…]}'></textarea></label>${teacherRoomChecks(defaultRooms,"notebookRoom")}<button id="importNotebookQuiz" class="primary big">Quiz importieren</button><p id="notebookMsg" class="small"></p></details>
@@ -1762,6 +1843,7 @@ function renderTeacherPane(tab){
     $("#contentFilter").onchange=e=>{teacherContentFilter=e.target.value;renderTeacherPane("content")};
     if($("#seedLibrary"))$("#seedLibrary").onclick=teacherSeedLibrary;
     $("#seedNotebookOptics").onclick=teacherSeedNotebookOptics;
+    $("#seedSandokan").onclick=teacherSeedSandokan;
     $("#importNotebookQuiz").onclick=teacherImportNotebookQuiz;
     if($("#addVocabBtn"))$("#addVocabBtn").onclick=teacherAddVocab;
     $("#saveBookPages").onclick=teacherSaveBookPages;$("#saveHomework").onclick=teacherSaveHomework;
@@ -1918,9 +2000,25 @@ async function teacherSeedLibrary(){
 }
 async function teacherSeedNotebookOptics(){
   if(!teacherRoom)return;
-  const items=DEFAULT_CONTENT.filter(item=>item.subject==="natur"||item.id.startsWith("g1-staende-"));
-  try{await rpc("lerninsel_teacher_library_seed",{p_items:items,p_room_id:teacherRoom.roomId},true);toast("✓ Natur und GSEL 1 wurden aktualisiert.");await teacherPull()}
-  catch(error){toast("Die neuen Natur- und GSEL-Inhalte konnten nicht übernommen werden.")}
+  const items=DEFAULT_CONTENT.filter(item=>item.subject==="natur"||item.id.startsWith("g1-staende-")||item.id.startsWith("g2-sandokan-"));
+  try{
+    await rpc("lerninsel_teacher_library_seed",{p_items:items,p_room_id:teacherRoom.roomId},true);
+    await teacherPull();
+    const homeworkLoaded=(state.teacher.items||[]).some(item=>item.id==="g1-staende-homework-aufgabe5-s13");
+    if(homeworkLoaded){toast("✓ Neue Natur- und GSEL-Inhalte übernommen (inkl. Sandokan).")}
+    else{alert("Die GSEL-Hausaufgabe ist noch nicht in der aktuellen Klasse angekommen. Bitte die Seite einmal neu laden und danach erneut auf den Aktualisieren-Knopf tippen.")}
+  }catch(error){alert("Die neuen Inhalte konnten nicht übernommen werden. Bitte prüfen, ob du im Lehrerbereich angemeldet bist, und versuche es erneut.")}
+}
+async function teacherSeedSandokan(){
+  if(!teacherRoom)return;
+  const items=DEFAULT_CONTENT.filter(item=>item.id.startsWith("g2-sandokan-"));
+  try{
+    await rpc("lerninsel_teacher_library_seed",{p_items:items,p_room_id:teacherRoom.roomId},true);
+    await teacherPull();
+    const got=(state.teacher.items||[]).some(item=>item.id==="g2-sandokan-lesson");
+    if(got)toast("✓ Sandokan und Fragen sind jetzt in GSEL 2.");
+    else alert("Sandokan konnte in der aktuellen Klasse noch nicht bestätigt werden. Bitte die Klasse prüfen und erneut versuchen.");
+  }catch(error){alert("Sandokan konnte nicht übernommen werden. Bitte die Lehreranmeldung und Supabase-Verbindung prüfen.")}
 }
 async function teacherSyncDefault(){return teacherSeedLibrary()}
 async function teacherToggleLibraryRoom(itemId,roomId,checked){

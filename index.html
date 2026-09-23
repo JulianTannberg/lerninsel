@@ -81,7 +81,7 @@ label{display:block;font-weight:700;margin:11px 0 5px}input,select,textarea{widt
  .tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.formGrid,.libraryTools,.classBar{grid-template-columns:1fr}.avatarGrid{grid-template-columns:repeat(4,1fr)}.profileBar{align-items:flex-start}.topActions{flex-direction:column}.homeLink{align-items:flex-start;flex-direction:column}
 }
 
-/* v9.0.13: Lerninhalte ohne private Unterrichtsfotos */
+/* v9.0.14: zuverlässige Aktualisierung der GSEL-Hausaufgaben */
 :root{
  --bg:#f3eee6;--card:#fffaf3;--ink:#2b3540;--muted:#748087;--line:#ded6ca;
  --accent:#5b7280;--accent2:#8499a4;--soft:#e7edef;--good:#e4eee7;
@@ -133,10 +133,10 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(118,143,155,.22);
 <dialog id="gameDialog"><div id="gameInside" class="inside"></div></dialog>
 <dialog id="liveDialog"><div id="liveInside" class="inside"></div></dialog>
 
-<script src="config.js"></script>
-<script src="app.js"></script>
+<script src="config.js?v=9014"></script>
+<script src="app.js?v=9015"></script>
 <script>
-if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{})}
+if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js?v=9014").catch(()=>{})}
 </script>
 </body>
 </html>
