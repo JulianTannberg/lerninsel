@@ -1,41 +1,16 @@
-LERNINSEL – KORRIGIERTES UPDATE
-24.09.2026
+Lerninsel – Cache-/Schüleransicht-Fix 24.09.2026
 
-Warum vorher Inhalte fehlten:
-- Im GitHub-Repository sind balladen_update.js und english_update.js aktuell noch NICHT vorhanden.
-- config.js und sw.js sind dort noch auf dem alten Stand.
-- Die Ständepyramide steckt zwar bereits in app.js, bestehende Klassen laden aber ältere Inhalte aus der Datenbank. Deshalb war sie in GSEL 1 nicht sichtbar.
+Alle Dateien aus dieser ZIP in das HAUPTVERZEICHNIS des GitHub-Repositories hochladen und vorhandene Dateien ersetzen.
 
-Diese ZIP behebt alle drei Punkte.
+Wichtig:
+- index.html ERSETZEN
+- config.js ERSETZEN
+- sw.js ERSETZEN
+- gsel1_update.js ERSETZEN
+- balladen_update.js ERSETZEN
+- english_update.js ERSETZEN
+- app.js NICHT löschen. Sie bleibt unverändert im Repository.
 
-DATEIEN:
-- config.js                 ERSETZEN
-- sw.js                     ERSETZEN
-- gsel1_update.js           NEU HOCHLADEN
-- balladen_update.js        NEU HOCHLADEN
-- english_update.js         NEU HOCHLADEN
+Die index.html lädt jetzt alle neuen Zusatzdateien direkt mit einer neuen Versionsnummer. Dadurch kann die Schüleransicht nicht mehr an den alten JS-Dateien hängen bleiben.
 
-app.js NICHT löschen und NICHT ersetzen.
-
-Danach:
-1. Alle 5 Dateien ins Hauptverzeichnis des GitHub-Repositories hochladen.
-2. Änderungen committen.
-3. Lerninsel komplett schließen und neu öffnen.
-4. Falls die alte PWA noch geöffnet war: einmal neu laden.
-
-Danach sichtbar:
-DEUTSCH > Balladen
-- allgemeine Balladenmerkmale
-- Reiter John Maynard
-- Reiter Der Maulwurf muss weg
-- Übungen, Arbeitsblattfragen und Quiz
-
-GSEL 1 > Die drei Stände im Mittelalter
-- Eintrag „Ständepyramide – mittelalterliche Gesellschaft“
-- nachgezeichnete Pyramide beim Öffnen
-
-ENGLISCH > London
-- genau eine Lernseite „Vokabeln: Unterwegs in London“
-- car, train, underground, bus, walk, street, town, city usw.
-- zusätzliche Übungen zu Where do you live?, Jobs, Friends,
-  Preisen, Verkehr, Wetter und Freizeit
+Danach die Lerninsel einmal komplett schließen und neu öffnen. Falls sie als installierte PWA geöffnet ist, einmal schließen und erneut starten.

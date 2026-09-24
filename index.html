@@ -133,10 +133,19 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(118,143,155,.22);
 <dialog id="gameDialog"><div id="gameInside" class="inside"></div></dialog>
 <dialog id="liveDialog"><div id="liveInside" class="inside"></div></dialog>
 
-<script src="config.js?v=9014"></script>
-<script src="app.js?v=9016"></script>
+<script src="config.js?v=9023"></script>
+<script src="app.js?v=9023"></script>
+<script src="gsel1_update.js?v=9023"></script>
+<script src="balladen_update.js?v=9023"></script>
+<script src="english_update.js?v=9023"></script>
 <script>
-if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js?v=9016").catch(()=>{})}
+if("serviceWorker" in navigator){
+  let reloading=false;
+  navigator.serviceWorker.addEventListener("controllerchange",()=>{
+    if(!reloading){reloading=true;location.reload()}
+  });
+  navigator.serviceWorker.register("sw.js?v=9023").then(r=>r.update()).catch(()=>{});
+}
 </script>
 </body>
 </html>

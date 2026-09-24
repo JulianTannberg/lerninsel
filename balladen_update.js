@@ -151,4 +151,12 @@
       return oldRenderTopic(subjectId,topic);
     };
   }
+  setTimeout(()=>{
+    try{
+      if(typeof role!=="undefined" && role==="student" && typeof state!=="undefined" && state.student){
+        if(state.currentSubject==="deutsch" && typeof renderSubject==="function") renderSubject("deutsch");
+        else if(!state.currentSubject && typeof renderStudentDashboard==="function") renderStudentDashboard();
+      }
+    }catch{}
+  },500);
 })();
