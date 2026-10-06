@@ -242,6 +242,104 @@ const DEFAULT_CONTENT = [
     question:"Ein Winkel misst 70°. Welche Aussage stimmt?",options:["Er ist kleiner als ein rechter Winkel","Er ist genau ein rechter Winkel","Er ist größer als 90°","Er ist ein gestreckter Winkel"],correct:0
   },
   {
+    id:"g1-grundherrschaft-lesson-1",subject:"gsel1",topic:"Grundherrschaft",kind:"lesson",type:"lesson",
+    title:"Grundherrschaft – ganz einfach",summary:"Wer besitzt das Land? Was müssen Bauern tun?",
+    sections:[
+      {heading:"Was ist eine Grundherrschaft?",text:"Im Mittelalter gehörte viel Land einem Grundherrn. Das konnte ein Adeliger, ein Bischof oder ein Kloster sein. Bauern lebten und arbeiteten auf diesem Land. Viele Bauern waren vom Grundherrn abhängig."},
+      {heading:"Was bekam der Bauer?",text:"Der Bauer durfte Land nutzen und dort wohnen und arbeiten. Der Grundherr sollte ihn außerdem schützen."},
+      {heading:"Was musste der Bauer geben?",text:"Der Bauer musste Abgaben leisten. Das konnten zum Beispiel Getreide, Eier, Hühner, Schweine, Lämmer, Flachs oder Geld sein."},
+      {heading:"Was ist Frondienst?",text:"Frondienst bedeutet: Der Bauer musste für den Grundherrn arbeiten. Er half zum Beispiel auf den Feldern, bei der Ernte, bei Tieren oder bei Reparaturen."},
+      {heading:"Wer war der Meier?",text:"Der Meier war ein Verwalter. Er achtete darauf, dass die Bauern ihre Arbeiten erledigten und ihre Abgaben abgaben."},
+      {heading:"Was bedeutete unfrei?",text:"Unfreie Bauern konnten nicht über alles selbst entscheiden. Sie waren vom Willen des Grundherrn abhängig und mussten sich an seine Abgaben- und Dienstregeln halten."},
+      {heading:"Warum wurden Bauern abhängig?",text:"Krieg, schlechte Ernten oder Hunger konnten Bauern in Not bringen. Ein Grundherr konnte helfen und Schutz geben. Dafür verloren Bauern oft einen Teil ihrer Freiheit."}
+    ],
+    memory:"Grundherr = besitzt Land und bietet Schutz · Bauer = arbeitet und gibt Abgaben · Meier = verwaltet und kontrolliert."
+  },
+  {
+    id:"g1-grundherrschaft-lesson-aufbau",subject:"gsel1",topic:"Grundherrschaft",kind:"lesson",type:"lesson",
+    title:"So war eine Grundherrschaft aufgebaut",summary:"Ein einfaches Schaubild mit Herrenhof, Meier und Bauernhöfen.",diagram:"grundherrschaft",
+    sections:[
+      {heading:"Herrenhof oder Fronhof",text:"Der wichtigste Hof gehörte direkt zum Grundherrn. Dort lebte der Grundherr manchmal selbst. Häufig leitete ein Meier den Hof."},
+      {heading:"Bauernhöfe",text:"In der Umgebung lagen die kleineren Höfe der Bauern. Die Bauern bewirtschafteten ihr Land und mussten zusätzlich Abgaben und Frondienste leisten."},
+      {heading:"Ganz kurz",text:"Grundherr oben – Meier verwaltet – Bauern arbeiten und leisten Abgaben. Dafür bekommen die Bauern Landnutzung und Schutz."}
+    ],
+    memory:"Herrenhof/Fronhof → Meier → Bauernhöfe."
+  },
+
+  {id:"g1-grundherrschaft-practice-1",subject:"gsel1",topic:"Grundherrschaft",kind:"practice",type:"mcq",title:"Was ist Grundherrschaft?",question:"Welche Erklärung ist richtig?",options:["Land gehört einem Grundherrn. Bauern arbeiten darauf und sind oft von ihm abhängig.","Alle Bauern besitzen ihr Land völlig frei.","Eine Grundherrschaft ist nur eine Burg.","Eine Grundherrschaft ist ein mittelalterlicher Markt."],correct:0},
+  {id:"g1-grundherrschaft-practice-2",subject:"gsel1",topic:"Grundherrschaft",kind:"practice",type:"mcq",title:"Wer macht was?",question:"Welche Zuordnung stimmt?",options:["Grundherr besitzt Land · Meier verwaltet · Bauer arbeitet","Bauer besitzt alles · Grundherr arbeitet für ihn · Meier ist Ritter","Meier besitzt das Königreich · Bauer ist Bischof · Grundherr ist Knecht","Alle drei haben genau dieselben Aufgaben"],correct:0},
+  {id:"g1-grundherrschaft-practice-3",subject:"gsel1",topic:"Grundherrschaft",kind:"practice",type:"mcq",title:"Abgaben",question:"Was konnten Bauern als Abgabe geben?",options:["Getreide, Eier, Tiere oder Geld","Fernseher und Computer","Nur Waffen","Gar nichts"],correct:0},
+  {id:"g1-grundherrschaft-practice-4",subject:"gsel1",topic:"Grundherrschaft",kind:"practice",type:"mcq",title:"Frondienst",question:"Was bedeutet Frondienst?",options:["Der Bauer arbeitet für den Grundherrn.","Der Bauer macht Urlaub.","Der Bauer wird König.","Der Grundherr arbeitet jeden Tag für den Bauern."],correct:0},
+  {id:"g1-grundherrschaft-practice-5",subject:"gsel1",topic:"Grundherrschaft",kind:"practice",type:"mcq",title:"Warum abhängig?",question:"Warum konnten Bauern von einem Grundherrn abhängig werden?",options:["Wegen Krieg, schlechter Ernten, Hunger oder weil sie Schutz brauchten.","Weil sie ein Auto kaufen wollten.","Weil es keine Landwirtschaft gab.","Weil jeder Bauer Ritter werden musste."],correct:0},
+  {id:"g1-grundherrschaft-practice-6",subject:"gsel1",topic:"Grundherrschaft",kind:"practice",type:"builder",title:"Merksatz bauen",question:"Bringe den Merksatz in die richtige Reihenfolge.",parts:["Der Grundherr besitzt Land.","Die Bauern arbeiten und leisten Abgaben.","Der Meier kontrolliert Arbeit und Abgaben.","Dafür bekommen die Bauern Landnutzung und Schutz."],correctOrder:[0,1,2,3]},
+
+  {
+    id:"g1-grundherrschaft-homework-1",subject:"gsel1",topic:"Grundherrschaft",kind:"homework",type:"guided",
+    title:"Aufgabe 1 – Grundherrschaft erklären",summary:"Buchseite 15 · Aufgabe 1 mit kleinen Hilfen.",
+    question:"Beschreibe, was man unter Grundherrschaft versteht.",
+    steps:[
+      {prompt:"Wem gehörte viel Land?",options:["Dem Grundherrn","Jedem Bauern allein","Nur den Händlern"],correct:0},
+      {prompt:"Wer arbeitete auf dem Land?",options:["Bauern","Nur Ritter","Nur Mönche"],correct:0},
+      {prompt:"Wie waren viele Bauern zum Grundherrn?",options:["Abhängig","Seine Lehrer","Seine Könige"],correct:0}
+    ],
+    finalText:"Grundherrschaft bedeutet: Ein Grundherr besaß Land. Bauern lebten und arbeiteten auf diesem Land. Viele Bauern waren vom Grundherrn abhängig und mussten Abgaben und Dienste leisten."
+  },
+  {
+    id:"g1-grundherrschaft-homework-2",subject:"gsel1",topic:"Grundherrschaft",kind:"homework",type:"guided",
+    title:"Aufgabe 2 – Aufbau erklären",summary:"Buchseite 15 · Aufgabe 2 mit Hilfe zum Schaubild.",
+    question:"Erkläre, wie eine Grundherrschaft aufgebaut war.",
+    steps:[
+      {prompt:"Wie hieß der wichtigste Hof?",options:["Herrenhof oder Fronhof","Marktplatz","Ritterhof"],correct:0},
+      {prompt:"Wer verwaltete den Hof oft vor Ort?",options:["Der Meier","Der Schmied","Der Bote"],correct:0},
+      {prompt:"Was lag um den Herrenhof herum?",options:["Bauernhöfe","Nur Burgen","Nur Klöster"],correct:0}
+    ],
+    finalText:"Zur Grundherrschaft gehörte ein Herrenhof oder Fronhof. Dort arbeitete oft ein Meier als Verwalter. In der Umgebung lagen die Höfe der Bauern. Die Bauern arbeiteten und leisteten Abgaben und Frondienste."
+  },
+  {
+    id:"g1-grundherrschaft-homework-3",subject:"gsel1",topic:"Grundherrschaft",kind:"homework",type:"guided",
+    title:"Aufgabe 3 – Abgaben nennen",summary:"Buchseite 15 · Aufgabe 3 mit Auswahlhilfe.",
+    question:"Liste Beispiele für Abgaben auf, die Bauern leisten mussten.",
+    steps:[
+      {prompt:"Welche Lebensmittel konnten Abgaben sein?",options:["Getreide und Eier","Bonbons und Pizza","Nur Salz"],correct:0},
+      {prompt:"Welche Tiere konnten als Abgabe verlangt werden?",options:["Hühner, Schweine oder Lämmer","Nur Pferde","Keine Tiere"],correct:0},
+      {prompt:"Konnte auch Geld verlangt werden?",options:["Ja","Nein, niemals","Nur vom König"],correct:0}
+    ],
+    finalText:"Bauern mussten zum Beispiel Getreide, Eier, Hühner, Schweine oder Lämmer abgeben. Auch Flachs oder Geld konnten als Abgabe verlangt werden."
+  },
+  {
+    id:"g1-grundherrschaft-homework-4",subject:"gsel1",topic:"Grundherrschaft",kind:"homework",type:"choicewriting",
+    title:"Aufgabe 4 – Wähle A oder B",summary:"Buchseite 15 · Meier oder Bauerndialog mit Hilfestellung.",
+    question:"Wähle die Variante, die du bearbeiten sollst.",
+    variants:[
+      {
+        id:"A",title:"A – Du bist der Meier",
+        question:"Stell dir vor, du bist der Meier auf dem Fronhof. Berichte über deine Aufgaben.",
+        guide:["Der Meier verwaltet den Hof für den Grundherrn.","Er kontrolliert die Frondienste der Bauern.","Er achtet darauf, dass die Abgaben geleistet werden."],
+        starter:"Als Meier auf dem Fronhof muss ich …",
+        example:"Als Meier auf dem Fronhof verwalte ich den Hof für den Grundherrn. Ich kontrolliere, ob die Bauern ihre Frondienste erledigen und ihre Abgaben abgeben. Außerdem kümmere ich mich darum, dass die Arbeiten auf dem Hof erledigt werden."
+      },
+      {
+        id:"B",title:"B – Zwei Bauern diskutieren",
+        question:"Schreibe einen kurzen Dialog: Soll ein Bauer sich in die Abhängigkeit eines Grundherrn begeben? Was spricht dafür und was dagegen?",
+        guide:["Dafür: Schutz, Hilfe in Not, eventuell kein eigener Kriegsdienst.","Dagegen: weniger Freiheit, Abgaben, Frondienste, Abhängigkeit.","Lass beide Bauern mindestens einen Grund nennen."],
+        starter:"Bauer 1: Ich würde zu einem Grundherrn gehen, weil …\nBauer 2: Ich würde lieber frei bleiben, weil …",
+        example:"Bauer 1: Ich würde zu einem Grundherrn gehen, weil er mich schützen kann.\nBauer 2: Ich würde lieber frei bleiben, weil ich sonst Abgaben und Frondienste leisten muss.\nBauer 1: In einer Notlage kann seine Hilfe aber wichtig sein.\nBauer 2: Dafür müsste ich einen Teil meiner Freiheit aufgeben."
+      }
+    ]
+  },
+  {
+    id:"g1-grundherrschaft-homework-5",subject:"gsel1",topic:"Grundherrschaft",kind:"homework",type:"writing",
+    title:"Aufgabe 5 – Bewerten",summary:"Buchseite 15 · mit drei Hilfen und Beispiel zum Vergleichen.",
+    question:"Bewerte, was die Grundherrschaft für abhängige Menschen bedeutete.",
+    helps:[
+      "Denke zuerst an die Vorteile: Schutz, Landnutzung und Hilfe in Not.",
+      "Denke dann an die Nachteile: Abgaben, Frondienste, weniger Freiheit und Abhängigkeit.",
+      "Beginne zum Beispiel so: Für abhängige Bauern hatte die Grundherrschaft Vorteile und Nachteile. …"
+    ],
+    finalText:"Für abhängige Bauern hatte die Grundherrschaft Vorteile und Nachteile. Sie konnten Land nutzen und bekamen Schutz. Dafür mussten sie Abgaben und Frondienste leisten und waren vom Willen des Grundherrn abhängig. Deshalb bedeutete die Grundherrschaft für sie auch einen Verlust an Freiheit."
+  },
+
+  {
     id:"g1-staende-lernen-1",subject:"gsel1",topic:"Die drei Stände im Mittelalter",kind:"lesson",type:"lesson",
     title:"Die drei Stände einfach erklärt",summary:"Wer gehörte zu welchem Stand und welche Aufgaben hatte er?",
     sections:[
@@ -679,6 +777,19 @@ function withCurrentNatureLessons(items){
   });
   return arr
 }
+// The new GSEL 1 schoolbook unit is also part of the app version. Existing
+// online classes may still only contain the older Stände topic. Overlay the
+// current Grundherrschaft unit locally whenever GSEL 1 is enabled.
+const GRUNDHERRSCHAFT_CONTENT = DEFAULT_CONTENT.filter(item=>item.id.startsWith("g1-grundherrschaft-"));
+function withCurrentGsel1Grundherrschaft(items){
+  const arr=items||[];
+  const hasGsel1=arr.some(i=>i.subject==="gsel1");
+  if(!hasGsel1)return arr;
+  GRUNDHERRSCHAFT_CONTENT.forEach(item=>{
+    if(!arr.some(i=>i.id===item.id))arr.push(structuredClone(item));
+  });
+  return arr
+}
 const RETIRED_PIRATE_HOMEWORK = new Set(["g2-piraten-homework-1","g2-piraten-homework-2"]);
 function restoreSandokanProgress(){
   if(!studentSession||studentSession.demo)return;
@@ -697,6 +808,14 @@ function restoreCurrentNatureProgress(){
     // Server progress wins. The local copy is only a safety net for built-in
     // overlay items that are not yet present in an older class library.
     for(const item of NATURE_0610_CONTENT)if(!state.progress[item.id]&&saved[item.id])state.progress[item.id]=saved[item.id];
+  }catch{}
+}
+function restoreGrundherrschaftProgress(){
+  if(!studentSession||studentSession.demo)return;
+  try{
+    const k=`lerninsel_gsel1_grundherrschaft_${studentSession.roomCode}_${studentSession.studentCode}`;
+    const saved=JSON.parse(localStorage.getItem(k)||"{}");
+    for(const item of GRUNDHERRSCHAFT_CONTENT)if(!state.progress[item.id]&&saved[item.id])state.progress[item.id]=saved[item.id];
   }catch{}
 }
 function withCurrentSandokan(items){
@@ -901,6 +1020,9 @@ function saveLocal(){
     const natureKey=`lerninsel_nature_0610_${studentSession.roomCode}_${studentSession.studentCode}`;
     const onlyCurrentNature=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("n-material-")||id.startsWith("n-lens-")));
     localStorage.setItem(natureKey,JSON.stringify(onlyCurrentNature));
+    const grundherrschaftKey=`lerninsel_gsel1_grundherrschaft_${studentSession.roomCode}_${studentSession.studentCode}`;
+    const onlyGrundherrschaft=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("g1-grundherrschaft-")));
+    localStorage.setItem(grundherrschaftKey,JSON.stringify(onlyGrundherrschaft));
   }
   if(state.profile)localStorage.setItem(KEYS.localProfile,JSON.stringify(state.profile));
 }
@@ -1025,7 +1147,7 @@ async function bootStudent(){
     try{
       const r=await rpc("lerninsel_student_login",{p_public_code:studentSession.roomCode,p_student_code:studentSession.studentCode});
       if(r?.student){
-        state.student=r.student;state.items=withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic)));state.progress=r.progress||{};restoreSandokanProgress();restoreCurrentNatureProgress();
+        state.student=r.student;state.items=withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic))));state.progress=r.progress||{};restoreSandokanProgress();restoreCurrentNatureProgress();restoreGrundherrschaftProgress();
         await loadStudentProfile();
         await openStudentHome();return
       }
@@ -1051,7 +1173,7 @@ function renderStudentLogin(){
       const r=await rpc("lerninsel_student_login",{p_public_code:room,p_student_code:code});
       if(!r?.student)throw new Error("Code nicht gefunden.");
       studentSession={roomCode:room,studentCode:code};localStorage.setItem(KEYS.studentSession,JSON.stringify(studentSession));
-      state.student=r.student;state.items=withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic)));state.progress=r.progress||{};restoreSandokanProgress();restoreCurrentNatureProgress();
+      state.student=r.student;state.items=withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic))));state.progress=r.progress||{};restoreSandokanProgress();restoreCurrentNatureProgress();restoreGrundherrschaftProgress();
       await loadStudentProfile();await openStudentHome()
     }catch(e){m.textContent="Anmeldung nicht möglich. Bitte Codes prüfen."}
   };
@@ -1059,7 +1181,7 @@ function renderStudentLogin(){
 }
 function loadDemoStudent(){
   state.student={id:"demo",label:"Demo-Schüler"};
-  state.items=withCurrentSandokan(DEFAULT_CONTENT.map(x=>structuredClone(x)));
+  state.items=withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan(DEFAULT_CONTENT.map(x=>normalizeBuiltInTopic(structuredClone(x))))));
   state.progress=JSON.parse(localStorage.getItem(KEYS.localProgress)||"{}");
   state.profile=JSON.parse(localStorage.getItem(KEYS.localProfile)||"null")||{nickname:"Fiete",avatar:"🦊",games_spent:0,game_best:0}
 }
@@ -1191,6 +1313,33 @@ function lessonExtra(i){
   if(i.diagram==="shadow-symbols")return `<div class="lessonSection softDiagram"><h3>So liegen die vier Größen</h3><svg viewBox="0 0 760 300" class="learnSvg" aria-label="Schattenwurf mit G g B b"><line x1="40" y1="150" x2="720" y2="150" stroke="#a9b8ca" stroke-dasharray="8 8"/><circle cx="90" cy="150" r="13" fill="#f2b84b"/><text x="55" y="125">Lichtquelle</text><line x1="330" y1="105" x2="330" y2="195" stroke="#536b88" stroke-width="10"/><line x1="690" y1="60" x2="690" y2="240" stroke="#536b88" stroke-width="10"/><line x1="90" y1="150" x2="690" y2="60" stroke="#e7a84a" stroke-width="3"/><line x1="90" y1="150" x2="690" y2="240" stroke="#e7a84a" stroke-width="3"/><text x="345" y="105" font-size="30" font-weight="800">G</text><text x="705" y="70" font-size="30" font-weight="800">B</text><path d="M90 225 H330" stroke="#7d6bc5" stroke-width="5"/><text x="195" y="260" font-size="28" font-weight="800">g</text><path d="M90 280 H690" stroke="#7d6bc5" stroke-width="5"/><text x="380" y="295" font-size="28" font-weight="800">b</text></svg><div class="memoryGrid"><b>G = Gegenstandsgröße</b><b>g = Gegenstandsweite</b><b>B = Bildgröße</b><b>b = Bildweite</b></div></div>`;
   if(i.diagram==="shadow-construction")return `<div class="lessonSection softDiagram"><h3>Die zwei Randstrahlen</h3><svg viewBox="0 0 760 260" class="learnSvg"><line x1="50" y1="135" x2="710" y2="135" stroke="#b5c1cf" stroke-dasharray="8 8"/><circle cx="90" cy="135" r="12" fill="#f2b84b"/><line x1="330" y1="95" x2="330" y2="175" stroke="#526b87" stroke-width="9"/><line x1="690" y1="45" x2="690" y2="225" stroke="#526b87" stroke-width="9"/><line x1="90" y1="135" x2="690" y2="45" stroke="#d87c69" stroke-width="4"/><line x1="90" y1="135" x2="690" y2="225" stroke="#d87c69" stroke-width="4"/><text x="160" y="70" font-size="22">Randstrahl</text><text x="350" y="90" font-size="22">Gegenstand</text><text x="610" y="30" font-size="22">Schirm</text></svg></div>`;
   if(i.diagram==="reflection")return `<div class="lessonSection softDiagram"><h3>Spiegelung: immer zuerst das Lot</h3><svg viewBox="0 0 760 330" class="learnSvg"><line x1="100" y1="250" x2="660" y2="250" stroke="#526b87" stroke-width="10"/><circle cx="380" cy="250" r="8" fill="#263a54"/><line x1="380" y1="250" x2="380" y2="45" stroke="#91a3b7" stroke-width="3" stroke-dasharray="8 7"/><line x1="150" y1="70" x2="380" y2="250" stroke="#d87c69" stroke-width="5"/><line x1="380" y1="250" x2="610" y2="70" stroke="#6b8fd4" stroke-width="5"/><path d="M380 170 A80 80 0 0 0 317 201" fill="none" stroke="#7d6bc5" stroke-width="4"/><path d="M380 170 A80 80 0 0 1 443 201" fill="none" stroke="#7d6bc5" stroke-width="4"/><text x="390" y="65" font-size="24" font-weight="800">Lot (90° zum Spiegel)</text><text x="270" y="175" font-size="24">α</text><text x="470" y="175" font-size="24">β</text><text x="275" y="300" font-size="24">Spiegel</text></svg><div class="merksatz">α = β · Die Winkel werden zum Lot gemessen.</div></div>`;
+  if(i.diagram==="grundherrschaft")return `
+    <div class="lessonSection softDiagram">
+      <h3>Grundherrschaft als einfaches Schaubild</h3>
+      <svg viewBox="0 0 760 470" class="learnSvg" role="img" aria-label="Schaubild einer Grundherrschaft mit Grundherr, Fronhof, Meier und Bauernhöfen">
+        <rect x="250" y="38" width="260" height="82" rx="18" fill="#dfe6ef" stroke="#526b87" stroke-width="3"/>
+        <text x="380" y="72" text-anchor="middle" font-size="25" font-weight="800" fill="#263a54">Grundherr</text>
+        <text x="380" y="101" text-anchor="middle" font-size="18" fill="#52657c">besitzt Land · bietet Schutz</text>
+        <path d="M380 120 V166" stroke="#7d8da1" stroke-width="4" marker-end="url(#ghArrow)"/>
+        <defs><marker id="ghArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7d8da1"/></marker></defs>
+        <rect x="235" y="176" width="290" height="105" rx="18" fill="#f4ead2" stroke="#8e7950" stroke-width="3"/>
+        <text x="380" y="211" text-anchor="middle" font-size="25" font-weight="800" fill="#54462e">Herrenhof / Fronhof</text>
+        <text x="380" y="242" text-anchor="middle" font-size="20" fill="#6d5c3c">Meier verwaltet den Hof</text>
+        <text x="380" y="268" text-anchor="middle" font-size="17" fill="#6d5c3c">kontrolliert Arbeit und Abgaben</text>
+        <path d="M270 282 C235 318 180 322 145 343" stroke="#7d8da1" stroke-width="3" fill="none" marker-end="url(#ghArrow)"/>
+        <path d="M380 282 V342" stroke="#7d8da1" stroke-width="3" fill="none" marker-end="url(#ghArrow)"/>
+        <path d="M490 282 C525 318 580 322 615 343" stroke="#7d8da1" stroke-width="3" fill="none" marker-end="url(#ghArrow)"/>
+        <g fill="#e8efe2" stroke="#6f8667" stroke-width="3">
+          <rect x="55" y="350" width="180" height="82" rx="15"/><rect x="290" y="350" width="180" height="82" rx="15"/><rect x="525" y="350" width="180" height="82" rx="15"/>
+        </g>
+        <g text-anchor="middle" fill="#314638">
+          <text x="145" y="382" font-size="22" font-weight="800">Bauernhof</text><text x="145" y="410" font-size="16">arbeitet · Abgaben</text>
+          <text x="380" y="382" font-size="22" font-weight="800">Bauernhof</text><text x="380" y="410" font-size="16">arbeitet · Frondienst</text>
+          <text x="615" y="382" font-size="22" font-weight="800">Bauernhof</text><text x="615" y="410" font-size="16">arbeitet · Abgaben</text>
+        </g>
+      </svg>
+      <div class="merksatz">Grundherr besitzt Land → Meier verwaltet → Bauern arbeiten und leisten Abgaben.</div>
+    </div>`;
   if(i.diagram==="estate-pyramid")return `
     <div class="lessonSection softDiagram">
       <h3>Die mittelalterliche Ständegesellschaft</h3>
@@ -1898,7 +2047,7 @@ function renderParentLogin(){
   }
 }
 function renderParentState(r){
-  const items=(r.items||[]).map(normalizeBuiltInTopic),prog=r.progress||{},profile=r.profile||{};
+  const items=withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic)))),prog=r.progress||{},profile=r.profile||{};
   const nonQuiz=items.filter(i=>i.kind!=="quiz"),done=nonQuiz.filter(i=>prog[i.id]?.status==="completed").length;
   const byTopic={};nonQuiz.forEach(i=>{const k=`${i.subject}|${i.topic}`;(byTopic[k]??=[]).push(i)});
   MAIN.innerHTML=`<div class="card profileBar"><div class="profileLeft"><div class="avatar">${esc(profile.avatar||"🙂")}</div>
@@ -2065,7 +2214,7 @@ function startTeacherTest(){
   role="student";
   studentSession={demo:true,teacherTest:true};
   state.student={id:"teacher-test",label:"Test-Schüler"};
-  state.items=withCurrentNatureLessons(withCurrentSandokan((state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT).filter(i=>roomSubjectEnabled(i.subject)).map(x=>normalizeBuiltInTopic(structuredClone(x)))));
+  state.items=withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan((state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT).filter(i=>roomSubjectEnabled(i.subject)).map(x=>normalizeBuiltInTopic(structuredClone(x))))));
   state.progress={};
   state.profile={nickname:"Test",avatar:"🦊",games_spent:0,game_best:0};
   state.currentSubject=null;state.currentTopic=null;state.practice=null;state.quiz=null;state.live=null;
@@ -2157,7 +2306,7 @@ async function teacherSeedLibrary(){
 }
 async function teacherSeedNotebookOptics(){
   if(!teacherRoom)return;
-  const items=DEFAULT_CONTENT.filter(item=>item.subject==="natur"||item.id.startsWith("g1-staende-")||item.id.startsWith("g2-sandokan-"));
+  const items=DEFAULT_CONTENT.filter(item=>item.subject==="natur"||item.id.startsWith("g1-staende-")||item.id.startsWith("g1-grundherrschaft-")||item.id.startsWith("g2-sandokan-"));
   try{
     await rpc("lerninsel_teacher_library_seed",{p_items:items,p_room_id:teacherRoom.roomId},true);
     await teacherPull();

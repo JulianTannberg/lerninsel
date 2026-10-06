@@ -1,3 +1,26 @@
+LERNINSEL v9.0.22 – GSEL 1: GRUNDHERRSCHAFT
+
+Neu unter GSEL 1:
+- Eigenes Thema „Grundherrschaft“.
+- Zwei sehr einfache Lerntexte: Grundherrschaft erklärt + einfacher Aufbau mit eigenem Schaubild.
+- Übungen zu Grundherr, Bauer, Meier, Abgaben, Frondienst und Abhängigkeit.
+- Buchseite 15: Aufgaben 1–5 als unterstützte Aufgaben mit kleinen Schritten, Auswahlhilfen, Satzanfängen und Beispielantworten.
+- Aufgabe 4 enthält beide Buchwege: A „Meier“ und B „Bauerndialog“.
+- Es werden keine Fotos der Schulbuchseiten in der App verwendet.
+
+SICHTBARKEIT:
+- Das neue Thema wird in bereits bestehenden Online-Klassen automatisch eingeblendet, sobald GSEL 1 dort vorhanden ist.
+- Ein erneutes manuelles Übernehmen ist für die Schüleransicht nicht nötig.
+- Der vorhandene Lernstand der anderen Themen bleibt erhalten.
+- Der Service-Worker wurde auf v9.0.22 erhöht, damit die neue app.js sicher geladen wird.
+
+GITHUB:
+1. ZIP entpacken.
+2. index.html, app.js, sw.js und manifest.webmanifest im Repository ersetzen.
+3. Die vorhandene config.js im Repository NICHT löschen.
+4. Nach der Veröffentlichung die App einmal vollständig neu öffnen.
+
+
 LERNINSEL v9.0.21 – NATUR-SICHTBARKEIT KORRIGIERT
 
 Korrektur:
