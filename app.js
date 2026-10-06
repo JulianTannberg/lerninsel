@@ -64,8 +64,8 @@ const DEFAULT_CONTENT = [
   {
     id:"g2-sandokan-lesson",subject:"gsel2",topic:"Piraten",kind:"lesson",type:"lesson",
     title:"Sandokan",summary:"Der Tiger von Malaysia – Buchseiten 14–15 einfach erklärt.",
-    videoUrl:"https://www.ardmediathek.de/serie/Y3JpZDovL21kci5kZS9zZW5kZXJlaWhlbi9jOGUyMjc5MS01MDJlLTQxZDAtYWJkNS1hOGVkNmQ3ZTIzNDE",
-    videoLabel:"Sandokan – Der Tiger von Malaysia (ARD Mediathek, Fernsehmehrteiler von 1976). Die Verfügbarkeit einzelner Teile kann sich ändern.",
+    videoUrl:"https://youtu.be/yjhgH7lSrfw?si=Flf1UmVRVwwUO_dk",
+    videoLabel:"Sandokan – Film auf YouTube (von der Lehrkraft verlinkt).",
     sections:[
       {heading:"Wer ist Sandokan?",text:"Sandokan ist die Hauptfigur in den Abenteuerromanen von Emilio Salgari. Er trägt den Beinamen „Tiger von Malaysia“. In der Geschichte ist er ein Pirat, der mit seinen Gefährten gegen europäische Kolonialherren kämpft. Sein Gegenspieler ist James Brooke."},
       {heading:"Was bedeutet Kolonialherrschaft?",text:"Kolonialherrschaft bedeutet: Ein fremder Staat oder dessen Vertreter bestimmen über ein Gebiet und seine Menschen. Sie kontrollieren zum Beispiel Handel, Land und politische Entscheidungen. Manche Einheimische wehrten sich dagegen."},
@@ -559,6 +559,48 @@ const DEFAULT_CONTENT = [
   {id:"e-sentence-name",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"mcq",title:"What's your name?",question:"Welche Antwort passt zu „What's your name?“",options:["My name is Omar.","I live in Manchester.","I like football.","That's in England."],correct:0},
   {id:"e-sentence-live",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"mcq",title:"Where do you live?",question:"Welche Antwort passt zu „Where do you live?“",options:["I live in Manchester.","My name is Omar.","I was.","Nice to meet you."],correct:0},
   {id:"e-sentence-sports",subject:"englisch",topic:"Vokabeln & Sätze",kind:"practice",type:"mcq",title:"Sports",question:"Welche Antwort passt zu „What sports do you like?“",options:["I like running and football.","I live in Manchester.","My name is Omar.","To buy."],correct:0}
+
+,
+  /* Natur · neue Übungen aus den Arbeitsblättern vom 06.10.2026 */
+  {id:"n-material-glass-cloze",subject:"natur",topic:"Licht",kind:"practice",type:"cloze",title:"Klares Glas – lichtdurchlässig",question:"Ergänze den Text zum klaren Glas.",template:"Durch {0} gehen die Lichtstrahlen fast ungehindert hindurch. Das Material ist {1}. Einen völlig sauberen Glaskörper sehen wir nur schlecht, wenn {2} Licht von ihm in unser Auge gelangt.",gaps:[
+    {options:["klares Glas","schwarze Pappe","einen Spiegel","weiße Pappe"],correct:0},
+    {options:["lichtdurchlässig","undurchsichtig","selbstleuchtend","schwarz"],correct:0},
+    {options:["kein oder nur sehr wenig zurückgeworfenes","alles erzeugte","nur rotes","besonders viel absorbiertes"],correct:0}
+  ]},
+  {id:"n-material-black-cloze",subject:"natur",topic:"Licht",kind:"practice",type:"cloze",title:"Schwarze Pappe – absorbieren",question:"Ergänze die Aussagen zur schwarzen Pappe.",template:"Schwarze Körper {0} einen sehr großen Teil des auftreffenden Lichts. Absorbieren bedeutet: Licht wird {1}. Deshalb sehen wir schwarze Körper oft {2}, weil nur wenig Licht von ihnen in unser Auge zurückgelangt.",gaps:[
+    {options:["absorbieren","erzeugen","durchlassen","bündeln"],correct:0},
+    {options:["aufgenommen / verschluckt","verstärkt","in eine Linse verwandelt","immer vollständig durchgelassen"],correct:0},
+    {options:["schlechter","heller als weiße","gar nicht als Form","nur durch Glas"],correct:0}
+  ]},
+  {id:"n-material-white-scatter",subject:"natur",topic:"Licht",kind:"practice",type:"mcq",title:"Weiße Pappe – streuen",question:"Was passiert mit Licht, das auf eine matte weiße Pappe trifft?",options:["Es wird in viele Richtungen zurückgestreut.","Es geht vollständig gerade hindurch.","Es verschwindet vollständig im Material.","Es wird wie an einem perfekten Spiegel nur in eine Richtung reflektiert."],correct:0},
+  {id:"n-material-see-white",subject:"natur",topic:"Licht",kind:"practice",type:"mcq",title:"Warum sehen wir matte Körper?",question:"Warum können wir einen undurchsichtigen matten Körper sehen?",options:["Weil ein Teil des zurückgestreuten Lichts in unser Auge fällt.","Weil das Auge selbst Licht zum Körper sendet.","Weil jedes Material selbst leuchtet.","Weil alle Lichtstrahlen durch den Körper hindurchgehen."],correct:0},
+  {id:"n-material-mirror-law",subject:"natur",topic:"Licht",kind:"practice",type:"mcq",title:"Spiegel – gerichtete Reflexion",question:"Was geschieht an einem ebenen Spiegel mit einem Lichtstrahl?",options:["Er wird so zurückgeworfen, dass Einfallswinkel und Reflexionswinkel gleich groß sind.","Er wird vollständig absorbiert.","Er geht immer gerade durch den Spiegel hindurch.","Er wird unabhängig vom Einfallswinkel senkrecht nach oben geworfen."],correct:0},
+  {id:"n-material-mirror-see",subject:"natur",topic:"Licht",kind:"practice",type:"flashcard",title:"Kann man einen Spiegel selbst sehen?",question:"Auf dem Blatt steht: „Können wir diesen Körper eigentlich sehen?“ Was ist die genaue Antwort?",answer:"Einen idealen, völlig sauberen Spiegel selbst würden wir kaum sehen – wir sehen vor allem das Spiegelbild. Einen echten Spiegel erkennen wir zusätzlich an Rahmen, Kanten, Staub und daran, dass ein kleiner Teil des Lichts gestreut wird."},
+  {id:"n-material-milkglass-cloze",subject:"natur",topic:"Licht",kind:"practice",type:"cloze",title:"Milchglas – teillichtdurchlässig",question:"Ergänze den Text zum Milchglas.",template:"Milchglas ist {0}. Ein Teil des Lichts wird {1} und dabei in viele Richtungen gestreut; ein anderer Teil wird zurückgestreut bzw. reflektiert. Deshalb können wir Milchglas {2}, aber nicht klar hindurchsehen.",gaps:[
+    {options:["teillichtdurchlässig","vollständig undurchlässig","selbstleuchtend","ein perfekter Spiegel"],correct:0},
+    {options:["durchgelassen","vollständig verschluckt","erzeugt","nur gebündelt"],correct:0},
+    {options:["sehen","niemals sehen","nur im Dunkeln sehen","nur von hinten sehen"],correct:0}
+  ]},
+  {id:"n-material-absorb-def",subject:"natur",topic:"Licht",kind:"practice",type:"mcq",title:"Fachbegriff: absorbieren",question:"Was bedeutet „Licht absorbieren“?",options:["Licht aufnehmen; seine Energie bleibt im Material und wird z. B. in Wärme umgewandelt.","Licht in viele Richtungen zurückwerfen.","Licht unverändert hindurchlassen.","Neues Licht erzeugen."],correct:0},
+  {id:"n-material-scatter-def",subject:"natur",topic:"Licht",kind:"practice",type:"mcq",title:"Fachbegriff: streuen",question:"Was bedeutet „Licht streuen“?",options:["Licht in viele verschiedene Richtungen ablenken bzw. zurückwerfen.","Licht vollständig aufnehmen.","Licht nur in exakt eine Richtung spiegeln.","Licht ausschalten."],correct:0},
+  {id:"n-material-window",subject:"natur",topic:"Licht",kind:"practice",type:"mcq",title:"Warum sehen wir Fensterscheiben?",question:"Fensterglas ist lichtdurchlässig. Warum erkennen wir eine Fensterscheibe trotzdem meistens?",options:["An den Glasoberflächen wird ein kleiner Teil des Lichts reflektiert; außerdem streuen z. B. Staub, Kratzer und Schmutz Licht in unser Auge.","Weil Glas selbst stark leuchtet.","Weil überhaupt kein Licht durch Glas geht.","Weil das Auge Lichtstrahlen auf die Scheibe schickt."],correct:0},
+
+  {id:"n-lens-symbols",subject:"natur",topic:"Licht",kind:"practice",type:"flashcard",title:"Sammellinse: G, g, B, b und f",question:"Wofür stehen G, g, B, b und f bei einer Sammellinse?",answer:"G = Gegenstandsgröße · g = Gegenstandsweite (Gegenstand → Linse) · B = Bildgröße · b = Bildweite (Linse → Bild) · f = Brennweite (Linse → Brennpunkt F). Achtung: Bei der Linse werden g und b von der Linse aus gemessen."},
+  {id:"n-lens-symbols-cloze",subject:"natur",topic:"Licht",kind:"practice",type:"cloze",title:"Linsen-Größen zuordnen",question:"Setze die richtigen Fachbegriffe ein.",template:"G ist die {0}. g ist der Abstand {1}. B ist die {2}. b ist der Abstand {3}. f ist die {4}.",gaps:[
+    {options:["Gegenstandsgröße","Bildweite","Brennweite","Bildgröße"],correct:0},
+    {options:["Gegenstand → Linse","Lichtquelle → Gegenstand","Bild → Brennpunkt","Spiegel → Lot"],correct:0},
+    {options:["Bildgröße","Gegenstandsweite","Brennweite","Lichtstärke"],correct:0},
+    {options:["Linse → Bild","Lichtquelle → Schirm","Gegenstand → Lichtquelle","F → Gegenstand"],correct:0},
+    {options:["Brennweite Linse → F","Gegenstandsgröße","Bildgröße","Spiegellänge"],correct:0}
+  ]},
+  {id:"n-lens-missing-f",subject:"natur",topic:"Licht",kind:"practice",type:"mcq",title:"Fehlender Brennpunkt F",question:"Auf der Zeichnung ist nur ein Brennpunkt F eingezeichnet. Wo liegt der zweite Brennpunkt?",options:["Auf der anderen Seite der Linse im genau gleichen Abstand.","Direkt auf der Linse.","Beim Gegenstand, unabhängig von der Brennweite.","Doppelt so weit entfernt wie der eingezeichnete Brennpunkt."],correct:0,diagram:"lens-focal"},
+  {id:"n-lens-parallel-ray",subject:"natur",topic:"Licht",kind:"practice",type:"mcq",title:"Parallelstrahl",question:"Wie läuft ein Strahl weiter, der vor der Sammellinse parallel zur optischen Achse verläuft?",options:["Hinter der Linse durch den bildseitigen Brennpunkt F.","Hinter der Linse weiter parallel.","Er kehrt zum Gegenstand zurück.","Er endet in der Linse."],correct:0},
+  {id:"n-lens-focal-ray",subject:"natur",topic:"Licht",kind:"practice",type:"mcq",title:"Brennpunktstrahl",question:"Ein Strahl läuft vor der Sammellinse durch den gegenstandsseitigen Brennpunkt F. Wie verläuft er hinter der Linse?",options:["Parallel zur optischen Achse.","Durch den bildseitigen Brennpunkt.","Senkrecht nach unten.","Zurück zum Gegenstand."],correct:0},
+  {id:"n-lens-center-ray",subject:"natur",topic:"Licht",kind:"practice",type:"mcq",title:"Mittelpunktstrahl",question:"Wie verläuft der Mittelpunktstrahl durch eine dünne Sammellinse in der Schulzeichnung?",options:["Geradlinig durch die Linsenmitte.","Er knickt im Brennpunkt um 90° ab.","Er läuft nach der Linse parallel zur Achse.","Er wird vollständig reflektiert."],correct:0},
+  {id:"n-lens-ray-arrows",subject:"natur",topic:"Licht",kind:"practice",type:"mcq",title:"Pfeile für die Lichtausbreitung",question:"In welche Richtung zeigen die Pfeile auf den Konstruktionsstrahlen bei der Aufgabe?",options:["Vom Gegenstand zur Linse und danach weiter zum Bild.","Immer vom Bild zurück zum Gegenstand.","Nur senkrecht nach oben.","Die Richtung ist beliebig."],correct:0},
+  {id:"n-lens-image-a",subject:"natur",topic:"Licht",kind:"practice",type:"mcq",title:"Sammellinse – Bild A",question:"Wie beim oberen Arbeitsblatt: Der Gegenstand steht zwischen F und 2F vor der Sammellinse. Wie wird das scharfe Bild?",options:["Reell, auf dem Kopf und vergrößert; es entsteht hinter der Linse weiter als 2F.","Reell, aufrecht und verkleinert.","Virtuell, aufrecht und immer gleich groß.","Es entsteht überhaupt kein Bild."],correct:0,diagram:"lens-a"},
+  {id:"n-lens-image-b",subject:"natur",topic:"Licht",kind:"practice",type:"mcq",title:"Sammellinse – Bild B",question:"Wie beim unteren Arbeitsblatt: Der Gegenstand steht weiter als 2F von der Sammellinse entfernt. Wie wird das scharfe Bild?",options:["Reell, auf dem Kopf und verkleinert; es entsteht zwischen F und 2F hinter der Linse.","Reell, aufrecht und vergrößert.","Virtuell und hinter dem Gegenstand.","Immer genau gleich groß wie der Gegenstand."],correct:0,diagram:"lens-b"},
+  {id:"n-lens-construction-order",subject:"natur",topic:"Licht",kind:"practice",type:"builder",title:"Sammellinse konstruieren",question:"Bringe die Schritte zum Konstruieren eines scharfen Bildes in die richtige Reihenfolge.",parts:["Von der Pfeilspitze einen Parallelstrahl bis zur Linse zeichnen.","Hinter der Linse diesen Strahl durch den bildseitigen Brennpunkt F weiterzeichnen.","Von der Pfeilspitze einen zweiten Hauptstrahl zeichnen (z. B. Mittelpunktstrahl).","Den Schnittpunkt der gebrochenen Strahlen als Bildspitze markieren.","Von dort den Bildpfeil bis zur optischen Achse zeichnen und B sowie b beschriften."],correctOrder:[0,1,2,3,4]}
 
 ];
 
@@ -1401,10 +1443,18 @@ function renderAngleMeasure(i){
   checkPlacement()
 }
 
+
+function renderPracticeDiagram(kind){
+  if(kind==="lens-focal")return `<div class="lessonSection softDiagram"><svg viewBox="0 0 760 230" class="learnSvg" role="img" aria-label="Sammellinse mit einem eingezeichneten und einem fehlenden Brennpunkt"><line x1="45" y1="115" x2="715" y2="115" stroke="#a9b8ca" stroke-dasharray="8 8"/><path d="M380 25 Q345 115 380 205 Q415 115 380 25" fill="#dce8f4" stroke="#536b88" stroke-width="4"/><circle cx="500" cy="115" r="7" fill="#7d6bc5"/><text x="488" y="94" font-size="25" font-weight="800">F</text><text x="235" y="96" font-size="34" font-weight="800" fill="#7d6bc5">?</text><line x1="380" y1="195" x2="500" y2="195" stroke="#7d6bc5" stroke-width="4"/><text x="430" y="220" font-size="23">f</text></svg></div>`;
+  if(kind==="lens-a")return `<div class="lessonSection softDiagram"><div class="small"><strong>A:</strong> Gegenstand zwischen F und 2F</div><svg viewBox="0 0 760 270" class="learnSvg" role="img" aria-label="Sammellinse, Gegenstand zwischen Brennweite und doppelter Brennweite"><line x1="35" y1="135" x2="725" y2="135" stroke="#a9b8ca" stroke-dasharray="8 8"/><path d="M395 25 Q360 135 395 245 Q430 135 395 25" fill="#dce8f4" stroke="#536b88" stroke-width="4"/><line x1="245" y1="135" x2="245" y2="65" stroke="#263a54" stroke-width="7"/><path d="M245 52 l-12 24 h24 z" fill="#263a54"/><circle cx="295" cy="135" r="6" fill="#7d6bc5"/><text x="284" y="160" font-size="22">F</text><circle cx="495" cy="135" r="6" fill="#7d6bc5"/><text x="486" y="160" font-size="22">F</text><text x="217" y="45" font-size="22" font-weight="800">G</text><text x="590" y="75" font-size="24" fill="#7d6bc5">Bild?</text></svg></div>`;
+  if(kind==="lens-b")return `<div class="lessonSection softDiagram"><div class="small"><strong>B:</strong> Gegenstand weiter als 2F</div><svg viewBox="0 0 760 270" class="learnSvg" role="img" aria-label="Sammellinse, Gegenstand weiter als doppelte Brennweite"><line x1="35" y1="135" x2="725" y2="135" stroke="#a9b8ca" stroke-dasharray="8 8"/><path d="M430 25 Q395 135 430 245 Q465 135 430 25" fill="#dce8f4" stroke="#536b88" stroke-width="4"/><line x1="105" y1="135" x2="105" y2="35" stroke="#263a54" stroke-width="7"/><path d="M105 22 l-12 24 h24 z" fill="#263a54"/><circle cx="330" cy="135" r="6" fill="#7d6bc5"/><text x="319" y="160" font-size="22">F</text><circle cx="530" cy="135" r="6" fill="#7d6bc5"/><text x="521" y="160" font-size="22">F</text><text x="78" y="22" font-size="22" font-weight="800">G</text><text x="595" y="85" font-size="24" fill="#7d6bc5">Bild?</text></svg></div>`;
+  return ""
+}
+
 function renderPracticeMCQ(i){
   const shown=shuffledOptions(i.options);
   $("#workInside").innerHTML=practiceHead()+`<span class="badge">${esc(subjectMeta(i.subject).name)} · ${esc(i.topic)}</span>
-    <div class="question">${esc(i.question)}</div>
+    ${renderPracticeDiagram(i.diagram)}<div class="question">${esc(i.question)}</div>
     <div>${shown.map(o=>`<button class="choice quizOption" data-opt="${o.originalIndex}">${esc(o.text)}</button>`).join("")}</div>
     <button id="checkPractice" class="primary big" style="margin-top:10px">Antwort prüfen</button><div id="practiceFeedback"></div>`;
   let selected=null;
