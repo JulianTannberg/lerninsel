@@ -197,6 +197,85 @@ const DEFAULT_CONTENT = [
    question:"Für wen wurden die Vitalienbrüder später zum Problem?",options:["Für die Hanse","Für die Römer","Für die Wikinger","Für die Ägypter"],correct:0},
   {id:"g2-piraten-quiz-8",subject:"gsel2",topic:"Piraten",kind:"quiz",type:"mcq",title:"Quizfrage 8",
    question:"Was konnten begnadigte Piraten später tun?",options:["Als Piratenjäger arbeiten","König werden","Nur noch an Land leben","Keine Schiffe mehr sehen"],correct:0},
+  // Somalia: stark vereinfachte aktuelle Einheit zu Piraterie vor der Küste.
+  // Grundlage: bpb, UN, Weltbank und IMO; Stand Oktober 2026.
+  {
+    id:"g2-somalia-piracy-lesson-1",subject:"gsel2",topic:"Somalia – Piraterie",kind:"lesson",type:"lesson",
+    title:"Somalia und Piraterie – ganz einfach",summary:"Warum es Piraten vor Somalia gab und warum das Thema noch aktuell ist.",diagram:"somalia-piracy",
+    sections:[
+      {heading:"Wo liegt Somalia?",text:"Somalia liegt im Osten Afrikas am Horn von Afrika. Das Land hat eine lange Küste am Golf von Aden und am Indischen Ozean. In der Nähe fahren viele Handelsschiffe zwischen Europa und Asien."},
+      {heading:"Warum konnte Piraterie wachsen?",text:"Seit 1991 gab es in Somalia lange Zeit Bürgerkrieg und nur einen schwachen Staat. Die Küste konnte deshalb nicht gut kontrolliert werden. Dazu kamen Armut und wenige Arbeitsplätze. Auch illegale Fischerei ausländischer Schiffe sorgte in Küstenorten für Wut. Das erklärt aber nicht alles."},
+      {heading:"Was machten die Piratengruppen?",text:"Piratengruppen griffen Schiffe an und entführten Schiffe und Besatzungen. Danach forderten sie Geld für die Freilassung. Das nennt man Lösegeld. Später war das oft organisierte Kriminalität und kein romantisches Piratenabenteuer."},
+      {heading:"Warum war das ein großes Problem?",text:"Für Seeleute waren die Angriffe gefährlich. Außerdem liegt vor Somalia eine wichtige Schifffahrtsroute. Unsicherheit dort kann Transporte verzögern und verteuern."},
+      {heading:"Was wurde dagegen getan?",text:"Viele Staaten arbeiteten zusammen. Kriegsschiffe überwachten wichtige Seewege, Handelsschiffe verbesserten ihren Schutz und Piraterie wurde stärker verfolgt. Dadurch gingen die Angriffe nach dem Höhepunkt um 2011 deutlich zurück."},
+      {heading:"Und heute?",text:"Piraterie vor Somalia ist nicht verschwunden. Nach mehreren ruhigeren Jahren gab es wieder mehr Vorfälle. Die Internationale Seeschifffahrts-Organisation IMO warnte 2026 erneut vor einer Zunahme im Golf von Aden und in den Gewässern vor Somalia."},
+      {heading:"Wichtig",text:"Somalia ist nicht gleich Piraterie. Die große Mehrheit der Menschen in Somalia hat damit nichts zu tun. Piraterie wird von kleinen kriminellen Gruppen ausgeübt."}
+    ],
+    memory:"Merke: Schwacher Staat + Armut + wenig Kontrolle machten Piraterie leichter. Ziel war meist Lösegeld. Somalia ist aber nicht „ein Land voller Piraten“."
+  },
+  {
+    id:"g2-somalia-piracy-lesson-2",subject:"gsel2",topic:"Somalia – Piraterie",kind:"lesson",type:"lesson",
+    title:"Ursache und Folge",summary:"So hängt das Piratenproblem vereinfacht zusammen.",
+    sections:[
+      {heading:"1. Krise im Land",text:"Bürgerkrieg und ein schwacher Staat machten das Leben für viele Menschen schwer."},
+      {heading:"2. Wenig Kontrolle auf See",text:"Somalia hatte lange keine starke Küstenwache, die die lange Küste überall schützen konnte."},
+      {heading:"3. Kriminelle Gruppen nutzen die Lage",text:"Gruppen begannen Schiffe zu entführen und Lösegeld zu verlangen."},
+      {heading:"4. Piraterie wird zum Geschäft",text:"Mit hohen Lösegeldern wurde Piraterie für organisierte Gruppen sehr lukrativ."},
+      {heading:"5. Internationale Gegenmaßnahmen",text:"Schutzmaßnahmen auf Schiffen, internationale Marineeinsätze und Strafverfolgung senkten die Zahl der Angriffe deutlich."}
+    ],
+    memory:"Nicht eine einzige Ursache erklärt Piraterie. Mehrere Probleme kamen zusammen."
+  },
+
+  {id:"g2-somalia-piracy-practice-1",subject:"gsel2",topic:"Somalia – Piraterie",kind:"practice",type:"mcq",title:"Wo liegt Somalia?",question:"Welche Aussage stimmt?",options:["Somalia liegt in Ostafrika am Horn von Afrika.","Somalia liegt in Südamerika.","Somalia ist eine Insel im Atlantik.","Somalia liegt in Nordeuropa."],correct:0},
+  {id:"g2-somalia-piracy-practice-2",subject:"gsel2",topic:"Somalia – Piraterie",kind:"practice",type:"mcq",title:"Warum ist die Lage wichtig?",question:"Warum ist die Gegend vor Somalia für die Schifffahrt wichtig?",options:["Dort verläuft eine wichtige Route zwischen Europa und Asien.","Dort dürfen nur Fischer fahren.","Dort gibt es keine Handelsschiffe.","Dort endet jeder Seeweg."],correct:0},
+  {id:"g2-somalia-piracy-practice-3",subject:"gsel2",topic:"Somalia – Piraterie",kind:"practice",type:"mcq",title:"Warum konnte Piraterie wachsen?",question:"Welche Antwort passt am besten?",options:["Bürgerkrieg, schwacher Staat, Armut und wenig Kontrolle auf See spielten zusammen.","Nur das Wetter war schuld.","Piraterie wurde von der Regierung vorgeschrieben.","Es gab dort keine Menschen, die Handel trieben."],correct:0},
+  {id:"g2-somalia-piracy-practice-4",subject:"gsel2",topic:"Somalia – Piraterie",kind:"practice",type:"mcq",title:"Was war meist das Ziel?",question:"Was wollten organisierte Piratengruppen vor Somalia meist erreichen?",options:["Lösegeld bekommen.","Neue Länder entdecken.","Wissenschaftliche Forschung betreiben.","Häfen bauen."],correct:0},
+  {id:"g2-somalia-piracy-practice-5",subject:"gsel2",topic:"Somalia – Piraterie",kind:"practice",type:"mcq",title:"Was half gegen Piraterie?",question:"Welche Maßnahmen halfen, die Angriffe zu verringern?",options:["Internationale Überwachung, besserer Schutz der Schiffe und Strafverfolgung.","Mehr Piratenflaggen.","Weniger Nachrichten über das Thema.","Alle Handelsschiffe wurden abgeschafft."],correct:0},
+  {id:"g2-somalia-piracy-practice-6",subject:"gsel2",topic:"Somalia – Piraterie",kind:"practice",type:"mcq",title:"Mythos oder Wirklichkeit?",question:"Welche Aussage ist richtig?",options:["Nur kleine kriminelle Gruppen betreiben Piraterie; die meisten Menschen in Somalia haben damit nichts zu tun.","Jeder Fischer in Somalia ist Pirat.","Alle Menschen in Somalia leben von Piraterie.","Piraterie gibt es nur in Somalia."],correct:0},
+  {id:"g2-somalia-piracy-practice-7",subject:"gsel2",topic:"Somalia – Piraterie",kind:"practice",type:"mcq",title:"Ist das Thema heute vorbei?",question:"Was stimmt für 2026?",options:["Nein. Nach ruhigeren Jahren gab es wieder mehr Vorfälle.","Ja. Seit 2012 gab es keinen einzigen Vorfall mehr.","Piraterie wurde weltweit abgeschafft.","Der Golf von Aden ist für Schiffe geschlossen."],correct:0},
+  {id:"g2-somalia-piracy-practice-8",subject:"gsel2",topic:"Somalia – Piraterie",kind:"practice",type:"builder",title:"Ursache und Folge ordnen",question:"Bringe die vereinfachte Entwicklung in eine sinnvolle Reihenfolge.",parts:["Bürgerkrieg und schwacher Staat.","Die Küste wird nur wenig kontrolliert.","Kriminelle Gruppen entführen Schiffe.","Sie verlangen Lösegeld.","Internationale Gegenmaßnahmen verringern viele Angriffe."],correctOrder:[0,1,2,3,4]},
+
+  {
+    id:"g2-somalia-piracy-homework-1",subject:"gsel2",topic:"Somalia – Piraterie",kind:"homework",type:"writing",
+    title:"Aufgabe 1 – Warum Piraterie?",summary:"Mit Satzanfängen und kleinen Hilfen.",
+    question:"Erkläre in 3 bis 4 kurzen Sätzen, warum Piraterie vor Somalia entstehen konnte.",
+    helps:[
+      "Beginne mit: Seit 1991 gab es in Somalia …",
+      "Nenne danach zwei Punkte: schwacher Staat, wenig Kontrolle an der Küste, Armut oder wenige Arbeitsplätze.",
+      "Schlusssatz: Kriminelle Gruppen nutzten diese Lage und …"
+    ],
+    finalText:"Seit 1991 gab es in Somalia lange Zeit Bürgerkrieg und einen schwachen Staat. Die lange Küste konnte nur schlecht kontrolliert werden. Dazu kamen Armut und wenige Arbeitsplätze. Kriminelle Gruppen nutzten diese Lage und entführten Schiffe, um Lösegeld zu verlangen."
+  },
+  {
+    id:"g2-somalia-piracy-homework-2",subject:"gsel2",topic:"Somalia – Piraterie",kind:"homework",type:"writing",
+    title:"Aufgabe 2 – Warum ist der Golf von Aden wichtig?",summary:"Die Lage mit der Schifffahrt verbinden.",
+    question:"Erkläre in 2 bis 3 Sätzen, warum Piraterie vor Somalia auch für andere Länder ein Problem ist.",
+    helps:[
+      "Viele Handelsschiffe fahren dort vorbei.",
+      "Die Route verbindet Europa und Asien.",
+      "Angriffe können Transporte gefährlicher, langsamer und teurer machen."
+    ],
+    finalText:"Vor Somalia und durch den Golf von Aden fahren viele Handelsschiffe zwischen Europa und Asien. Piratenangriffe gefährden Seeleute und können Transporte verzögern und verteuern. Deshalb betrifft das Problem nicht nur Somalia."
+  },
+  {
+    id:"g2-somalia-piracy-homework-3",subject:"gsel2",topic:"Somalia – Piraterie",kind:"homework",type:"writing",
+    title:"Aufgabe 3 – Nicht alle sind Piraten",summary:"Eine faire Aussage über Somalia formulieren.",
+    question:"Warum ist der Satz „Somalia ist ein Piratenland“ unfair? Schreibe 2 bis 3 Sätze.",
+    helps:[
+      "Denke daran: Wer betreibt Piraterie – alle Menschen oder kleine Gruppen?",
+      "Somalia hat Millionen Einwohner mit ganz unterschiedlichen Berufen und Lebensgeschichten.",
+      "Beginne zum Beispiel: Der Satz ist unfair, weil …"
+    ],
+    finalText:"Der Satz ist unfair, weil nur kleine kriminelle Gruppen Piraterie betreiben. Die große Mehrheit der Menschen in Somalia hat damit nichts zu tun. Man sollte ein ganzes Land nicht mit den Taten weniger Menschen gleichsetzen."
+  },
+
+  {id:"g2-somalia-piracy-quiz-1",subject:"gsel2",topic:"Somalia – Piraterie",kind:"quiz",type:"mcq",title:"Quizfrage 1",question:"An welchem Meer liegt Somalia unter anderem?",options:["Indischer Ozean","Nordsee","Ostsee","Karibisches Meer"],correct:0},
+  {id:"g2-somalia-piracy-quiz-2",subject:"gsel2",topic:"Somalia – Piraterie",kind:"quiz",type:"mcq",title:"Quizfrage 2",question:"Was bedeutet Lösegeld?",options:["Geld, das für die Freilassung verlangt wird.","Geld für einen Hafenplatz.","Ein Lohn für Fischer.","Eine Steuer auf Lebensmittel."],correct:0},
+  {id:"g2-somalia-piracy-quiz-3",subject:"gsel2",topic:"Somalia – Piraterie",kind:"quiz",type:"mcq",title:"Quizfrage 3",question:"Welche Entwicklung half Piraterie vor Somalia zu begünstigen?",options:["Bürgerkrieg und ein schwacher Staat.","Eine besonders starke Küstenwache.","Zu wenige Schiffe auf dem Meer.","Ein Verbot von Fischerei."],correct:0},
+  {id:"g2-somalia-piracy-quiz-4",subject:"gsel2",topic:"Somalia – Piraterie",kind:"quiz",type:"mcq",title:"Quizfrage 4",question:"Was geschah nach dem Höhepunkt um 2011?",options:["Die Zahl der Angriffe ging durch Gegenmaßnahmen deutlich zurück.","Alle Schiffe wurden Piratenschiffe.","Der Golf von Aden trocknete aus.","Somalia bekam keine Küste mehr."],correct:0},
+  {id:"g2-somalia-piracy-quiz-5",subject:"gsel2",topic:"Somalia – Piraterie",kind:"quiz",type:"mcq",title:"Quizfrage 5",question:"Welche Aussage ist für 2026 richtig?",options:["Piraterie ist nicht verschwunden und es gab wieder mehr Vorfälle.","Piraterie existiert weltweit nicht mehr.","Seit 2012 gab es vor Somalia keine Vorfälle.","Der Seeweg wurde dauerhaft geschlossen."],correct:0},
+  {id:"g2-somalia-piracy-quiz-6",subject:"gsel2",topic:"Somalia – Piraterie",kind:"quiz",type:"mcq",title:"Quizfrage 6",question:"Welche Aussage über Somalia ist fair?",options:["Piraterie wird von kleinen kriminellen Gruppen betrieben, nicht von der gesamten Bevölkerung.","Alle Menschen in Somalia sind Piraten.","Jeder Küstenbewohner arbeitet für Piraten.","Somalia besteht nur aus Piratenhäfen."],correct:0},
+
   {
     id:"m-winkel-lernen-1",subject:"mathe",topic:"Winkelmessen",kind:"lesson",type:"lesson",
     title:"Winkel mit dem Geodreieck messen",summary:"So legst du das Geodreieck richtig an.",
@@ -790,6 +869,18 @@ function withCurrentGsel1Grundherrschaft(items){
   });
   return arr
 }
+// Current Somalia piracy unit. Show it automatically whenever GSEL 2 is enabled,
+// including in classes created before this app version.
+const SOMALIA_PIRACY_CONTENT = DEFAULT_CONTENT.filter(item=>item.id.startsWith("g2-somalia-piracy-"));
+function withCurrentGsel2SomaliaPiracy(items){
+  const arr=items||[];
+  const hasGsel2=arr.some(i=>i.subject==="gsel2");
+  if(!hasGsel2)return arr;
+  SOMALIA_PIRACY_CONTENT.forEach(item=>{
+    if(!arr.some(i=>i.id===item.id))arr.push(structuredClone(item));
+  });
+  return arr
+}
 const RETIRED_PIRATE_HOMEWORK = new Set(["g2-piraten-homework-1","g2-piraten-homework-2"]);
 function restoreSandokanProgress(){
   if(!studentSession||studentSession.demo)return;
@@ -816,6 +907,14 @@ function restoreGrundherrschaftProgress(){
     const k=`lerninsel_gsel1_grundherrschaft_${studentSession.roomCode}_${studentSession.studentCode}`;
     const saved=JSON.parse(localStorage.getItem(k)||"{}");
     for(const item of GRUNDHERRSCHAFT_CONTENT)if(!state.progress[item.id]&&saved[item.id])state.progress[item.id]=saved[item.id];
+  }catch{}
+}
+function restoreSomaliaPiracyProgress(){
+  if(!studentSession||studentSession.demo)return;
+  try{
+    const k=`lerninsel_gsel2_somalia_piracy_${studentSession.roomCode}_${studentSession.studentCode}`;
+    const saved=JSON.parse(localStorage.getItem(k)||"{}");
+    for(const item of SOMALIA_PIRACY_CONTENT)if(!state.progress[item.id]&&saved[item.id])state.progress[item.id]=saved[item.id];
   }catch{}
 }
 function withCurrentSandokan(items){
@@ -1023,6 +1122,9 @@ function saveLocal(){
     const grundherrschaftKey=`lerninsel_gsel1_grundherrschaft_${studentSession.roomCode}_${studentSession.studentCode}`;
     const onlyGrundherrschaft=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("g1-grundherrschaft-")));
     localStorage.setItem(grundherrschaftKey,JSON.stringify(onlyGrundherrschaft));
+    const somaliaKey=`lerninsel_gsel2_somalia_piracy_${studentSession.roomCode}_${studentSession.studentCode}`;
+    const onlySomaliaPiracy=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("g2-somalia-piracy-")));
+    localStorage.setItem(somaliaKey,JSON.stringify(onlySomaliaPiracy));
   }
   if(state.profile)localStorage.setItem(KEYS.localProfile,JSON.stringify(state.profile));
 }
@@ -1147,7 +1249,7 @@ async function bootStudent(){
     try{
       const r=await rpc("lerninsel_student_login",{p_public_code:studentSession.roomCode,p_student_code:studentSession.studentCode});
       if(r?.student){
-        state.student=r.student;state.items=withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic))));state.progress=r.progress||{};restoreSandokanProgress();restoreCurrentNatureProgress();restoreGrundherrschaftProgress();
+        state.student=r.student;state.items=withCurrentGsel2SomaliaPiracy(withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic)))));state.progress=r.progress||{};restoreSandokanProgress();restoreCurrentNatureProgress();restoreGrundherrschaftProgress();restoreSomaliaPiracyProgress();
         await loadStudentProfile();
         await openStudentHome();return
       }
@@ -1173,7 +1275,7 @@ function renderStudentLogin(){
       const r=await rpc("lerninsel_student_login",{p_public_code:room,p_student_code:code});
       if(!r?.student)throw new Error("Code nicht gefunden.");
       studentSession={roomCode:room,studentCode:code};localStorage.setItem(KEYS.studentSession,JSON.stringify(studentSession));
-      state.student=r.student;state.items=withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic))));state.progress=r.progress||{};restoreSandokanProgress();restoreCurrentNatureProgress();restoreGrundherrschaftProgress();
+      state.student=r.student;state.items=withCurrentGsel2SomaliaPiracy(withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic)))));state.progress=r.progress||{};restoreSandokanProgress();restoreCurrentNatureProgress();restoreGrundherrschaftProgress();restoreSomaliaPiracyProgress();
       await loadStudentProfile();await openStudentHome()
     }catch(e){m.textContent="Anmeldung nicht möglich. Bitte Codes prüfen."}
   };
@@ -1181,7 +1283,7 @@ function renderStudentLogin(){
 }
 function loadDemoStudent(){
   state.student={id:"demo",label:"Demo-Schüler"};
-  state.items=withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan(DEFAULT_CONTENT.map(x=>normalizeBuiltInTopic(structuredClone(x))))));
+  state.items=withCurrentGsel2SomaliaPiracy(withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan(DEFAULT_CONTENT.map(x=>normalizeBuiltInTopic(structuredClone(x)))))));
   state.progress=JSON.parse(localStorage.getItem(KEYS.localProgress)||"{}");
   state.profile=JSON.parse(localStorage.getItem(KEYS.localProfile)||"null")||{nickname:"Fiete",avatar:"🦊",games_spent:0,game_best:0}
 }
@@ -1313,6 +1415,36 @@ function lessonExtra(i){
   if(i.diagram==="shadow-symbols")return `<div class="lessonSection softDiagram"><h3>So liegen die vier Größen</h3><svg viewBox="0 0 760 300" class="learnSvg" aria-label="Schattenwurf mit G g B b"><line x1="40" y1="150" x2="720" y2="150" stroke="#a9b8ca" stroke-dasharray="8 8"/><circle cx="90" cy="150" r="13" fill="#f2b84b"/><text x="55" y="125">Lichtquelle</text><line x1="330" y1="105" x2="330" y2="195" stroke="#536b88" stroke-width="10"/><line x1="690" y1="60" x2="690" y2="240" stroke="#536b88" stroke-width="10"/><line x1="90" y1="150" x2="690" y2="60" stroke="#e7a84a" stroke-width="3"/><line x1="90" y1="150" x2="690" y2="240" stroke="#e7a84a" stroke-width="3"/><text x="345" y="105" font-size="30" font-weight="800">G</text><text x="705" y="70" font-size="30" font-weight="800">B</text><path d="M90 225 H330" stroke="#7d6bc5" stroke-width="5"/><text x="195" y="260" font-size="28" font-weight="800">g</text><path d="M90 280 H690" stroke="#7d6bc5" stroke-width="5"/><text x="380" y="295" font-size="28" font-weight="800">b</text></svg><div class="memoryGrid"><b>G = Gegenstandsgröße</b><b>g = Gegenstandsweite</b><b>B = Bildgröße</b><b>b = Bildweite</b></div></div>`;
   if(i.diagram==="shadow-construction")return `<div class="lessonSection softDiagram"><h3>Die zwei Randstrahlen</h3><svg viewBox="0 0 760 260" class="learnSvg"><line x1="50" y1="135" x2="710" y2="135" stroke="#b5c1cf" stroke-dasharray="8 8"/><circle cx="90" cy="135" r="12" fill="#f2b84b"/><line x1="330" y1="95" x2="330" y2="175" stroke="#526b87" stroke-width="9"/><line x1="690" y1="45" x2="690" y2="225" stroke="#526b87" stroke-width="9"/><line x1="90" y1="135" x2="690" y2="45" stroke="#d87c69" stroke-width="4"/><line x1="90" y1="135" x2="690" y2="225" stroke="#d87c69" stroke-width="4"/><text x="160" y="70" font-size="22">Randstrahl</text><text x="350" y="90" font-size="22">Gegenstand</text><text x="610" y="30" font-size="22">Schirm</text></svg></div>`;
   if(i.diagram==="reflection")return `<div class="lessonSection softDiagram"><h3>Spiegelung: immer zuerst das Lot</h3><svg viewBox="0 0 760 330" class="learnSvg"><line x1="100" y1="250" x2="660" y2="250" stroke="#526b87" stroke-width="10"/><circle cx="380" cy="250" r="8" fill="#263a54"/><line x1="380" y1="250" x2="380" y2="45" stroke="#91a3b7" stroke-width="3" stroke-dasharray="8 7"/><line x1="150" y1="70" x2="380" y2="250" stroke="#d87c69" stroke-width="5"/><line x1="380" y1="250" x2="610" y2="70" stroke="#6b8fd4" stroke-width="5"/><path d="M380 170 A80 80 0 0 0 317 201" fill="none" stroke="#7d6bc5" stroke-width="4"/><path d="M380 170 A80 80 0 0 1 443 201" fill="none" stroke="#7d6bc5" stroke-width="4"/><text x="390" y="65" font-size="24" font-weight="800">Lot (90° zum Spiegel)</text><text x="270" y="175" font-size="24">α</text><text x="470" y="175" font-size="24">β</text><text x="275" y="300" font-size="24">Spiegel</text></svg><div class="merksatz">α = β · Die Winkel werden zum Lot gemessen.</div></div>`;
+  if(i.diagram==="somalia-piracy")return `
+    <div class="lessonSection softDiagram">
+      <h3>So hängt das Thema zusammen</h3>
+      <svg viewBox="0 0 760 455" class="learnSvg" role="img" aria-label="Vereinfachtes Schaubild zu Somalia, Schifffahrt und Piraterie">
+        <defs><marker id="soArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#74869a"/></marker></defs>
+        <rect x="245" y="20" width="270" height="64" rx="16" fill="#e7efe2" stroke="#6f8667" stroke-width="3"/>
+        <text x="380" y="48" text-anchor="middle" font-size="25" font-weight="800" fill="#314638">Somalia · Ostafrika</text>
+        <text x="380" y="72" text-anchor="middle" font-size="16" fill="#52657c">Golf von Aden + Indischer Ozean</text>
+        <path d="M380 84 V118" stroke="#74869a" stroke-width="4" marker-end="url(#soArrow)"/>
+        <rect x="200" y="128" width="360" height="64" rx="16" fill="#edf3fa" stroke="#6a84a1" stroke-width="3"/>
+        <text x="380" y="156" text-anchor="middle" font-size="23" font-weight="800" fill="#31445f">Wichtige Schifffahrtsroute</text>
+        <text x="380" y="181" text-anchor="middle" font-size="16" fill="#52657c">viele Handelsschiffe zwischen Europa und Asien</text>
+        <path d="M380 192 V224" stroke="#74869a" stroke-width="4" marker-end="url(#soArrow)"/>
+        <g>
+          <rect x="40" y="234" width="205" height="74" rx="15" fill="#f5eadf" stroke="#a37b55" stroke-width="3"/>
+          <rect x="278" y="234" width="205" height="74" rx="15" fill="#f5eadf" stroke="#a37b55" stroke-width="3"/>
+          <rect x="516" y="234" width="205" height="74" rx="15" fill="#f5eadf" stroke="#a37b55" stroke-width="3"/>
+          <text x="142" y="264" text-anchor="middle" font-size="20" font-weight="800">Bürgerkrieg</text><text x="142" y="289" text-anchor="middle" font-size="16">schwacher Staat</text>
+          <text x="380" y="264" text-anchor="middle" font-size="20" font-weight="800">Armut</text><text x="380" y="289" text-anchor="middle" font-size="16">wenige Jobs</text>
+          <text x="618" y="264" text-anchor="middle" font-size="20" font-weight="800">Wenig Kontrolle</text><text x="618" y="289" text-anchor="middle" font-size="16">an der langen Küste</text>
+        </g>
+        <path d="M142 308 C180 345 255 342 320 360" stroke="#74869a" stroke-width="3" fill="none" marker-end="url(#soArrow)"/>
+        <path d="M380 308 V350" stroke="#74869a" stroke-width="3" fill="none" marker-end="url(#soArrow)"/>
+        <path d="M618 308 C580 345 505 342 440 360" stroke="#74869a" stroke-width="3" fill="none" marker-end="url(#soArrow)"/>
+        <rect x="245" y="365" width="270" height="64" rx="16" fill="#f6e4e4" stroke="#a56e6e" stroke-width="3"/>
+        <text x="380" y="394" text-anchor="middle" font-size="23" font-weight="800" fill="#5d3e3e">Kriminelle Piratengruppen</text>
+        <text x="380" y="418" text-anchor="middle" font-size="16" fill="#6b5050">Schiffe entführen → Lösegeld fordern</text>
+      </svg>
+      <div class="merksatz">Mehrere Probleme kamen zusammen. Es gab nicht nur eine einzige Ursache.</div>
+    </div>`;
   if(i.diagram==="grundherrschaft")return `
     <div class="lessonSection softDiagram">
       <h3>Grundherrschaft als einfaches Schaubild</h3>
@@ -2047,7 +2179,7 @@ function renderParentLogin(){
   }
 }
 function renderParentState(r){
-  const items=withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic)))),prog=r.progress||{},profile=r.profile||{};
+  const items=withCurrentGsel2SomaliaPiracy(withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic))))),prog=r.progress||{},profile=r.profile||{};
   const nonQuiz=items.filter(i=>i.kind!=="quiz"),done=nonQuiz.filter(i=>prog[i.id]?.status==="completed").length;
   const byTopic={};nonQuiz.forEach(i=>{const k=`${i.subject}|${i.topic}`;(byTopic[k]??=[]).push(i)});
   MAIN.innerHTML=`<div class="card profileBar"><div class="profileLeft"><div class="avatar">${esc(profile.avatar||"🙂")}</div>
@@ -2214,7 +2346,7 @@ function startTeacherTest(){
   role="student";
   studentSession={demo:true,teacherTest:true};
   state.student={id:"teacher-test",label:"Test-Schüler"};
-  state.items=withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan((state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT).filter(i=>roomSubjectEnabled(i.subject)).map(x=>normalizeBuiltInTopic(structuredClone(x))))));
+  state.items=withCurrentGsel2SomaliaPiracy(withCurrentGsel1Grundherrschaft(withCurrentNatureLessons(withCurrentSandokan((state.teacher.items?.length?state.teacher.items:DEFAULT_CONTENT).filter(i=>roomSubjectEnabled(i.subject)).map(x=>normalizeBuiltInTopic(structuredClone(x)))))));
   state.progress={};
   state.profile={nickname:"Test",avatar:"🦊",games_spent:0,game_best:0};
   state.currentSubject=null;state.currentTopic=null;state.practice=null;state.quiz=null;state.live=null;
@@ -2306,12 +2438,12 @@ async function teacherSeedLibrary(){
 }
 async function teacherSeedNotebookOptics(){
   if(!teacherRoom)return;
-  const items=DEFAULT_CONTENT.filter(item=>item.subject==="natur"||item.id.startsWith("g1-staende-")||item.id.startsWith("g1-grundherrschaft-")||item.id.startsWith("g2-sandokan-"));
+  const items=DEFAULT_CONTENT.filter(item=>item.subject==="natur"||item.id.startsWith("g1-staende-")||item.id.startsWith("g1-grundherrschaft-")||item.id.startsWith("g2-sandokan-")||item.id.startsWith("g2-somalia-piracy-"));
   try{
     await rpc("lerninsel_teacher_library_seed",{p_items:items,p_room_id:teacherRoom.roomId},true);
     await teacherPull();
     const homeworkLoaded=(state.teacher.items||[]).some(item=>item.id==="g1-staende-homework-aufgabe5-s13");
-    if(homeworkLoaded){toast("✓ Neue Natur- und GSEL-Inhalte übernommen (inkl. Sandokan).")}
+    if(homeworkLoaded){toast("✓ Neue Natur- und GSEL-Inhalte übernommen (inkl. Sandokan und Somalia).")}
     else{alert("Die GSEL-Hausaufgabe ist noch nicht in der aktuellen Klasse angekommen. Bitte die Seite einmal neu laden und danach erneut auf den Aktualisieren-Knopf tippen.")}
   }catch(error){alert("Die neuen Inhalte konnten nicht übernommen werden. Bitte prüfen, ob du im Lehrerbereich angemeldet bist, und versuche es erneut.")}
 }

@@ -1,3 +1,39 @@
+LERNINSEL v9.0.23 – GSEL 2: SOMALIA UND PIRATERIE
+
+Neu unter GSEL 2:
+- Eigenes Thema „Somalia – Piraterie“.
+- Zwei sehr einfache Lerntexte mit einem eigenen Schaubild.
+- Inhalte: Lage Somalias, Golf von Aden, Ursachen der Piraterie, Lösegeld, Folgen, Gegenmaßnahmen und aktueller Stand 2026.
+- Übungen: 7 einfache Auswahlfragen + eine Reihenfolge-Aufgabe.
+- Hausaufgaben: 3 kurze Schreibaufgaben mit Hilfen und Beispielantworten.
+- Quiz: 6 Fragen.
+- Wichtig: Die Einheit vermeidet das Klischee „Somalia = Piraten“ und erklärt ausdrücklich, dass nur kleine kriminelle Gruppen Piraterie betreiben.
+
+AKTUELLER STAND:
+- Die starke Pirateriephase wuchs besonders zwischen 2005 und 2011.
+- Internationale Marineeinsätze, Schutzmaßnahmen auf Handelsschiffen und Strafverfolgung ließen die Zahlen danach stark sinken.
+- 2026 meldete die IMO erneut eine Zunahme von Piraterie und bewaffneten Überfällen im Golf von Aden und vor Somalia.
+- Stand der aktuellen Hinweise: Oktober 2026.
+
+QUELLENGRUNDLAGE:
+- Bundeszentrale für politische Bildung (bpb): Piraterie vor Somalia und ihre Ursachen.
+- Vereinte Nationen (UN): Instabilität, schwache staatliche Strukturen und fehlende Perspektiven als wichtige Hintergründe.
+- Weltbank: Entwicklung somalischer Piraterie und Lösegeldmodell, besonders 2005–2011.
+- Internationale Seeschifffahrts-Organisation (IMO): aktuelle Piraterieberichte und Warnungen 2026.
+
+SICHTBARKEIT:
+- Das neue Somalia-Thema wird in bereits bestehenden Online-Klassen automatisch eingeblendet, sobald GSEL 2 dort vorhanden ist.
+- Es muss nicht erst manuell der Klasse zugewiesen werden, damit Schüler es sehen.
+- Lernfortschritt der neuen eingeblendeten Inhalte wird zusätzlich lokal gesichert.
+- Der Knopf „Neue Natur-, GSEL- und Hausaufgaben übernehmen“ kann die Somalia-Inhalte auch dauerhaft in der Klassendatenbank speichern.
+
+GITHUB:
+1. ZIP entpacken.
+2. index.html, app.js, sw.js und manifest.webmanifest im Repository ersetzen.
+3. Die vorhandene config.js im Repository NICHT löschen.
+4. Nach der Veröffentlichung die App einmal vollständig neu öffnen.
+
+
 LERNINSEL v9.0.22 – GSEL 1: GRUNDHERRSCHAFT
 
 Neu unter GSEL 1:
