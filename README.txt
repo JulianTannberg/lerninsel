@@ -1,4 +1,4 @@
-LERNINSEL v9.0.18 – NATUR LICHT + SAMMELLINSEN
+LERNINSEL v9.0.20 – NATUR: ZWEI NEUE THEMEN
 
 In GSEL 2 → Piraten erscheint nach dem Hochladen automatisch:
 - Unter „Lernen“: Sandokan – Der Tiger von Malaysia, vereinfachte Seiten 14–15,
@@ -28,8 +28,21 @@ Diese ZIP enthält keine Fotos aus dem Schulbuch. Die Karten M2–M4 bleiben im
 Schulbuch zum Nachschlagen. Alte Datenbank-Inhalte werden nicht global gelöscht.
 
 
-UPDATE v9.0.18 – 06.10.2026
-- Natur > Licht > Üben erweitert: Licht an Materialien (klares Glas, schwarze/weiße Pappe, Spiegel, Milchglas).
-- Fachbegriffe absorbieren und streuen + Fensterscheiben-Erklärung als Übungen.
-- Sammellinse ergänzt: G/g/B/b/f, Brennpunkte, Hauptstrahlen, Bildkonstruktion sowie Vergrößerung/Verkleinerung für die beiden Arbeitsblatt-Fälle A und B.
-- Die exakten Zentimeterwerte des fotografierten Linsenblatts werden nicht fest vorgegeben, weil ein Foto perspektivisch verzerrt sein kann; die für die Arbeit entscheidende Konstruktion und Einordnung werden geübt.
+UPDATE v9.0.20 – 06.10.2026
+- Unter Natur erscheinen zwei neue Themen:
+  1. „Licht auf Materialien“
+  2. „Sammellinsen“
+- Beide Themen haben jetzt einen eigenen Bereich „Lernen“ UND passende Übungen.
+- Die Erklärungen sind bewusst sehr kurz und einfach formuliert.
+- Licht auf Materialien: klares Glas, schwarze/weiße Pappe, Spiegel, Milchglas, absorbieren, streuen, Fensterscheibe.
+- Sammellinsen: G/g/B/b/f, zwei Brennpunkte, drei wichtige Strahlen, Vergrößerung/Verkleinerung.
+- Bereits gespeicherte Übungen aus v9.0.18 werden in der Schüleransicht automatisch den beiden neuen Themen zugeordnet.
+- Wenn die Übungen schon in einer Klasse vorhanden sind, werden die neuen einfachen Lernkarten in der Schüleransicht automatisch ergänzt.
+- Für eine dauerhafte Speicherung in der Klassendatenbank kann im Lehrerbereich „Neue Natur-, GSEL- und Hausaufgaben übernehmen“ erneut ausgeführt werden.
+
+
+UPDATE v9.0.20 – 06.10.2026
+- Neue Sammellinsen-Arbeitsblätter ergänzt.
+- Lernbereich vereinfacht: Zeichnung lesen, optische Achse, G/g/B/b/f und die drei Strahlen.
+- Aufgaben A und B an die aktuellen Blätter angepasst: A = Verkleinerung, B = Vergrößerung.
+- Messwerte aus den ausgefüllten Blättern als Übungen ergänzt.
