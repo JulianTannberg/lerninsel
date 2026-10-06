@@ -664,14 +664,18 @@ DEFAULT_CONTENT.forEach(normalizeBuiltInTopic);
 // pirate homework. Overlay only this book unit for classes that already have
 // the GSEL 2 / Piraten topic. Other subjects, custom content and progress remain.
 const SANDOKAN_CONTENT = DEFAULT_CONTENT.filter(item=>item.id.startsWith("g2-sandokan-"));
-const NATURE_0610_LESSONS = DEFAULT_CONTENT.filter(item=>item.id.startsWith("n-material-lesson-")||item.id.startsWith("n-lens-lesson-"));
+// These two Nature topics belong to the app itself. Existing online classes may
+// still contain only the older "Licht" items in Supabase. Therefore the app
+// overlays the complete current units locally whenever Nature is already part
+// of the student's class. This makes both topics appear immediately without a
+// teacher having to import/seed them again.
+const NATURE_0610_CONTENT = DEFAULT_CONTENT.filter(item=>item.id.startsWith("n-material-")||item.id.startsWith("n-lens-"));
 function withCurrentNatureLessons(items){
   const arr=(items||[]).map(normalizeBuiltInTopic);
-  const hasMaterials=arr.some(i=>i.id?.startsWith("n-material-")&&!i.id.includes("lesson"));
-  const hasLenses=arr.some(i=>i.id?.startsWith("n-lens-")&&!i.id.includes("lesson"));
-  NATURE_0610_LESSONS.forEach(lesson=>{
-    const wanted=lesson.id.startsWith("n-material-")?hasMaterials:hasLenses;
-    if(wanted&&!arr.some(i=>i.id===lesson.id))arr.push(structuredClone(lesson));
+  const hasNature=arr.some(i=>i.subject==="natur");
+  if(!hasNature)return arr;
+  NATURE_0610_CONTENT.forEach(item=>{
+    if(!arr.some(i=>i.id===item.id))arr.push(structuredClone(item));
   });
   return arr
 }
@@ -683,6 +687,16 @@ function restoreSandokanProgress(){
     const saved=JSON.parse(localStorage.getItem(k)||"{}");
     // Only backfill locally overlaid items: server progress always wins.
     for(const item of SANDOKAN_CONTENT)if(!state.progress[item.id]&&saved[item.id])state.progress[item.id]=saved[item.id];
+  }catch{}
+}
+function restoreCurrentNatureProgress(){
+  if(!studentSession||studentSession.demo)return;
+  try{
+    const k=`lerninsel_nature_0610_${studentSession.roomCode}_${studentSession.studentCode}`;
+    const saved=JSON.parse(localStorage.getItem(k)||"{}");
+    // Server progress wins. The local copy is only a safety net for built-in
+    // overlay items that are not yet present in an older class library.
+    for(const item of NATURE_0610_CONTENT)if(!state.progress[item.id]&&saved[item.id])state.progress[item.id]=saved[item.id];
   }catch{}
 }
 function withCurrentSandokan(items){
@@ -884,6 +898,9 @@ function saveLocal(){
     const k=`lerninsel_sandokan_${studentSession.roomCode}_${studentSession.studentCode}`;
     const onlySandokan=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("g2-sandokan-")));
     localStorage.setItem(k,JSON.stringify(onlySandokan));
+    const natureKey=`lerninsel_nature_0610_${studentSession.roomCode}_${studentSession.studentCode}`;
+    const onlyCurrentNature=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("n-material-")||id.startsWith("n-lens-")));
+    localStorage.setItem(natureKey,JSON.stringify(onlyCurrentNature));
   }
   if(state.profile)localStorage.setItem(KEYS.localProfile,JSON.stringify(state.profile));
 }
@@ -1008,7 +1025,7 @@ async function bootStudent(){
     try{
       const r=await rpc("lerninsel_student_login",{p_public_code:studentSession.roomCode,p_student_code:studentSession.studentCode});
       if(r?.student){
-        state.student=r.student;state.items=withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic)));state.progress=r.progress||{};restoreSandokanProgress();
+        state.student=r.student;state.items=withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic)));state.progress=r.progress||{};restoreSandokanProgress();restoreCurrentNatureProgress();
         await loadStudentProfile();
         await openStudentHome();return
       }
@@ -1034,7 +1051,7 @@ function renderStudentLogin(){
       const r=await rpc("lerninsel_student_login",{p_public_code:room,p_student_code:code});
       if(!r?.student)throw new Error("Code nicht gefunden.");
       studentSession={roomCode:room,studentCode:code};localStorage.setItem(KEYS.studentSession,JSON.stringify(studentSession));
-      state.student=r.student;state.items=withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic)));state.progress=r.progress||{};restoreSandokanProgress();
+      state.student=r.student;state.items=withCurrentNatureLessons(withCurrentSandokan((r.items||[]).map(normalizeBuiltInTopic)));state.progress=r.progress||{};restoreSandokanProgress();restoreCurrentNatureProgress();
       await loadStudentProfile();await openStudentHome()
     }catch(e){m.textContent="Anmeldung nicht möglich. Bitte Codes prüfen."}
   };

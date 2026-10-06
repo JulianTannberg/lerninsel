@@ -1,3 +1,11 @@
+LERNINSEL v9.0.21 – NATUR-SICHTBARKEIT KORRIGIERT
+
+Korrektur:
+- Die beiden neuen Natur-Themen „Licht auf Materialien“ und „Sammellinsen“ werden jetzt auch in bereits bestehenden Online-Klassen automatisch angezeigt.
+- Dazu gehören jeweils Lernen UND Üben.
+- Es ist kein erneutes manuelles Übernehmen der Inhalte im Lehrerbereich nötig.
+- Der Service-Worker wurde auf v9.0.21 erhöht, damit Handy/Tablet die neue app.js sicher nachladen.
+
 LERNINSEL v9.0.20 – NATUR: ZWEI NEUE THEMEN
 
 In GSEL 2 → Piraten erscheint nach dem Hochladen automatisch:
