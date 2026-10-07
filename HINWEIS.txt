@@ -1,0 +1,9 @@
+Lerninsel v9.0.24 – GSEL 2 Arbeitsblatt-Ergänzung
+
+Diese ZIP enthält nur die geänderte Datei config.js.
+Auf GitHub im Repository lerninsel die vorhandene config.js durch diese Datei ersetzen.
+Alle anderen Dateien unverändert lassen.
+
+Neu in der Schüleransicht:
+GSEL 2 → Arbeitsblatt – Ergänzung → Piraten heute – Arbeitsblatt
+Dort stehen die Antworten zu den vier Aufgaben (Film + Text).
