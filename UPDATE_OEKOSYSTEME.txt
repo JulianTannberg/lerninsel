@@ -1,0 +1,21 @@
+LERNINSEL v9.0.24 – NATUR: BIO – ÖKOSYSTEME (27.10.2026)
+
+NEU: Natur → Bio – Ökosysteme
+• Lernen: 1 Lernseite mit sieben sehr einfachen Abschnitten, Schaubild und Vorlesefunktion (geräteabhängig).
+• Üben: 11 Fragen, auch Mehrfachauswahl, jeweils zwei Tipps und eine Erklärung nach richtiger Antwort.
+• Test: 10 Fragen ohne Tipps; Ergebnis und Lösungen erst am Ende.
+• Inhalte anhand Schulbuch S. 50–51 und Arbeitsblättern 1 und 2: Biotop, Biozönose, abiotisch/biotisch, Eichhörnchen, See, Aquarium, ökologische Nische.
+• Sichtbar auch in alten Online-Klassen, sobald dort Natur als Fach bereits vorhanden ist.
+• Fortschritt lokal gesichert und soweit möglich mit dem bisherigen Server synchronisiert.
+• Alle bisherigen Natur- und anderen Themen bleiben erhalten.
+
+INSTALLATION AUF GITHUB PAGES
+1. ZIP entpacken und den INHALT des Ordners lerninsel-main in das Stammverzeichnis des bisherigen GitHub-Repositories kopieren.
+2. Bestehende Dateien ersetzen, insbesondere app.js, index.html und sw.js.
+3. Bestehende config.js unbedingt beibehalten (in dieser ZIP liegt eine Kopie der hochgeladenen Version).
+4. Nach Veröffentlichung die Lerninsel neu laden/öffnen; bei alter Anzeige im Browser einmal vollständig aktualisieren.
+
+WICHTIG
+- Diese ZIP ersetzt keine Serverdatenbank und entfernt keine bisherigen Inhalte.
+- In einer ganz leeren Online-Klasse ohne zugewiesene Natur-Inhalte muss Natur zuerst im Lehrerbereich eingerichtet werden.
+- Beim Test wird das Ergebnis auf dem Bildschirm ausgewertet; eine dauerhafte Server-Testnote ist nicht vorgesehen.

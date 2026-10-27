@@ -111,6 +111,16 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(118,143,155,.22);
 .pageGallery img{background:#e9eff0;border-radius:16px}.pagePdf,.liveCode{background:#e7eef0;border-radius:18px}.homeLink.overdue{border-color:#cda29c;background:#fbefec}
 .avatarChoice{background:#fffdf9;border-radius:16px}.avatarChoice.selected{outline-color:#9aadb5}
 .toast{background:#fffaf3;border-radius:17px;box-shadow:0 9px 30px rgba(54,67,73,.17)}
+
+/* Biologie: eigenständiges Ökosystem-Schaubild, mobil lesbar */
+.ecoFormula{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:center;text-align:center;margin:14px 0}
+.ecoFormula>div{background:#eaf1ec;border:1px solid #cddbd0;border-radius:13px;padding:12px 5px;font-size:1.15rem}
+.ecoFormula strong,.ecoFormula small{display:block}.ecoFormula small{font-size:.78rem;font-weight:400;color:#42544c}
+.ecoFormula>b{font-size:1.5rem}.ecoHelp{margin:12px 0;background:#f5ecd6;border-left:4px solid #caa861;border-radius:12px;padding:11px 13px}
+.ecoOptions{display:grid;gap:8px;margin:14px 0}.ecoOption{display:flex;gap:12px;align-items:flex-start;padding:13px;border:1px solid var(--line);border-radius:13px;background:#fffdf9;font-weight:600;cursor:pointer}
+.ecoOption input{flex:0 0 21px;width:21px;height:21px;margin:2px 0;accent-color:var(--accent)}
+.ecoOption:has(input:checked){background:#e7eff0;border-color:var(--accent)}
+@media(max-width:650px){.ecoFormula{grid-template-columns:1fr}.ecoFormula>div{padding:8px}}
 </style>
 </head>
 <body>
@@ -134,9 +144,9 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(118,143,155,.22);
 <dialog id="liveDialog"><div id="liveInside" class="inside"></div></dialog>
 
 <script src="config.js?v=9014"></script>
-<script src="app.js?v=9023"></script>
+<script src="app.js?v=9024"></script>
 <script>
-if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js?v=9023").catch(()=>{})}
+if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js?v=9024").catch(()=>{})}
 </script>
 </body>
 </html>

@@ -826,6 +826,9 @@ const DEFAULT_CONTENT = [
   {id:"n-lens-construction-order",subject:"natur",topic:"Sammellinsen",kind:"practice",type:"builder",title:"Sammellinse konstruieren",question:"Bringe die Schritte in die richtige Reihenfolge.",parts:["Von der Pfeilspitze einen Parallelstrahl bis zur Linse zeichnen.","Hinter der Linse durch den rechten Brennpunkt F weiterzeichnen.","Einen zweiten Strahl gerade durch die Linsenmitte zeichnen.","Wo sich die Strahlen rechts treffen, liegt die Bildspitze.","Dort den Bildpfeil bis zur Mittellinie zeichnen."],correctOrder:[0,1,2,3,4]}
 ];
 
+// Bio: Ökosysteme (Buchseiten 50–51, Arbeitsblätter 1–2).
+DEFAULT_CONTENT.push(...[{"id":"n-eco-lesson","subject":"natur","topic":"Bio – Ökosysteme","kind":"lesson","type":"lesson","title":"Ökosysteme – einfach erklärt","summary":"7 kurze Abschnitte: Biotop, Biozönose, Umweltfaktoren, See, Eichhörnchen und Aquarium.","diagram":"eco-basic","sections":[{"heading":"1. Was ist ein Ökosystem?","text":"Ein Wald, eine Wiese oder ein See ist ein Ökosystem. Es besteht aus zwei Teilen: Biotop (Lebensraum) und Biozönose (Lebensgemeinschaft). Beide beeinflussen sich gegenseitig."},{"heading":"2. Biotop – der Lebensraum","text":"Das Biotop ist der Lebensraum mit seinen unbelebten Bedingungen. Diese nennt man abiotische Umweltfaktoren. Beispiele: Licht, Temperatur, Wind, Regen, Luftfeuchtigkeit, Wasser, Boden und Gelände."},{"heading":"3. Biozönose – die Lebensgemeinschaft","text":"Die Biozönose besteht aus allen Lebewesen eines Biotops. Dazu gehören Tiere, Pflanzen, Pilze und kleine Lebewesen. Sie beeinflussen sich gegenseitig: durch Nahrung, Fressfeinde oder Konkurrenz. Das nennt man biotische Umweltfaktoren."},{"heading":"4. Beispiel Eichhörnchen","text":"Abiotische Einflüsse: Licht, Temperatur, Wind, Regen und Boden. Biotische Einflüsse: Bäume, Nahrung wie Nüsse, Fressfeinde und andere Eichhörnchen als Konkurrenten. Tipp: Ist ein Lebewesen beteiligt?"},{"heading":"5. Beispiel See – wie auf Arbeitsblatt 1","text":"Bild 1: Wasser, Licht, Boden und Steine zeigen den Lebensraum (Biotop). Bild 2: Fische, Vögel und Wasserpflanzen zeigen die Lebensgemeinschaft (Biozönose). Bild 3: Beides zusammen zeigt das Ökosystem See."},{"heading":"6. Beispiel Aquarium","text":"Ein Aquarium ist ein künstliches Ökosystem. Biotop: Wasser, Licht, Steine, Temperatur. Biozönose: Fische, Wasserpflanzen und kleine Lebewesen. Die Lampe spendet Licht, der Heizstab wärmt das Wasser und der Filter reinigt es."},{"heading":"7. Was ist eine ökologische Nische?","text":"Tiere können im selben Lebensraum unterschiedlich leben. Manche Vögel suchen Nahrung auf dem Boden, andere oben im Baum. Die Art, wie ein Lebewesen seine Umwelt nutzt, gehört zu seiner ökologischen Nische."}],"memory":"Biotop = Lebensraum. Biozönose = Lebensgemeinschaft. Biotop + Biozönose = Ökosystem. Abiotisch = unbelebte Umwelt; biotisch = Einflüsse von Lebewesen."},{"id":"n-eco-practice-01","subject":"natur","topic":"Bio – Ökosysteme","kind":"practice","type":"mcq","title":"Übung 1: Ein Ökosystem besteht aus …","question":"Ein Ökosystem besteht aus …","options":["nur den Tieren","Lebensraum und Lebensgemeinschaft","nur dem Wetter"],"hints":["Denke an zwei Teile: die Umgebung und die Lebewesen.","Biotop + Biozönose = ?"],"explanation":"Lebensraum (Biotop) und Lebensgemeinschaft (Biozönose) bilden ein Ökosystem.","correct":1},{"id":"n-eco-practice-02","subject":"natur","topic":"Bio – Ökosysteme","kind":"practice","type":"multi","title":"Übung 2: Welche Begriffe sind abiotische Umweltfaktore…","question":"Welche Begriffe sind abiotische Umweltfaktoren? Wähle alle richtigen aus.","options":["Licht","Wind","Fuchs","Regen","Eichhörnchen"],"hints":["Abiotisch bedeutet: nicht lebendig.","Wetter und Licht gehören dazu. Tiere nicht."],"explanation":"Licht, Wind und Regen sind unbelebte Einflüsse.","correctIndices":[0,1,3]},{"id":"n-eco-practice-03","subject":"natur","topic":"Bio – Ökosysteme","kind":"practice","type":"mcq","title":"Übung 3: Was ist ein Biotop?","question":"Was ist ein Biotop?","options":["der Lebensraum","alle Tiere und Pflanzen","nur die Fressfeinde"],"hints":["Suche ein anderes Wort für Biotop.","Biotop heißt Lebensraum."],"explanation":"Das Biotop ist der Lebensraum mit seinen unbelebten Bedingungen.","correct":0},{"id":"n-eco-practice-04","subject":"natur","topic":"Bio – Ökosysteme","kind":"practice","type":"multi","title":"Übung 4: Was gehört zur Biozönose eines Sees? Wähle al…","question":"Was gehört zur Biozönose eines Sees? Wähle alles Richtige.","options":["Fische","Enten","Wasserpflanzen","Steine","Sonnenlicht"],"hints":["Zur Biozönose gehören die Lebewesen.","Fische, Enten und Wasserpflanzen leben."],"explanation":"Die Biozönose umfasst die Lebewesen im See.","correctIndices":[0,1,2]},{"id":"n-eco-practice-05","subject":"natur","topic":"Bio – Ökosysteme","kind":"practice","type":"mcq","title":"Übung 5: Was ist für ein Eichhörnchen ein biotischer E…","question":"Was ist für ein Eichhörnchen ein biotischer Einfluss?","options":["Wind","ein Fressfeind","Kälte"],"hints":["Biotisch: Es geht um Lebewesen.","Ein Fressfeind ist ein anderes Tier."],"explanation":"Ein Fressfeind ist ein Lebewesen und deshalb ein biotischer Einfluss.","correct":1},{"id":"n-eco-practice-06","subject":"natur","topic":"Bio – Ökosysteme","kind":"practice","type":"mcq","title":"Übung 6: Bild A zeigt einen See nur mit Wasser, Sonne,…","question":"Bild A zeigt einen See nur mit Wasser, Sonne, Steinen und Boden. Was ist dargestellt?","options":["Biotop / Lebensraum","Biozönose / Lebensgemeinschaft","nur ein Fressfeind"],"hints":["Sind auf dem Bild Lebewesen zu sehen?","Nur unbelebte Bestandteile: Lebensraum."],"explanation":"Das Bild zeigt die unbelebte Umgebung – das Biotop.","correct":0},{"id":"n-eco-practice-07","subject":"natur","topic":"Bio – Ökosysteme","kind":"practice","type":"mcq","title":"Übung 7: Bild B zeigt die Fische, Enten und Pflanzen d…","question":"Bild B zeigt die Fische, Enten und Pflanzen des Sees. Was ist dargestellt?","options":["nur Temperatur","Biozönose / Lebensgemeinschaft","nur Wetter"],"hints":["Hier sind die Lebewesen zu sehen.","Alle Lebewesen zusammen heißen Biozönose."],"explanation":"Alle Lebewesen in einem Lebensraum bilden die Biozönose.","correct":1},{"id":"n-eco-practice-08","subject":"natur","topic":"Bio – Ökosysteme","kind":"practice","type":"mcq","title":"Übung 8: Bild C zeigt den See mit Wasser, Licht, Fisch…","question":"Bild C zeigt den See mit Wasser, Licht, Fischen und Pflanzen. Was ist dargestellt?","options":["nur das Biotop","nur die Biozönose","das Ökosystem"],"hints":["Hier ist beides enthalten.","Lebensraum + Lebensgemeinschaft = Ökosystem."],"explanation":"Zusammen sind Biotop und Biozönose das Ökosystem See.","correct":2},{"id":"n-eco-practice-09","subject":"natur","topic":"Bio – Ökosysteme","kind":"practice","type":"multi","title":"Übung 9: Was gehört im Aquarium zum Biotop? Wähle alle…","question":"Was gehört im Aquarium zum Biotop? Wähle alles Richtige.","options":["Wasser","Fische","Licht","Wassertemperatur","Wasserpflanzen"],"hints":["Suche die unbelebten Bedingungen.","Wasser, Licht und Temperatur sind nicht lebendig."],"explanation":"Wasser, Licht und Temperatur gehören zum unbelebten Lebensraum.","correctIndices":[0,2,3]},{"id":"n-eco-practice-10","subject":"natur","topic":"Bio – Ökosysteme","kind":"practice","type":"mcq","title":"Übung 10: Warum ist auch ein Aquarium ein Ökosystem?","question":"Warum ist auch ein Aquarium ein Ökosystem?","options":["Weil Wasser immer warm ist.","Weil es Lebewesen und einen Lebensraum enthält.","Weil ein Mensch es besitzt."],"hints":["Denke an die beiden Teile jedes Ökosystems.","Fische und Pflanzen leben im Wasser."],"explanation":"Auch ein künstlich eingerichtetes Aquarium hat ein Biotop und eine Biozönose.","correct":1},{"id":"n-eco-practice-11","subject":"natur","topic":"Bio – Ökosysteme","kind":"practice","type":"mcq","title":"Übung 11: Zwei Vogelarten leben im selben Wald. Eine su…","question":"Zwei Vogelarten leben im selben Wald. Eine sucht am Boden Futter, die andere im Baum. Was zeigt das?","options":["unterschiedliche ökologische Nischen","unterschiedliche Temperaturen","zwei verschiedene Wälder"],"hints":["Die Tiere nutzen denselben Lebensraum verschieden.","Sie finden an unterschiedlichen Orten Nahrung."],"explanation":"Die Tiere haben unterschiedliche ökologische Nischen.","correct":0},{"id":"n-eco-quiz-01","subject":"natur","topic":"Bio – Ökosysteme","kind":"quiz","type":"mcq","title":"Testfrage 1","question":"Welches Wort bedeutet Lebensraum?","options":["Biozönose","Biotop","Fressfeind"],"explanation":"Biotop bedeutet Lebensraum.","correct":1},{"id":"n-eco-quiz-02","subject":"natur","topic":"Bio – Ökosysteme","kind":"quiz","type":"mcq","title":"Testfrage 2","question":"Welches Wort bedeutet Lebensgemeinschaft?","options":["Biozönose","Biotop","Temperatur"],"explanation":"Biozönose bedeutet Lebensgemeinschaft.","correct":0},{"id":"n-eco-quiz-03","subject":"natur","topic":"Bio – Ökosysteme","kind":"quiz","type":"mcq","title":"Testfrage 3","question":"Woraus besteht ein Ökosystem?","options":["Biotop und Biozönose","nur aus Pflanzen","nur aus Wetter"],"explanation":"Das Ökosystem besteht aus Biotop und Biozönose.","correct":0},{"id":"n-eco-quiz-04","subject":"natur","topic":"Bio – Ökosysteme","kind":"quiz","type":"mcq","title":"Testfrage 4","question":"Welche drei Faktoren sind abiotisch?","options":["Temperatur","Regen","Konkurrenten","Wind","Fressfeinde"],"explanation":"Temperatur, Regen und Wind sind nicht lebendig.","correctIndices":[0,1,3]},{"id":"n-eco-quiz-05","subject":"natur","topic":"Bio – Ökosysteme","kind":"quiz","type":"mcq","title":"Testfrage 5","question":"Welche drei Beispiele sind biotische Einflüsse auf das Eichhörnchen?","options":["Fressfeinde","Nahrungsangebot","Lufttemperatur","Konkurrenz","Sonnenlicht"],"explanation":"Fressfeinde, Nahrung aus Lebewesen und Konkurrenz sind biotisch.","correctIndices":[0,1,3]},{"id":"n-eco-quiz-06","subject":"natur","topic":"Bio – Ökosysteme","kind":"quiz","type":"mcq","title":"Testfrage 6","question":"Alle Fische und Wasserpflanzen in einem See bilden einen Teil der …","options":["Biozönose","Temperatur","Steine"],"explanation":"Die Lebewesen des Sees gehören zur Biozönose.","correct":0},{"id":"n-eco-quiz-07","subject":"natur","topic":"Bio – Ökosysteme","kind":"quiz","type":"mcq","title":"Testfrage 7","question":"Was gehört zum Biotop des Sees?","options":["die Enten","das Wasser und die Lichtverhältnisse","die Fische"],"explanation":"Wasser und Licht sind unbelebte Bedingungen.","correct":1},{"id":"n-eco-quiz-08","subject":"natur","topic":"Bio – Ökosysteme","kind":"quiz","type":"mcq","title":"Testfrage 8","question":"Ein Bild zeigt den See samt Wasser, Pflanzen und Tieren. Es zeigt …","options":["nur den Lebensraum","das Ökosystem See","nur die Lebensgemeinschaft"],"explanation":"Lebensraum und Lebewesen zusammen zeigen das Ökosystem.","correct":1},{"id":"n-eco-quiz-09","subject":"natur","topic":"Bio – Ökosysteme","kind":"quiz","type":"mcq","title":"Testfrage 9","question":"Welche Aussage über ein Aquarium stimmt?","options":["Es ist kein Ökosystem.","Nur die Fische gehören dazu.","Es kann ein künstliches Ökosystem sein."],"explanation":"Ein Aquarium enthält einen Lebensraum und Lebewesen.","correct":2},{"id":"n-eco-quiz-10","subject":"natur","topic":"Bio – Ökosysteme","kind":"quiz","type":"mcq","title":"Testfrage 10","question":"Zwei Vogelarten fressen im selben Wald an verschiedenen Orten. Sie nutzen …","options":["verschiedene ökologische Nischen","den gleichen Stein","nur abiotische Faktoren"],"explanation":"Unterschiedliche Arten können verschiedene ökologische Nischen nutzen.","correct":0}]);
+
 const NATUR_LIGHT_TOPICS = new Set(["Licht und Optik","Licht und Sehen","Ausbreitung des Lichts"]);
 function normalizeBuiltInTopic(item){
   if(item?.subject==="natur"&&NATUR_LIGHT_TOPICS.has(item.topic))item.topic="Licht";
@@ -846,7 +849,7 @@ const SANDOKAN_CONTENT = DEFAULT_CONTENT.filter(item=>item.id.startsWith("g2-san
 // overlays the complete current units locally whenever Nature is already part
 // of the student's class. This makes both topics appear immediately without a
 // teacher having to import/seed them again.
-const NATURE_0610_CONTENT = DEFAULT_CONTENT.filter(item=>item.id.startsWith("n-material-")||item.id.startsWith("n-lens-"));
+const NATURE_0610_CONTENT = DEFAULT_CONTENT.filter(item=>item.id.startsWith("n-material-")||item.id.startsWith("n-lens-")||item.id.startsWith("n-eco-"));
 function withCurrentNatureLessons(items){
   const arr=(items||[]).map(normalizeBuiltInTopic);
   const hasNature=arr.some(i=>i.subject==="natur");
@@ -1117,7 +1120,7 @@ function saveLocal(){
     const onlySandokan=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("g2-sandokan-")));
     localStorage.setItem(k,JSON.stringify(onlySandokan));
     const natureKey=`lerninsel_nature_0610_${studentSession.roomCode}_${studentSession.studentCode}`;
-    const onlyCurrentNature=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("n-material-")||id.startsWith("n-lens-")));
+    const onlyCurrentNature=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("n-material-")||id.startsWith("n-lens-")||id.startsWith("n-eco-")));
     localStorage.setItem(natureKey,JSON.stringify(onlyCurrentNature));
     const grundherrschaftKey=`lerninsel_gsel1_grundherrschaft_${studentSession.roomCode}_${studentSession.studentCode}`;
     const onlyGrundherrschaft=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("g1-grundherrschaft-")));
@@ -1331,7 +1334,7 @@ function renderStudentDashboard(){
     const topicCount=new Set(items.filter(i=>i.subject===s.id).map(i=>i.topic)).size;
     const active=topicCount>0;
     return `<button class="card subjectCard" data-subject="${s.id}" ${active?"":"disabled"} style="text-align:left;opacity:${active?1:.55}">
-      <div class="subjectIcon">${s.icon}</div><h3>${esc(s.name)}</h3><p>${active?`${topicCount} Thema${topicCount===1?"":"en"}`:"Noch keine Inhalte"}</p>
+      <div class="subjectIcon">${s.icon}</div><h3>${esc(s.name)}</h3><p>${active?`${topicCount} ${topicCount===1?"Thema":"Themen"}`:"Noch keine Inhalte"}</p>
     </button>`
   }).join("");
   $$("[data-subject]").forEach(b=>b.onclick=()=>renderSubject(b.dataset.subject));
@@ -1382,12 +1385,12 @@ function renderTopic(subjectId,topic){
           <button id="startVocabWriting" class="primary big">Schreibtraining starten · ${vocabDue?vocabDue+" fällig":"heute alles wiederholen"}</button></div>`:""}
         ${otherPractice.length?`<p class="hint">Weitere Aufgaben kommen bei Fehlern am Ende noch einmal.</p><button id="startPractice" class="${vocab.length?"ghost":"primary"} big">${vocab.length?"Weitere Englisch-Übungen":"Übungsrunde starten"} · ${practiceDone}/${practice.length} erledigt</button>`:(!vocab.length?'<div class="small">Noch keine Übungen.</div>':"")}
       </section>
-      <section class="card topicSection"><h3>✏️ Hausaufgaben</h3><p class="hint">Die echte Aufgabe zuerst. Hilfen führen Schritt für Schritt weiter.</p>
+      ${subjectId==="natur"&&topic==="Bio – Ökosysteme"?"":`<section class="card topicSection"><h3>✏️ Hausaufgaben</h3><p class="hint">Die echte Aufgabe zuerst. Hilfen führen Schritt für Schritt weiter.</p>
         ${subjectId==="gsel2"&&topic==="Piraten"&&home.some(i=>i.id.startsWith("g2-sandokan-q"))?'<h4 class="sandokanHomeworkTitle">Sandokan · Buchseiten 14–15 · Aufgaben 1–5</h4>':""}
         <div class="homeworkList">${home.map(itemRow).join("")||'<div class="small">Noch keine Hausaufgaben.</div>'}</div>
-      </section>
-      <section class="card topicSection"><h3>🏆 Quiz</h3><p class="hint">Themengebundenes Zeitquiz. Richtige und schnelle Antworten bringen mehr Quizpunkte.</p>
-        ${quiz.length?`<button id="startSoloQuiz" class="primary big">Solo-Quiz starten · ${quiz.length} Fragen</button>`:'<div class="small">Noch kein Quiz.</div>'}
+      </section>`}
+      <section class="card topicSection"><h3>${subjectId==="natur"&&topic==="Bio – Ökosysteme"?"✅ Test":"🏆 Quiz"}</h3><p class="hint">${subjectId==="natur"&&topic==="Bio – Ökosysteme"?"10 Fragen ohne Hilfen. Auswertung und Lösungen am Ende.":"Themengebundenes Zeitquiz. Richtige und schnelle Antworten bringen mehr Quizpunkte."}</p>
+        ${quiz.length?`<button id="startSoloQuiz" class="primary big">${subjectId==="natur"&&topic==="Bio – Ökosysteme"?"Test starten":"Solo-Quiz starten"} · ${quiz.length} Fragen</button>`:'<div class="small">Noch kein Quiz.</div>'}
       </section>
     </div>`;
   $("#backTopics").onclick=()=>renderSubject(subjectId);
@@ -1412,6 +1415,7 @@ function openItem(id){
 }
 
 function lessonExtra(i){
+  if(i.diagram==="eco-basic")return `<div class="lessonSection softDiagram"><h3>Ein Ökosystem hat zwei Teile</h3><div class="ecoFormula" role="img" aria-label="Biotop plus Biozönose ergibt Ökosystem"><div>🏞️ <strong>Biotop</strong><small>Lebensraum</small></div><b>+</b><div>🐟 <strong>Biozönose</strong><small>Lebensgemeinschaft</small></div><b>=</b><div>🌍 <strong>Ökosystem</strong><small>beides zusammen</small></div></div><p class="small">Merke: Ein See ohne dargestellte Tiere und Pflanzen steht für das Biotop. Mit den Lebewesen zusammen zeigt er das Ökosystem.</p></div>`;
   if(i.diagram==="shadow-symbols")return `<div class="lessonSection softDiagram"><h3>So liegen die vier Größen</h3><svg viewBox="0 0 760 300" class="learnSvg" aria-label="Schattenwurf mit G g B b"><line x1="40" y1="150" x2="720" y2="150" stroke="#a9b8ca" stroke-dasharray="8 8"/><circle cx="90" cy="150" r="13" fill="#f2b84b"/><text x="55" y="125">Lichtquelle</text><line x1="330" y1="105" x2="330" y2="195" stroke="#536b88" stroke-width="10"/><line x1="690" y1="60" x2="690" y2="240" stroke="#536b88" stroke-width="10"/><line x1="90" y1="150" x2="690" y2="60" stroke="#e7a84a" stroke-width="3"/><line x1="90" y1="150" x2="690" y2="240" stroke="#e7a84a" stroke-width="3"/><text x="345" y="105" font-size="30" font-weight="800">G</text><text x="705" y="70" font-size="30" font-weight="800">B</text><path d="M90 225 H330" stroke="#7d6bc5" stroke-width="5"/><text x="195" y="260" font-size="28" font-weight="800">g</text><path d="M90 280 H690" stroke="#7d6bc5" stroke-width="5"/><text x="380" y="295" font-size="28" font-weight="800">b</text></svg><div class="memoryGrid"><b>G = Gegenstandsgröße</b><b>g = Gegenstandsweite</b><b>B = Bildgröße</b><b>b = Bildweite</b></div></div>`;
   if(i.diagram==="shadow-construction")return `<div class="lessonSection softDiagram"><h3>Die zwei Randstrahlen</h3><svg viewBox="0 0 760 260" class="learnSvg"><line x1="50" y1="135" x2="710" y2="135" stroke="#b5c1cf" stroke-dasharray="8 8"/><circle cx="90" cy="135" r="12" fill="#f2b84b"/><line x1="330" y1="95" x2="330" y2="175" stroke="#526b87" stroke-width="9"/><line x1="690" y1="45" x2="690" y2="225" stroke="#526b87" stroke-width="9"/><line x1="90" y1="135" x2="690" y2="45" stroke="#d87c69" stroke-width="4"/><line x1="90" y1="135" x2="690" y2="225" stroke="#d87c69" stroke-width="4"/><text x="160" y="70" font-size="22">Randstrahl</text><text x="350" y="90" font-size="22">Gegenstand</text><text x="610" y="30" font-size="22">Schirm</text></svg></div>`;
   if(i.diagram==="reflection")return `<div class="lessonSection softDiagram"><h3>Spiegelung: immer zuerst das Lot</h3><svg viewBox="0 0 760 330" class="learnSvg"><line x1="100" y1="250" x2="660" y2="250" stroke="#526b87" stroke-width="10"/><circle cx="380" cy="250" r="8" fill="#263a54"/><line x1="380" y1="250" x2="380" y2="45" stroke="#91a3b7" stroke-width="3" stroke-dasharray="8 7"/><line x1="150" y1="70" x2="380" y2="250" stroke="#d87c69" stroke-width="5"/><line x1="380" y1="250" x2="610" y2="70" stroke="#6b8fd4" stroke-width="5"/><path d="M380 170 A80 80 0 0 0 317 201" fill="none" stroke="#7d6bc5" stroke-width="4"/><path d="M380 170 A80 80 0 0 1 443 201" fill="none" stroke="#7d6bc5" stroke-width="4"/><text x="390" y="65" font-size="24" font-weight="800">Lot (90° zum Spiegel)</text><text x="270" y="175" font-size="24">α</text><text x="470" y="175" font-size="24">β</text><text x="275" y="300" font-size="24">Spiegel</text></svg><div class="merksatz">α = β · Die Winkel werden zum Lot gemessen.</div></div>`;
@@ -1536,16 +1540,28 @@ function renderLesson(i){
   $("#workInside").innerHTML=`
     <span class="badge">${esc(subjectMeta(i.subject).name)} · Lernen</span><h2>${esc(i.title)}</h2>
     ${lessonExtra(i)}
+    ${i.id==="n-eco-lesson"?'<button id="ecoReadAloud" class="ghost big" style="margin:8px 0">🔊 Lernseite vorlesen</button>':""}
     ${originalPagesHtml(i)}
     ${(i.sections||[]).map(s=>`<div class="lessonSection"><h3>${esc(s.heading)}</h3><div>${esc(s.text)}</div></div>`).join("")}
     ${i.memory?`<div class="merksatz">💡 ${esc(i.memory)}</div>`:""}
     ${i.videoUrl?`<div class="videoCard"><h3 style="margin-top:0">▶ Lernvideo</h3><p class="small">${esc(i.videoLabel||"Video öffnen")}</p><a class="primary big" style="display:block;text-align:center;text-decoration:none" href="${esc(i.videoUrl)}" target="_blank" rel="noopener">Video öffnen</a></div>`:""}
     ${i.resourceUrl?`<div class="videoCard"><h3 style="margin-top:0">📄 Arbeitsblatt</h3><p class="small">${esc(i.resourceLabel||"PDF öffnen")}</p><a class="primary big" style="display:block;text-align:center;text-decoration:none" href="${esc(i.resourceUrl)}" target="_blank" rel="noopener">PDF öffnen</a></div>`:""}
     <button id="readDone" class="primary big">${p.status==="completed"?"✓ Gelesen":"Gelesen"}</button>`;
-  addDialogClose("#workDialog",()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)});
+  addDialogClose("#workDialog",()=>{if(i.id==="n-eco-lesson"&&("speechSynthesis" in window))speechSynthesis.cancel();closeDialog("#workDialog");renderTopic(i.subject,i.topic)});
   $("#workDialog").showModal();
+  if(i.id==="n-eco-lesson"){
+    $("#ecoReadAloud").onclick=()=>{
+      if(!("speechSynthesis" in window)){toast("Vorlesen wird auf diesem Gerät nicht unterstützt.");return}
+      if(window.speechSynthesis.speaking){window.speechSynthesis.cancel();$("#ecoReadAloud").textContent="🔊 Lernseite vorlesen";return}
+      const spoken=(i.sections||[]).map(x=>x.heading+". "+x.text).join(". ");
+      const speech=new SpeechSynthesisUtterance(spoken);speech.lang="de-DE";speech.rate=.85;
+      speech.onend=()=>{const b=$("#ecoReadAloud");if(b)b.textContent="🔊 Lernseite vorlesen"};
+      window.speechSynthesis.speak(speech);$("#ecoReadAloud").textContent="⏹️ Vorlesen stoppen";
+    };
+  }
   $("#readDone").onclick=async()=>{
     const b=$("#readDone");b.textContent="✓ Gelesen – gespeichert";b.disabled=true;
+    if(i.id==="n-eco-lesson"&&("speechSynthesis" in window))speechSynthesis.cancel();
     await completeItem(i);setTimeout(()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)},450)
   }
 }
@@ -1600,6 +1616,7 @@ async function correctPractice(i,msg="✓ Richtig!"){
 }
 function renderPracticeItem(i){
   if(i._vocabMode==="flashcard")renderVocabFlashcard(i);
+  else if(i.id?.startsWith("n-eco-practice-"))renderEcoPractice(i);
   else if(i.type==="mcq")renderPracticeMCQ(i);
   else if(i.type==="roleplay")renderRoleplay(i);
   else if(isVocabItem(i))renderVocabWriting(i);
@@ -1805,6 +1822,33 @@ function renderPracticeDiagram(kind){
   if(kind==="lens-a")return `<div class="lessonSection softDiagram"><div class="small"><strong>A:</strong> G = 4,7 cm · B = 2,8 cm → Bild kleiner</div><svg viewBox="0 0 760 270" class="learnSvg" role="img" aria-label="Sammellinse Aufgabe A mit kleinerem Bild"><line x1="35" y1="135" x2="725" y2="135" stroke="#a9b8ca" stroke-dasharray="8 8"/><path d="M430 25 Q395 135 430 245 Q465 135 430 25" fill="#dce8f4" stroke="#536b88" stroke-width="4"/><line x1="105" y1="135" x2="105" y2="35" stroke="#263a54" stroke-width="7"/><path d="M105 22 l-12 24 h24 z" fill="#263a54"/><circle cx="330" cy="135" r="6" fill="#7d6bc5"/><text x="319" y="160" font-size="22">F</text><circle cx="530" cy="135" r="6" fill="#7d6bc5"/><text x="521" y="160" font-size="22">F</text><line x1="610" y1="135" x2="610" y2="190" stroke="#7d6bc5" stroke-width="7"/><path d="M610 203 l-12 -24 h24 z" fill="#7d6bc5"/><text x="78" y="22" font-size="22" font-weight="800">G</text><text x="623" y="185" font-size="22" font-weight="800">B</text></svg></div>`;
   if(kind==="lens-b")return `<div class="lessonSection softDiagram"><div class="small"><strong>B:</strong> G = 4,7 cm · B = 5,7 cm → Bild größer</div><svg viewBox="0 0 760 270" class="learnSvg" role="img" aria-label="Sammellinse Aufgabe B mit größerem Bild"><line x1="35" y1="135" x2="725" y2="135" stroke="#a9b8ca" stroke-dasharray="8 8"/><path d="M395 25 Q360 135 395 245 Q430 135 395 25" fill="#dce8f4" stroke="#536b88" stroke-width="4"/><line x1="245" y1="135" x2="245" y2="65" stroke="#263a54" stroke-width="7"/><path d="M245 52 l-12 24 h24 z" fill="#263a54"/><circle cx="295" cy="135" r="6" fill="#7d6bc5"/><text x="284" y="160" font-size="22">F</text><circle cx="495" cy="135" r="6" fill="#7d6bc5"/><text x="486" y="160" font-size="22">F</text><line x1="610" y1="135" x2="610" y2="230" stroke="#7d6bc5" stroke-width="7"/><path d="M610 243 l-12 -24 h24 z" fill="#7d6bc5"/><text x="217" y="45" font-size="22" font-weight="800">G</text><text x="623" y="220" font-size="22" font-weight="800">B</text></svg></div>`;
   return ""
+}
+
+function renderEcoPractice(i){
+  let hintNo=0,locked=false;
+  const multiple=i.type==="multi", expected=(multiple?i.correctIndices:[i.correct]).map(Number).sort((a,b)=>a-b);
+  const options=(i.options||[]).map((o,n)=>`<label class="ecoOption"><input type="${multiple?"checkbox":"radio"}" name="ecoPractice" value="${n}"><span>${esc(o)}</span></label>`).join("");
+  $("#workInside").innerHTML=practiceHead()+`<span class="badge">🌿 Bio · Ökosysteme</span><div class="question">${esc(i.question)}</div><p class="small">${multiple?"Mehrere Antworten sind richtig.":"Wähle eine Antwort."}</p><div class="ecoOptions">${options}</div><div class="actions"><button id="ecoCheck" class="primary">Antwort prüfen</button><button id="ecoHint" class="ghost">💡 Tipp anzeigen</button></div><div id="ecoHelpBox" role="status"></div><div id="practiceFeedback" role="status"></div><button id="ecoNext" class="primary big hidden">Weiter →</button>`;
+  $("#ecoHint").onclick=()=>{
+    if(locked||hintNo>=(i.hints||[]).length)return;
+    const tip=i.hints[hintNo++];$("#ecoHelpBox").innerHTML+=`<div class="ecoHelp">💡 Tipp ${hintNo}: ${esc(tip)}</div>`;
+    if(hintNo>=i.hints.length)$("#ecoHint").disabled=true;
+  };
+  $("#ecoCheck").onclick=async()=>{
+    if(locked)return;
+    const answers=$$('input[name="ecoPractice"]:checked').map(el=>Number(el.value)).sort((a,b)=>a-b);
+    if(!answers.length){$("#practiceFeedback").innerHTML='<div class="feedback no">Bitte wähle zuerst eine Antwort.</div>';return}
+    const ok=answers.length===expected.length&&answers.every((v,n)=>v===expected[n]);
+    const p=progressFor(i.id);p.attempts++;saveLocal();studentEvent(i.id,"checked",{ok});
+    if(!ok){$("#practiceFeedback").innerHTML='<div class="feedback no">Noch nicht ganz richtig. Versuche es erneut oder nutze einen Tipp.</div>';return}
+    locked=true;state.practice.locked=true;
+    $$('#workInside input[name="ecoPractice"]').forEach(el=>el.disabled=true);
+    $("#ecoCheck").disabled=true;$("#ecoHint").disabled=true;
+    await completeItem(i);
+    $("#practiceFeedback").innerHTML=`<div class="feedback ok">✓ Richtig! ${esc(i.explanation||"")}</div>`;
+    $("#ecoNext").classList.remove("hidden");
+    $("#ecoNext").onclick=nextPractice;
+  };
 }
 
 function renderPracticeMCQ(i){
@@ -2025,8 +2069,41 @@ function renderWritingHomework(i){
   $("#closeHomework").onclick=()=>{closeDialog("#workDialog");renderTopic(i.subject,i.topic)}
 }
 
+/* Ökosysteme: einfacher Wissenstest ohne Antworten bis zur Auswertung. */
+function startEcoTest(items){
+  state.quiz={eco:true,items:[...items],index:0,answers:[]};
+  renderEcoTestQuestion();
+}
+function renderEcoTestQuestion(){
+  const q=state.quiz;if(!q?.eco)return;
+  if(q.index>=q.items.length){finishEcoTest();return}
+  const i=q.items[q.index],multi=Array.isArray(i.correctIndices);
+  $("#workInside").innerHTML=`<div class="sessionHead"><span>✅ Test · Frage ${q.index+1} von ${q.items.length}</span><span>Ohne Hilfen</span></div><div class="question">${esc(i.question)}</div><p class="small">${multi?"Mehrere Antworten sind richtig.":"Wähle eine Antwort."}</p><div class="ecoOptions">${i.options.map((o,n)=>`<label class="ecoOption"><input type="${multi?"checkbox":"radio"}" name="ecoTest" value="${n}"><span>${esc(o)}</span></label>`).join("")}</div><p id="ecoTestMsg" class="small"></p><button id="ecoTestContinue" class="primary big">${q.index+1===q.items.length?"Test auswerten":"Nächste Frage →"}</button>`;
+  addDialogClose("#workDialog",abortWorkDialog);
+  $("#workDialog").showModal();
+  $("#ecoTestContinue").onclick=()=>{
+    const answers=$$('input[name="ecoTest"]:checked').map(el=>Number(el.value));
+    if(!answers.length){$("#ecoTestMsg").textContent="Bitte wähle eine Antwort.";return}
+    q.answers.push(answers);q.index++;renderEcoTestQuestion();
+  };
+}
+function finishEcoTest(){
+  const q=state.quiz;
+  const checked=q.items.map((i,n)=>{
+    const expected=(i.correctIndices||[i.correct]).map(Number).sort((a,b)=>a-b);
+    const selected=(q.answers[n]||[]).slice().sort((a,b)=>a-b);
+    return {item:i,selected,expected,ok:selected.length===expected.length&&selected.every((x,j)=>x===expected[j])};
+  });
+  const score=checked.filter(x=>x.ok).length, percent=Math.round(100*score/checked.length);
+  for(const x of checked)studentEvent(x.item.id,"checked",{ok:x.ok,test:true});
+  $("#workInside").innerHTML=`<span class="sectionTitle">Ökosysteme · Testauswertung</span><h2>Dein Ergebnis</h2><div class="scoreBig">${score} von ${checked.length} richtig · ${percent}%</div><p>${score>=9?"Sehr gut!":score>=7?"Gut gemacht!":"Lies die Lernseite noch einmal und probiere den Test erneut."}</p><div class="lessonSection"><h3>Deine Antworten und die Lösungen</h3>${checked.map((x,n)=>`<div class="stepBox"><strong>${n+1}. ${esc(x.item.question)}</strong><p>${x.ok?"✅ Richtig":"🔎 Noch üben"}</p><p class="small">Deine Antwort: ${esc(x.selected.map(v=>x.item.options[v]).join(", "))}</p><p><strong>Richtig: ${esc(x.expected.map(v=>x.item.options[v]).join(", "))}</strong></p><p class="small">${esc(x.item.explanation||"")}</p></div>`).join("")}</div><button id="ecoTestDone" class="primary big">Zurück zum Thema</button>`;
+  addDialogClose("#workDialog",()=>{state.quiz=null;closeDialog("#workDialog");renderTopic(state.currentSubject,state.currentTopic)});
+  $("#ecoTestDone").onclick=()=>{state.quiz=null;closeDialog("#workDialog");renderTopic(state.currentSubject,state.currentTopic)};
+}
+
 /* Solo quiz */
 function startSoloQuiz(items){
+  if(items.length&&items[0].id?.startsWith("n-eco-quiz-")){startEcoTest(items);return}
   state.quiz={items:[...items],index:0,score:0,correct:0,timer:null,answered:false};
   renderSoloQuizQuestion()
 }
