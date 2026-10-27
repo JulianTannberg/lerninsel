@@ -121,6 +121,17 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(118,143,155,.22);
 .ecoOption input{flex:0 0 21px;width:21px;height:21px;margin:2px 0;accent-color:var(--accent)}
 .ecoOption:has(input:checked){background:#e7eff0;border-color:var(--accent)}
 @media(max-width:650px){.ecoFormula{grid-template-columns:1fr}.ecoFormula>div{padding:8px}}
+
+/* Biologie S. 52–53: Waldschichten und Wortliste */
+.forestLayers{display:grid;gap:6px;margin:12px 0 4px}
+.forestLayer{display:flex;align-items:center;gap:12px;border-radius:12px;padding:10px 12px;border:1px solid #cdddc9}
+.forestLayer>span{font-size:1.55rem;flex:0 0 34px;text-align:center}
+.forestLayer strong,.forestLayer small{display:block}
+.forestLayer small{font-size:.83rem;color:#385047;font-weight:450;line-height:1.42}
+.treeLayer{background:#dcead2}.shrubLayer{background:#e5efd7}.herbLayer{background:#edf1d9}.mossLayer{background:#e3ead4}.rootLayer{background:#eae2ce;border-color:#d6c8af}
+.forestGlossary{background:#f3f7f2}.forestTerm{display:grid;grid-template-columns:minmax(120px,.38fr) 1fr;align-items:start;gap:12px;border-bottom:1px solid #dbe5d9;padding:9px 0;font-size:.94rem}
+.forestTerm:last-child{border-bottom:0}.forestTerm strong{color:#2b543c}
+@media(max-width:500px){.forestTerm{grid-template-columns:1fr;gap:3px}.forestLayer{padding:9px 8px;gap:8px}}
 </style>
 </head>
 <body>
@@ -144,9 +155,9 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(118,143,155,.22);
 <dialog id="liveDialog"><div id="liveInside" class="inside"></div></dialog>
 
 <script src="config.js?v=9014"></script>
-<script src="app.js?v=9024"></script>
+<script src="app.js?v=9025"></script>
 <script>
-if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js?v=9024").catch(()=>{})}
+if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js?v=9025").catch(()=>{})}
 </script>
 </body>
 </html>

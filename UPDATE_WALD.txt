@@ -1,0 +1,15 @@
+LERNINSEL v9.0.25 – ERGÄNZUNG ÖKOSYSTEM WALD (27.10.2026)
+
+Unter NATUR → Bio – Ökosysteme ergänzt:
+• Zweite Lernseite „Ökosystem Wald – Stockwerke und Fachwörter“ zum Schulbuch S. 52–53.
+• Übersicht der 5 Stockwerke: Baumschicht, Strauchschicht, Krautschicht, Moosschicht, Wurzelschicht.
+• Einfach erklärte Fachwörter für Aufgabe 2 auf dem schulischen Aufgabenblatt.
+• Mischwald, Forst und Monokultur und die Zusammenhänge zu Licht, Wind und Tierarten.
+• Zwei getrennte Übungsrunden: Grundwissen (11 Fragen) und Wald (14 Fragen), jeweils zwei Tipps.
+• Erweiterter Test mit 15 Fragen zu beiden Lernseiten, ohne Tipps, mit Lösungen am Ende.
+• Die vorhandenen Inhalte, Klassen und Lernstände bleiben erhalten.
+
+GitHub Pages: ZIP entpacken und den INHALT von lerninsel-main im bisherigen
+Repository hochladen. Insbesondere app.js, index.html und sw.js ersetzen.
+Die vorhandene config.js des bisherigen GitHub-Repositories beibehalten.
+Bestehende Supabase-Daten werden durch die ZIP nicht geändert.
