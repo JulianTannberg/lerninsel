@@ -112,26 +112,23 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(118,143,155,.22);
 .avatarChoice{background:#fffdf9;border-radius:16px}.avatarChoice.selected{outline-color:#9aadb5}
 .toast{background:#fffaf3;border-radius:17px;box-shadow:0 9px 30px rgba(54,67,73,.17)}
 
-/* Biologie: eigenständiges Ökosystem-Schaubild, mobil lesbar */
-.ecoFormula{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:center;text-align:center;margin:14px 0}
-.ecoFormula>div{background:#eaf1ec;border:1px solid #cddbd0;border-radius:13px;padding:12px 5px;font-size:1.15rem}
-.ecoFormula strong,.ecoFormula small{display:block}.ecoFormula small{font-size:.78rem;font-weight:400;color:#42544c}
-.ecoFormula>b{font-size:1.5rem}.ecoHelp{margin:12px 0;background:#f5ecd6;border-left:4px solid #caa861;border-radius:12px;padding:11px 13px}
-.ecoOptions{display:grid;gap:8px;margin:14px 0}.ecoOption{display:flex;gap:12px;align-items:flex-start;padding:13px;border:1px solid var(--line);border-radius:13px;background:#fffdf9;font-weight:600;cursor:pointer}
-.ecoOption input{flex:0 0 21px;width:21px;height:21px;margin:2px 0;accent-color:var(--accent)}
-.ecoOption:has(input:checked){background:#e7eff0;border-color:var(--accent)}
-@media(max-width:650px){.ecoFormula{grid-template-columns:1fr}.ecoFormula>div{padding:8px}}
-
-/* Biologie S. 52–53: Waldschichten und Wortliste */
-.forestLayers{display:grid;gap:6px;margin:12px 0 4px}
-.forestLayer{display:flex;align-items:center;gap:12px;border-radius:12px;padding:10px 12px;border:1px solid #cdddc9}
-.forestLayer>span{font-size:1.55rem;flex:0 0 34px;text-align:center}
-.forestLayer strong,.forestLayer small{display:block}
-.forestLayer small{font-size:.83rem;color:#385047;font-weight:450;line-height:1.42}
-.treeLayer{background:#dcead2}.shrubLayer{background:#e5efd7}.herbLayer{background:#edf1d9}.mossLayer{background:#e3ead4}.rootLayer{background:#eae2ce;border-color:#d6c8af}
-.forestGlossary{background:#f3f7f2}.forestTerm{display:grid;grid-template-columns:minmax(120px,.38fr) 1fr;align-items:start;gap:12px;border-bottom:1px solid #dbe5d9;padding:9px 0;font-size:.94rem}
-.forestTerm:last-child{border-bottom:0}.forestTerm strong{color:#2b543c}
-@media(max-width:500px){.forestTerm{grid-template-columns:1fr;gap:3px}.forestLayer{padding:9px 8px;gap:8px}}
+/* GSEL2: aufklappbare Selbstabfrage nach der vollständigen Tafel-Tabelle. */
+.examRecall details{border:1px solid #c9d9de;background:#fffdf9;border-radius:13px;margin:9px 0;padding:12px}
+.examRecall details summary{font-weight:750;cursor:pointer;padding:3px}
+.examRecall details div{padding:5px 4px;border-bottom:1px solid #eff1f1;line-height:1.5}
+.examRecall details div:last-child{border-bottom:0}
+/* Lernzettel GSEL 2: große, lesbare Vergleichstabelle und aufklappbares Glossar. */
+.examSection{background:#f7fafb}.examScroll{overflow-x:auto;overscroll-behavior-x:contain;margin:12px 0;border-radius:12px;border:1px solid var(--line)}
+.examCompare{width:100%;min-width:830px;border-collapse:collapse;background:#fff;line-height:1.45;font-size:.92rem}
+.examCompare th,.examCompare td{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid #dce5ed;border-right:1px solid #e5ebf0}
+.examCompare thead{background:#dcebf0}.examCompare tbody th{min-width:152px;background:#f0f5f7}
+.examCompare tbody tr:nth-child(even) td{background:#fbfcfd}
+.glossaryList{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px;margin-top:10px}
+.glossaryList details{background:#fff;border:1px solid #dae2ea;border-radius:12px;padding:10px 12px}
+.glossaryGroup{border:1px solid #d3dfe1;border-radius:13px;padding:12px;background:#fafdfd}
+.glossaryGroup h4{margin:0 0 9px;color:#3b5562;font-size:1rem}
+.glossaryGroup details{margin:5px 0}
+.glossaryList summary{cursor:pointer;font-weight:750}.glossaryList p{font-weight:400;font-size:.92rem;line-height:1.5;margin:8px 0 2px}
 </style>
 </head>
 <body>

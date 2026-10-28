@@ -1,0 +1,17 @@
+Lerninsel – GSEL 2: Piraten – Vorbereitung auf die Arbeit
+
+Überarbeitete Lerninhalte nach dem endkontrollierten PDF vom 28.10.2026:
+- Vollständige Vergleichstabelle mit 6 Spalten, zeitlich sortiert
+- Nur 22 passende Fachbegriffe aus dem Glossar
+- Begnadigungen, Blackbeard und ehemalige Piratenjäger
+- Anne Bonny und Mary Read: Nassau, Calico Jack, Männerkleidung,
+  Verurteilung 1720, Schwangerschaft / Aufschub und späteres Schicksal
+- Sandokan und Mary Read: unsichere Überlieferungen kenntlich gemacht
+- 5 Lernseiten, 30 Multiple-Choice-Übungen, 12 Merkkarten,
+  4 Lückentexte und 20 Fragen im Quiz
+- Ausgefüllte PDF: GSEL2_Piraten_Lernzettel_A4.pdf
+- Selbstfüllbare Tabelle: gsel2_piraten_arbeitsblatt.html
+
+ZIP-Inhalt wie gewohnt auf GitHub hochladen und vorhandene Dateien ersetzen.
+Keine Datenbankmigration nötig. Übrige Lerninhalte bleiben erhalten.
+Sandakan liegt in Malaysia, nicht Indonesien, wie auf dem Glossarblatt steht.

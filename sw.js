@@ -1,5 +1,5 @@
-const CACHE="lerninsel-v9.0.25-20261027";
-const ASSETS=["./","./index.html","./config.js?v=9014","./app.js?v=9025","./manifest.webmanifest"];
+const CACHE="lerninsel-v9.0.25-gsel2-piraten";
+const ASSETS=["./","./index.html","./config.js?v=9014","./app.js?v=9025","./manifest.webmanifest","./GSEL2_Piraten_Lernzettel_A4.pdf","./gsel2_piraten_arbeitsblatt.html"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE).then(c=>Promise.allSettled(ASSETS.map(a=>c.add(a)))));self.skipWaiting()});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
 self.addEventListener("fetch",e=>{if(e.request.method!=="GET")return;const u=new URL(e.request.url);if(u.origin!==self.location.origin)return;

@@ -1,0 +1,20 @@
+GSEL 2 – Vorbereitung auf die Klassenarbeit (28.10.2026)
+
+Neu: ausgefüllte Vergleichstabelle in 6 Spalten (mit Fachbegriffen), sortiert nach Zeit.
+In der Lernapp: Lernen → 5 kurze Lernseiten inklusive versteckbarer Tabelle,
+nur passende Fachbegriffe, Begnadigungen, Blackbeard, Anne Bonny / Mary Read,
+Schwangerschaft / Strafaufschub, historischer Unsicherheit Sandokan, Somalia.
+Üben: 30 Multiple-Choice-Fragen, 12 Merkkarten, 4 Lückentexte.
+Quiz: 20 Fragen als Probetest.
+
+Die geprüfte ausdruckbare PDF liegt als GSEL2_Piraten_Lernzettel_A4.pdf bei.
+Die gsel2_piraten_arbeitsblatt.html ist eine ausfüllbare Lerntabelle.
+
+GitHub: Inhalt des Ordners lerninsel-main auf den Root des Repositories hochladen
+(wie bei den vorherigen ZIP-Dateien). Dateien nicht nur einzeln hochladen,
+damit die neue PDF auch online verfügbar ist. Bei Installation der PWA
+gegebenenfalls neu laden, damit der aktualisierte Cache erscheint.
+
+Hinweis: Die Eingaben im Lehrerbereich / Supabase bleiben bestehen.
+Alte GSEL2-Exam-Inhalte werden in der Schüleransicht anhand derselben
+IDs durch diese Fassung ersetzt; übrige Fächer bleiben erhalten.
