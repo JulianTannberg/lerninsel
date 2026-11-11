@@ -836,6 +836,743 @@ const GSEL2_EXAM_TERMS = [{"group":"Störtebeker und die Hanse · um 1400","term
 const GSEL2_EXAM_CONTENT = [{"id":"g2-exam-lesson-table","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"lesson","type":"lesson","title":"1. Die vollständige Piraten-Tabelle","summary":"Die fünf Themen nach Zeit sortiert · mit allen sechs Spalten.","diagram":"pirate-exam-table","resourceUrl":"GSEL2_Piraten_Lernzettel_A4.pdf","resourceLabel":"Geprüften, ausgefüllten Lernzettel als PDF öffnen","sections":[{"heading":"So lernst du für die Arbeit","text":"Lies jede Tabellenzeile. Versuche dann ohne Hilfe zu sagen: Wer? Wann? Wo? Was war besonders? Wer waren die Gegner? Welche Fachbegriffe passen? Darunter kannst du die fünf Themen als verdeckte Lernkarten üben."},{"heading":"Die fünf Zeiten in der richtigen Reihenfolge","text":"Um 1400: Störtebeker. 17./frühes 18. Jahrhundert: Karibik und Blackbeard. Um 1720: Anne Bonny und Mary Read. 19. Jahrhundert: Sandokan (unsichere historische Überlieferung). Seit den 1990ern bis heute: Piraterie vor Somalia."}],"memory":"Erst die fünf Piratenthemen nach Jahrhunderten lernen. Dann die Besonderheiten und passenden Fachbegriffe."},{"id":"g2-exam-lesson-terms","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"lesson","type":"lesson","title":"2. Nur die passenden Fachbegriffe","summary":"Die Wörter aus dem Glossar passend zu jedem Thema.","diagram":"pirate-exam-glossary","sections":[{"heading":"Wie lerne ich sie?","text":"Sieh dir zuerst das Piratenthema an. Klappe dann die Fachbegriffe einzeln auf. Nur Begriffe, die zur Tabelle gehören, sind hier enthalten."},{"heading":"Zwei Briefe – zwei verschiedene Aufgaben","text":"Kaperbrief oder Freibeuterbrief: Erlaubnis, bestimmte feindliche Schiffe anzugreifen. Seeräuberbrief: Hamburg durfte Seeräuber verfolgen und bestrafen."}],"memory":"Fachbegriffe nicht nur aufsagen, sondern zum richtigen Piratenthema zuordnen."},{"id":"g2-exam-lesson-carib","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"lesson","type":"lesson","title":"3. Karibik: Blackbeard, Nassau und Begnadigungen","summary":"Warum ehemalige Piraten später Piratenjäger wurden.","sections":[{"heading":"Wann gab es viele Piraten?","text":"In der Karibik gab es besonders im 17. und frühen 18. Jahrhundert viele Piraten. Blackbeard (Edward Teach) war etwa 1716–1718 aktiv und starb 1718."},{"heading":"Was geschah ab 1717/18?","text":"Viele Piraten bekamen die Möglichkeit, begnadigt zu werden. Das bedeutet: Ihnen wurden frühere Taten unter Bedingungen verziehen. Einige ehemalige Piraten halfen danach, andere Piraten zu verfolgen. Sie wurden Piratenjäger."},{"heading":"Nassau und Port Royal","text":"Nassau liegt auf den Bahamas. Dort versuchte Gouverneur Woodes Rogers ab 1718, die Piraterie zu bekämpfen. Port Royal liegt auf Jamaika und war vor allem im 17. Jahrhundert ein bedeutender Piratenhafen."}],"memory":"1717/18: Begnadigungen · Manche ehemalige Piraten wurden Piratenjäger · Nassau = Bahamas · Port Royal = Jamaika."},{"id":"g2-exam-lesson-anne-mary","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"lesson","type":"lesson","title":"4. Anne Bonny und Mary Read – genau erklärt","summary":"Nassau · Calico Jack · Männerkleidung · Schwangerschaft · Urteil.","sections":[{"heading":"Anne Bonny","text":"Anne kam mit ihrem Ehemann James Bonny nach Nassau. Dort verliebte sie sich in den Piraten Calico Jack Rackham. Laut späterem Bericht wollte James einer Scheidung nicht zustimmen. Anne ging mit Rackham auf sein Piratenschiff."},{"heading":"Mary Read","text":"Mary segelte ebenfalls auf dem Schiff von Calico Jack. Nach einer alten Erzählung wuchs sie als Junge auf und arbeitete später als Soldatin. Ob alle diese Erlebnisse wirklich so stattgefunden haben, ist nicht sicher. Bei Angriffen trug Mary Männerkleidung; ob sie längere Zeit unerkannt blieb, ist unklar."},{"heading":"Was geschah 1720?","text":"Anne und Mary wurden 1720 gefangen und auf Jamaika wegen Piraterie zum Tode verurteilt. Beide erklärten, dass sie schwanger waren. Deshalb wurde die Strafe aufgeschoben."},{"heading":"Wie ging es weiter?","text":"Mary Read starb 1721 im Gefängnis. Was später mit Anne Bonny geschah, ist nicht sicher bekannt."}],"memory":"Anne + Calico Jack · Mary an Bord · 1720 Urteil · Schwangerschaft = Aufschub · Mary 1721 gestorben · Annes Ende unklar."},{"id":"g2-exam-lesson-method","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"lesson","type":"lesson","title":"5. Texte, Bilder und Karten auswerten","summary":"So löst du Aufgaben mit Quellen.","sections":[{"heading":"Text: vier Fragen","text":"Wer? Wann? Wo? Was geschah? Suche im Text danach und unterstreiche die passenden Wörter."},{"heading":"Bild und Karte","text":"Zuerst beschreiben, was tatsächlich zu sehen ist. Dann die Lage oder die Bedeutung erklären. Eine Vermutung als Vermutung kennzeichnen."},{"heading":"Wichtig bei Sandokan","text":"Film- und Romanabenteuer sind erfunden. Über einen möglichen historischen Sandokan auf Borneo gibt es Überlieferungen, aber seine Rolle bei den Ereignissen von 1845 ist nicht sicher belegt. Sandakan liegt in Malaysia (Sabah), nicht in Indonesien."},{"heading":"Wichtig bei Somalia","text":"Piraterie wurde von kriminellen Gruppen betrieben. Das bedeutet nicht, dass die Bevölkerung Somalias aus Piraten besteht."}],"memory":"Erst beschreiben, dann erklären. Historische Tatsachen und Erzählungen auseinanderhalten."},{"id":"g2-exam-practice-time-stoer","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Störtebeker: Zeit","question":"Wann waren Störtebeker und die Vitalienbrüder aktiv?","options":["Um 1720","Um 1845","Seit 2008","Um 1400"],"correct":3},{"id":"g2-exam-practice-place-stoer","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Störtebeker: Ort","question":"Wo fuhren die Vitalienbrüder?","options":["Im Pazifik","In Nordsee und Ostsee","In der Karibik","Vor Somalia"],"correct":1},{"id":"g2-exam-practice-enemy-stoer","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Störtebeker: Gegner","question":"Wen griffen die Vitalienbrüder später auch an?","options":["Handelsschiffe der Hanse","Schiffe der EU-Mission ATALANTA","Britische Schiffe bei Borneo im 19. Jahrhundert","Die Römer"],"correct":0},{"id":"g2-exam-practice-term-likedeeler","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Fachbegriff: Likedeeler","question":"Was bedeutet „Likedeeler“?","options":["Stadt auf Jamaika","Gleichteiler; ob sie die Beute wirklich gleich teilten, ist nicht sicher","Piratenjäger","Schnelles Motorboot"],"correct":1},{"id":"g2-exam-practice-carib-time","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Karibik: Zeit","question":"Wann waren besonders viele Piraten in der Karibik aktiv?","options":["Nur 1716–1718","Um 1400","Erst seit dem Jahr 2008","Im 17. und frühen 18. Jahrhundert"],"correct":3},{"id":"g2-exam-practice-carib-blackbeard","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Blackbeard","question":"Wer war Blackbeard?","options":["Ein Mitglied der Hanse","Ein EU-Soldat vor Somalia","Der Mann von Anne Bonny","Ein bekannter Karibikpirat, der 1718 starb"],"correct":3},{"id":"g2-exam-practice-carib-portroyal","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Port Royal","question":"Wo liegt Port Royal?","options":["Auf Borneo","In Somalia","Auf Jamaika","Auf den Bahamas"],"correct":2},{"id":"g2-exam-practice-carib-tortuga","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Tortuga","question":"Wofür war Tortuga im 17. Jahrhundert bekannt?","options":["Als Piratenstützpunkt in der Karibik","Als Stadt der Hanse","Als Hauptstadt von Somalia","Als EU-Marineeinsatz"],"correct":0},{"id":"g2-exam-practice-carib-pardons","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Begnadigung","question":"Was geschah ab 1717/18 mit vielen Piraten?","options":["Alle wurden automatisch Könige","Sie mussten nach Borneo reisen","Sie wurden Mitglied der Hanse","Sie konnten begnadigt werden"],"correct":3},{"id":"g2-exam-practice-carib-hunters","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Piratenjäger","question":"Was machten einige begnadigte Piraten später?","options":["Sie wurden alle 1720 hingerichtet","Sie jagten andere Piraten","Sie gründeten Somalia","Sie erfanden die Galeere"],"correct":1},{"id":"g2-exam-practice-letters","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Zwei Briefe","question":"Was ist ein Kaperbrief bzw. Freibeuterbrief?","options":["Eine Begnadigung ohne Bedingungen","Eine Erlaubnis, bestimmte feindliche Schiffe anzugreifen","Ein Schreiben zum Bau eines Hafens","Ein Abkommen zur Bekämpfung von Piraten in Asien"],"correct":1},{"id":"g2-exam-practice-seer-letter","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Seeräuberbrief","question":"Wozu diente der Seeräuberbrief im Glossar?","options":["Hamburg durfte Piraten verfolgen und bestrafen","Er erlaubte Piraten, jedes Schiff zu überfallen","Er regelte das Lösegeld vor Somalia","Er ernannte Blackbeard zum König"],"correct":0},{"id":"g2-exam-practice-anne-nassau","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Anne: Nassau","question":"Mit wem kam Anne Bonny nach Nassau?","options":["Mit Blackbeard","Mit Syarif Osman","Mit ihrem Ehemann James Bonny","Mit Klaus Störtebeker"],"correct":2},{"id":"g2-exam-practice-anne-place","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Nassau","question":"Auf welcher Inselgruppe liegt Nassau?","options":["Auf den Bahamas","Auf Jamaika","Auf Borneo","Auf Tortuga"],"correct":0},{"id":"g2-exam-practice-anne-calico","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Anne: Calico Jack","question":"In wen verliebte sich Anne Bonny?","options":["In Störtebeker","In einen Marineoffizier der EU","In den Piraten Calico Jack Rackham","In Blackbeard"],"correct":2},{"id":"g2-exam-practice-mary-crew","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Mary: an Bord","question":"Auf wessen Piratenschiff fuhren Anne und Mary zusammen?","options":["Auf dem Schiff von Störtebeker","Auf dem Schiff von Calico Jack Rackham","Auf der Galeone Cacafuego","Auf einem EU-Schiff"],"correct":1},{"id":"g2-exam-practice-mary-boy","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Mary: Kindheit","question":"Welche Aussage über Mary Reads Kindheit ist am sorgfältigsten?","options":["Eine frühe Erzählung berichtet, dass sie als Junge aufwuchs; sicher belegt ist das nicht","Sie war nachweislich als Kind Königin","Sie wurde 2008 geboren","Sie wuchs sicher auf Tortuga auf"],"correct":0},{"id":"g2-exam-practice-mary-disguise","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Mary: Männerkleidung","question":"Welche Aussage zu Marys Männerkleidung ist richtig?","options":["Sie lebte zur Zeit von Störtebeker","Sie trug bei Angriffen Männerkleidung; wie lange sie unerkannt blieb, ist unklar","Sie war nachweislich nie als Piratin unterwegs","Sie war immer als Mann anerkannt und das ist vollständig belegt"],"correct":1},{"id":"g2-exam-practice-both-year","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Anne und Mary: Zeit","question":"In welchem Jahr wurden Anne Bonny und Mary Read verurteilt?","options":["2008","1720","1400","1845"],"correct":1},{"id":"g2-exam-practice-both-pregnant","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Anne und Mary: Schwangerschaft","question":"Warum wurde ihre Strafe nach dem Urteil aufgeschoben?","options":["Weil Blackbeard sie freikaufte","Weil sie Hansestädte besuchten","Weil Sandokan ihnen half","Beide erklärten, dass sie schwanger waren"],"correct":3},{"id":"g2-exam-practice-mary-end","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Mary: Lebensende","question":"Was geschah 1721 mit Mary Read?","options":["Sie wurde Gouverneurin von Nassau","Sie kämpfte vor Somalia","Sie gründete die Hanse","Sie starb im Gefängnis"],"correct":3},{"id":"g2-exam-practice-anne-end","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Anne: danach","question":"Was wissen wir über Anne Bonny nach dem Prozess?","options":["Sie wurde Kapitänin der ATALANTA","Sie lebte 1845 auf Borneo","Ihr weiteres Schicksal ist nicht sicher bekannt","Sie starb nachweislich 1721 mit Mary"],"correct":2},{"id":"g2-exam-practice-sandokan-place","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Sandokan: Ort","question":"Wo liegt die Insel Borneo?","options":["In der Karibik","An der Nordsee","Vor Ostafrika","In Südostasien"],"correct":3},{"id":"g2-exam-practice-sandakan","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Fachbegriff: Sandakan","question":"Zu welchem heutigen Land gehört Sandakan?","options":["Indonesien","Somalia","Jamaika","Malaysia"],"correct":3},{"id":"g2-exam-practice-sandokan-uncertain","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Sandokan: Quelle","question":"Was ist zu einem historischen Sandokan sicher?","options":["Alle Filmabenteuer sind genau so geschehen","Er war nachweislich ein Vitalienbruder","Er wurde 1720 auf Jamaika verurteilt","Seine Rolle bei den Ereignissen von 1845 ist nicht eindeutig belegt"],"correct":3},{"id":"g2-exam-practice-somalia-place","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Somalia: Lage","question":"Wo liegt Somalia?","options":["Am Horn von Afrika","Auf den Bahamas","An der Ostsee","Auf Borneo"],"correct":0},{"id":"g2-exam-practice-somalia-ransom","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Somalia: Lösegeld","question":"Was verlangen Piratengruppen nach einer Entführung häufig?","options":["Eine Freifahrt nach Tortuga","Lösegeld","Einen Kaperbrief aus Hamburg","Eine neue Piratenflagge"],"correct":1},{"id":"g2-exam-practice-somalia-boats","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Somalia: Boote","question":"Was sind Skiffs?","options":["Kleine, schnelle Motorboote","Schwere Ritterrüstungen","Eine Hansestadt","Eine Piratenflagge"],"correct":0},{"id":"g2-exam-practice-somalia-atalanta","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Somalia: ATALANTA","question":"Wofür steht ATALANTA im Glossar?","options":["Für die Piratenflagge","Für eine Hafenstadt auf Borneo","Für einen Freibeuterbrief","Für einen EU-Marineeinsatz zum Schutz der Schifffahrt seit 2008"],"correct":3},{"id":"g2-exam-practice-all-order","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"mcq","title":"Alle Themen: Reihenfolge","question":"Welche Reihenfolge stimmt zeitlich?","options":["Anne/Mary → Somalia → Störtebeker → Karibik → Sandokan","Sandokan → Störtebeker → Somalia → Anne/Mary → Karibik","Störtebeker → Karibik → Anne/Mary → Sandokan → Somalia","Somalia → Störtebeker → Sandokan → Karibik → Anne/Mary"],"correct":2},{"id":"g2-exam-card-1","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"flashcard","title":"Merkkarte 1: Zeit: Störtebeker","question":"Zeit: Störtebeker","answer":"Um 1400."},{"id":"g2-exam-card-2","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"flashcard","title":"Merkkarte 2: Zeit: Karibik/Blackbeard","question":"Zeit: Karibik/Blackbeard","answer":"Karibik im 17./frühen 18. Jahrhundert; Blackbeard ca. 1716–1718."},{"id":"g2-exam-card-3","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"flashcard","title":"Merkkarte 3: Begnadigung","question":"Begnadigung","answer":"Ab 1717/18 konnten viele Piraten begnadigt werden. Einige wurden später Piratenjäger."},{"id":"g2-exam-card-4","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"flashcard","title":"Merkkarte 4: Nassau / Port Royal","question":"Nassau / Port Royal","answer":"Nassau = Bahamas. Port Royal = Jamaika."},{"id":"g2-exam-card-5","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"flashcard","title":"Merkkarte 5: Anne Bonny","question":"Anne Bonny","answer":"Mit James Bonny nach Nassau; verliebte sich in Calico Jack; fuhr mit ihm auf einem Piratenschiff."},{"id":"g2-exam-card-6","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"flashcard","title":"Merkkarte 6: Mary Read","question":"Mary Read","answer":"Fuhr mit Anne auf Calico Jacks Schiff. Ihre Kindheitsgeschichte ist nicht sicher belegt."},{"id":"g2-exam-card-7","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"flashcard","title":"Merkkarte 7: 1720: Warum Aufschub?","question":"1720: Warum Aufschub?","answer":"Beide waren laut ihren Angaben schwanger. Die Strafe wurde aufgeschoben."},{"id":"g2-exam-card-8","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"flashcard","title":"Merkkarte 8: 1721: Mary und Anne","question":"1721: Mary und Anne","answer":"Mary starb im Gefängnis. Was aus Anne wurde, ist unsicher."},{"id":"g2-exam-card-9","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"flashcard","title":"Merkkarte 9: Sandakan","question":"Sandakan","answer":"Hafenstadt in Sabah auf Borneo, Malaysia."},{"id":"g2-exam-card-10","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"flashcard","title":"Merkkarte 10: Sandokan","question":"Sandokan","answer":"Möglicher historischer Bezug um 1845 ist unklar; Roman und Film sind kein Beweis."},{"id":"g2-exam-card-11","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"flashcard","title":"Merkkarte 11: Somalia – Technik","question":"Somalia – Technik","answer":"Skiffs = schnelle kleine Motorboote; Dhaus = mögliche Mutterschiffe."},{"id":"g2-exam-card-12","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"flashcard","title":"Merkkarte 12: ATALANTA","question":"ATALANTA","answer":"EU-Marineeinsatz seit 2008 vor Somalia zum Schutz der Schifffahrt."},{"id":"g2-exam-cloze-time","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"cloze","title":"Die fünf Zeiten","question":"Ordne die Zeitangaben zu.","template":"Störtebeker: {0}. Karibik: {1}. Anne/Mary: {2}. Sandokan: {3}. Somalia: {4}.","gaps":[{"options":["um 1400","um 1720","seit 2008"],"correct":0},{"options":["17./18. Jh.","14. Jh.","21. Jh."],"correct":0},{"options":["um 1720","um 1400","um 1845"],"correct":0},{"options":["19. Jh.","15. Jh.","21. Jh."],"correct":0},{"options":["seit den 1990er-Jahren","nur im 15. Jh.","nur im 17. Jh."],"correct":0}]},{"id":"g2-exam-cloze-anne","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"cloze","title":"Anne und Mary","question":"Ergänze die wichtigsten Personen und Gründe.","template":"Anne kam mit ihrem Mann nach {0}. Sie verliebte sich in {1}. Mary fuhr auf demselben {2}. Beide erhielten Aufschub, weil sie {3} waren.","gaps":[{"options":["Nassau","Port Royal","Hamburg"],"correct":0},{"options":["Calico Jack","Störtebeker","Sandokan"],"correct":0},{"options":["Piratenschiff","Dampflok","Handelskontor"],"correct":0},{"options":["schwanger","begnadigt","verschollen"],"correct":0}]},{"id":"g2-exam-cloze-glossary","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"cloze","title":"Fachbegriffe zuordnen","question":"Setze die passenden Fachbegriffe ein.","template":"{0} ist der Zusammenschluss von Kaufleuten. {1} ist die Piratenflagge. {2} sind schnelle Motorboote. {3} ist der EU-Einsatz vor Somalia.","gaps":[{"options":["Hanse","Dhau","Port Royal"],"correct":0},{"options":["Jolly Roger","Likedeeler","Prise"],"correct":0},{"options":["Skiffs","Hansestädte","Galeeren"],"correct":0},{"options":["ATALANTA","Nassau","Freibeuter"],"correct":0}]},{"id":"g2-exam-cloze-places","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"practice","type":"cloze","title":"Vier wichtige Orte","question":"Ergänze den richtigen Ort.","template":"Port Royal liegt auf {0}. Nassau liegt auf den {1}. Sandakan liegt in {2}. Der Golf von Aden liegt bei {3}.","gaps":[{"options":["Jamaika","Borneo","Ostfriesland"],"correct":0},{"options":["Bahamas","Kanarischen Inseln","Philippinen"],"correct":0},{"options":["Malaysia","Indonesien","Somalia"],"correct":0},{"options":["Somalia","Jamaika","Großbritannien"],"correct":0}]},{"id":"g2-exam-quiz-1","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 1","question":"Um 1400: Welche Gruppe gehört zu Störtebeker?","options":["Piraten vor Somalia","Vitalienbrüder","Bukanier","ATALANTA"],"correct":1},{"id":"g2-exam-quiz-2","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 2","question":"Welche Organisation wurde durch die Vitalienbrüder besonders geschädigt?","options":["Die Hanse","Die EU","Die WHO","Die britische Regierung 1845"],"correct":0},{"id":"g2-exam-quiz-3","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 3","question":"Was bedeutet Likedeeler?","options":["Piratenjäger","Mutterschiff","Königspalast","Gleichteiler"],"correct":3},{"id":"g2-exam-quiz-4","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 4","question":"Welche Zeit passt zur Karibikpiraterie?","options":["Nur das 15. Jahrhundert","Nur heute","17. und frühes 18. Jahrhundert","Nur 1716–1718"],"correct":2},{"id":"g2-exam-quiz-5","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 5","question":"Wer war Blackbeard?","options":["Ein Mitglied der Hanse","Ein Karibikpirat, der 1718 starb","Der Mann von Anne Bonny","Ein Admiral vor Somalia"],"correct":1},{"id":"g2-exam-quiz-6","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 6","question":"Was geschah ab 1717/18 mit vielen Karibikpiraten?","options":["Sie erhielten die Möglichkeit zur Begnadigung","Sie wurden alle zu Königen","Sie kamen alle nach Borneo","Sie erfanden den Kaperbrief"],"correct":0},{"id":"g2-exam-quiz-7","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 7","question":"Was taten einige ehemalige Piraten nach einer Begnadigung?","options":["Sie gründeten die Hanse","Sie wurden alle 1720 verurteilt","Sie schlossen den Golf von Aden","Sie jagten Piraten"],"correct":3},{"id":"g2-exam-quiz-8","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 8","question":"In welcher Stadt lernte Anne Bonny Calico Jack kennen?","options":["In Sandakan","In Port Royal","In Nassau","In Hamburg"],"correct":2},{"id":"g2-exam-quiz-9","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 9","question":"Wen verließ Anne Bonny, als sie mit Calico Jack aufs Piratenschiff ging?","options":["Syarif Osman","Ihren Ehemann James Bonny","Blackbeard","Klaus Störtebeker"],"correct":1},{"id":"g2-exam-quiz-10","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 10","question":"Mit wem segelte Mary Read auf einem Piratenschiff?","options":["Mit dem EU-Einsatz ATALANTA","Mit Anne Bonny und Calico Jack","Mit Störtebeker","Mit Syarif Osman"],"correct":1},{"id":"g2-exam-quiz-11","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 11","question":"Welche Aussage zu Mary Reads Kindheit ist richtig?","options":["Es gibt eine Erzählung, sie sei als Junge aufgewachsen; sicher ist das nicht","Sie war nachweislich eine Prinzessin","Sie lebte im 15. Jahrhundert","Sie wuchs auf einem EU-Schiff auf"],"correct":0},{"id":"g2-exam-quiz-12","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 12","question":"Warum wurde die Strafe für Anne und Mary 1720 aufgeschoben?","options":["Sie wurden Mitglieder der Hanse","Blackbeard war noch am Leben","Sie hatten einen Seeräuberbrief","Beide erklärten, schwanger zu sein"],"correct":3},{"id":"g2-exam-quiz-13","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 13","question":"Was geschah mit Mary Read 1721?","options":["Sie reiste nach Borneo","Sie gründete ATALANTA","Sie starb im Gefängnis","Sie wurde Gouverneurin"],"correct":2},{"id":"g2-exam-quiz-14","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 14","question":"Was wissen wir sicher über Annes Leben nach dem Prozess?","options":["Sie starb 1721 zusammen mit Mary","Ihr weiteres Schicksal ist ungeklärt","Sie wurde Piratenjägerin","Sie reiste nach Somalia"],"correct":1},{"id":"g2-exam-quiz-15","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 15","question":"Was ist ein Kaperbrief?","options":["Erlaubnis zum Angriff auf bestimmte feindliche Schiffe","Ein Piratenurteil","Eine Karte von Borneo","Ein Lösegeldvertrag"],"correct":0},{"id":"g2-exam-quiz-16","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 16","question":"Wo liegt Sandakan wirklich?","options":["In Indonesien","Auf Jamaika","In Ostfriesland","In Malaysia auf Borneo"],"correct":3},{"id":"g2-exam-quiz-17","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 17","question":"Welche Aussage zu Sandokan ist wissenschaftlich vorsichtig?","options":["Er war auf Calico Jacks Schiff","Er lebte sicher um 1400","Überlieferung und Roman sind kein sicherer Beweis für seine Taten","Die Filmhandlung ist vollständig belegt"],"correct":2},{"id":"g2-exam-quiz-18","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 18","question":"Wo befinden sich der Golf von Aden und die heutige Piraterie?","options":["Vor Nassau","Vor Somalia in Ostafrika","Vor Jamaika","Vor Hamburg"],"correct":1},{"id":"g2-exam-quiz-19","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 19","question":"Was sind Skiffs?","options":["Kleine schnelle Motorboote","Piratenflaggen","Kaperbriefe","Hansestädte"],"correct":0},{"id":"g2-exam-quiz-20","subject":"gsel2","topic":"Piraten – Vorbereitung auf die Arbeit","kind":"quiz","type":"mcq","title":"Probetest · Frage 20","question":"Seit wann schützt die EU-Mission ATALANTA die Schifffahrt?","options":["Seit 2008","Seit 1400","Seit 1718","Seit 1845"],"correct":0}];
 DEFAULT_CONTENT.push(...GSEL2_EXAM_CONTENT);
 
+
+// Ainu unit: short lessons for the whole class, a simple talk about food and music,
+// learning cards, exercises, and a test. No student names in learning material.
+const AINU_CONTENT = [
+  {
+    "id": "g2-ainu-start",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "lesson",
+    "type": "lesson",
+    "title": "Wer sind die Ainu?",
+    "summary": "Erst verstehen: Wo leben die Ainu und was ist besonders an ihrer Kultur?",
+    "sections": [
+      {
+        "heading": "Ein Volk aus dem Norden Japans",
+        "text": "Die Ainu sind ein indigenes Volk. Sie leben vor allem auf der Insel Hokkaidō im Norden Japans. Indigen bedeutet: Ihre Vorfahren lebten schon lange dort, bevor sich die heutige staatliche Ordnung entwickelte."
+      },
+      {
+        "heading": "Eine eigene Kultur",
+        "text": "Die Ainu haben eine eigene Sprache, Geschichten, Musik, traditionelle Kleidung und Bräuche. Ihre Sprache ist nicht einfach ein japanischer Dialekt."
+      },
+      {
+        "heading": "Wichtig",
+        "text": "Die Ainu gibt es auch heute. Viele setzen sich dafür ein, dass ihre Kultur und Sprache weiterleben."
+      }
+    ],
+    "memory": "Die Ainu leben auch heute. Hokkaidō ist eine Insel im Norden Japans."
+  },
+  {
+    "id": "g2-ainu-essen",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "lesson",
+    "type": "lesson",
+    "title": "Essen der Ainu",
+    "summary": "Kurze, einfache Sätze zum Nachlesen und Merken.",
+    "sections": [
+      {
+        "heading": "Fisch und Jagd",
+        "text": "Früher aßen die Ainu viel Fisch, besonders Lachs. Sie jagten auch Tiere wie Hirsche."
+      },
+      {
+        "heading": "Pflanzen und Beeren",
+        "text": "Sie sammelten Beeren und wilde Pflanzen. In einigen Gegenden bauten sie auch Getreide und Gemüse an."
+      },
+      {
+        "heading": "Ohaw – eine Suppe",
+        "text": "Ohaw ist eine traditionelle Suppe. Sie wird zum Beispiel mit Fisch oder Fleisch und Gemüse zubereitet."
+      },
+      {
+        "heading": "Heute",
+        "text": "Ainu essen heute nicht nur traditionelle Gerichte. Sie leben wie andere Menschen auch in der heutigen Zeit."
+      }
+    ],
+    "memory": "Essen merken: Lachs – Hirsch – Beeren – Ohaw."
+  },
+  {
+    "id": "g2-ainu-musik",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "lesson",
+    "type": "lesson",
+    "title": "Musik der Ainu",
+    "summary": "Zwei Instrumente und das Wichtigste über Gesang und Tanz.",
+    "sections": [
+      {
+        "heading": "Gemeinsam singen und tanzen",
+        "text": "Musik gehört zur Ainu-Kultur. Menschen sangen und tanzten etwa bei Feiern und Zeremonien."
+      },
+      {
+        "heading": "Mukkuri",
+        "text": "Die Mukkuri ist eine kleine Maultrommel, meist aus Bambus. Sie wird am Mund gespielt."
+      },
+      {
+        "heading": "Tonkori",
+        "text": "Die Tonkori ist ein langes Saiteninstrument. Es hat normalerweise fünf Saiten, die gezupft werden."
+      },
+      {
+        "heading": "Musik heute",
+        "text": "Es gibt auch heute Ainu-Musikerinnen und -Musiker. Manche verbinden traditionelle und moderne Musik."
+      }
+    ],
+    "memory": "Musik merken: Gesang – Tanz – Mukkuri – Tonkori."
+  },
+  {
+    "id": "g2-ainu-vortrag",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "lesson",
+    "type": "lesson",
+    "title": "Kurzvortrag: Essen und Musik",
+    "summary": "Ein einfacher Vortrag zum Üben – Schritt für Schritt.",
+    "sections": [
+      {
+        "heading": "1. Anfang",
+        "text": "Ich erzähle euch etwas über das Essen und die Musik der Ainu."
+      },
+      {
+        "heading": "2. Essen",
+        "text": "Früher lebten die Ainu eng mit der Natur zusammen. Sie aßen Fisch, besonders Lachs. Sie jagten Hirsche und sammelten Beeren und Pflanzen."
+      },
+      {
+        "heading": "3. Suppe",
+        "text": "Ein bekanntes Essen ist Ohaw. Das ist eine Suppe mit Fisch oder Fleisch und Gemüse."
+      },
+      {
+        "heading": "4. Musik",
+        "text": "Musik war ebenfalls wichtig. Die Ainu sangen und tanzten bei Festen."
+      },
+      {
+        "heading": "5. Instrumente",
+        "text": "Ein Instrument heißt Mukkuri. Das ist eine kleine Maultrommel. Ein anderes Instrument heißt Tonkori. Es hat meistens fünf Saiten."
+      },
+      {
+        "heading": "6. Schluss",
+        "text": "Essen und Musik gehören bis heute zur Kultur der Ainu."
+      },
+      {
+        "heading": "So übst du",
+        "text": "Erst jeden Abschnitt laut lesen. Danach versuchen, mit den Stichwörtern Lachs – Hirsch – Beeren – Ohaw – Mukkuri – Tonkori frei zu sprechen."
+      }
+    ],
+    "memory": "Langsam sprechen. Bei Fisch, Suppe und Instrumenten auf das Plakat zeigen."
+  },
+  {
+    "id": "g2-ainu-kleidung-geschichte",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "lesson",
+    "type": "lesson",
+    "title": "Kleidung und Geschichte",
+    "summary": "Die wichtigsten Informationen einfach erklärt.",
+    "sections": [
+      {
+        "heading": "Kleidung aus Naturmaterialien",
+        "text": "Früher stellten die Ainu Kleidung aus Baumfasern, Tierfellen und anderen Naturmaterialien her. Durch Handel bekamen sie auch Baumwolle."
+      },
+      {
+        "heading": "Besondere Muster",
+        "text": "Ihre traditionelle Kleidung hat oft aufwendige Muster und Stickereien. Manchen Mustern wurde eine schützende Bedeutung zugeschrieben."
+      },
+      {
+        "heading": "Ab 1869",
+        "text": "Japan begann, Hokkaidō stärker zu besiedeln. Viele Ainu verloren Land, und ihre Sprache und Kultur wurden unterdrückt."
+      },
+      {
+        "heading": "1997, 2008 und 2019",
+        "text": "1997 wurde die Förderung der Ainu-Kultur gesetzlich geregelt. 2008 erkannte das japanische Parlament die Ainu als indigenes Volk an. 2019 wurde diese Anerkennung gesetzlich festgeschrieben."
+      },
+      {
+        "heading": "Heute",
+        "text": "Viele Menschen lernen wieder Ainu und führen Traditionen weiter."
+      }
+    ],
+    "memory": "Geschichte merken: 1869 – 1997 – 2008 – 2019."
+  },
+  {
+    "id": "g2-ainu-religion",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "lesson",
+    "type": "lesson",
+    "title": "Religion der Ainu",
+    "summary": "Kamuy, Natur und Zeremonien – leicht verständlich.",
+    "sections": [
+      {
+        "heading": "Was sind Kamuy?",
+        "text": "In der traditionellen Religion gibt es mächtige Geistwesen oder Gottheiten. Sie heißen Kamuy und sind mit Tieren und Naturkräften verbunden."
+      },
+      {
+        "heading": "Wichtige Naturkräfte",
+        "text": "Der Bär und das Feuer hatten eine besondere Bedeutung. Auch Wasser, Pflanzen und Berge waren wichtig."
+      },
+      {
+        "heading": "Inaw",
+        "text": "Inaw sind besonders geschnitzte Holzstäbe. Sie wurden bei religiösen Zeremonien benutzt."
+      },
+      {
+        "heading": "Iyomante",
+        "text": "Iyomante heißt eine traditionelle Zeremonie, bei der ein Kamuy geehrt und sein Geist symbolisch zurückgesandt wurde."
+      },
+      {
+        "heading": "Nicht alle Ainu leben gleich",
+        "text": "Heute haben Ainu unterschiedliche Glaubensvorstellungen. Alte Traditionen werden nicht von allen Menschen ausgeübt."
+      }
+    ],
+    "memory": "Kamuy = Geistwesen/Gottheiten. Inaw = besondere Holzstäbe."
+  },
+  {
+    "id": "g2-ainu-traditionen",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "lesson",
+    "type": "lesson",
+    "title": "Traditionen und Bräuche",
+    "summary": "Tänze, Erzählungen und Handwerk.",
+    "sections": [
+      {
+        "heading": "Tänze",
+        "text": "Bei Festen und Zeremonien tanzen Menschen traditionelle Tänze. Manche Tänze ahmen Tierbewegungen nach."
+      },
+      {
+        "heading": "UNESCO 2009",
+        "text": "Seit 2009 gehören die traditionellen Ainu-Tänze zum immateriellen Kulturerbe der UNESCO."
+      },
+      {
+        "heading": "Yukar",
+        "text": "Yukar sind lange, oft gesungene Geschichten, zum Beispiel über Helden."
+      },
+      {
+        "heading": "Handwerk",
+        "text": "Die Ainu sind für Holzschnitzerei, Weben und schöne Stickereien bekannt."
+      },
+      {
+        "heading": "Heute",
+        "text": "Traditionen werden in Familien, Werkstätten und Kulturzentren weitergegeben. Zugleich entsteht neue Ainu-Musik und -Kunst."
+      }
+    ],
+    "memory": "Traditionen merken: Tänze – Yukar – Schnitzereien – UNESCO 2009."
+  },
+  {
+    "id": "g2-ainu-karte-lebensraum",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Lernkarte: lebensraum",
+    "question": "Wo leben die Ainu vor allem?",
+    "answer": "Auf Hokkaidō im Norden Japans."
+  },
+  {
+    "id": "g2-ainu-karte-indigen",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Lernkarte: indigen",
+    "question": "Was bedeutet indigen?",
+    "answer": "Die Vorfahren eines Volkes lebten bereits seit langer Zeit in einer Region."
+  },
+  {
+    "id": "g2-ainu-karte-essen",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Lernkarte: essen",
+    "question": "Welche drei Lebensmittel waren früher wichtig?",
+    "answer": "Lachs, Hirschfleisch und Beeren bzw. Wildpflanzen."
+  },
+  {
+    "id": "g2-ainu-karte-ohaw",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Lernkarte: ohaw",
+    "question": "Was ist Ohaw?",
+    "answer": "Eine traditionelle Suppe, zum Beispiel mit Fisch oder Fleisch und Gemüse."
+  },
+  {
+    "id": "g2-ainu-karte-mukkuri",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Lernkarte: mukkuri",
+    "question": "Was ist eine Mukkuri?",
+    "answer": "Eine kleine Maultrommel, meist aus Bambus."
+  },
+  {
+    "id": "g2-ainu-karte-tonkori",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Lernkarte: tonkori",
+    "question": "Was ist eine Tonkori?",
+    "answer": "Ein langes Saiteninstrument mit meist fünf Saiten."
+  },
+  {
+    "id": "g2-ainu-karte-kleidung",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Lernkarte: kleidung",
+    "question": "Woraus machten die Ainu früher Kleidung?",
+    "answer": "Zum Beispiel aus Baumfasern, Tierfellen oder gehandelter Baumwolle."
+  },
+  {
+    "id": "g2-ainu-karte-geschichte",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Lernkarte: geschichte",
+    "question": "Was passierte auf Hokkaidō ab 1869?",
+    "answer": "Stärkere japanische Besiedlung; viele Ainu verloren Land und Rechte."
+  },
+  {
+    "id": "g2-ainu-karte-anerkennung",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Lernkarte: anerkennung",
+    "question": "Wann wurden die Ainu im japanischen Parlament als indigenes Volk anerkannt?",
+    "answer": "2008. Ein Gesetz von 2019 schrieb dies ausdrücklich fest."
+  },
+  {
+    "id": "g2-ainu-karte-kamuy",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Lernkarte: kamuy",
+    "question": "Was sind Kamuy?",
+    "answer": "Mächtige Geistwesen oder Gottheiten der traditionellen Ainu-Vorstellungen."
+  },
+  {
+    "id": "g2-ainu-karte-inaw",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Lernkarte: inaw",
+    "question": "Was sind Inaw?",
+    "answer": "Besonders bearbeitete Holzstäbe für religiöse Zeremonien."
+  },
+  {
+    "id": "g2-ainu-karte-yukar",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Lernkarte: yukar",
+    "question": "Was sind Yukar?",
+    "answer": "Lange, oft gesungene Geschichten."
+  },
+  {
+    "id": "g2-ainu-karte-unesco",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Lernkarte: unesco",
+    "question": "Was wurde 2009 UNESCO-Kulturerbe?",
+    "answer": "Die traditionellen Ainu-Tänze."
+  },
+  {
+    "id": "g2-ainu-uebung-1",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Übung: Ort der Ainu",
+    "question": "Wo leben die Ainu vor allem?",
+    "options": [
+      "In Nordjapan auf Hokkaidō",
+      "In Südamerika",
+      "In Australien",
+      "Auf Island"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "g2-ainu-uebung-2",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Übung: Traditionelles Essen",
+    "question": "Welcher Fisch war für die Ainu besonders wichtig?",
+    "options": [
+      "Hering",
+      "Lachs",
+      "Thunfisch",
+      "Kabeljau"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "g2-ainu-uebung-3",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Übung: Gericht",
+    "question": "Was ist Ohaw?",
+    "options": [
+      "Ein Tanz",
+      "Ein Fest",
+      "Eine Suppe",
+      "Ein Boot"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "g2-ainu-uebung-4",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Übung: Instrument",
+    "question": "Was ist eine Mukkuri?",
+    "options": [
+      "Eine Maultrommel",
+      "Eine Trompete",
+      "Eine Flöte",
+      "Eine Glocke"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "g2-ainu-uebung-5",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Übung: Saiten",
+    "question": "Wie viele Saiten hat die Tonkori meistens?",
+    "options": [
+      "Zwei",
+      "Drei",
+      "Fünf",
+      "Zwölf"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "g2-ainu-uebung-6",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Übung: Kleidung",
+    "question": "Welche Materialien nutzten die Ainu traditionell?",
+    "options": [
+      "Nur Plastik",
+      "Baumfasern und Tierfelle",
+      "Nur Metall",
+      "Papier aus Schulheften"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "g2-ainu-uebung-7",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Übung: Geschichte",
+    "question": "Was nahm ab 1869 auf Hokkaidō zu?",
+    "options": [
+      "Japanische Besiedlung",
+      "Vulkanausbrüche",
+      "Ritterturniere",
+      "Weltraumflüge"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "g2-ainu-uebung-8",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Übung: Anerkennung",
+    "question": "In welchem Jahr erkannte das japanische Parlament die Ainu als indigenes Volk an?",
+    "options": [
+      "1899",
+      "1997",
+      "2008",
+      "2019"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "g2-ainu-uebung-9",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Übung: Glauben",
+    "question": "Was sind Kamuy?",
+    "options": [
+      "Fischernetze",
+      "Geistwesen oder Gottheiten",
+      "Nudelgerichte",
+      "Boote"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "g2-ainu-uebung-10",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Übung: Ritualgegenstände",
+    "question": "Was sind Inaw?",
+    "options": [
+      "Religiöse Holzstäbe",
+      "Musikinstrumente",
+      "Fischgerichte",
+      "Hüte"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "g2-ainu-uebung-11",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Übung: Geschichten",
+    "question": "Was sind Yukar?",
+    "options": [
+      "Waffen",
+      "Lange gesungene Geschichten",
+      "Schuhe",
+      "Berge"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "g2-ainu-uebung-12",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Übung: UNESCO",
+    "question": "Was wurde 2009 zum UNESCO-Kulturerbe erklärt?",
+    "options": [
+      "Die gesamte Insel Hokkaidō",
+      "Traditionelle Ainu-Tänze",
+      "Alle Ainu-Kleidungsstücke",
+      "Alle Häuser Japans"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "g2-ainu-test-1",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test: Lage",
+    "question": "Die Ainu leben vor allem auf ...",
+    "options": [
+      "Hokkaidō",
+      "Madagaskar",
+      "Grönland",
+      "Sizilien"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "g2-ainu-test-2",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test: Ernährung",
+    "question": "Was gehört zur traditionellen Ernährung der Ainu?",
+    "options": [
+      "Lachs und gesammelte Pflanzen",
+      "Nur Brot",
+      "Nur Schokolade",
+      "Nur Nudeln"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "g2-ainu-test-3",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test: Ohaw",
+    "question": "Ohaw ist ...",
+    "options": [
+      "ein Holzstab",
+      "eine Suppe",
+      "ein besonderer Hut",
+      "ein Tanz"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "g2-ainu-test-4",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test: Musik",
+    "question": "Was ist die Tonkori?",
+    "options": [
+      "Eine Trommel",
+      "Ein Saiteninstrument",
+      "Ein Horn",
+      "Eine Pfeife"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "g2-ainu-test-5",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test: Naturmaterial",
+    "question": "Was passt zur traditionellen Ainu-Kleidung?",
+    "options": [
+      "Fasern aus Baumrinde",
+      "Kunststofffolien",
+      "Raumanzüge",
+      "Metallplatten"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "g2-ainu-test-6",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test: Geschichte",
+    "question": "Wofür steht das Jahr 1997?",
+    "options": [
+      "Gesetz zur Förderung der Ainu-Kultur",
+      "Ainu-Tänze werden UNESCO-Kulturerbe",
+      "Start der japanischen Besiedlung",
+      "Gesetzliche Anerkennung als indigenes Volk"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "g2-ainu-test-7",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test: Geschichte",
+    "question": "Wofür steht 2019?",
+    "options": [
+      "Erfindung der Mukkuri",
+      "Gesetzliche Anerkennung als indigenes Volk",
+      "Erfindung der Tonkori",
+      "Gründung der Insel Hokkaidō"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "g2-ainu-test-8",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test: Religion",
+    "question": "Ein Kamuy ist in der traditionellen Religion ...",
+    "options": [
+      "ein Geistwesen oder eine Gottheit",
+      "eine Suppe",
+      "ein Musikinstrument",
+      "ein Kleidungsstück"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "g2-ainu-test-9",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test: Religion",
+    "question": "Wozu wurden Inaw genutzt?",
+    "options": [
+      "Zu religiösen Zeremonien",
+      "Als Regenschirme",
+      "Als Fischernetze",
+      "Zum Schreiben"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "g2-ainu-test-10",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test: Bräuche",
+    "question": "Was sind Yukar?",
+    "options": [
+      "Gesungene Erzählungen",
+      "Fischarten",
+      "Bauernhöfe",
+      "Muscheln"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "g2-ainu-test-11",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test: Tanz",
+    "question": "Was zeichnet manche Ainu-Tänze aus?",
+    "options": [
+      "Sie ahmen Tiere nach",
+      "Sie werden nur allein getanzt",
+      "Sie benutzen immer Klaviere",
+      "Sie haben nie Gesang"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "g2-ainu-test-12",
+    "subject": "gsel2",
+    "topic": "Die Ainu",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test: Gegenwart",
+    "question": "Welche Aussage ist richtig?",
+    "options": [
+      "Die Ainu gibt es nicht mehr",
+      "Alle Ainu leben exakt wie vor 300 Jahren",
+      "Die Ainu leben auch heute und pflegen ihre Kultur",
+      "Alle Ainu leben auf einem einzigen Dorfplatz"
+    ],
+    "correct": 2
+  }
+];
+DEFAULT_CONTENT.push(...AINU_CONTENT);
+
 const NATUR_LIGHT_TOPICS = new Set(["Licht und Optik","Licht und Sehen","Ausbreitung des Lichts"]);
 function normalizeBuiltInTopic(item){
   if(item?.subject==="natur"&&NATUR_LIGHT_TOPICS.has(item.topic))item.topic="Licht";
@@ -895,6 +1632,11 @@ function withCurrentGsel2SomaliaPiracy(items){
     if(at<0)arr.push(structuredClone(item));
     else if(item.id.startsWith("g2-exam-"))arr[at]=structuredClone(item);
   });
+  // Make the new Ainu unit available in existing GSEL 2 classrooms without
+  // changing their older lessons or needing a manual Supabase import.
+  AINU_CONTENT.forEach(item=>{
+    if(!arr.some(i=>i.id===item.id))arr.push(structuredClone(item));
+  });
   return arr
 }
 const RETIRED_PIRATE_HOMEWORK = new Set(["g2-piraten-homework-1","g2-piraten-homework-2"]);
@@ -931,6 +1673,11 @@ function restoreSomaliaPiracyProgress(){
     const k=`lerninsel_gsel2_somalia_piracy_${studentSession.roomCode}_${studentSession.studentCode}`;
     const saved=JSON.parse(localStorage.getItem(k)||"{}");
     for(const item of SOMALIA_PIRACY_CONTENT)if(!state.progress[item.id]&&saved[item.id])state.progress[item.id]=saved[item.id];
+  }catch{}
+  try{
+    const k=`lerninsel_gsel2_ainu_${studentSession.roomCode}_${studentSession.studentCode}`;
+    const saved=JSON.parse(localStorage.getItem(k)||"{}");
+    for(const item of AINU_CONTENT)if(!state.progress[item.id]&&saved[item.id])state.progress[item.id]=saved[item.id];
   }catch{}
 }
 function withCurrentSandokan(items){
@@ -1141,6 +1888,9 @@ function saveLocal(){
     const somaliaKey=`lerninsel_gsel2_somalia_piracy_${studentSession.roomCode}_${studentSession.studentCode}`;
     const onlySomaliaPiracy=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("g2-somalia-piracy-")||id.startsWith("g2-exam-")));
     localStorage.setItem(somaliaKey,JSON.stringify(onlySomaliaPiracy));
+    const ainuKey=`lerninsel_gsel2_ainu_${studentSession.roomCode}_${studentSession.studentCode}`;
+    const onlyAinu=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("g2-ainu-")));
+    localStorage.setItem(ainuKey,JSON.stringify(onlyAinu));
   }
   if(state.profile)localStorage.setItem(KEYS.localProfile,JSON.stringify(state.profile));
 }
