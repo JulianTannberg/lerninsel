@@ -1573,6 +1573,504 @@ const AINU_CONTENT = [
 ];
 DEFAULT_CONTENT.push(...AINU_CONTENT);
 
+// Natur: Bio – Ökosysteme, Ökosystem Wald und Arbeitsblatt 12 zu Frühblühern.
+const BIO_OEKOSYSTEM_CONTENT = [
+  {
+    "id": "n-eco-lesson-basics",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "lesson",
+    "type": "lesson",
+    "title": "Ökosysteme – die Grundlagen",
+    "summary": "Wie Lebewesen und ihre Umwelt zusammenhängen.",
+    "sections": [
+      {
+        "heading": "Was ist ein Ökosystem?",
+        "text": "Ein Ökosystem besteht aus einem Lebensraum (Biotop) und allen Lebewesen darin (Biozönose). Beide beeinflussen sich gegenseitig. Ein Wald ist ein Beispiel."
+      },
+      {
+        "heading": "Lebendige und unbelebte Umwelt",
+        "text": "Biotische Faktoren gehen von Lebewesen aus, etwa Konkurrenz um Nahrung oder Schatten durch Bäume. Abiotische Faktoren sind zum Beispiel Licht, Temperatur, Wasser und Boden."
+      },
+      {
+        "heading": "Wer hat welche Aufgabe?",
+        "text": "Produzenten sind vor allem grüne Pflanzen: Sie erzeugen mithilfe von Licht Zucker. Konsumenten sind Tiere, die Pflanzen oder andere Tiere fressen. Destruenten (Zersetzer) bauen abgestorbene Reste ab und führen Nährstoffe zurück."
+      },
+      {
+        "heading": "Nahrungskette und Nahrungsnetz",
+        "text": "Eine Nahrungskette zeigt, wer wen frisst: zum Beispiel Blatt → Raupe → Meise → Sperber. Viele Nahrungsketten sind miteinander zu einem Nahrungsnetz verbunden."
+      }
+    ],
+    "memory": "Biotop + Biozönose = Ökosystem. Licht, Wasser, Boden und Temperatur sind abiotische Faktoren."
+  },
+  {
+    "id": "n-eco-lesson-forest",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "lesson",
+    "type": "lesson",
+    "title": "Ökosystem Wald – Stockwerke und Fachwörter",
+    "summary": "Die fünf Stockwerke des Waldes und ihre Bedeutung.",
+    "sections": [
+      {
+        "heading": "1. Baumschicht",
+        "text": "Die Kronen hoher Bäume bilden die oberste Schicht. Sie fangen viel Sonnenlicht auf und beeinflussen, wie viel Licht unten ankommt."
+      },
+      {
+        "heading": "2. Strauchschicht",
+        "text": "Hier wachsen Sträucher und junge Bäume. Vögel finden hier Nahrung, Schutz und Nistplätze."
+      },
+      {
+        "heading": "3. Krautschicht",
+        "text": "Hier wachsen unter anderem Gräser, Farne, Blumen und Frühblüher. Für sie ist die Lichtmenge am Waldboden besonders wichtig."
+      },
+      {
+        "heading": "4. Moosschicht",
+        "text": "Moose, Pilze und kleine Pflanzen bedecken Teile des Bodens. Die Schicht hält Feuchtigkeit zurück und ist Lebensraum für kleine Tiere."
+      },
+      {
+        "heading": "5. Wurzelschicht",
+        "text": "Unter der Erde liegen Wurzeln sowie viele Bodenlebewesen. Wurzeln nehmen Wasser und Mineralstoffe auf und verankern Pflanzen im Boden."
+      },
+      {
+        "heading": "Mischwald, Forst und Monokultur",
+        "text": "Im Mischwald wachsen verschiedene Baumarten. Ein Forst ist ein bewirtschafteter Wald. Eine Monokultur besteht überwiegend aus einer Baumart und kann anfälliger gegenüber bestimmten Schäden sein."
+      }
+    ],
+    "memory": "Von oben nach unten: Baum – Strauch – Kraut – Moos – Wurzel."
+  },
+  {
+    "id": "n-eco-lesson-bloom",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "lesson",
+    "type": "lesson",
+    "title": "Frühblüher – Licht und Temperatur im Wald",
+    "summary": "Arbeitsblatt 12: Kurven lesen, Blühzeit und Lebenszyklus verstehen.",
+    "sections": [
+      {
+        "heading": "Die Aufgabe auf dem Arbeitsblatt",
+        "text": "Zeichne für die zwölf Monate zwei Linien: die relative Lichtstärke unter dem Laubdach (linke Achse: 0–100 %) und die Temperatur (rechte Achse: 0–25 °C). Im Schaubild darunter sind die Messwerte bereits als Kurven dargestellt."
+      },
+      {
+        "heading": "Was bedeutet „relative Lichtstärke“?",
+        "text": "Die Prozentwerte vergleichen das Licht unter den Baumkronen mit dem Licht außerhalb des Waldes. 49 % im März bedeutet: Unter den Kronen kommt ungefähr halb so viel Licht an wie außerhalb des Waldes."
+      },
+      {
+        "heading": "März bis Mai: der wichtige Vergleich",
+        "text": "Im März beträgt die relative Lichtstärke 49 % bei 3,6 °C. Im April sind es 33 % bei 5,2 °C. Im Mai nur noch 11 % bei 8,7 °C. Obwohl es wärmer wird, kommt am Waldboden immer weniger Licht an."
+      },
+      {
+        "heading": "Warum blühen Frühblüher so früh?",
+        "text": "Im zeitigen Frühjahr tragen viele Laubbäume noch wenig oder kein Laub. Frühblüher nutzen das Licht am Boden und die steigenden Temperaturen, um Blätter zu bilden, zu blühen und Reservestoffe aufzubauen."
+      },
+      {
+        "heading": "Was geschieht danach?",
+        "text": "Wenn sich das Blätterdach schließt, fällt weniger Licht auf den Waldboden. Viele Frühblüher ziehen ihre oberirdischen Pflanzenteile im späten Frühjahr ein. Unterirdische Speicherorgane, zum Beispiel Zwiebeln oder Knollen, bleiben erhalten. Im nächsten Frühjahr treiben die Pflanzen wieder aus."
+      },
+      {
+        "heading": "Die Pflanzen aus der Abbildung",
+        "text": "Gezeigt werden Märzenbecher, Buschwindröschen, Scharbockskraut, Lerchensporn und Aronstab. Ihre Blühzeiten liegen im Frühjahr, teils schon ab Februar, überwiegend zwischen März und Mai."
+      },
+      {
+        "heading": "Wichtig für Aufgabe 2",
+        "text": "Nicht die gesamte Pflanze stirbt im Mai: Bei vielen Frühblühern endet nur die oberirdische Wachstumsphase. Sie überdauern im Boden und können im nächsten Jahr erneut austreiben."
+      }
+    ],
+    "memory": "Vor dem Laubaustrieb: viel Licht am Boden. Ab Mai: dichteres Blätterdach, wenig Licht. Frühblüher nutzen deshalb das frühe Frühjahr.",
+    "diagram": "forest-early-bloom"
+  },
+  {
+    "id": "n-eco-practice-card-1",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Karte: Biotop",
+    "question": "Was ist ein Biotop?",
+    "answer": "Der unbelebte Lebensraum eines Ökosystems, zum Beispiel der Waldboden mit seinen Bedingungen."
+  },
+  {
+    "id": "n-eco-practice-1",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Zwei Teile",
+    "question": "Woraus besteht ein Ökosystem?",
+    "options": [
+      "Biotop und Biozönose",
+      "Nur aus Tieren",
+      "Nur aus Sonnenlicht",
+      "Nur aus Pflanzen"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "n-eco-practice-2",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Abiotischer Faktor",
+    "question": "Was ist ein abiotischer Umweltfaktor?",
+    "options": [
+      "Eine Meise",
+      "Ein Pilz",
+      "Die Temperatur",
+      "Eine Raupe"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "n-eco-practice-3",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Stockwerke",
+    "question": "In welcher Waldschicht blühen viele Frühblüher?",
+    "options": [
+      "Baumschicht",
+      "Krautschicht",
+      "Wurzelschicht",
+      "Strauchschicht"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "n-eco-practice-4",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Unter der Erde",
+    "question": "Welche Waldschicht liegt überwiegend unter der Erde?",
+    "options": [
+      "Moosschicht",
+      "Baumschicht",
+      "Wurzelschicht",
+      "Strauchschicht"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "n-eco-practice-5",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Licht im März",
+    "question": "Wie groß ist die relative Lichtstärke im März laut Tabelle?",
+    "options": [
+      "11 %",
+      "49 %",
+      "6 %",
+      "80 %"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "n-eco-practice-6",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Licht im Mai",
+    "question": "Wie viel Licht erreicht unter dem Kronendach im Mai den Waldboden (relativ)?",
+    "options": [
+      "49 %",
+      "33 %",
+      "51 %",
+      "11 %"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "n-eco-practice-7",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Temperatur",
+    "question": "Wie ändert sich die mittlere Tagestemperatur von März bis Mai?",
+    "options": [
+      "Sie steigt von 3,6 °C auf 8,7 °C.",
+      "Sie fällt von 8,7 °C auf 3,6 °C.",
+      "Sie bleibt immer gleich.",
+      "Sie sinkt auf unter 0 °C."
+    ],
+    "correct": 0
+  },
+  {
+    "id": "n-eco-practice-8",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Dichtes Blätterdach",
+    "question": "Warum erreicht im Mai deutlich weniger Licht den Waldboden?",
+    "options": [
+      "Weil die Bäume mehr Blätter tragen.",
+      "Weil die Sonne nicht mehr scheint.",
+      "Weil die Temperatur sinkt.",
+      "Weil es nachts nie dunkel wird."
+    ],
+    "correct": 0
+  },
+  {
+    "id": "n-eco-practice-card-2",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "practice",
+    "type": "flashcard",
+    "title": "Karte: Überdauern",
+    "question": "Wie überleben viele Frühblüher nach dem Einziehen ihrer Blätter?",
+    "answer": "Sie überdauern zum Beispiel mit Zwiebeln, Knollen oder unterirdischen Sprossen, in denen Reservestoffe gespeichert sind."
+  },
+  {
+    "id": "n-eco-practice-9",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Sommerwerte",
+    "question": "In welchen Monaten zeigt die Tabelle den kleinsten Lichtwert von 6 %?",
+    "options": [
+      "Mai und Juni",
+      "Juni und Juli",
+      "August und September",
+      "Januar und Februar"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "n-eco-practice-10",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Pflanzen erkennen",
+    "question": "Welche Pflanze steht auf dem Arbeitsblatt?",
+    "options": [
+      "Sonnenblume",
+      "Mais",
+      "Märzenbecher",
+      "Kaktus"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "n-eco-practice-11",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Was ist richtig?",
+    "question": "Was bedeutet es, wenn viele Frühblüher im Mai ihren Lebenszyklus „abschließen“?",
+    "options": [
+      "Alle Pflanzen sind endgültig tot.",
+      "Sie wachsen ab sofort nur im Winter.",
+      "Die oberirdische Wachstumsphase endet; sie überdauern unter der Erde.",
+      "Sie brauchen nie wieder Licht."
+    ],
+    "correct": 2
+  },
+  {
+    "id": "n-eco-practice-12",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "practice",
+    "type": "mcq",
+    "title": "Kurven einzeichnen",
+    "question": "Welche Achsen gehören zu den beiden Kurven?",
+    "options": [
+      "Links 0–100 % Licht, rechts 0–25 °C Temperatur.",
+      "Links 0–25 % Licht, rechts 0–100 °C Temperatur.",
+      "Beide Kurven zeigen nur Prozent.",
+      "Beide Kurven zeigen nur Temperaturen."
+    ],
+    "correct": 0
+  },
+  {
+    "id": "n-eco-quiz-1",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test 1 – Ökosystem",
+    "question": "Was beschreibt ein Ökosystem?",
+    "options": [
+      "Nur ein Tier",
+      "Lebewesen und ihr Lebensraum mit ihren Wechselwirkungen",
+      "Nur einen Fluss",
+      "Eine einzelne Pflanze"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "n-eco-quiz-2",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test 2 – Wald",
+    "question": "Wo wachsen viele Waldblumen und Frühblüher?",
+    "options": [
+      "In der Baumschicht",
+      "In der Strauchschicht",
+      "In der Krautschicht",
+      "Oberhalb aller Baumkronen"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "n-eco-quiz-3",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test 3 – Faktoren",
+    "question": "Welcher dieser Faktoren ist abiotisch?",
+    "options": [
+      "Konkurrenz zwischen Pflanzen",
+      "Licht",
+      "Räuber-Beute-Beziehung",
+      "Ein Insekt"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "n-eco-quiz-4",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test 4 – März",
+    "question": "Welche Werte gehören zum März?",
+    "options": [
+      "49 % Licht und 3,6 °C",
+      "11 % Licht und 8,7 °C",
+      "6 % Licht und 16,2 °C",
+      "51 % Licht und 1,9 °C"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "n-eco-quiz-5",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test 5 – Mai",
+    "question": "Welche Werte gehören zum Mai?",
+    "options": [
+      "33 % und 5,2 °C",
+      "49 % und 3,6 °C",
+      "11 % und 8,7 °C",
+      "34 % und 10,3 °C"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "n-eco-quiz-6",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test 6 – Zusammenhang",
+    "question": "Warum wird es unter Laubbäumen von März bis Mai trotz steigender Temperatur dunkler?",
+    "options": [
+      "Weil es im Mai schneit.",
+      "Weil die Bäume neue Blätter tragen und Licht abfangen.",
+      "Weil Frühblüher das Licht verbrauchen.",
+      "Weil die Tage kürzer werden."
+    ],
+    "correct": 1
+  },
+  {
+    "id": "n-eco-quiz-7",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test 7 – Frühblüher",
+    "question": "Warum treiben Frühblüher schon im zeitigen Frühjahr aus?",
+    "options": [
+      "Dann ist der Waldboden unter noch kahlen Bäumen vergleichsweise hell.",
+      "Dann wachsen keine Bäume mehr.",
+      "Dann ist der Boden am heißesten.",
+      "Dann gibt es überhaupt keinen Schatten."
+    ],
+    "correct": 0
+  },
+  {
+    "id": "n-eco-quiz-8",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test 8 – Pflanzen",
+    "question": "Welche Pflanzengruppe passt zum Arbeitsblatt?",
+    "options": [
+      "Mais, Kürbis, Tomate",
+      "Märzenbecher, Scharbockskraut, Buschwindröschen",
+      "Kaktus, Palme, Agave",
+      "Weizen, Roggen, Hafer"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "n-eco-quiz-9",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test 9 – Sommer",
+    "question": "Welchen Lichtwert zeigt die Tabelle für Juli?",
+    "options": [
+      "51 %",
+      "34 %",
+      "6 %",
+      "47 %"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "n-eco-quiz-10",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test 10 – Lebenszyklus",
+    "question": "Was geschieht nach der frühen Wachstumsphase mit vielen Frühblühern?",
+    "options": [
+      "Sie überdauern mit unterirdischen Speicherorganen.",
+      "Sie werden zu Bäumen.",
+      "Sie sterben aus.",
+      "Sie blühen das ganze Jahr ohne Pause."
+    ],
+    "correct": 0
+  },
+  {
+    "id": "n-eco-quiz-11",
+    "subject": "natur",
+    "topic": "Bio – Ökosysteme",
+    "kind": "quiz",
+    "type": "mcq",
+    "title": "Test 11 – Kurven",
+    "question": "Welche Aussage über die beiden Kurven ist richtig?",
+    "options": [
+      "Beide Kurven haben die gleiche Einheit.",
+      "Die Lichtstärke sinkt stark im Frühjahr, während die Temperatur steigt.",
+      "Im Juli ist die Lichtstärke am größten.",
+      "Die Temperatur bleibt von Januar bis Dezember gleich."
+    ],
+    "correct": 1
+  }
+];
+DEFAULT_CONTENT.push(...BIO_OEKOSYSTEM_CONTENT);
+
 const NATUR_LIGHT_TOPICS = new Set(["Licht und Optik","Licht und Sehen","Ausbreitung des Lichts"]);
 function normalizeBuiltInTopic(item){
   if(item?.subject==="natur"&&NATUR_LIGHT_TOPICS.has(item.topic))item.topic="Licht";
@@ -1593,7 +2091,7 @@ const SANDOKAN_CONTENT = DEFAULT_CONTENT.filter(item=>item.id.startsWith("g2-san
 // overlays the complete current units locally whenever Nature is already part
 // of the student's class. This makes both topics appear immediately without a
 // teacher having to import/seed them again.
-const NATURE_0610_CONTENT = DEFAULT_CONTENT.filter(item=>item.id.startsWith("n-material-")||item.id.startsWith("n-lens-"));
+const NATURE_0610_CONTENT = DEFAULT_CONTENT.filter(item=>item.id.startsWith("n-material-")||item.id.startsWith("n-lens-")||item.id.startsWith("n-eco-"));
 function withCurrentNatureLessons(items){
   const arr=(items||[]).map(normalizeBuiltInTopic);
   const hasNature=arr.some(i=>i.subject==="natur");
@@ -1880,7 +2378,7 @@ function saveLocal(){
     const onlySandokan=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("g2-sandokan-")));
     localStorage.setItem(k,JSON.stringify(onlySandokan));
     const natureKey=`lerninsel_nature_0610_${studentSession.roomCode}_${studentSession.studentCode}`;
-    const onlyCurrentNature=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("n-material-")||id.startsWith("n-lens-")));
+    const onlyCurrentNature=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("n-material-")||id.startsWith("n-lens-")||id.startsWith("n-eco-")));
     localStorage.setItem(natureKey,JSON.stringify(onlyCurrentNature));
     const grundherrschaftKey=`lerninsel_gsel1_grundherrschaft_${studentSession.roomCode}_${studentSession.studentCode}`;
     const onlyGrundherrschaft=Object.fromEntries(Object.entries(state.progress).filter(([id])=>id.startsWith("g1-grundherrschaft-")));
@@ -2179,6 +2677,27 @@ function openItem(id){
 }
 
 function lessonExtra(i){
+  if(i.diagram==="forest-early-bloom"){
+    const months=["Jan","Feb","Mär","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"];
+    const light=[51,51,49,33,11,6,6,7,9,14,34,47];
+    const temp=[1.9,1.8,3.6,5.2,8.7,13.2,16.2,17.8,17.4,14.2,10.3,5.6];
+    const X=n=>56+47*n, YL=v=>270-2.1*v, YT=v=>270-8.4*v;
+    const points=(values,y)=>values.map((v,n)=>X(n)+","+y(v)).join(" ");
+    const grid=[0,20,40,60,80,100].map(v=>'<line x1="51" y1="'+YL(v)+'" x2="585" y2="'+YL(v)+'" stroke="#e4e9ed"/><text x="42" y="'+(YL(v)+4)+'" text-anchor="end" font-size="12" fill="#3c5874">'+v+'</text><text x="591" y="'+(YL(v)+4)+'" font-size="12" fill="#9a4e18">'+v/4+'</text>').join("");
+    const labels=months.map((m,n)=>'<text x="'+X(n)+'" y="291" text-anchor="middle" font-size="12">'+m+'</text>').join("");
+    const rows=months.map((m,n)=>'<tr><th>'+m+'</th><td>'+light[n]+' %</td><td>'+temp[n].toFixed(1).replace(".",",")+' °C</td></tr>').join("");
+    return '<div class="lessonSection" style="overflow-x:auto"><h3>Die zwei Kurven aus Arbeitsblatt 12</h3><p class="small">Blau: relative Lichtstärke unter den Kronen (linke Achse). Orange: durchschnittliche Tagestemperatur (rechte Achse). Die beiden Kurven haben unterschiedliche Einheiten.</p>'+
+      '<svg viewBox="0 0 660 320" style="min-width:480px;max-width:100%;height:auto" role="img" aria-label="Monatskurven: Das Licht nimmt von März bis Mai stark ab, die Temperatur steigt im Frühjahr">'+
+      '<rect x="0" y="0" width="660" height="320" fill="#ffffff" rx="12"/><text x="48" y="23" font-size="13" fill="#3c5874">Licht (%)</text><text x="582" y="23" font-size="13" fill="#9a4e18">Temperatur (°C)</text>'+
+      grid+'<line x1="51" y1="55" x2="51" y2="270" stroke="#7b8897"/><line x1="585" y1="55" x2="585" y2="270" stroke="#7b8897"/><line x1="51" y1="270" x2="585" y2="270" stroke="#7b8897"/>'+
+      '<polyline fill="none" stroke="#33699c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="'+points(light,YL)+'"/>'+
+      '<polyline fill="none" stroke="#d0782a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="'+points(temp,YT)+'"/>'+
+      light.map((v,n)=>'<circle cx="'+X(n)+'" cy="'+YL(v)+'" r="3" fill="#33699c"/>').join("")+
+      temp.map((v,n)=>'<circle cx="'+X(n)+'" cy="'+YT(v)+'" r="3" fill="#d0782a"/>').join("")+labels+
+      '<text x="50" y="313" font-size="12" fill="#33699c">● Licht</text><text x="140" y="313" font-size="12" fill="#d0782a">● Temperatur</text></svg>'+
+      '<p class="small">Die Kurven helfen beim Verstehen. Auf dem Schulblatt sollen die Werte selbst in die große Zeichnung eingetragen werden.</p>'+
+      '<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;font-size:.9rem"><thead><tr><th style="text-align:left">Monat</th><th>Licht</th><th>Temperatur</th></tr></thead><tbody>'+rows+'</tbody></table></div></div>';
+  }
   if(i.diagram==="pirate-exam-table")return `
     <div class="lessonSection examSection">
       <h3>Die ausgefüllte Vergleichstabelle</h3>
